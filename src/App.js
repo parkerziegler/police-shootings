@@ -5,6 +5,7 @@ import PerCapitaMapContainer from './components/percapita/PerCapitaMapContainer'
 
 class App extends Component {
   render() {
+
     return (
       <div>
         <Header />
