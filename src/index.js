@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
 
-const store = createStore(rootReducer);
-console.log(store);
+const reducers = combineReducers({ rootReducer });
+const store = createStore(reducers);
 
 ReactDOM.render(
   <Provider store={store}>

@@ -8,7 +8,7 @@ export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SEND_API_DATA_TO_REDUCER:
       return Object.assign({}, state, {
-        data: action.data
+        data: action.data.us
       });
     default:
       return state;
