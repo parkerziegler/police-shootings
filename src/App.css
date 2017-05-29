@@ -32,7 +32,7 @@ body {
 
 .map-container {
   top: 7%;
-  position: fixed;
+  position: absolute;
   left: 0;
 	width: 70%;
 	display: inline-block;
@@ -48,4 +48,37 @@ body {
 .states {
 	stroke: #fff;
   stroke-width: 0.5px;
+}
+
+.map-description-container {
+	width: 30%;
+	height: auto;
+	right: 0;
+	top: 20%;
+	position: absolute;
+	border: 1px solid #000;
+	display: inline-block;
+}
+
+.map-description-container > .header {
+	color: #000000;
+	font: 28px 'HelveticaNeue-Bold', 'Helvetica', sans-serif;
+	position: relative;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: none;
+	box-shadow: none;
+	overflow: visible;
+	white-space: normal;
+}
+
+.map-description-container > .text {
+	color: #000000;
+	font: 12px 'HelveticaNeue', 'Helvetica', sans-serif;
+	display: block;
+	position: absolute;
+	top: 100px;
+	left: 0;
 }

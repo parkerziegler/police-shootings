@@ -9,7 +9,7 @@ import * as stateNames from '../../assets/state-names';
 import axios from 'axios';
 import * as actions from '../../actions/actions';
 
-class PerCapitaMapContainer extends React.Component {
+class Map extends React.Component {
 
   constructor() {
     super();
@@ -87,4 +87,4 @@ function mapStateToProps (state, ownProps) {
   }
 }
 
-export default connect(mapStateToProps)(PerCapitaMapContainer);
+export default connect(mapStateToProps)(Map);

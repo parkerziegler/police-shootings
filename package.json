@@ -12,9 +12,12 @@
     "topojson": "^2.2.0"
   },
   "devDependencies": {
+    "node-sass-chokidar": "0.0.2",
     "react-scripts": "0.9.5"
   },
   "scripts": {
+		"build-css": "node-sass-chokidar src/ -o src/",
+		"watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

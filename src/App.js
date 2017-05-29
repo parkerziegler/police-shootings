@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/Header.js';
-import PerCapitaMapContainer from './components/percapita/PerCapitaMapContainer';
+import Header from './components/Header';
+import Map from './components/maps/Map';
+import MapDescription from './components/maps/MapDescription';
 
 class App extends Component {
   render() {
@@ -9,7 +10,8 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <PerCapitaMapContainer />
+        <Map />
+				<MapDescription />
       </div>
     );
   }
