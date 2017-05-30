@@ -53,32 +53,29 @@ body {
 .map-description-container {
 	width: 30%;
 	height: auto;
-	right: 0;
+	right: 0px;
 	top: 20%;
 	position: absolute;
-	border: 1px solid #000;
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
 }
 
-.map-description-container > .header {
+.map-description-container > .inset-header {
 	color: #000000;
-	font: 28px 'HelveticaNeue-Bold', 'Helvetica', sans-serif;
-	position: relative;
+	font: 700 28px 'Khula', sans-serif;
 	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
 	background: none;
 	box-shadow: none;
 	overflow: visible;
 	white-space: normal;
+	flex: 0 1 auto;
+	order: 1;
 }
 
 .map-description-container > .text {
 	color: #000000;
 	font: 12px 'HelveticaNeue', 'Helvetica', sans-serif;
 	display: block;
-	position: absolute;
-	top: 100px;
-	left: 0;
+	flex: 0 1 auto;
+	order: 1;
 }
