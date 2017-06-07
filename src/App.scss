@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$roboto: 'Roboto', sans-serif;
+
+body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	flex: 0 1 auto;
+  background: #495D77;
+  height: 55px;
+  width: 100%;
+	margin-top: 10px;
+  -webkit-box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
+  display: flex;
+	flex-direction: row;
+  overflow: hidden;
+  z-index: 2;
+
+	.page-title {
+		flex: 0 1 auto;
+	  color: #FFFFFF;
+	  font: 700 28px 'HelveticaNeue', 'Helvetica', sans-serif;
+	  margin-left: 10px;
+		padding-top: 10px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.page-title:last-child {
+		color: #A1A1A1
+	}
+
+}
+
+.percapita {
+
+	flex: 0 1 auto;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: auto;
+	align-items: center;
+
+	.map-container {
+	  flex: 0 1 auto;
+		height: auto;
+		width: 70%;
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			.states {
+				stroke: #FFFFFF;
+			  stroke-width: 1px;
+			}
+		}
+	}
+
+	.map-description-container {
+		width: 30%;
+		height: auto;
+		flex: 0 1 auto;
+		display: flex;
+		flex-direction: column;
+
+		.inset-header {
+			color: #000000;
+			font-family: $roboto;
+			font-size: 28px;
+			font-weight: bold;
+			display: block;
+			background: none;
+			box-shadow: none;
+			overflow: visible;
+			white-space: normal;
+			flex: 0 1 auto;
+			order: 1;
+		}
+
+		.text {
+			color: #000000;
+			font: 12px 'HelveticaNeue', 'Helvetica', sans-serif;
+			display: block;
+			flex: 0 1 auto;
+			order: 2;
+		}
+	}
+
+}

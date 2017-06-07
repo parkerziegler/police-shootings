@@ -27,7 +27,7 @@ class Map extends React.Component {
 					  ])
 					 .then(axios.spread((countedAPI, censusAPI) => {
 
-
+						 this.props.dispatch(actions.sendShootingsDataToReducer(countedAPI.data));
 						 let dataByState = _.groupBy(countedAPI.data, 'state');
 
 						 _.map(us.objects.states.geometries, (state) => {
@@ -43,6 +43,7 @@ class Map extends React.Component {
 								state.properties.stateName = matchState.name;
 								state.properties.numShootings = matchShootings.length;
 								state.properties.population = matchPopulation;
+								state.properties.shootingsPerCapita = matchShootings.length / matchPopulation;
 							});
 
 						this.props.dispatch(actions.sendAPIDataToReducer({ us }));

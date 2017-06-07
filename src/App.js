@@ -10,8 +10,10 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Map />
-				<MapDescription />
+				<div className='percapita'>
+	        <Map />
+					<MapDescription />
+				</div>
       </div>
     );
   }
