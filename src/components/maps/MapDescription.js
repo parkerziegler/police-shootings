@@ -8,7 +8,6 @@ class MapDescription extends React.Component {
 
 	constructor(props) {
 		super(props);
-		const { maps, dispatch } = this.props;
 	}
 
 	render() {
@@ -17,7 +16,7 @@ class MapDescription extends React.Component {
 
 			let numDays = moment("2016-12-31").diff(moment("2015-01-01"), "days");
 
-			let numPerDay = Number(this.props.maps.shootingsData.length / numDays).toFixed(3);
+			let numPerDay = Number(this.props.maps.shootingsData.length / numDays).toFixed(1);
 
 			let highestState = this.props.maps.data.objects ?
 					_.orderBy(this.props.maps.data.objects.states.geometries, ['properties.shootingsPerCapita'], ['desc']) : null;
@@ -26,12 +25,16 @@ class MapDescription extends React.Component {
 
 			let highestRate = highestState ? Number(highestState[0].properties.shootingsPerCapita * 1000000).toFixed(1) : 'loading...'
 
-
+			let activeState = this.props.maps.activeState ? this.props.maps.activeState : { stateName: 'Loading...', shootingsPerMillion: 'Loading...' };
+			console.log(activeState);
 			return (
 				<div className='map-description-container'>
-					<div className='inset-header'>Shootings Per Million By State</div>
+					<div className='inset-header'>Shootings Per Million</div>
+					<div className='inset-subheader'>By State</div>
 					<div className='text'>Between January 1, 2015 and December 31, 2016, <b>{totalCount}</b> people were killed by police in the United States. That amounts to roughly <b>{numPerDay}</b> people per day. <b>{highestStateName}</b> had the highest rate of police involved shootings in this time period, with <b>{highestRate}</b> for every million residents. Hover over a state to obtain its rate.
 					</div>
+					<div className='state-name'>{activeState.stateName}</div>
+					<div className='state-name'>{_.round(activeState.shootingsPerMillion, 2)}</div>
 				</div>
 			)
 	}

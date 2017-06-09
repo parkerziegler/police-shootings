@@ -56,22 +56,25 @@ body {
     height: auto;
     flex: 0 1 auto;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 10px 10px 10px 10px; }
     .percapita .map-description-container .inset-header {
       color: #000000;
       font-family: "Roboto", sans-serif;
       font-size: 28px;
       font-weight: bold;
-      display: block;
-      background: none;
-      box-shadow: none;
-      overflow: visible;
-      white-space: normal;
-      flex: 0 1 auto;
-      order: 1; }
+      margin-bottom: 3px; }
+    .percapita .map-description-container .inset-subheader {
+      color: #A1A1A1;
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      margin-bottom: 3px; }
     .percapita .map-description-container .text {
       color: #000000;
       font: 12px 'HelveticaNeue', 'Helvetica', sans-serif;
-      display: block;
-      flex: 0 1 auto;
-      order: 2; }
+      margin-bottom: 10px; }
+    .percapita .map-description-container .state-name {
+      color: #000000;
+      font: "Roboto", sans-serif;
+      font-size: 24px;
+      font-weight: bold; }

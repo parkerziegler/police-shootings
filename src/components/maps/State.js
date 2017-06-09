@@ -1,11 +1,14 @@
 import * as React from 'react'
 import '../../App.css'
+import * as actions from '../../actions/actions';
+import { connect } from 'react-redux';
 
 class State extends React.Component {
 
   constructor(props) {
     super(props);
 		this.getStateColor = this.getStateColor.bind(this);
+		this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
   }
 
 	getStateColor(shootingsPerCapita) {
@@ -36,11 +39,28 @@ class State extends React.Component {
       }
 	}
 
+	onMouseEnterHandler(event) {
+		console.log(this.props.stateName);
+
+		let state = {
+			stateName: this.props.stateName,
+			shootingsPerMillion: this.props.numShootings / this.props.population * 1000000
+		};
+
+		this.props.dispatch(actions.getHoveredStateData(state));
+	}
+
   render() {
 
 		let fill = this.getStateColor(this.props.numShootings / this.props.population * 1000000);
-    return <path className='states' d={this.props.path} fill={fill} />;
+    return <path className='states' d={this.props.path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
   }
 }
 
-export default State;
+function mapStateToProps (state, ownProps) {
+  return {
+    maps: state.rootReducer
+  }
+}
+
+export default connect(mapStateToProps)(State);

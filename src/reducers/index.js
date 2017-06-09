@@ -2,7 +2,8 @@ import * as actionTypes from '../constants/action-types';
 
 const initialState = {
   data: [{}],
-	shootingsData: [{}]
+	shootingsData: [{}],
+	activeState: {}
 };
 
 export const rootReducer = (state = initialState, action) => {
@@ -14,6 +15,10 @@ export const rootReducer = (state = initialState, action) => {
 		case actionTypes.SEND_SHOOTINGS_DATA_TO_REDUCER:
 			return Object.assign({}, state, {
 				shootingsData: action.data
+			});
+		case actionTypes.GET_HOVERED_STATE_DATA:
+			return Object.assign({}, state, {
+				activeState: action.state
 			});
     default:
       return state;

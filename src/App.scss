@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 $roboto: 'Roboto', sans-serif;
+$black: #000000;
 
 body {
   height: 100%;
@@ -75,27 +76,34 @@ body {
 		flex: 0 1 auto;
 		display: flex;
 		flex-direction: column;
+		padding: 10px 10px 10px 10px;
 
 		.inset-header {
-			color: #000000;
+			color: $black;
 			font-family: $roboto;
 			font-size: 28px;
 			font-weight: bold;
-			display: block;
-			background: none;
-			box-shadow: none;
-			overflow: visible;
-			white-space: normal;
-			flex: 0 1 auto;
-			order: 1;
+			margin-bottom: 3px;
+		}
+
+		.inset-subheader {
+			color: #A1A1A1;
+			font-family: $roboto;
+			font-size: 20px;
+			margin-bottom: 3px;
 		}
 
 		.text {
-			color: #000000;
+			color: $black;
 			font: 12px 'HelveticaNeue', 'Helvetica', sans-serif;
-			display: block;
-			flex: 0 1 auto;
-			order: 2;
+			margin-bottom: 10px;
+		}
+
+		.state-name {
+			color: $black;
+			font: $roboto;
+			font-size: 24px;
+			font-weight: bold;
 		}
 	}
 

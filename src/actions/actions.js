@@ -15,3 +15,11 @@ export const sendShootingsDataToReducer = (data) => {
 		data
 	};
 }
+
+export const getHoveredStateData = (state) => {
+
+	return {
+		type: actionTypes.GET_HOVERED_STATE_DATA,
+		state
+	};
+}
