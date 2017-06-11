@@ -61,20 +61,56 @@ body {
     .percapita .map-description-container .inset-header {
       color: #000000;
       font-family: "Roboto", sans-serif;
-      font-size: 28px;
+      font-size: 36px;
       font-weight: bold;
       margin-bottom: 3px; }
     .percapita .map-description-container .inset-subheader {
-      color: #A1A1A1;
+      color: #666666;
       font-family: "Roboto", sans-serif;
-      font-size: 20px;
-      margin-bottom: 3px; }
+      font-size: 28px;
+      margin-bottom: 10px; }
     .percapita .map-description-container .text {
       color: #000000;
-      font: 12px 'HelveticaNeue', 'Helvetica', sans-serif;
+      font: 14px 'HelveticaNeue', 'Helvetica', sans-serif;
       margin-bottom: 10px; }
     .percapita .map-description-container .state-name {
       color: #000000;
       font: "Roboto", sans-serif;
-      font-size: 24px;
+      font-size: 32px;
       font-weight: bold; }
+    .percapita .map-description-container .data-table {
+      display: flex;
+      flex-direction: column; }
+      .percapita .map-description-container .data-table .table-button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 60%; }
+        .percapita .map-description-container .data-table .table-button-container .button {
+          width: 40%;
+          height: auto;
+          background: #50505E;
+          flex: 0 0 auto;
+          padding: 5px 5px 5px 5px;
+          text-align: center;
+          cursor: pointer; }
+        .percapita .map-description-container .data-table .table-button-container div:first-child {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px; }
+        .percapita .map-description-container .data-table .table-button-container div:last-child {
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px; }
+      .percapita .map-description-container .data-table .table {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px; }
+        .percapita .map-description-container .data-table .table div {
+          width: 80%;
+          display: flex;
+          flex-direction: column; }
+          .percapita .map-description-container .data-table .table div .table-header {
+            font: 700 14px "HelveticaNeue", sans-serif;
+            padding: 5px 0 5px 0; }
+          .percapita .map-description-container .data-table .table div .row {
+            font: 400 12px "Roboto", sans-serif;
+            padding: 2px 0 2px 0; }
