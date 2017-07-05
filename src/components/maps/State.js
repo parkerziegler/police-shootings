@@ -40,7 +40,6 @@ class State extends React.Component {
 	}
 
 	onMouseEnterHandler(event) {
-		console.log(this.props.stateName);
 
 		let state = {
 			stateName: this.props.stateName,

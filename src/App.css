@@ -8,6 +8,20 @@ body {
   display: flex;
   flex-direction: column; }
 
+.header-transition-appear {
+  opacity: 0.01; }
+
+.header-transition-appear.header-transition-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in; }
+
+.description-transition-appear {
+  opacity: 0.01; }
+
+.description-transition-appear.description-transition-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in 2s; }
+
 .header {
   flex: 0 1 auto;
   background: #495D77;
@@ -41,16 +55,16 @@ body {
   height: auto;
   align-items: center; }
   .percapita .map-container {
-    flex: 0 1 auto;
-    height: auto;
-    width: 70%; }
-    .percapita .map-container svg {
-      position: absolute;
-      top: 0;
-      left: 0; }
-      .percapita .map-container svg .states {
+    width: 70%;
+    display: flex;
+    flex-direction: column; }
+    .percapita .map-container .map {
+      flex: 0 1 auto;
+      height: 100%;
+      width: 100%; }
+      .percapita .map-container .map .states {
         stroke: #FFFFFF;
-        stroke-width: 1px; }
+        stroke-width: 0.25px; }
   .percapita .map-description-container {
     width: 30%;
     height: auto;
@@ -63,7 +77,9 @@ body {
       font-family: "Roboto", sans-serif;
       font-size: 36px;
       font-weight: bold;
-      margin-bottom: 3px; }
+      margin-bottom: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis; }
     .percapita .map-description-container .inset-subheader {
       color: #666666;
       font-family: "Roboto", sans-serif;
@@ -109,8 +125,11 @@ body {
           display: flex;
           flex-direction: column; }
           .percapita .map-description-container .data-table .table div .table-header {
-            font: 700 14px "HelveticaNeue", sans-serif;
-            padding: 5px 0 5px 0; }
+            font: 700 13px "HelveticaNeue", sans-serif;
+            padding: 5px 0 5px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; }
           .percapita .map-description-container .data-table .table div .row {
             font: 400 12px "Roboto", sans-serif;
             padding: 2px 0 2px 0; }

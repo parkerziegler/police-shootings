@@ -11,7 +11,7 @@ class App extends Component {
       <div>
         <Header />
 				<div className='percapita'>
-	        <Map />
+	        <Map type='percapita' />
 					<MapDescription />
 				</div>
       </div>
