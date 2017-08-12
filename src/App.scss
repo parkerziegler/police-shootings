@@ -3,6 +3,33 @@
 $roboto: 'Roboto', sans-serif;
 $black: #000000;
 $helvetica: 'HelveticaNeue', sans-serif;
+$breakpoints: (
+	mobile: 480px,
+	tablet: 768px,
+	desktop: 1024px
+);
+$font-sizes: (
+	null: 16px,
+	mobile: 18px,
+	tablet: 22px,
+	desktop: 28px
+);
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			font-size: $fs-font-size;
+		}
+		@else {
+			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
+				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint)
+			}
+			@media screen and (min-width: $fs-breakpoint) {
+				font-size: $fs-font-size;
+			}
+		}
+	}
+}
 
 body {
   height: 100%;
@@ -34,33 +61,42 @@ body {
 
 .header {
 	flex: 0 1 auto;
-  background: #495D77;
-  height: 55px;
-  width: 100%;
-	margin-top: 10px;
-  -webkit-box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
-  box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
-  display: flex;
+  	background: #495D77;
+  	height: auto;
+  	width: 100%;
+  	-webkit-box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
+  	-moz-box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
+  	box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.75);
+  	display: flex;
 	flex-direction: row;
-  overflow: hidden;
-  z-index: 2;
+  	overflow: hidden;
+	z-index: 2;
+	align-items: center;
 
 	.page-title {
 		flex: 0 1 auto;
-	  color: #FFFFFF;
-	  font: 700 28px 'HelveticaNeue', 'Helvetica', sans-serif;
-	  margin-left: 10px;
-		padding-top: 10px;
+	  	color: #FFFFFF;
+		font-weight: 700;
+		font-family: 'HelveticaNeue', 'Helvetica', sans-serif;
+	  	margin-left: 10px;
+		padding: 5px 0 5px 0;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+		@include font-size($font-sizes);
 	}
 
 	.page-title:last-child {
 		color: #A1A1A1
 	}
 
+}
+
+@media only screen and (max-width: 900px) {
+	.header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 
 .percapita {
@@ -86,6 +122,13 @@ body {
 					stroke: #FFFFFF;
 				  stroke-width: 0.25px;
 				}
+		}
+	}
+
+	@media only screen and (max-width: 900px) {
+
+		.map-container {
+			width: 100%;
 		}
 	}
 
@@ -188,4 +231,18 @@ body {
 
 	}
 
+	@media only screen and (max-width: 900px) {
+
+		.map-description-container {
+			width: 95%;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 900px) {
+
+	.percapita {
+		flex-direction: column;
+	}
 }

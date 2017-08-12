@@ -25,27 +25,43 @@ body {
 .header {
   flex: 0 1 auto;
   background: #495D77;
-  height: 55px;
+  height: auto;
   width: 100%;
-  margin-top: 10px;
   -webkit-box-shadow: 0px 4px 14px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 4px 14px -3px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 4px 14px -3px rgba(0, 0, 0, 0.75);
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  z-index: 2; }
+  z-index: 2;
+  align-items: center; }
   .header .page-title {
     flex: 0 1 auto;
     color: #FFFFFF;
-    font: 700 28px 'HelveticaNeue', 'Helvetica', sans-serif;
+    font-weight: 700;
+    font-family: 'HelveticaNeue', 'Helvetica', sans-serif;
     margin-left: 10px;
-    padding-top: 10px;
+    padding: 5px 0 5px 0;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    font-size: 16px; }
+    @media screen and (min-width: 480px) {
+      .header .page-title {
+        font-size: 18px; } }
+    @media screen and (min-width: 768px) {
+      .header .page-title {
+        font-size: 22px; } }
+    @media screen and (min-width: 1024px) {
+      .header .page-title {
+        font-size: 28px; } }
   .header .page-title:last-child {
     color: #A1A1A1; }
+
+@media only screen and (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start; } }
 
 .percapita {
   flex: 0 1 auto;
@@ -65,6 +81,9 @@ body {
       .percapita .map-container .map .states {
         stroke: #FFFFFF;
         stroke-width: 0.25px; }
+  @media only screen and (max-width: 900px) {
+    .percapita .map-container {
+      width: 100%; } }
   .percapita .map-description-container {
     width: 30%;
     height: auto;
@@ -133,3 +152,10 @@ body {
           .percapita .map-description-container .data-table .table div .row {
             font: 400 12px "Roboto", sans-serif;
             padding: 2px 0 2px 0; }
+  @media only screen and (max-width: 900px) {
+    .percapita .map-description-container {
+      width: 95%; } }
+
+@media only screen and (max-width: 900px) {
+  .percapita {
+    flex-direction: column; } }
