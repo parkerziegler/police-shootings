@@ -11,9 +11,12 @@ class App extends Component {
       <div>
         <Header />
 				<div className='percapita'>
-	        <Map type='percapita' />
+	        <Map mapType='choropleth' />
 					<MapDescription />
 				</div>
+        <div className='raw'>
+          <Map mapType='proportional' />
+        </div>
       </div>
     );
   }
