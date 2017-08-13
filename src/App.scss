@@ -14,6 +14,12 @@ $font-sizes: (
 	tablet: 22px,
 	desktop: 28px
 );
+$subheader-font-sizes: (
+	null: 12px,
+	mobile: 14px,
+	tablet: 18px,
+	desktop: 21px
+);
 
 @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
 	@each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -99,7 +105,8 @@ body {
 	}
 }
 
-.percapita {
+.percapita,
+.raw {
 
 	flex: 0 1 auto;
 	display: flex;
@@ -142,8 +149,8 @@ body {
 
 		.inset-header {
 			color: $black;
-			font-family: $roboto;
-			font-size: 36px;
+			font-family: $helvetica;
+			@include font-size($font-sizes);
 			font-weight: bold;
 			margin-bottom: 3px;
 			overflow: hidden;
@@ -152,22 +159,22 @@ body {
 
 		.inset-subheader {
 			color: #666666;
-			font-family: $roboto;
-			font-size: 28px;
+			font-family: $helvetica;
 			margin-bottom: 10px;
+			@include font-size($subheader-font-sizes);
 		}
 
 		.text {
 			color: $black;
-			font: 14px 'HelveticaNeue', 'Helvetica', sans-serif;
+			font: 14px $helvetica;
 			margin-bottom: 10px;
 		}
 
 		.state-name {
 			color: $black;
-			font: $roboto;
-			font-size: 32px;
+			font: $helvetica;
 			font-weight: bold;
+			@include font-size($font-sizes);
 		}
 
 		.data-table {
