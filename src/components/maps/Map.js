@@ -14,6 +14,8 @@ class Map extends React.Component {
 
   constructor(props) {
     super(props);
+    this.generatePath = this.generatePath.bind(this);
+    this.generateCircle = this.generateCircle.bind(this);
   }
 
   componentWillMount() {
@@ -101,29 +103,64 @@ class Map extends React.Component {
       .attr("x", function(d, i){ return (i*30); })
       .attr("y", 60)
       .text(function(d){ return d; })
-	}
+  }
+  
+  generatePath(geoPath, data) {
+
+    const featurePath = () => {
+      let pathComponent = _.map(data, (feature, i) => {
+        let path = geoPath(feature);
+        return <State mapType={this.props.mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} key={i} />;
+      });
+      return pathComponent;
+    }
+
+    let paths = featurePath();
+    return paths;
+
+  }
+
+  generateCircle(geoPath, data) {
+
+    // get the max num shootings of the dataset
+    // let statesByShootings = _.orderBy(this.props.maps.data.objects.states.geometries, ['properties.numShootings'], ['desc']);
+
+    // let maxState = statesByShootings[0].properties.numShootings;
+
+    // set up a scale for the radius, the max will be the max in the dataset
+    let radius = d3.scaleSqrt()
+      .domain([0, 372])
+      .range([0, 80]);
+
+    const featurePath = () => {
+      let pathComponent = _.map(data, (feature, i) => {
+        let path = geoPath(feature);
+        return <State mapType={this.props.mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} radius={radius(feature.properties.numShootings)} feature={feature} key={i}/>;
+      });
+      return pathComponent;
+    }
+
+    let paths = featurePath();
+    return paths;
+
+  }
 
   render() {
 
+    // some important pieces for the render
     let geoPath = d3.geoPath();
-
     let data = this.props.maps.data.objects ? topojson.feature(this.props.maps.data, this.props.maps.data.objects.states).features : null;
 
-    const featurePath = () => {
-        if (data) {
-          let pathComponent = _.map(data, (feature, i) => {
-            let path = geoPath(feature);
-            return <State stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} key={i} />;
-          });
-          return pathComponent;
-        }
-    }
+    let paths = data ? 
+      this.props.mapType === 'choropleth' ?
+        this.generatePath(geoPath, data) : this.generateCircle(geoPath, data) :
+      null;
 
     return (
 			<div className='map-container'>
 	      <svg className='map' width="960" height="600" viewBox="0 0 960 600">
 	          <g>
-	            {featurePath()}
+	            {paths}
 	          </g>
 	      </svg>
 			</div>

@@ -2,13 +2,15 @@ import * as React from 'react'
 import '../../App.css'
 import * as actions from '../../actions/actions';
 import { connect } from 'react-redux';
+import * as d3 from 'd3';
 
 class State extends React.Component {
 
   constructor(props) {
     super(props);
 		this.getStateColor = this.getStateColor.bind(this);
-		this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
+    this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
+    this.getJSX = this.getJSX.bind(this);
   }
 
 	getStateColor(shootingsPerCapita) {
@@ -47,12 +49,32 @@ class State extends React.Component {
 		};
 
 		this.props.dispatch(actions.getHoveredStateData(state));
-	}
+  }
+  
+  getJSX() {
+
+    let translate = d3.geoPath().centroid(this.props.feature) ? d3.geoPath().centroid(this.props.feature) : '0, 0';
+
+    const data = () => {
+        if (this.props.mapType === 'choropleth') {
+
+        let fill = this.getStateColor(this.props.numShootings / this.props.population * 1000000);
+        
+        return <path className='states' d={this.props.path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
+      } else {
+        return <circle r={this.props.radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"}/>
+      }
+    };
+
+    let elements = data();
+    return elements;
+  }
 
   render() {
 
-		let fill = this.getStateColor(this.props.numShootings / this.props.population * 1000000);
-    return <path className='states' d={this.props.path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
+    let JSX = this.getJSX();
+    return JSX;
+    
   }
 }
 
