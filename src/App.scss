@@ -20,6 +20,12 @@ $subheader-font-sizes: (
 	tablet: 18px,
 	desktop: 21px
 );
+$label-font-sizes: (
+	null: 8px,
+	mobile: 8px,
+	tablet: 10px,
+	desktop: 12px
+);
 
 @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
 	@each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -127,7 +133,20 @@ body {
 
 				.states {
 					stroke: #FFFFFF;
-				  stroke-width: 0.25px;
+				  	stroke-width: 0.25px;
+				}
+
+				.states:hover {
+					opacity: 0.75;
+				}
+
+				.states.raw:hover {
+					opacity: 0.5;
+				}
+
+				.state-label {
+					font-family: $helvetica;
+					@include font-size($label-font-sizes);
 				}
 		}
 	}

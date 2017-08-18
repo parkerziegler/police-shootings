@@ -85,6 +85,28 @@ body {
       .raw .map-container .map .states {
         stroke: #FFFFFF;
         stroke-width: 0.25px; }
+      .percapita .map-container .map .states:hover,
+      .raw .map-container .map .states:hover {
+        opacity: 0.75; }
+      .percapita .map-container .map .states.raw:hover,
+      .raw .map-container .map .states.raw:hover {
+        opacity: 0.5; }
+      .percapita .map-container .map .state-label,
+      .raw .map-container .map .state-label {
+        font-family: "HelveticaNeue", sans-serif;
+        font-size: 8px; }
+        @media screen and (min-width: 480px) {
+          .percapita .map-container .map .state-label,
+          .raw .map-container .map .state-label {
+            font-size: 8px; } }
+        @media screen and (min-width: 768px) {
+          .percapita .map-container .map .state-label,
+          .raw .map-container .map .state-label {
+            font-size: 10px; } }
+        @media screen and (min-width: 1024px) {
+          .percapita .map-container .map .state-label,
+          .raw .map-container .map .state-label {
+            font-size: 12px; } }
   @media only screen and (max-width: 900px) {
     .percapita .map-container,
     .raw .map-container {
