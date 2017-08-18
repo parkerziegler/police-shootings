@@ -62,7 +62,7 @@ class State extends React.Component {
         
         return <path className='states' d={this.props.path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
       } else {
-        return <circle r={this.props.radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"}/>
+        return <circle className='states raw' r={this.props.radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75}/>
       }
     };
 
