@@ -23,44 +23,44 @@ class Map extends React.Component {
   componentWillMount() {
 
 		// fetch the data - we'll just use a simplified topojson from Mike Bostock
-    d3.json("https://d3js.org/us-10m.v1.json", (error, us) => {
-      if (error) throw error;
+    // d3.json("https://d3js.org/us-10m.v1.json", (error, us) => {
+    //   if (error) throw error;
 
-			// send off concurrent requests for the shootings data and census data
-			axios.all([
-								axios.get('https://thecountedapi.com/api/counted'),
-								axios.get('https://api.census.gov/data/2016/pep/population?get=POP,GEONAME&for=state:*&key=3cb72d0b9a80896c19992beee5e32be81aa2ca61')
-					  ])
-					 .then(axios.spread((countedAPI, censusAPI) => {
+		// 	// send off concurrent requests for the shootings data and census data
+		// 	axios.all([
+		// 						axios.get('https://thecountedapi.com/api/counted'),
+		// 						axios.get('https://api.census.gov/data/2016/pep/population?get=POP,GEONAME&for=state:*&key=3cb72d0b9a80896c19992beee5e32be81aa2ca61')
+		// 			  ])
+		// 			 .then(axios.spread((countedAPI, censusAPI) => {
 
-						 // spread the responses, starting with the shootings data
-						 // send the data to redux for later storage
-						 this.props.dispatch(actions.sendShootingsDataToReducer(countedAPI.data));
-						 let dataByState = _.groupBy(countedAPI.data, 'state');
+		// 				 // spread the responses, starting with the shootings data
+		// 				 // send the data to redux for later storage
+		// 				 this.props.dispatch(actions.sendShootingsDataToReducer(countedAPI.data));
+		// 				 let dataByState = _.groupBy(countedAPI.data, 'state');
 
-						 _.map(us.objects.states.geometries, (state) => {
-								state.id = _.parseInt(state.id);
+		// 				 _.map(us.objects.states.geometries, (state) => {
+		// 						state.id = _.parseInt(state.id);
 
-								let matchState = _.find(stateNames, ['id', state.id]);
-								let matchShootings = dataByState[matchState.code];
-								let populationData = _.invert(_.fromPairs(censusAPI.data));
-								let matchPopulation = _.parseInt(populationData[matchState.name]);
+		// 						let matchState = _.find(stateNames, ['id', state.id]);
+		// 						let matchShootings = dataByState[matchState.code];
+		// 						let populationData = _.invert(_.fromPairs(censusAPI.data));
+		// 						let matchPopulation = _.parseInt(populationData[matchState.name]);
 
-								state.properties = {};
-								state.properties.stateAbbreviation = matchState.code;
-								state.properties.stateName = matchState.name;
-								state.properties.numShootings = matchShootings.length;
-								state.properties.population = matchPopulation;
-								state.properties.shootingsPerCapita = matchShootings.length / matchPopulation;
-							});
+		// 						state.properties = {};
+		// 						state.properties.stateAbbreviation = matchState.code;
+		// 						state.properties.stateName = matchState.name;
+		// 						state.properties.numShootings = matchShootings.length;
+		// 						state.properties.population = matchPopulation;
+		// 						state.properties.shootingsPerCapita = matchShootings.length / matchPopulation;
+		// 					});
 
-						this.props.dispatch(actions.sendAPIDataToReducer({ us }));
+		// 				this.props.dispatch(actions.sendAPIDataToReducer({ us }));
 
-					}))
-					 .catch((err) => {
-						 console.log(err);
-					 });
-    });
+		// 			}))
+		// 			 .catch((err) => {
+		// 				 console.log(err);
+		// 			 });
+    // });
 
   }
 
