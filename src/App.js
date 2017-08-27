@@ -14,20 +14,26 @@ class App extends Component {
 
   render() {
 
-    return (
-      <div>
-        <Header />
-				<div className='percapita'>
-	        <Map mapType='choropleth' />
-					<MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
-				</div>
-        <div className='raw'>
-          <Map mapType='proportional' />
-          <MapDescription mapType='choropleth' insetHeader='Total Shootings'/>
-        </div>
+    let component = this.props.maps.fetchingData ? <div></div> : <div>
+      <Header />
+      <div className='percapita'>
+        <Map mapType='choropleth' />
+        <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
       </div>
-    );
+      <div className='raw'>
+        <Map mapType='proportional' />
+        <MapDescription mapType='choropleth' insetHeader='Total Shootings'/>
+      </div>
+    </div>;
+
+    return component;
   }
 }
 
-export default connect()(App);
+const mapStateToProps = (state, ownProps) => {
+  return {
+    maps: state.rootReducer
+  };
+};
+
+export default connect(mapStateToProps)(App);
