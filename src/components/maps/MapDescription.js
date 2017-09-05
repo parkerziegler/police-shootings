@@ -17,6 +17,8 @@ class MapDescription extends React.Component {
 		super(props);
 		this.getStatsForChoropleth = this.getStatsForChoropleth.bind(this);
 		this.getStatsForProportional = this.getStatsForProportional.bind(this);
+		this.getJSXForChoropleth = this.getJSXForChoropleth.bind(this);
+		this.getJSXForProportional = this.getJSXForProportional.bind(this);
 	}
 
 	getStatsForChoropleth() {
@@ -59,20 +61,22 @@ class MapDescription extends React.Component {
 	getStatsForProportional() {
 
 		// calculate the highest state
-		let highestState = this.props.maps.data.objects ?
-		_.orderBy(this.props.maps.data.objects.states.geometries, ['properties.numberShootings'], ['desc']) : null;
+		let orderedStates = this.props.maps.data.objects ?
+		_.orderBy(this.props.maps.data.objects.states.geometries, ['properties.numShootings'], ['desc']) : null;
 
-		let highestCount = highestState ? highestState[0].properties.numberShootings : 'loading...';
+		let highestState = orderedStates ? orderedStates[0].properties.stateName : 'loading...';
 
-		let secondHighest = highestState ? highestState[1].properties.stateName : null;
+		let highestCount = orderedStates ? orderedStates[0].properties.numShootings : 'loading...';
 
-		let thirdHighest = highestState ? highestState[2].properties.stateName : null;
+		let secondHighest = orderedStates ? orderedStates[1].properties.stateName : 'loading...';
 
-		let lowestState = highestState ? highestState[-1].properties.stateName : null;
+		let thirdHighest = orderedStates ? orderedStates[2].properties.stateName : 'loading...';
 
-		let secondLowest = highestState ? highestState[-2].properties.stateName : null;
+		let lowestState = orderedStates ? orderedStates[orderedStates.length - 1].properties.stateName : 'loading...';
 
-		return {
+		let secondLowest = orderedStates ? orderedStates[orderedStates.length - 2].properties.stateName : 'loading...';
+
+		let proportionalStats = {
 			highestState,
 			highestCount,
 			secondHighest,
@@ -80,6 +84,8 @@ class MapDescription extends React.Component {
 			lowestState,
 			secondLowest
 		};
+
+		return proportionalStats;
 
 	}
 
@@ -89,7 +95,7 @@ class MapDescription extends React.Component {
 
 		return (
 			<div className='text'>
-				Between January 1, 2015 and December 31, 2016, <b>{stats.totalCount}</b> people were killed by police in the United States. That amounts to roughly <b>{stats.numPerDay}</b> people per day. <br /><br /><b>{stats.highestStateName}</b> had the highest rate of police involved shootings in this time period, with <b>{stats.highestRate}</b> for every million residents.<br/> <br />Hover over a state to obtain its rate.
+				Between January 1, 2015 and December 31, 2016, <b>{stats.totalCount}</b> people were killed by police in the United States. That amounts to roughly <b>{stats.numPerDay}</b> people per day. <br /><br /><b>{stats.highestStateName}</b> had the highest rate of police involved shootings in this time period, with <b>{stats.highestRate}</b> for every million residents.<br/> <br/>Hover over a state to obtain its rate.
 			</div>
 		);
 
@@ -102,9 +108,9 @@ class MapDescription extends React.Component {
 
 		return (
 			<div className='text'>
-				Of all 50 states, <b>{stats.highestState}</b> had the greatest number of shootings in this time period at <b>{stats.highestCount}</b>. <b>{stats.secondHighest}</b> and <b>{stats.thirdHighest}</b>
+				Of all 50 states, <b>{stats.highestState}</b> had the greatest number of shootings in this time period at <b>{stats.highestCount}</b>. <b>{stats.secondHighest}</b> and <b>{stats.thirdHighest}</b> <b>{stats.lowestState}</b> and <b>{stats.secondLowest}</b> had the fewest shootings of all states, with only <b>2</b> each.<br/><br />Hover over a state to obtain the number of shootings.
 			</div>
-		)
+		);
 	}
 
 	render() {
@@ -123,8 +129,6 @@ class MapDescription extends React.Component {
 						<div className='inset-header'>{this.props.insetHeader}</div>
 						<div className='inset-subheader'>By State</div>
 						{insetJSX}
-						{/*<div className='state-name'>{stats.activeState.stateName ? stats.activeState.stateName : 'New Mexico'}</div>
-						<div className='inset-subheader'>{stats.activeState.shootingsPerMillion ? _.round(stats.activeState.shootingsPerMillion, 2) : 20.66} shootings per million</div>*/}
 						<DataTable />
 					</div>
 				</CSSTransitionGroup>

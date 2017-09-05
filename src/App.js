@@ -22,7 +22,7 @@ class App extends Component {
       </div>
       <div className='raw'>
         <Map mapType='proportional' />
-        <MapDescription mapType='choropleth' insetHeader='Total Shootings'/>
+        <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
       </div>
     </div>;
 
