@@ -7,6 +7,13 @@ export const callAPI = () => {
 	};
 };
 
+export const requestTopojsonData = () => {
+
+	return {
+		type: actionTypes.REUQEST_TOPOJSON_DATA
+	};
+};
+
 export const sendAPIDataToReducer = (data) => {
 
   return {
