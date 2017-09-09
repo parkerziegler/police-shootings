@@ -4,7 +4,11 @@ const initialState = {
 	fetchingData: true,
   data: [{}],
 	shootingsData: [{}],
-	activeState: {}
+	activeState: {
+		stateName: 'New Mexico',
+		shootings: 43,
+		shootingsPerMillion: 20.66
+	}
 };
 
 export const rootReducer = (state = initialState, action) => {

@@ -117,6 +117,14 @@ class MapDescription extends React.Component {
 
 		let insetJSX = this.props.mapType === 'choropleth' ? this.getJSXForChoropleth() : this.getJSXForProportional();
 
+		let children = this.props.mapType === 'choropleth' ? {
+				text: this.getJSXForChoropleth(),
+				stat: <div className='inset-subheader'>{Number(this.props.maps.activeState.shootingsPerMillion).toFixed(2) + " shootings per million"}</div>
+			} : {
+				text: this.getJSXForProportional(),
+				stat: <div className='inset-subheader'>{this.props.maps.activeState.shootings + " shootings"}</div>
+			};
+
 			return (
 				<CSSTransitionGroup
 				transitionName="description-transition"
@@ -128,7 +136,9 @@ class MapDescription extends React.Component {
 					<div className='map-description-container'>
 						<div className='inset-header'>{this.props.insetHeader}</div>
 						<div className='inset-subheader'>By State</div>
-						{insetJSX}
+						{children.text}
+						<div className='state-name'>{this.props.maps.activeState.stateName}</div>
+						{children.stat}
 						<DataTable />
 					</div>
 				</CSSTransitionGroup>

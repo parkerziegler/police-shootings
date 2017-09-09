@@ -44,7 +44,8 @@ class State extends React.Component {
 	onMouseEnterHandler(event) {
 
 		let state = {
-			stateName: this.props.stateName,
+      stateName: this.props.stateName,
+      shootings: this.props.numShootings,
 			shootingsPerMillion: this.props.numShootings / this.props.population * 1000000
 		};
 
@@ -62,7 +63,7 @@ class State extends React.Component {
         
         return <path className='states' d={this.props.path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
       } else {
-        return <circle className='states raw' r={this.props.radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75}/>
+        return <circle className='states raw' r={this.props.radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75} onMouseEnter={this.onMouseEnterHandler}/>
       }
     };
 
