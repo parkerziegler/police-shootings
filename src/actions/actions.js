@@ -10,7 +10,7 @@ export const callAPI = () => {
 export const requestTopojsonData = () => {
 
 	return {
-		type: actionTypes.REUQEST_TOPOJSON_DATA
+		type: actionTypes.REQUEST_TOPOJSON_DATA
 	};
 };
 
