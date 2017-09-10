@@ -67,8 +67,8 @@ class DataTable extends React.Component {
 
 		let ascDesc = this.state.activeTab === 'highest' ? ['desc'] : ['asc'];
 
-		let states = this.props.maps.data.objects ?
-				_.slice(_.orderBy(this.props.maps.data.objects.states.geometries, ['properties.shootingsPerCapita'], ascDesc), 0, 5) : null;
+		let states = this.props.maps.geoData.objects ?
+				_.slice(_.orderBy(this.props.maps.geoData.objects.states.geometries, ['properties.shootingsPerCapita'], ascDesc), 0, 5) : null;
 
 		let stateNames = _.map(states, (state, i) => {
 			return <div className='row' key={i}>{state.properties.stateName}</div>;
@@ -102,7 +102,7 @@ class DataTable extends React.Component {
 
 function mapStateToProps (state, ownProps) {
   return {
-    maps: state.rootReducer
+    maps: state.mapReducer
   }
 }
 
