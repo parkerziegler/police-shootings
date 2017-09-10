@@ -5,6 +5,7 @@ import moment from 'moment';
 import * as _ from 'lodash';
 import DataTable from './DataTable';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import PropTypes from 'prop-types';
 
 const FirstChild = (props) => {
   const childrenArray = React.Children.toArray(props.children);
@@ -23,29 +24,30 @@ class MapDescription extends React.Component {
 
 	getStatsForChoropleth() {
 
+		const { maps } = this.props;
+
 		// first calculate how many shootings occurred per day on average
-		let totalCount = Number(this.props.maps.shootingsData.length).toLocaleString();
+		let totalCount = Number(maps.shootingsData.length).toLocaleString();
 		
-		// use moment to get the difference between start and end date
+		// use moment to get the total number of days in the dataset
 		let numDays = moment("2016-12-31").diff(moment("2015-01-01"), "days");
 
-		// get the average
-		let numPerDay = Number(this.props.maps.shootingsData.length / numDays).toFixed(1);
+		// get the average number of shootings per data
+		let numPerDay = Number(maps.shootingsData.length / numDays).toFixed(1);
 
-		// also calculate the highest state
-		let highestState = this.props.maps.data.objects ?
-		_.orderBy(this.props.maps.data.objects.states.geometries, ['properties.shootingsPerCapita'], ['desc']) : null;
+		// also determine which state had the highest rate of shootings
+		let orderedStates = _.orderBy(maps.geoData.objects.states.geometries, ['properties.shootingsPerCapita'], ['desc']);
 
 		// get the name of the state with the highest rate
-		let highestStateName = highestState ? highestState[0].properties.stateName : 'Loading...';
+		let highestStateName = orderedStates[0].properties.stateName;
 
-		// get its rate as well
-		let highestRate = highestState ? Number(highestState[0].properties.shootingsPerCapita * 1000000).toFixed(1) : 'loading...'
+		// and the value
+		let highestRate = Number(orderedStates[0].properties.shootingsPerCapita * 1000000).toFixed(1);
 
 		// finally, get the state that the user is hovering
-		let activeState = this.props.maps.activeState ? this.props.maps.activeState : null;
+		let activeState = maps.activeState;
 
-		// put everything in an object to return
+		// put the statistics in an object to return
 		let choroplethStats = {
 			totalCount,
 			numPerDay,
@@ -60,22 +62,20 @@ class MapDescription extends React.Component {
 
 	getStatsForProportional() {
 
+		const { maps } = this.props;
+
 		// calculate the highest state
-		let orderedStates = this.props.maps.data.objects ?
-		_.orderBy(this.props.maps.data.objects.states.geometries, ['properties.numShootings'], ['desc']) : null;
+		let orderedStates = _.orderBy(maps.geoData.objects.states.geometries, ['properties.numShootings'], ['desc']);
 
-		let highestState = orderedStates ? orderedStates[0].properties.stateName : 'loading...';
+		// calculate the highest states, the lowest states, and their counts
+		let highestState = orderedStates[0].properties.stateName;
+		let highestCount = orderedStates[0].properties.numShootings;
+		let secondHighest = orderedStates[1].properties.stateName;
+		let thirdHighest = orderedStates[2].properties.stateName;
+		let lowestState = orderedStates[orderedStates.length - 1].properties.stateName;
+		let secondLowest = orderedStates[orderedStates.length - 2].properties.stateName;
 
-		let highestCount = orderedStates ? orderedStates[0].properties.numShootings : 'loading...';
-
-		let secondHighest = orderedStates ? orderedStates[1].properties.stateName : 'loading...';
-
-		let thirdHighest = orderedStates ? orderedStates[2].properties.stateName : 'loading...';
-
-		let lowestState = orderedStates ? orderedStates[orderedStates.length - 1].properties.stateName : 'loading...';
-
-		let secondLowest = orderedStates ? orderedStates[orderedStates.length - 2].properties.stateName : 'loading...';
-
+		// return it all in an object
 		let proportionalStats = {
 			highestState,
 			highestCount,
@@ -91,6 +91,8 @@ class MapDescription extends React.Component {
 
 	getJSXForChoropleth() {
 
+		// return different text descriptions for the different map types
+		// get the appropriate stats for the corresponding map type
 		let stats = this.getStatsForChoropleth();
 
 		return (
@@ -104,6 +106,8 @@ class MapDescription extends React.Component {
 
 	getJSXForProportional() {
 
+		// return different text descriptions for the different map types
+		// get the appropriate stats for the corresponding map type
 		let stats = this.getStatsForProportional();
 
 		return (
@@ -115,41 +119,57 @@ class MapDescription extends React.Component {
 
 	render() {
 
-		let insetJSX = this.props.mapType === 'choropleth' ? this.getJSXForChoropleth() : this.getJSXForProportional();
+		const { mapType, insetHeader, maps } = this.props;
 
-		let children = this.props.mapType === 'choropleth' ? {
-				text: this.getJSXForChoropleth(),
-				stat: <div className='inset-subheader'>{Number(this.props.maps.activeState.shootingsPerMillion).toFixed(2) + " shootings per million"}</div>
-			} : {
-				text: this.getJSXForProportional(),
-				stat: <div className='inset-subheader'>{this.props.maps.activeState.shootings + " shootings"}</div>
-			};
+		const children = () => {
+			switch (mapType) {
+				case 'choropleth':
+					return {
+						text: this.getJSXForChoropleth(),
+						stat: <div className='inset-subheader'>{Number(this.props.maps.activeState.shootingsPerMillion).toFixed(2) + " shootings per million"}</div>
+					};
+				case 'proportional':
+					return {
+						text: this.getJSXForProportional(),
+						stat: <div className='inset-subheader'>{this.props.maps.activeState.shootings + " shootings"}</div>
+					};
+				default:
+					return;
+			}
+		};
 
-			return (
-				<CSSTransitionGroup
-				transitionName="description-transition"
-				transitionAppear={true}
-				transitionAppearTimeout={500}
-				transitionEnter={false}
-				transitionLeave={false}
-				component={FirstChild}>
-					<div className='map-description-container'>
-						<div className='inset-header'>{this.props.insetHeader}</div>
-						<div className='inset-subheader'>By State</div>
-						{children.text}
-						<div className='state-name'>{this.props.maps.activeState.stateName}</div>
-						{children.stat}
-						<DataTable />
-					</div>
-				</CSSTransitionGroup>
-			);
+		return (
+			<CSSTransitionGroup
+			transitionName="description-transition"
+			transitionAppear={true}
+			transitionAppearTimeout={500}
+			transitionEnter={false}
+			transitionLeave={false}
+			component={FirstChild}>
+				<div className='map-description-container'>
+					<div className='inset-header'>{insetHeader}</div>
+					<div className='inset-subheader'>By State</div>
+					{children().text}
+					<div className='state-name'>{maps.activeState.stateName}</div>
+					{children().stat}
+					<DataTable />
+				</div>
+			</CSSTransitionGroup>
+		);
 	}
 }
 
-function mapStateToProps (state, ownProps) {
+const mapStateToProps = (state, ownProps) => {
   return {
-    maps: state.rootReducer
-  }
-}
+	maps: state.mapReducer,
+	insetHeader: ownProps.insetHeader,
+	mapType: ownProps.mapType
+  };
+};
 
 export default connect(mapStateToProps)(MapDescription);
+
+MapDescription.propTypes = {
+	insetHeader: PropTypes.string.isRequired,
+	mapType: PropTypes.string.isRequired
+};

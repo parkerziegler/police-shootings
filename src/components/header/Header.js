@@ -1,11 +1,12 @@
 import * as React from 'react';
-import '../App.css';
+import '../../App.css';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class Header extends React.Component {
 
   render() {
 
+    // wrap our header in CSS Transition Group - this will slowly fade it in
     return (
 			<CSSTransitionGroup
 			transitionName="header-transition"

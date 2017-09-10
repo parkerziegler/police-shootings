@@ -1,8 +1,10 @@
 import * as React from 'react'
 import '../../App.css'
-import * as actions from '../../actions/actions';
+import { getHoveredStateData } from '../../actions/actions';
 import { connect } from 'react-redux';
 import * as d3 from 'd3';
+import PropTypes from 'prop-types';
+
 
 class State extends React.Component {
 
@@ -13,60 +15,72 @@ class State extends React.Component {
     this.getJSX = this.getJSX.bind(this);
   }
 
+  // a simple method to retun a color for a state
+  // based on the number of shootings per capita
 	getStateColor(shootingsPerCapita) {
 
-		if (shootingsPerCapita < 1){
-        return "rgb(247,251,255)";
-      }
-      else if (shootingsPerCapita < 3){
-        return "rgb(222,235,247)";
-      }
-      else if (shootingsPerCapita < 5){
-        return "rgb(198,219,239)";
-      }
-      else if (shootingsPerCapita < 7){
-        return "rgb(158,202,225)";
-      }
-      else if (shootingsPerCapita < 10){
-        return "rgb(107,174,214)";
-      }
-      else if (shootingsPerCapita < 12){
-        return "rgb(66,146,198)";
-      }
-      else if (shootingsPerCapita < 15){
-        return "rgb(33,113,181)";
-      }
-      else {
-        return "rgb(8,81,156)";
-      }
+		if (shootingsPerCapita < 1) {
+      return "rgb(247,251,255)";
+    }
+    else if (shootingsPerCapita < 3) {
+      return "rgb(222,235,247)";
+    }
+    else if (shootingsPerCapita < 5) {
+      return "rgb(198,219,239)";
+    }
+    else if (shootingsPerCapita < 7) {
+      return "rgb(158,202,225)";
+    }
+    else if (shootingsPerCapita < 10) {
+      return "rgb(107,174,214)";
+    }
+    else if (shootingsPerCapita < 12) {
+      return "rgb(66,146,198)";
+    }
+    else if (shootingsPerCapita < 15) {
+      return "rgb(33,113,181)";
+    }
+    else {
+      return "rgb(8,81,156)";
+    }
 	}
 
 	onMouseEnterHandler(event) {
 
+    const { stateName, numShootings, population, dispatch } = this.props;
+
+    // when a user hovers on a state, dispatch an action to set this state
+    // as the activeState in the mapsReducer
 		let state = {
-      stateName: this.props.stateName,
-      shootings: this.props.numShootings,
-			shootingsPerMillion: this.props.numShootings / this.props.population * 1000000
+      stateName,
+      shootings: numShootings,
+			shootingsPerMillion: numShootings / population * 1000000
 		};
 
-		this.props.dispatch(actions.getHoveredStateData(state));
+		dispatch(getHoveredStateData(state));
   }
   
   getJSX() {
 
-    let translate = d3.geoPath().centroid(this.props.feature) ? d3.geoPath().centroid(this.props.feature) : '0, 0';
+    const { mapType, numShootings, population, feature, path, radius } = this.props;
 
+    // define a function to get the appropriate JSX based on mapType
     const data = () => {
-        if (this.props.mapType === 'choropleth') {
-
-        let fill = this.getStateColor(this.props.numShootings / this.props.population * 1000000);
+      switch(mapType) {
+        case 'choropleth':
+          let fill = this.getStateColor(numShootings / population * 1000000);
         
-        return <path className='states' d={this.props.path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
-      } else {
-        return <circle className='states raw' r={this.props.radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75} onMouseEnter={this.onMouseEnterHandler}/>
+          return <path className='states' d={path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
+        case 'proportional':
+
+          let translate = d3.geoPath().centroid(feature);
+          return <circle className='states raw' r={radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75} onMouseEnter={this.onMouseEnterHandler}/>;
+        default:
+          return;
       }
     };
 
+    // invoke the function to get the elements
     let elements = data();
     return elements;
   }
@@ -74,15 +88,31 @@ class State extends React.Component {
   render() {
 
     let JSX = this.getJSX();
+    console.log(JSX);
     return JSX;
     
   }
 }
 
-function mapStateToProps (state, ownProps) {
+const mapStateToProps = (state, ownProps) => {
   return {
-    maps: state.rootReducer
-  }
-}
+    maps: state.mapReducer,
+    stateName: ownProps.stateName,
+    numShootings: ownProps.numShootings,
+    population: ownProps.population,
+    path: ownProps.path,
+    feature: ownProps.feature,
+    radius: ownProps.radius
+  };
+};
 
 export default connect(mapStateToProps)(State);
+
+// State.propTypes = {
+//   stateName: PropTypes.string.isRequired,
+//   numShootings: PropTypes.number.isRequired,
+//   population: PropTypes.number.isRequired,
+//   path: PropTypes.string.isRequired,
+//   feature: PropTypes.object.isRequired,
+//   radius: PropTypes.number
+// };
