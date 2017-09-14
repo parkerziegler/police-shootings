@@ -13,7 +13,7 @@ npm run start
 
 ### Building the App
 ```javascript
-npm run prod
+npm run build
 ```
 
 ### Caveats
