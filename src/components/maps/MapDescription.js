@@ -71,7 +71,9 @@ class MapDescription extends React.Component {
 		let highestState = orderedStates[0].properties.stateName;
 		let highestCount = orderedStates[0].properties.numShootings;
 		let secondHighest = orderedStates[1].properties.stateName;
+		let secondHighestCount = orderedStates[1].properties.numShootings;
 		let thirdHighest = orderedStates[2].properties.stateName;
+		let thirdHighestCount = orderedStates[2].properties.numShootings;
 		let lowestState = orderedStates[orderedStates.length - 1].properties.stateName;
 		let secondLowest = orderedStates[orderedStates.length - 2].properties.stateName;
 
@@ -80,7 +82,9 @@ class MapDescription extends React.Component {
 			highestState,
 			highestCount,
 			secondHighest,
+			secondHighestCount,
 			thirdHighest,
+			thirdHighestCount,
 			lowestState,
 			secondLowest
 		};
@@ -112,7 +116,7 @@ class MapDescription extends React.Component {
 
 		return (
 			<div className='text'>
-				Of all 50 states, <b>{stats.highestState}</b> had the greatest number of shootings in this time period at <b>{stats.highestCount}</b>. <b>{stats.secondHighest}</b> and <b>{stats.thirdHighest}</b> <b>{stats.lowestState}</b> and <b>{stats.secondLowest}</b> had the fewest shootings of all states, with only <b>2</b> each.<br/><br />Hover over a state to obtain the number of shootings.
+				Of all 50 states, <b>{stats.highestState}</b> had the greatest number of shootings in this time period at <b>{stats.highestCount}</b>. <b>{stats.secondHighest}</b> and <b>{stats.thirdHighest}</b> had the second and third greatest counts at <b>{stats.secondHighestCount}</b> and <b>{stats.thirdHighestCount}</b>, respectively. <b>{stats.lowestState}</b> had the fewest shootings of all states, with only <b>2</b>.<br/><br />Hover over a state to obtain the number of shootings.
 			</div>
 		);
 	}
@@ -126,12 +130,12 @@ class MapDescription extends React.Component {
 				case 'choropleth':
 					return {
 						text: this.getJSXForChoropleth(),
-						stat: <div className='inset-subheader'>{Number(this.props.maps.activeState.shootingsPerMillion).toFixed(2) + " shootings per million"}</div>
+						stat: <div className='inset-subheader'>{Number(maps.activeState.shootingsPerMillion).toFixed(2) + " shootings per million"}</div>
 					};
 				case 'proportional':
 					return {
 						text: this.getJSXForProportional(),
-						stat: <div className='inset-subheader'>{this.props.maps.activeState.shootings + " shootings"}</div>
+						stat: <div className='inset-subheader'>{maps.activeState.shootings + " shootings"}</div>
 					};
 				default:
 					return;
