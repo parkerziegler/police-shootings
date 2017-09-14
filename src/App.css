@@ -235,5 +235,6 @@ body {
       width: 95%; } }
 
 @media only screen and (max-width: 900px) {
-  .percapita {
+  .percapita,
+  .raw {
     flex-direction: column; } }
