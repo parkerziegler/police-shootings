@@ -65,7 +65,7 @@ class DataTable extends React.Component {
 		const { activeTab } = this.state;
 
 		// determine whether we should render the table
-		// in ascending and descending order - we'll
+		// in ascending or descending order - we'll
 		// hand this off to lodash
 		let ascDesc = activeTab === 'highest' ? ['desc'] : ['asc'];
 
@@ -90,6 +90,8 @@ class DataTable extends React.Component {
 				stateStats
 			};
 
+			return tableRow;
+
 		} else if (mapType === 'proportional') {
 
 			// obtain our table data by looking at our reducer
@@ -110,6 +112,8 @@ class DataTable extends React.Component {
 				stateNames,
 				stateStats
 			};
+
+			return tableRow;
 				
 		} else {
 			return;
@@ -118,21 +122,25 @@ class DataTable extends React.Component {
 
 	render() {
 
-		let active = {background: '#4292C6', color: '#FFFFFF', border: '1px solid #6BAED6'};
-
-		let inactive = {background: '#FFFFFF', color: '#4292C6', border: '1px solid #4292C6'};
-
-		let highest = this.state.isHoverOnHighest || this.state.activeTab === 'highest' ? active : inactive;
-
-		let lowest = this.state.isHoverOnLowest || this.state.activeTab === 'lowest' ? active : inactive;
-
 		let tableJSX = this.getTableJSX();
 
 		// a lookup to store names for column headers
-		let columnHeaders = {
-			'choropleth': 'Shootings Per Million',
-			'proportional': 'Total Shootings'
+		let renderProps = {
+			'choropleth': {
+				columnHeader: 'Shootings Per Million',
+				active: {background: '#4292C6', color: '#FFFFFF', border: '1px solid #6BAED6'},
+				inactive: {background: '#FFFFFF', color: '#4292C6', border: '1px solid #4292C6'}
+			},
+			'proportional': {
+				columnHeader: 'Total Shootings',
+				active: {background: '#B24739', color: '#FFFFFF', border: '1px solid 7F3329'},
+				inactive: {background: '#FFFFFF', color: '#B24739', border: '1px solid #B24739'}
+			}
 		};
+
+		let highest = this.state.isHoverOnHighest || this.state.activeTab === 'highest' ? renderProps[this.props.mapType].active : renderProps[this.props.mapType].inactive;
+		
+		let lowest = this.state.isHoverOnLowest || this.state.activeTab === 'lowest' ? renderProps[this.props.mapType].active : renderProps[this.props.mapType].inactive;
 
 		return (
 			<div className='data-table'>
@@ -147,7 +155,7 @@ class DataTable extends React.Component {
 						{tableJSX.stateNames}
 					</div>
 					<div>
-						<div className='table-header'>{columnHeaders[this.props.mapType]}</div>
+						<div className='table-header'>{renderProps[this.props.mapType].columnHeader}</div>
 						{tableJSX.stateStats}
 					</div>
 				</div>
