@@ -152,7 +152,7 @@ class MapDescription extends React.Component {
 					{children().text}
 					<div className='state-name'>{maps.activeState.stateName}</div>
 					{children().stat}
-					<DataTable />
+					<DataTable mapType={mapType}/>
 				</div>
 			</CSSTransitionGroup>
 		);
