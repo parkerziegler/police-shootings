@@ -1,9 +1,9 @@
 import { put, takeEvery, takeLatest, all, call } from 'redux-saga/effects';
 import axios from 'axios';
 import * as actionTypes from '../constants/action-types';
-// import * as actions from '../actions/actions';
 import * as stateNames from '../assets/state-names';
 import * as _ from 'lodash';
+import { CENSUS_API_KEY } from '../config';
 
 
 export function* watchAPICall() {
@@ -15,7 +15,7 @@ export function* callAPI() {
         return axios.all([
             axios.get("https://d3js.org/us-10m.v1.json"),
             axios.get('https://thecountedapi.com/api/counted'),
-            axios.get('https://api.census.gov/data/2016/pep/population?get=POP,GEONAME&for=state:*&key=3cb72d0b9a80896c19992beee5e32be81aa2ca61'),
+            axios.get('https://api.census.gov/data/2016/pep/population?get=POP,GEONAME&for=state:*&key=' + CENSUS_API_KEY),
         ])
     });
 
