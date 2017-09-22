@@ -8,12 +8,35 @@ body {
   display: flex;
   flex-direction: column; }
 
+#root {
+  height: 100%;
+  width: 100%; }
+
+.page-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center; }
+  .page-container .chevron {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 5%;
+    border: 1px solid green; }
+  .page-container .page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 90%;
+    border: 1px solid red; }
+
 .header-transition-appear {
   opacity: 0.01; }
 
 .header-transition-appear.header-transition-appear-active {
   opacity: 1;
-  transition: opacity .5s ease-in; }
+  transition: opacity 1s ease-in; }
 
 .description-transition-appear {
   opacity: 0.01; }

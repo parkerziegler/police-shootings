@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
+import Home from './components/home/Home';
 import Header from './components/header/Header';
 import Map from './components/maps/Map';
 import MapDescription from './components/maps/MapDescription';
@@ -26,8 +27,10 @@ class App extends Component {
     // TODO - implement a Spinner solution
     let component = maps.fetchingData ?
       <div></div> :
-      <div>
-        <Header />
+      <div className='page-container'>
+        <div className='chevron'></div>
+        <Home />
+        {/* <Header />
         <div className='percapita'>
           <Map mapType='choropleth' />
           <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
@@ -35,7 +38,8 @@ class App extends Component {
         <div className='raw'>
           <Map mapType='proportional' />
           <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
-        </div>
+        </div> */}
+        <div className='chevron'></div>
       </div>;
 
     return component;
