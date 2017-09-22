@@ -2,7 +2,7 @@ import * as React from 'react'
 import '../../App.css'
 import { getHoveredStateData } from '../../actions/actions';
 import { connect } from 'react-redux';
-import * as d3 from 'd3';
+import { geoPath } from 'd3';
 import PropTypes from 'prop-types';
 
 
@@ -73,7 +73,7 @@ class State extends React.Component {
           return <path className='states' d={path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
         case 'proportional':
 
-          let translate = d3.geoPath().centroid(feature);
+          let translate = geoPath().centroid(feature);
           return <circle className='states raw' r={radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75} onMouseEnter={this.onMouseEnterHandler}/>;
         default:
           return;
@@ -88,7 +88,6 @@ class State extends React.Component {
   render() {
 
     let JSX = this.getJSX();
-    console.log(JSX);
     return JSX;
     
   }
