@@ -5,7 +5,7 @@
   "homepage": "https://parkerziegler.github.io/d3-react-map",
   "dependencies": {
     "axios": "^0.16.1",
-    "d3": "^4.7.4",
+    "d3": "4.7.4",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^15.4.2",
