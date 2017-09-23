@@ -17,5 +17,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # config
-config.js
+/src/config.js
 
