@@ -7,6 +7,7 @@ import Map from './components/maps/Map';
 import MapDescription from './components/maps/MapDescription';
 import { callAPI } from './actions/actions';
 import PropTypes from 'prop-types';
+import { Link, Fragment } from 'redux-little-router';
 
 class App extends Component {
 
@@ -27,9 +28,21 @@ class App extends Component {
     // TODO - implement a Spinner solution
     let component = maps.fetchingData ?
       <div></div> :
+      <Fragment forRoute='/'>
       <div className='page-container'>
-        <div className='chevron'></div>
-        <Home />
+        <Link href='/parker'>
+          <div className='chevron'>
+            <svg width="50" height="50" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#6C7680" d="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"/>
+            </svg>
+          </div>
+        </Link>
+          <Fragment forRoute='/home'>
+            <Home />
+          </Fragment>
+          <Fragment forRoute='/parker'>
+            <div>It's the Doo!</div>
+          </Fragment>
         {/* <Header />
         <div className='percapita'>
           <Map mapType='choropleth' />
@@ -39,8 +52,13 @@ class App extends Component {
           <Map mapType='proportional' />
           <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
         </div> */}
-        <div className='chevron'></div>
-      </div>;
+        <div className='chevron'>
+          <svg width="50" height="50" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#6C7680" d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"/>
+          </svg>
+        </div>
+      </div>
+      </Fragment>;
 
     return component;
   }
