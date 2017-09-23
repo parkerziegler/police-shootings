@@ -16,27 +16,44 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
-  justify-content: center;
-  align-items: center; }
+  justify-content: space-between;
+  align-items: center;
+  text-align: center; }
   .page-container .chevron {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0 0 5%;
+    flex: 0 1 auto;
     border: 1px solid green; }
   .page-container .page-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0 0 90%;
+    flex: 0 1 auto;
+    max-width: 90%;
     border: 1px solid red; }
 
-.header-transition-appear {
+.home-transition-0-appear,
+.home-transition-1-appear,
+.home-transition-2-appear,
+.home-transition-3-appear {
   opacity: 0.01; }
 
-.header-transition-appear.header-transition-appear-active {
+.home-transition-0-appear.home-transition-0-appear-active {
   opacity: 1;
   transition: opacity 1s ease-in; }
+
+.home-transition-1-appear.home-transition-1-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in 2s; }
+
+.home-transition-2-appear.home-transition-2-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in 4s; }
+
+.home-transition-3-appear.home-transition-3-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in 8s; }
 
 .description-transition-appear {
   opacity: 0.01; }
