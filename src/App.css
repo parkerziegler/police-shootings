@@ -78,9 +78,7 @@ body {
     flex-direction: column; }
     .percapita .map-container .map,
     .raw .map-container .map {
-      flex: 0 1 auto;
-      height: 100%;
-      width: 100%; }
+      flex: 0 1 auto; }
       .percapita .map-container .map .states,
       .raw .map-container .map .states {
         stroke: #FFFFFF;
@@ -221,10 +219,7 @@ body {
           .percapita .map-description-container .data-table .table div .table-header,
           .raw .map-description-container .data-table .table div .table-header {
             font: 700 13px "HelveticaNeue", sans-serif;
-            padding: 5px 0 5px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis; }
+            padding: 5px 0 5px 0; }
           .percapita .map-description-container .data-table .table div .row,
           .raw .map-description-container .data-table .table div .row {
             font: 400 12px "Roboto", sans-serif;

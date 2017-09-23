@@ -219,7 +219,7 @@ class Map extends React.Component {
 
     return (
 			<div className='map-container'>
-	      <svg className={`map ${mapType}`} width="960" height="600" viewBox="0 0 960 600">
+	      <svg className={`map ${mapType}`}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
 	          <g>
 	            {paths}
               {/* if the mapType is proportional, add StateLabels to the circles */}
@@ -256,7 +256,7 @@ const StateLabel = (props) => {
   let translate = "translate(" + (centroid[0] - 8) + ", " + (centroid[1] + 2) + ")";
 
   // return a state label
-  return <text className='state-label' transform={translate} className='state-label'>{props.stateAbbreviation}</text>;
+  return <text transform={translate}>{props.stateAbbreviation}</text>;
 };
 
 StateLabel.propTypes = {

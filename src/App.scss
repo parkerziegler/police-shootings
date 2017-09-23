@@ -128,26 +128,24 @@ body {
 
 		.map {
 		  flex: 0 1 auto;
-			height: 100%;
-			width: 100%;
 
-				.states {
-					stroke: #FFFFFF;
-				  	stroke-width: 0.25px;
-				}
+			.states {
+				stroke: #FFFFFF;
+				stroke-width: 0.25px;
+			}
 
-				.states:hover {
-					opacity: 0.75;
-				}
+			.states:hover {
+				opacity: 0.75;
+			}
 
-				.states.raw:hover {
-					opacity: 0.5;
-				}
+			.states.raw:hover {
+				opacity: 0.5;
+			}
 
-				.state-label {
-					font-family: $helvetica;
-					@include font-size($label-font-sizes);
-				}
+			.state-label {
+				font-family: $helvetica;
+				@include font-size($label-font-sizes);
+			}
 		}
 	}
 
@@ -241,9 +239,6 @@ body {
 					.table-header {
 						font: 700 13px $helvetica;
 						padding: 5px 0 5px 0;
-						overflow: hidden;
-						white-space: nowrap;
-						text-overflow: ellipsis;
 					}
 
 					.row {
