@@ -20,41 +20,33 @@ class Home extends React.Component {
         // get the average number of shootings per data
         let numPerDay = Number(maps.shootingsData.length / numDays).toFixed(1);
 
+        // iterate over our home page text, applying a transition to each
+        let divs = [{
+            jsx: <div className='home-text'>Between January 1, 2015 and December 31, 2016</div>
+        }, {
+            jsx: <div className='home-text' style={{fontSize: 40}}><b>{totalCount}</b> people</div>
+        }, {
+            jsx: <div className='home-text'>were killed by police in the United States.</div>
+        }, {
+            jsx: <div className='home-text'>That amounts to roughly <b style={{fontSize: 34}}>{numPerDay}</b> people per day.</div>
+        }];
+
+        let items = divs.map((div, i) => {
+            return (<CSSTransitionGroup
+            transitionName={`home-transition-${i}`}
+            transitionAppear={true}
+            transitionAppearTimeout={0}
+            transitionEnter={false}
+            transitionLeave={false}
+            key={i}>
+                {div.jsx}
+            </CSSTransitionGroup>);
+        });
+
         return (
-                <div className='page-content' style={{flexDirection: 'column'}}>
-                    <CSSTransitionGroup
-                    transitionName="header-transition"
-                    transitionAppear={true}
-                    transitionAppearTimeout={0}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                        <div className='home-text'>Between January 1, 2015 and December 31, 2016,</div>
-                    </CSSTransitionGroup>
-                    <CSSTransitionGroup
-                    transitionName="header-transition"
-                    transitionAppear={true}
-                    transitionAppearTimeout={2000}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                        <div className='home-text' style={{fontSize: 36}}><b>{totalCount}</b></div>
-                    </CSSTransitionGroup>
-                    <CSSTransitionGroup
-                    transitionName="header-transition"
-                    transitionAppear={true}
-                    transitionAppearTimeout={3500}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                        <div className='home-text'>people were killed by police in the United States.</div>
-                    </CSSTransitionGroup>
-                    <CSSTransitionGroup
-                    transitionName="header-transition"
-                    transitionAppear={true}
-                    transitionAppearTimeout={5000}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                        <div className='home-text'>That amounts to roughly <b>{numPerDay}</b> people per day.</div>
-                    </CSSTransitionGroup>
-                </div>
+            <div className='page-content' style={{flexDirection: 'column'}}>
+                {items}
+            </div>
         );
     }
 }
