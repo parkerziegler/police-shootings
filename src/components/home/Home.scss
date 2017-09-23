@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+$sourcecode: 'Source Code Pro', monospace;
+
+.home-text {
+    font: 24px $sourcecode;
+}
