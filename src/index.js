@@ -11,8 +11,21 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/rootSaga';
 
 const routes = {
-  '/parker': {
-      title: 'Parker'
+  '/intro': {
+    title: 'Intro',
+    index: 0
+  },
+  '/total-shootings': {
+    title: 'Total Shootings',
+    index: 1
+  },
+  '/percapita': {
+    title: 'Shootings Per Million By State',
+    index: 2
+  },
+  '/shootingsbydate': {
+    title: 'Shootings By Date',
+    index: 3
   }
 };
 
