@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux';
-import '../../App.css'
+import './MapDescription.css';
 import moment from 'moment';
 import * as _ from 'lodash';
 import DataTable from './DataTable';

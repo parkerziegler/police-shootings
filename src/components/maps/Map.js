@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux';
-import '../../App.css'
+import './Map.css';
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
 import * as _ from 'lodash';
@@ -256,7 +256,7 @@ const StateLabel = (props) => {
   let translate = "translate(" + (centroid[0] - 8) + ", " + (centroid[1] + 2) + ")";
 
   // return a state label
-  return <text transform={translate}>{props.stateAbbreviation}</text>;
+  return <text transform={translate} className='state-label'>{props.stateAbbreviation}</text>;
 };
 
 StateLabel.propTypes = {
