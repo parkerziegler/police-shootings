@@ -1,0 +1,25 @@
+.map-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column; }
+  .map-container .map {
+    flex: 0 1 auto; }
+    .map-container .map .states {
+      stroke: #FFFFFF;
+      stroke-width: 0.25px; }
+    .map-container .map .states:hover {
+      opacity: 0.75; }
+    .map-container .map .states.raw:hover {
+      opacity: 0.5; }
+    .map-container .map .state-label {
+      font-family: "HelveticaNeue", sans-serif;
+      font-size: 8px; }
+      @media screen and (min-width: 480px) {
+        .map-container .map .state-label {
+          font-size: 10px; } }
+      @media screen and (min-width: 768px) {
+        .map-container .map .state-label {
+          font-size: 14px; } }
+      @media screen and (min-width: 1024px) {
+        .map-container .map .state-label {
+          font-size: 14px; } }

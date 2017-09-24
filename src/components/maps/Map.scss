@@ -1,0 +1,59 @@
+$helvetica: 'HelveticaNeue', sans-serif;
+
+$breakpoints: (
+	mobile: 480px,
+	tablet: 768px,
+	desktop: 1024px
+);
+
+$label-font-sizes: (
+	null: 8px,
+	mobile: 10px,
+	tablet: 14px,
+	desktop: 14px
+);
+
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			font-size: $fs-font-size;
+		}
+		@else {
+			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
+				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint)
+			}
+			@media screen and (min-width: $fs-breakpoint) {
+				font-size: $fs-font-size;
+			}
+		}
+	}
+}
+
+.map-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+
+    .map {
+      flex: 0 1 auto;
+
+        .states {
+            stroke: #FFFFFF;
+            stroke-width: 0.25px;
+        }
+
+        .states:hover {
+            opacity: 0.75;
+        }
+
+        .states.raw:hover {
+            opacity: 0.5;
+        }
+
+        .state-label {
+            font-family: $helvetica;
+            @include font-size($label-font-sizes);
+        }
+    }
+}

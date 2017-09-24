@@ -1,7 +1,62 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 $sourcecode: 'Source Code Pro', monospace;
+$home-font-sizes: (
+    null: 16px,
+	mobile: 18px,
+	tablet: 22px,
+	desktop: 28px
+);
+$large-home-font-sizes: (
+    null: 16px,
+	mobile: 22px,
+	tablet: 28px,
+	desktop: 36px
+);
+
+/** Use a SCSS loop to create the transition classes to be used
+by the react-transition-group add-on */
+@for $i from 0 through 5 {
+
+    .home-transition-#{$i}-appear {
+        opacity: 0.01
+    }
+
+    .home-transition-#{$i}-appear.home-transition-#{$i}-appear-active {
+        opacity: 1;
+        transition: opacity 1s ease-in $i * 2s;
+    }
+}
+
+$breakpoints: (
+	mobile: 480px,
+	tablet: 768px,
+	desktop: 1024px
+);
+
+/** Also include our font-size mixin to scale things across desktop and mobile */
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			font-size: $fs-font-size;
+		}
+		@else {
+			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
+				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint)
+			}
+			@media screen and (min-width: $fs-breakpoint) {
+				font-size: $fs-font-size;
+			}
+		}
+	}
+}
 
 .home-text {
-    font: 24px $sourcecode;
+    font-family: $sourcecode, sans-serif;
+    @include font-size($home-font-sizes);
+}
+
+.home-text-large {
+    font-family: $sourcecode, sans-serif;
+    @include font-size($large-home-font-sizes);
 }
