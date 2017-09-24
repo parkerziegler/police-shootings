@@ -62,8 +62,21 @@ function* callAPI() {
 
 }
 
+// define a watcher saga to listen for when LOCATION_CHANGED is dispatched by the router
+function* watchLocationChanged() {
+
+    yield takeLatest('LOCATION_CHANGED', handleLocationChanged);
+}
+
+function* handleLocationChanged(action) {
+
+    // yield console.log('Your location changed!');
+    yield console.log(action);
+}
+
 export default function* rootSaga() {
     yield all([
-        watchAPICall()
+        watchAPICall(),
+        watchLocationChanged()
     ])
 }
