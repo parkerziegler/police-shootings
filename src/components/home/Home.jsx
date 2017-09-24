@@ -24,11 +24,15 @@ class Home extends React.Component {
         let divs = [{
             jsx: <div className='home-text'>Between January 1, 2015 and December 31, 2016</div>
         }, {
-            jsx: <div className='home-text' style={{fontSize: 40}}><b>{totalCount}</b> people</div>
+            jsx: <div className='home-text-large'><b>{totalCount}</b> people</div>
         }, {
             jsx: <div className='home-text'>were killed by police in the United States.</div>
         }, {
-            jsx: <div className='home-text'>That amounts to roughly <b style={{fontSize: 34}}>{numPerDay}</b> people per day.</div>
+            jsx: <div className='home-text'>That amounts to roughly <b className='home-text-large'>{numPerDay}</b> people per day.</div>
+        }, {
+            jsx: <div className='home-text'>Here's what we know.</div>
+        }, {
+            jsx: <div className='home-text' style={{fontFamily: 'HelveticaNeue, Helvetica, sans-serif', marginTop: '5%', fontWeight: 900}}>An Investigation | By Parker Ziegler</div>
         }];
 
         let items = divs.map((div, i) => {
