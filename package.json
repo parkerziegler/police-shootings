@@ -16,7 +16,8 @@
     "redux": "^3.6.0",
     "redux-little-router": "^14.2.0",
     "redux-saga": "^0.15.6",
-    "topojson": "^2.2.0"
+    "topojson": "^2.2.0",
+    "victory": "^0.22.2"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
