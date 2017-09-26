@@ -79,7 +79,7 @@ class App extends Component {
           <Fragment forRoute='/shootingsbydate'>
               <BarChart />
           </Fragment>
-        <Link href={nextRoute}>
+        <Link href={nextRoute} className='chevron-link'>
           <div className='chevron'>
             {currentRouteIndex < (routerLength - 1) ?
             <svg width="50" height="50" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
