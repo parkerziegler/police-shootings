@@ -71,7 +71,17 @@
         flex: 0 0 auto;
         padding: 5px 5px 5px 5px;
         text-align: center;
-        cursor: pointer; }
+        cursor: pointer;
+        font-size: 10px; }
+        @media screen and (min-width: 480px) {
+          .map-description-container .data-table .table-button-container .button {
+            font-size: 12px; } }
+        @media screen and (min-width: 768px) {
+          .map-description-container .data-table .table-button-container .button {
+            font-size: 15px; } }
+        @media screen and (min-width: 1024px) {
+          .map-description-container .data-table .table-button-container .button {
+            font-size: 18px; } }
       .map-description-container .data-table .table-button-container div:first-child {
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px; }

@@ -20,6 +20,12 @@ $subheader-font-sizes: (
 	tablet: 18px,
 	desktop: 21px
 );
+$button-font-sizes: (
+    null: 10px,
+    mobile: 12px,
+    tablet: 15px,
+    desktop: 18px
+);
 
 @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
 	@each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -95,6 +101,7 @@ $subheader-font-sizes: (
                 padding: 5px 5px 5px 5px;
                 text-align: center;
                 cursor: pointer;
+                @include font-size($button-font-sizes);
             }
 
             div:first-child {
