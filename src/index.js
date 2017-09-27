@@ -11,7 +11,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/rootSaga';
 
 const routes = {
-  '/intro': {
+  '/': {
     title: 'Intro',
     index: 0
   },

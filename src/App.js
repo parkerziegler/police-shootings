@@ -33,7 +33,7 @@ class App extends Component {
     let previousRouteIndex = router.routes[router.route].index - 1;
 
     // add a check to see if we're on the initial route
-    let previousRoute = previousRouteIndex === -1 ? "/intro" : _.findKey(router.routes, (route) => {
+    let previousRoute = previousRouteIndex === -1 ? "/" : _.findKey(router.routes, (route) => {
 
       return route.index === previousRouteIndex;
     });
@@ -48,10 +48,13 @@ class App extends Component {
       return route.index === nextRouteIndex;
     });
 
+    console.log(process);
+    console.log(process.env.PUBLIC_URL);
+
     // TODO - implement a Spinner solution
     let component = maps.fetchingData ?
       <div></div> :
-      <Fragment forRoute='/'>
+      <Fragment forRoute={process.env.PUBLIC_URL + '/'}>
       <div className='page-container'>
         <Link href={previousRoute} className='chevron-link' >
           <div className='chevron'>
@@ -61,22 +64,22 @@ class App extends Component {
             </svg> : null}
           </div>
         </Link>
-          <Fragment forRoute='/intro'>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/'}>
             <Home />
           </Fragment>
-          <Fragment forRoute='/total-shootings'>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/total-shootings'}>
             <div className='raw'>
               <Map mapType='proportional' />
               <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
             </div>
           </Fragment>
-          <Fragment forRoute='/percapita'>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/percapita'}>
             <div className='percapita'>
               <Map mapType='choropleth' />
               <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
             </div>
           </Fragment>
-          <Fragment forRoute='/shootingsbydate'>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/shootingsbydate'}>
               <BarChart />
           </Fragment>
         <Link href={nextRoute} className='chevron-link'>
