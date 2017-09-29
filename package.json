@@ -1,8 +1,8 @@
 {
-  "name": "d3-election-map",
+  "name": "d3-react-map",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://parkerziegler.github.io/d3-react-map",
+  "homepage": "https://parkerziegler.github.io/d3-react-map/",
   "dependencies": {
     "axios": "^0.16.1",
     "d3": "4.7.4",
