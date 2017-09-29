@@ -51,7 +51,7 @@ class App extends Component {
     // TODO - implement a Spinner solution
     let component = maps.fetchingData ?
       <div></div> :
-      <Fragment forRoute='/'>
+      <Fragment forRoute={process.env.PUBLIC_URL + '/'}>
       <div className='page-container'>
         <Link href={previousRoute} className='chevron-link' >
           <div className='chevron'>
@@ -61,22 +61,22 @@ class App extends Component {
             </svg> : null}
           </div>
         </Link>
-          <Fragment forRoute='/intro'>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/intro'}>
             <Home />
           </Fragment>
-          <Fragment forRoute='/total-shootings'>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/total-shootings'}>
             <div className='raw'>
               <Map mapType='proportional' />
               <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
             </div>
           </Fragment>
-          <Fragment forRoute='/percapita'>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/percapita'}>
             <div className='percapita'>
               <Map mapType='choropleth' />
               <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
             </div>
           </Fragment>
-          <Fragment forRoute='/shootingsbydate'>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/shootingsbydate'}>
               <BarChart />
           </Fragment>
         <Link href={nextRoute} className='chevron-link'>
