@@ -34,7 +34,8 @@ const {
   middleware,
   enhancer
 } = routerForBrowser({
-  routes
+  routes,
+  basename: '/d3-react-map/'
 });
 
 // create our saga middleware - we'll use this handle our side effects
@@ -55,6 +56,8 @@ if (initialLocation) {
   console.log(initialLocation);
   store.dispatch(initializeCurrentLocation(initialLocation));
 }
+
+console.log(process.env);
 
 // render our App
 ReactDOM.render(
