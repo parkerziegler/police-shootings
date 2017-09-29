@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { VictoryChart, VictoryBar, VictoryAxis } from 'victory';
+import { VictoryChart, VictoryBar, VictoryAxis, VictoryTheme } from 'victory';
 import * as _ from 'lodash';
 import moment from 'moment';
 
@@ -20,12 +20,14 @@ class BarChart extends React.Component {
 
         let data = _.map(_.keys(groupByDate), (key) => {
 
-            return { date: key, count: groupByDate[key].length }
+            return { date: _.parseInt(key, 10), count: groupByDate[key].length }
         });
+
+        console.log(data);
 
         return (
             <VictoryChart>
-                <VictoryAxis scale="time" tickCount={5} tickFormat={(t) => new Date(t).getMonth()} />
+                <VictoryAxis scale="time" tickValues={[new Date(2015, 3, 1), new Date(2015, 9, 1), new Date(2016, 2, 1), new Date(2016, 8, 1)]} tickFormat={(t) => moment(t).format('MMM YYYY')}/>
                 <VictoryAxis dependentAxis />
                 <VictoryBar data={data.sort()} x="date" y="count" scale="time"/>
             </VictoryChart>

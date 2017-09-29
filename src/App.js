@@ -51,43 +51,43 @@ class App extends Component {
     // TODO - implement a Spinner solution
     let component = maps.fetchingData ?
       <div></div> :
-      <Fragment forRoute={process.env.PUBLIC_URL + '/'}>
-      <div className='page-container'>
-        <Link href={previousRoute} className='chevron-link' >
-          <div className='chevron'>
-            {currentRouteIndex > 0 ?
-            <svg width="50" height="50" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#6C7680" d="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"/>
-            </svg> : null}
-          </div>
-        </Link>
-          <Fragment forRoute={process.env.PUBLIC_URL + '/'}>
+      <Fragment forRoute={'/'}>
+        <div className='page-container'>
+          <Link href={previousRoute} className='chevron-link' >
+            <div className='chevron'>
+              {currentRouteIndex > 0 ?
+              <svg width="50" height="50" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#6C7680" d="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"/>
+              </svg> : null}
+            </div>
+          </Link>
+          <Fragment forRoute={'/'}>
             <Home />
           </Fragment>
-          <Fragment forRoute={process.env.PUBLIC_URL + '/total-shootings'}>
+          <Fragment forRoute={'/total-shootings'}>
             <div className='raw'>
               <Map mapType='proportional' />
               <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
             </div>
           </Fragment>
-          <Fragment forRoute={process.env.PUBLIC_URL + '/percapita'}>
+          <Fragment forRoute={'/percapita'}>
             <div className='percapita'>
               <Map mapType='choropleth' />
               <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
             </div>
           </Fragment>
-          <Fragment forRoute={process.env.PUBLIC_URL + '/shootingsbydate'}>
+          <Fragment forRoute={'/shootingsbydate'}>
               <BarChart />
           </Fragment>
-        <Link href={nextRoute} className='chevron-link'>
-          <div className='chevron'>
-            {currentRouteIndex < (routerLength - 1) ?
-            <svg width="50" height="50" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#6C7680" d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"/>
-            </svg> : null}
-          </div>
-        </Link>
-      </div>
+          <Link href={nextRoute} className='chevron-link'>
+            <div className='chevron'>
+              {currentRouteIndex < (routerLength - 1) ?
+              <svg width="50" height="50" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#6C7680" d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"/>
+              </svg> : null}
+            </div>
+          </Link>
+        </div>
       </Fragment>;
 
     return component;
