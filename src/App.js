@@ -28,12 +28,12 @@ class App extends Component {
     const { maps, router } = this.props;
 
     // get the next and previous route based on the current route
-    let currentRouteIndex = router.result.index;
+    let currentRouteIndex = router.routes[router.route].index;
 
-    let previousRouteIndex = router.routes[router.route].index - 1;
+    let previousRouteIndex = currentRouteIndex - 1;
 
     // add a check to see if we're on the initial route
-    let previousRoute = previousRouteIndex === -1 ? "/intro" : _.findKey(router.routes, (route) => {
+    let previousRoute = previousRouteIndex === -1 ? "/" : _.findKey(router.routes, (route) => {
 
       return route.index === previousRouteIndex;
     });
@@ -41,7 +41,7 @@ class App extends Component {
     // also add a check to see if we're on the last route
     let routerLength = _.keys(router.routes).length;
 
-    let nextRouteIndex = router.routes[router.route].index + 1;
+    let nextRouteIndex = currentRouteIndex + 1;
 
     let nextRoute = nextRouteIndex >= routerLength ? "/percapita" : _.findKey(router.routes, (route) => {
 
@@ -61,7 +61,7 @@ class App extends Component {
             </svg> : null}
           </div>
         </Link>
-          <Fragment forRoute={process.env.PUBLIC_URL + '/intro'}>
+          <Fragment forRoute={process.env.PUBLIC_URL + '/'}>
             <Home />
           </Fragment>
           <Fragment forRoute={process.env.PUBLIC_URL + '/total-shootings'}>
