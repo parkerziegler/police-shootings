@@ -48,9 +48,6 @@ class App extends Component {
       return route.index === nextRouteIndex;
     });
 
-    console.log(process);
-    console.log(process.env.PUBLIC_URL);
-
     // TODO - implement a Spinner solution
     let component = maps.fetchingData ?
       <div></div> :
