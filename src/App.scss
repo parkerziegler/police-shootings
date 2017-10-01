@@ -58,6 +58,25 @@ body {
 	width: 100%;
 }
 
+.layout {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+
+	.chevron {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		svg:hover {
+			fill-opacity: 0.5;
+		}
+	}
+}
+
 .page-container {
 	display: flex;
 	height: 100%;
@@ -73,7 +92,6 @@ body {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			flex: 0 1 auto;
 	
 			svg:hover {
 				fill-opacity: 0.5;

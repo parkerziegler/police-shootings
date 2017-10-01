@@ -12,6 +12,20 @@ body {
   height: 100%;
   width: 100%; }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center; }
+  .layout .chevron {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .layout .chevron svg:hover {
+      fill-opacity: 0.5; }
+
 .page-container {
   display: flex;
   height: 100%;
@@ -24,8 +38,7 @@ body {
     .page-container .chevron-link .chevron {
       display: flex;
       justify-content: center;
-      align-items: center;
-      flex: 0 1 auto; }
+      align-items: center; }
       .page-container .chevron-link .chevron svg:hover {
         fill-opacity: 0.5; }
   .page-container .page-content {
