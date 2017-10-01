@@ -117,7 +117,7 @@ class App extends Component {
       });
 
       previousChildRoute = currentChildRouteIndex === 0 ? currentRoute.parent.route : _.findKey(router.routes, (route) => {
-        return route.childIndex = currentChildRouteIndex - 1;
+        return route.childIndex === currentChildRouteIndex - 1;
       });
 
     } else {
@@ -129,7 +129,7 @@ class App extends Component {
     return {
       previousChildRoute,
       nextChildRoute
-    }
+    };
 
   }
 
@@ -149,7 +149,7 @@ class App extends Component {
         <div className='layout'>
           <Chevron className='chevron-link vertical' path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z" href={previousChildRoute} visible={previousChildRoute !== '/'} />
           <div className='page-container'>
-            <Chevron className='chevron-link horizontal' path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" href={previousMainRoute} visible={router.route !== '/'} />
+            <Chevron className='chevron-link horizontal' path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" href={previousMainRoute} visible={previousMainRoute !== '/' || router.route === '/total-shootings'} />
             <Fragment forRoute={'/'}>
               <Home />
             </Fragment>
@@ -163,7 +163,7 @@ class App extends Component {
               <div>Yep</div>
             </Fragment>
             <Fragment forRoute={'/total-shootings/latino'}>
-              <div>Yep</div>
+              <div>Hey</div>
             </Fragment>
             <Fragment forRoute={'/percapita'}>
               <div className='percapita'>
