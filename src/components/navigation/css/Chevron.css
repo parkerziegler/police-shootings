@@ -1,0 +1,12 @@
+.chevron-link.horizontal {
+  min-width: 5%; }
+
+.chevron-link.vertical {
+  min-height: 5%; }
+
+.chevron {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .chevron svg:hover {
+    fill-opacity: 0.5; }
