@@ -1,4 +1,4 @@
-import { put, takeLatest, all, call } from 'redux-saga/effects';
+import { put, takeLatest, all, call, select } from 'redux-saga/effects';
 import axios from 'axios';
 import * as actionTypes from '../constants/action-types';
 import * as stateNames from '../assets/state-names';
@@ -62,17 +62,33 @@ function* callAPI() {
 
 }
 
-// define a watcher saga to listen for when LOCATION_CHANGED is dispatched by the router
+// define a watcher saga to listen for when ROUTER_LOCATION_CHANGED is dispatched by the router
 function* watchLocationChanged() {
-
-    yield takeLatest('LOCATION_CHANGED', handleLocationChanged);
+    yield takeLatest('ROUTER_LOCATION_CHANGED', handleLocationChanged);
 }
+
+// a lookup defining which filters to put when a particular route is hit
+const shootingsFilters = {
+    '/total-shootings': '',
+    '/total-shootings/black': '?race=Black',
+    '/total-shootings/hispanic': '?race=Hispanic/Latino'
+};
 
 function* handleLocationChanged(action) {
 
-    // yield console.log('Your location changed!');
-    yield console.log(action);
+    try {
+
+        // obtain the proper filter based on the route
+        let apiFilter = shootingsFilters[action.payload.route];
+
+        yield put({ type: actionTypes.SET_FILTERS_ON_SHOOTINGS_DATA, apiFilter });
+        
+    } catch (error) {
+        console.log(error);
+    }
+    
 }
+
 
 export default function* rootSaga() {
     yield all([
