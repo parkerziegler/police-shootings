@@ -37,3 +37,11 @@ export const getHoveredStateData = (state) => {
 		state
 	};
 };
+
+export const setFiltersOnShootingsData = (apiFilter) => {
+
+	return {
+		type: actionTypes.SET_FILTERS_ON_SHOOTINGS_DATA,
+		apiFilter
+	};
+};
