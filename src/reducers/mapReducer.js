@@ -10,7 +10,8 @@ const initialState = {
 		stateName: 'New Mexico',
 		shootings: 43,
 		shootingsPerMillion: 20.66
-	}
+	},
+	apiFilter: '/'
 };
 
 export const mapReducer = (state = initialState, action) => {
@@ -33,6 +34,10 @@ export const mapReducer = (state = initialState, action) => {
 		case actionTypes.GET_HOVERED_STATE_DATA:
 			return { ...state,
 				activeState: action.state
+			};
+		case actionTypes.SET_FILTERS_ON_SHOOTINGS_DATA:
+			return { ...state,
+				apiFilter: action.apiFilter
 			};
         default:
             return state;
