@@ -20,45 +20,59 @@ const axiosCall = () => {
     ]);
 };
 
+// define a function for filtering the data based on the route
+// i.e. when we navigate to total-shootings/black, filter the
+// data by race
+
 // define a generator to be handle fetching our API data
-function* callAPI() {
+function* callAPI(action) {
 
-    // call the API, using yield to wait for its response
-    const response = yield call(axiosCall);
+    try {
 
-    // do the same with the shootings data from the Counted API
-    yield put({ type: actionTypes.SEND_SHOOTINGS_DATA_TO_REDUCER, data: response[1].data });
-
-    // group the shootings data by state
-    let dataByState = _.groupBy(response[1].data, 'state');
+        // call the API, using yield to wait for its response
+        const response = yield call(axiosCall);
     
-    // next, modify the topojson data to and join the attributes from the shootings data
-    _.map(response[0].data.objects.states.geometries, (state) => {
+        // send the raw data off to redux for storage
+        yield put({ type: actionTypes.SEND_SHOOTINGS_DATA_TO_REDUCER, data: response[1].data });
+    
+        // group the shootings data by state
+        let dataByState = _.groupBy(response[1].data, 'state');
+        
+        // next, modify the topojson data to and join the attributes from the shootings data
+        _.map(response[0].data.objects.states.geometries, (state) => {
+    
+            // parse the id as an int so we can join it to the state data lookup we have
+            // stored in constants
+            state.id = _.parseInt(state.id);
+            let matchState = _.find(stateNames, ['id', state.id]);
+    
+            // once we have a match state, use it to obtain population data from the Census
+            let matchShootings = dataByState[matchState.code];
+    
+            // some lodash trickery to make the join
+            let populationData = _.invert(_.fromPairs(response[2].data));
+            let matchPopulation = _.parseInt(populationData[matchState.name]);
+    
+            // finally
+            state.properties = {};
+            state.properties.stateAbbreviation = matchState.code;
+            state.properties.stateName = matchState.name;
+            state.properties.numShootings = matchShootings.length;
+            state.properties.population = matchPopulation;
+            state.properties.shootingsPerCapita = matchShootings.length / matchPopulation;
+    
+        });
+    
+        // once it returns, send the topojson data from d3 off to redux
+        yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: response[0].data });
 
-        // parse the id as an int so we can join it to the state data lookup we have
-        // stored in constants
-        state.id = _.parseInt(state.id);
-        let matchState = _.find(stateNames, ['id', state.id]);
+        yield put({ type: actionTypes.SEND_CENSUS_DATA_TO_REDUCER, censusData: response[2].data });
 
-        // once we have a match state, use it to obtain population data from the Census
-        let matchShootings = dataByState[matchState.code];
-
-        // some lodash trickery to make the join
-        let populationData = _.invert(_.fromPairs(response[2].data));
-        let matchPopulation = _.parseInt(populationData[matchState.name]);
-
-        // finally
-        state.properties = {};
-        state.properties.stateAbbreviation = matchState.code;
-        state.properties.stateName = matchState.name;
-        state.properties.numShootings = matchShootings.length;
-        state.properties.population = matchPopulation;
-        state.properties.shootingsPerCapita = matchShootings.length / matchPopulation;
-
-    });
-
-    // once it returns, send the topojson data from d3 off to redux
-    yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: response[0].data });
+    } catch (error) {
+        
+        // log the error
+        console.log(error);
+    }
 
 }
 
@@ -69,26 +83,88 @@ function* watchLocationChanged() {
 
 // a lookup defining which filters to put when a particular route is hit
 const shootingsFilters = {
-    '/total-shootings': '',
-    '/total-shootings/black': '?race=Black',
-    '/total-shootings/hispanic': '?race=Hispanic/Latino'
+    '/': { filterKey: null, filterValue: null },
+    '/total-shootings': { filterKey: null, filterValue: null },
+    '/total-shootings/black': { filterKey: 'race', filterValue: 'Black' },
+    '/total-shootings/latino': { filterKey: 'race', filterValue: 'Hispanic/Latino' },
+    '/percapita': { filterKey: null, filterValue: null },
+    '/shootingsbydate': { filterKey: null, filterValue: null }
 };
+
+const filterShootingsData = (data, filterKey = null, filterValue = null) => {
+    
+    // copy over the data
+    let clone = [...data];
+
+    if (filterKey && filterValue) {
+        return clone.filter((entry) => {
+            return entry[filterKey] === filterValue;
+        });
+    } else {
+        return clone;
+    }
+};
+
+const joinShootingsDataToGeoData = (shootingsData, geoData, censusData) => {
+
+    if (!geoData) {
+        return;
+    } else {
+        let dataByState = _.groupBy(shootingsData, 'state');
+        
+        let filteredGeoData = _.map(geoData.objects.states.geometries, (state) => {
+    
+            // parse the id as an int so we can join it to the state data lookup we have
+            // stored in constants
+            state.id = _.parseInt(state.id);
+            let matchState = _.find(stateNames, ['id', state.id]);
+    
+            // once we have a match state, use it to obtain population data from the Census
+            let matchShootings = dataByState[matchState.code];
+            let numShootings = matchShootings ? matchShootings.length : 0;
+    
+            // some lodash trickery to make the join
+            let populationData = _.invert(_.fromPairs(censusData));
+            let matchPopulation = _.parseInt(populationData[matchState.name]);
+    
+            // finally, recompose the object
+            state.properties = {};
+            state.properties.stateAbbreviation = matchState.code;
+            state.properties.stateName = matchState.name;
+            state.properties.numShootings = numShootings;
+            state.properties.population = matchPopulation;
+            state.properties.shootingsPerCapita = numShootings / matchPopulation;
+    
+            return state;
+        });
+    
+        return filteredGeoData;
+    }
+}
 
 function* handleLocationChanged(action) {
 
     try {
 
-        // obtain the proper filter based on the route
-        let apiFilter = shootingsFilters[action.payload.route];
+        const reduxStore = yield select();
+        let shootingsData = reduxStore.mapReducer.shootingsData;
 
-        yield put({ type: actionTypes.SET_FILTERS_ON_SHOOTINGS_DATA, apiFilter });
+        // obtain the proper filter based on the route
+        let { filterKey, filterValue } = shootingsFilters[action.payload.route];
+
+        let filteredData = filterShootingsData(shootingsData, filterKey, filterValue);
+
+        let geoData = joinShootingsDataToGeoData(filteredData, reduxStore.mapReducer.geoData, reduxStore.mapReducer.censusData);
+
+        console.log(geoData);
+        
+        // yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: filteredGeoData });
         
     } catch (error) {
         console.log(error);
     }
     
 }
-
 
 export default function* rootSaga() {
     yield all([
