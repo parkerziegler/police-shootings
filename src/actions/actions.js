@@ -45,3 +45,11 @@ export const setFiltersOnShootingsData = (apiFilter) => {
 		apiFilter
 	};
 };
+
+export const sendCensusDataToReducer = (censusData) => {
+
+	return {
+		type: actionTypes.SEND_CENSUS_DATA_TO_REDUCER,
+		censusData
+	};
+};
