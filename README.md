@@ -1,5 +1,8 @@
 # d3-react-map
 
+### Demo
+Check out the app live [here](https://parkerziegler.github.io/d3-react-map/). This app is currently undergoing rapid development changes, some of them breaking. The app deployed to the demo is (**mostly**) functional, but if you catch an error please open an issue.
+
 ### Context
 This repo is an attempt to expand upon a [previous project](https://parkerziegler.github.io/d3-policeshootings-map/) of mine exploring police involved shootings in the United States. The previous iteration of this project was built using vanilla JavaScript and [D3](https://github.com/d3/d3). While I think it accomplished some things well, it is not designed with responsive principles in mind, employs no framework to manage the application, and suffers from some inelegant design. It was a while ago, I've learned a lot.
 
