@@ -120,7 +120,7 @@ class App extends Component {
         return route.childIndex === currentChildRouteIndex - 1;
       });
 
-    } else if (currentRoute.isLastRoute) {
+    } else if (currentRoute.isLastChildRoute) {
 
       let currentChildRouteIndex = currentRoute.childIndex;
       
