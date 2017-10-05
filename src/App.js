@@ -120,6 +120,16 @@ class App extends Component {
         return route.childIndex === currentChildRouteIndex - 1;
       });
 
+    } else if (currentRoute.isLastRoute) {
+
+      let currentChildRouteIndex = currentRoute.childIndex;
+      
+      nextChildRoute = '/';
+
+      previousChildRoute = currentChildRouteIndex === 0 ? currentRoute.parent.route : _.findKey(router.routes, (route) => {
+        return route.childIndex === currentChildRouteIndex - 1;
+      });
+
     } else {
 
       nextChildRoute = '/';
@@ -153,18 +163,17 @@ class App extends Component {
             <Fragment forRoute={'/'}>
               <Home />
             </Fragment>
-            <Fragment withConditions={location => location.pathname === '/total-shootings'}>
+            <Fragment forRoute={'/total-shootings'}>
               <div className='raw'>
                 <Map mapType='proportional' />
                 <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
               </div>
             </Fragment>
-            <Fragment forRoute={'/total-shootings/black'}>
-              <div>Yep</div>
-            </Fragment>
-            <Fragment forRoute={'/total-shootings/latino'}>
-              <div>Hey</div>
-            </Fragment>
+            <Fragment forRoute={'/total-shootings/black'}></Fragment>
+            <Fragment forRoute={'/total-shootings/latino'}></Fragment>
+            <Fragment forRoute={'/total-shootings/asian'}></Fragment>
+            <Fragment forRoute={'/total-shootings/nativeamerican'}></Fragment>
+            <Fragment forRoute={'/total-shootings/white'}></Fragment>
             <Fragment forRoute={'/percapita'}>
               <div className='percapita'>
                 <Map mapType='choropleth' />
