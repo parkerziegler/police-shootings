@@ -76,7 +76,7 @@ class Map extends React.Component {
 
     // set up a scale for the radius, the max will be the max in the dataset
     let radius = d3.scaleSqrt()
-      .domain([0, maxState])
+      .domain([0, 372])
       .range([0, 80]);
 
     // define a similar function to the one in this.generatePath - this actually
