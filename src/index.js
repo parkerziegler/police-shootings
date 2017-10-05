@@ -50,7 +50,7 @@ const routes = {
       navClass: 'child',
       childIndex: 4,
       hasNextSibling: false,
-      isLastRoute: true
+      isLastChildRoute: true
     }
   },
   '/percapita': {
