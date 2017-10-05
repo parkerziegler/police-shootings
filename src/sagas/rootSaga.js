@@ -87,6 +87,9 @@ const shootingsFilters = {
     '/total-shootings': { filterKey: null, filterValue: null },
     '/total-shootings/black': { filterKey: 'race', filterValue: 'Black' },
     '/total-shootings/latino': { filterKey: 'race', filterValue: 'Hispanic/Latino' },
+    '/total-shootings/asian': { filterKey: 'race', filterValue: 'Asian/Pacific Islander' },
+    '/total-shootings/nativeamerican': { filterKey: 'race', filterValue: 'Native American'},
+    '/total-shootings/white': { filterKey: 'race', filterValue: 'White' },
     '/percapita': { filterKey: null, filterValue: null },
     '/shootingsbydate': { filterKey: null, filterValue: null }
 };
@@ -112,7 +115,7 @@ const joinShootingsDataToGeoData = (shootingsData, geoData, censusData) => {
     } else {
         let dataByState = _.groupBy(shootingsData, 'state');
         
-        let filteredGeoData = _.map(geoData.objects.states.geometries, (state) => {
+        _.map(geoData.objects.states.geometries, (state) => {
     
             // parse the id as an int so we can join it to the state data lookup we have
             // stored in constants
@@ -138,7 +141,7 @@ const joinShootingsDataToGeoData = (shootingsData, geoData, censusData) => {
             return state;
         });
     
-        return filteredGeoData;
+        return geoData;
     }
 }
 
@@ -155,10 +158,8 @@ function* handleLocationChanged(action) {
         let filteredData = filterShootingsData(shootingsData, filterKey, filterValue);
 
         let geoData = joinShootingsDataToGeoData(filteredData, reduxStore.mapReducer.geoData, reduxStore.mapReducer.censusData);
-
-        console.log(geoData);
         
-        // yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: filteredGeoData });
+        yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: geoData });
         
     } catch (error) {
         console.log(error);
