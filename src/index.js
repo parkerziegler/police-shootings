@@ -33,11 +33,24 @@ const routes = {
       childIndex: 1,
       hasNextSibling: true
     },
+    '/asian': {
+      title: 'Total Shootings By Race - Asian',
+      navClass: 'child',
+      childIndex: 2,
+      hasNextSibling: true
+    },
+    '/nativeamerican': {
+      title: 'Total Shootings By Race - Native American',
+      navClass: 'child',
+      childIndex: 3,
+      hasNextSibling: true
+    },
     '/white': {
       title: 'Total Shootings By Race - White',
       navClass: 'child',
-      childIndex: 2,
-      hasNextSibling: false
+      childIndex: 4,
+      hasNextSibling: false,
+      isLastRoute: true
     }
   },
   '/percapita': {
