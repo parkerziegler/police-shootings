@@ -75,6 +75,7 @@ class MapDescription extends React.Component {
 		let thirdHighest = orderedStates[2].properties.stateName;
 		let thirdHighestCount = orderedStates[2].properties.numShootings;
 		let lowestState = orderedStates[orderedStates.length - 1].properties.stateName;
+		let lowestCount = orderedStates[orderedStates.length - 1].properties.numShootings;
 		let secondLowest = orderedStates[orderedStates.length - 2].properties.stateName;
 
 		// return it all in an object
@@ -86,6 +87,7 @@ class MapDescription extends React.Component {
 			thirdHighest,
 			thirdHighestCount,
 			lowestState,
+			lowestCount,
 			secondLowest
 		};
 
@@ -116,7 +118,7 @@ class MapDescription extends React.Component {
 
 		return (
 			<div className='text'>
-				Of all 50 states, <b>{stats.highestState}</b> had the greatest number of shootings in this time period at <b>{stats.highestCount}</b>. <b>{stats.secondHighest}</b> and <b>{stats.thirdHighest}</b> had the second and third greatest counts at <b>{stats.secondHighestCount}</b> and <b>{stats.thirdHighestCount}</b>, respectively. <b>{stats.lowestState}</b> had the fewest shootings of all states, with only <b>2</b>.<br/><br />Hover over a state to obtain the number of shootings.
+				Of all 50 states, <b>{stats.highestState}</b> had the greatest number of shootings in this time period at <b>{stats.highestCount}</b>. <b>{stats.secondHighest}</b> and <b>{stats.thirdHighest}</b> had the second and third greatest counts at <b>{stats.secondHighestCount}</b> and <b>{stats.thirdHighestCount}</b>, respectively. <b>{stats.lowestState}</b> had the fewest shootings of all states with <b>{stats.lowestCount}</b>.<br/><br />Hover over a state to obtain the number of shootings.
 			</div>
 		);
 	}
