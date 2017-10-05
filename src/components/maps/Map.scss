@@ -57,3 +57,16 @@ $label-font-sizes: (
         }
     }
 }
+
+@for $i from 0 through 50 {
+
+    .state-transition-#{$i}-appear {
+        fill-opacity: 0.01;
+    }
+    
+    .state-transition-#{$i}-appear.state-transition-#{$i}-appear-active {
+        fill-opacity: 1;
+        transition: fill-opacity 200ms ease-in $i * 50ms;
+    }
+}
+  

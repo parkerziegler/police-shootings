@@ -1,10 +1,16 @@
 import * as React from 'react'
 import '../../App.css'
+import './Map.css';
 import { getHoveredStateData } from '../../actions/actions';
 import { connect } from 'react-redux';
 import { geoPath } from 'd3';
 import PropTypes from 'prop-types';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
+function FirstChild(props) {
+  const childrenArray = React.Children.toArray(props.children);
+  return childrenArray[0] || null;
+}
 
 class State extends React.Component {
 
@@ -62,7 +68,7 @@ class State extends React.Component {
   
   getJSX() {
 
-    const { mapType, numShootings, population, feature, path, radius } = this.props;
+    const { mapType, numShootings, population, feature, path, radius, i } = this.props;
 
     // define a function to get the appropriate JSX based on mapType
     const data = () => {
@@ -72,9 +78,18 @@ class State extends React.Component {
         
           return <path className='states' d={path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
         case 'proportional':
-
+          console.log(i);
           let translate = geoPath().centroid(feature);
-          return <circle className='states raw' r={radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75} onMouseEnter={this.onMouseEnterHandler}/>;
+          return (
+            <CSSTransitionGroup
+              transitionName={`state-transition-${i}`}
+              transitionAppear={true}
+              transitionAppearTimeout={500}
+              transitionEnter={false}
+              transitionLeave={false}
+              component={FirstChild}>
+              <circle className={`states raw state-transition-${i}`} r={radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75} onMouseEnter={this.onMouseEnterHandler}/>
+          </CSSTransitionGroup>);
         default:
           return;
       }
