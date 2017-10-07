@@ -1,0 +1,55 @@
+/** A constants SCSS partial for storing common variables and mixins */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$roboto: 'Roboto', sans-serif;
+$black: #000000;
+$helvetica: 'HelveticaNeue', 'Helvetica', sans-serif;
+$breakpoints: (
+	mobile: 480px,
+	tablet: 768px,
+	desktop: 1024px
+);
+$font-sizes: (
+	null: 16px,
+	mobile: 18px,
+	tablet: 22px,
+	desktop: 28px
+);
+$subheader-font-sizes: (
+	null: 12px,
+	mobile: 14px,
+	tablet: 18px,
+	desktop: 21px
+);
+$label-font-sizes: (
+	null: 8px,
+	mobile: 8px,
+	tablet: 10px,
+	desktop: 12px
+);
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			font-size: $fs-font-size;
+		}
+		@else {
+			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
+				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint)
+			}
+			@media screen and (min-width: $fs-breakpoint) {
+				font-size: $fs-font-size;
+			}
+		}
+	}
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
