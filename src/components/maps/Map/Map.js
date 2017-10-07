@@ -4,7 +4,7 @@ import './Map.css';
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
 import * as _ from 'lodash';
-import State from './State';
+import State from '../State/State';
 import PropTypes from 'prop-types';
 
 class Map extends React.Component {

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+/** A constants SCSS partial for storing common variables and mixins */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 /** Use a SCSS loop to create the transition classes to be used
 by the react-transition-group add-on */
 .home-transition-0-appear {
@@ -43,10 +45,9 @@ by the react-transition-group add-on */
   opacity: 1;
   transition: opacity 1s ease-in 10s; }
 
-/** Also include our font-size mixin to scale things across desktop and mobile */
 .home-text {
-  font-family: "Source Code Pro", monospace, sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: "Source Code Pro", monospace, sans-serif; }
   @media screen and (min-width: 480px) {
     .home-text {
       font-size: 18px; } }
@@ -58,8 +59,8 @@ by the react-transition-group add-on */
       font-size: 28px; } }
 
 .home-text-large {
-  font-family: "Source Code Pro", monospace, sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: "Source Code Pro", monospace, sans-serif; }
   @media screen and (min-width: 480px) {
     .home-text-large {
       font-size: 22px; } }

@@ -1,0 +1,46 @@
+@import '../../../stylesheets/constants.scss';
+
+.map-description-container {
+    @include flex-column;
+    width: 30%;
+    height: auto;
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+
+    .inset-header {
+        @include font-size($font-sizes);
+        color: $black;
+        font-family: $helvetica;
+        font-weight: bold;
+        margin-bottom: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .inset-subheader {
+        @include font-size($subheader-font-sizes);
+        color: #666666;
+        font-family: $helvetica;
+        margin-bottom: 10px;
+    }
+
+    .text {
+        color: $black;
+        font: 14px $helvetica;
+        margin-bottom: 10px;
+    }
+
+    .state-name {
+        @include font-size($font-sizes);
+        color: $black;
+        font-family: $helvetica;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    .map-description-container {
+        width: 95%;
+    }
+}

@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import Home from './components/home/Home';
-import Header from './components/header/Header';
-import Map from './components/maps/Map';
-import MapDescription from './components/maps/MapDescription';
-import BarChart from './components/graphs/BarChart';
-import Chevron from './components/navigation/components/Chevron';
-import { callAPI } from './actions/actions';
+import Map from './components/maps/Map/Map';
+import MapDescription from './components/maps/MapDescription/MapDescription';
+import BarChart from './components/graphs/BarChart/BarChart';
+import Chevron from './components/navigation/Chevron/Chevron';
+import { callAPI } from './actions/mapActions';
 import PropTypes from 'prop-types';
 import { Link, Fragment } from 'redux-little-router';
 import * as _ from 'lodash';
@@ -50,7 +49,7 @@ class App extends Component {
 
     // here we'll need to determine next and previous routes to pass
     // to our Chevron components
-    let currentRoute = router.result; // router.routes[router.route];
+    let currentRoute = router.result;
 
     if (currentRoute.parent) {
 
@@ -94,8 +93,13 @@ class App extends Component {
     let nextChildRoute;
     let previousChildRoute;
 
+    // if the route has children, it is the parent
+    // of the sub-navigation
     if (currentRoute.hasChildren) {
 
+      // the next child route will be the first child
+      // and will its parent will have the same title as
+      // the current route
       nextChildRoute = _.findKey(router.routes, (route) => {
 
         if (!route.parent) {
@@ -105,10 +109,13 @@ class App extends Component {
         return route.parent.title === currentRoute.title && route.childIndex === 0;
       });
 
+      // there is no previous child route for the parent
       previousChildRoute = '/';
 
     } else if (currentRoute.hasNextSibling) {
 
+      // if the child route is bordered by other child routes,
+      // implement similar logic to the main navigation
       let currentChildRouteIndex = currentRoute.childIndex;
 
       nextChildRoute = _.findKey(router.routes, (route) => {
@@ -122,16 +129,20 @@ class App extends Component {
 
     } else if (currentRoute.isLastChildRoute) {
 
+      // for the last child route, there is no next child
       let currentChildRouteIndex = currentRoute.childIndex;
       
       nextChildRoute = '/';
 
+      // add a check to see if the previous route is the parent
+      // if not, get the previous child route
       previousChildRoute = currentChildRouteIndex === 0 ? currentRoute.parent.route : _.findKey(router.routes, (route) => {
         return route.childIndex === currentChildRouteIndex - 1;
       });
 
     } else {
 
+      // if this is not a child route, no need to worry about child navigation
       nextChildRoute = '/';
       previousChildRoute = '/';
     }
@@ -148,7 +159,7 @@ class App extends Component {
     // destructure props
     const { maps, router } = this.props;
 
-    // obtain routes from getRoutes method
+    // obtain routes from getMainRoutes and getChildRoutes method
     let { previousMainRoute, nextMainRoute } = this.getMainRoutes();
     let { previousChildRoute, nextChildRoute } = this.getChildRoutes();
 
@@ -203,19 +214,8 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(App);
 
 // define propTypes for App
-// App.propTypes = {
-//   maps: PropTypes.shape({
-//     fetchingData: PropTypes.bool.isRequired,
-//     geoData: PropTypes.arrayOf(PropTypes.object).isRequired,
-//     shootingsData: PropTypes.arrayOf(PropTypes.object).isRequired,
-//     activeState: PropTypes.objectOf({
-//       stateName: PropTypes.string.isRequired,
-//       numberShootings: PropTypes.number.isRequired,
-//       shootingsPerMillion: PropTypes.number.isRequired
-//     }).isRequired
-//   }).isRequired
-// }
-
-// chevron down icon
-{/* <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"/></svg> */}
+App.propTypes = {
+  maps: PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired
+};
 

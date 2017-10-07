@@ -1,7 +1,7 @@
 import * as React from 'react'
-import '../../App.css'
-import './Map.css';
-import { getHoveredStateData } from '../../actions/actions';
+import '../../../App.css'
+import '../Map/Map.css';
+import { getHoveredStateData } from '../../../actions/mapActions';
 import { connect } from 'react-redux';
 import { geoPath } from 'd3';
 import PropTypes from 'prop-types';

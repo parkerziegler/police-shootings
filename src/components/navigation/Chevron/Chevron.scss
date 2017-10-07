@@ -1,3 +1,5 @@
+@import '../../../stylesheets/_constants';
+
 .chevron-link.horizontal {
     min-width: 5%;
 }
@@ -7,7 +9,8 @@
 }
 
 .chevron {
-    display: flex;
+    @include flex-row;
+    border: 1px solid red;
     justify-content: center;
     align-items: center;
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './MapDescription.css';
 import moment from 'moment';
 import * as _ from 'lodash';
-import DataTable from './DataTable';
+import DataTable from '../DataTable/DataTable';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import PropTypes from 'prop-types';
 

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux';
-import '../../App.css'
+import './DataTable.css';
 import * as _ from 'lodash';
 
 class DataTable extends React.Component {
