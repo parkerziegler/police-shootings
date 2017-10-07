@@ -20,5 +20,6 @@ yarn-error.log*
 /src/config.js
 
 # css
-.css
+*.css
+/src/*.css
 
