@@ -1,21 +1,41 @@
 @import '../../../stylesheets/_constants';
 
+.chevron-link {
+    text-decoration: none;
+}
+
 .chevron-link.horizontal {
-    min-width: 5%;
+   min-width: 5%;
+    flex: 0 0 auto;
 }
 
 .chevron-link.vertical {
     min-height: 5%;
+    flex: 0 0 auto;
 }
 
 .chevron {
     @include flex-row;
-    border: 1px solid red;
     justify-content: center;
     align-items: center;
 
-    svg:hover {
-        fill-opacity: 0.5;
+    &:hover {
+
+        svg {
+            fill-opacity: 0.5;
+        }
+
+        div {
+            opacity: 0.5;
+        }
     }
+
+    .slide-title {
+        @include font-size($subheader-font-sizes);
+        font-family: $roboto;
+        color: #6C7680;
+        text-decoration: none;
+    }
+
 }
 
