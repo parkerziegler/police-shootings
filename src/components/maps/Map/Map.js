@@ -19,20 +19,19 @@ class Map extends React.Component {
 
 	componentDidMount() {
 
-    // // define a new legend - we'll let D3 really take the reins here
-    // const { mapType } = this.props;
+    // define a new legend - we'll let D3 really take the reins here
+    const { mapType } = this.props;
 
-    // // switch on the mapType prop to determine which legend to render
-    // switch (mapType) {
-    //   case 'choropleth':
-    //     this.generateChoroplethLegend();
-    //     break;
-    //   case 'proportional':
-    //     this.generateProportionalSymbolLegend();
-    //     break;
-    //   default:
-    //     return;
-    // }
+    // switch on the mapType prop to determine which legend to render
+    switch (mapType) {
+      case 'choropleth':
+        this.generateChoroplethLegend();
+        break;
+      case 'proportional':
+        return;
+      default:
+        return;
+    }
 
   }
   
@@ -48,7 +47,7 @@ class Map extends React.Component {
         let path = geoPath(feature);
 
         // return a state component
-        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} key={i} />;
+        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} i={i} key={i} />;
 
       });
       
@@ -212,12 +211,16 @@ class Map extends React.Component {
 
     // call the appropriate renderer based on the mapType prop
     const generatePaths = () => {
+
+      let map;
       switch (mapType) {
         case 'choropleth':
-          let choropleth = this.generatePath(geoPath, data);
-          return choropleth;
+          map = this.generatePath(geoPath, data);
+          return {
+            map
+          };
         case 'proportional':
-          let map = this.generateCircle(geoPath, data);
+          map = this.generateCircle(geoPath, data);
           let legend = this.generateProportionalSymbolLegend();
           return {
             map,

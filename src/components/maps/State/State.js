@@ -76,7 +76,17 @@ class State extends React.Component {
         case 'choropleth':
           let fill = this.getStateColor(numShootings / population * 1000000);
         
-          return <path className='states' d={path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onInteractionHandler} />;
+          return (
+            <CSSTransitionGroup
+              transitionName={`state-transition-${i}`}
+              transitionAppear={true}
+              transitionAppearTimeout={500}
+              transitionEnter={false}
+              transitionLeave={false}
+              component={FirstChild}>
+              <path className={`states state-transition-${i}`} d={path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onInteractionHandler} onClick={this.onInteractionHandler} onTouchStart={this.onInteractionHandler} />
+            </CSSTransitionGroup>
+          );
         case 'proportional':
 
           // get the centroid of the state
