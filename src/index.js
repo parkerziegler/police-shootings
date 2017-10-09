@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/rootSaga';
+import { totalShootingsJSX, totalShootingsBlackJSX, totalShootingsLatinoJSX, totalShootingsAsianJSX, totalShootingsNativeAmericanJSX, totalShootingsWhiteJSX } from './components/maps/MapDescription/Descriptions';
 
 // define routes for the application
 const routes = {
@@ -19,31 +20,37 @@ const routes = {
     title: 'Total Shootings',
     index: 1,
     hasChildren: true,
+    jsx: totalShootingsJSX,
     '/black': {
-      title: 'Total Shootings By Race - African American',
+      title: 'Total Shootings By Race African American',
       childIndex: 0,
-      hasNextSibling: true
+      hasNextSibling: true,
+      jsx: totalShootingsBlackJSX
     },
     '/latino': {
-      title: 'Total Shootings By Race - Latino',
+      title: 'Total Shootings By Race Latino',
       childIndex: 1,
-      hasNextSibling: true
+      hasNextSibling: true,
+      jsx: totalShootingsLatinoJSX
     },
     '/asian': {
-      title: 'Total Shootings By Race - Asian',
+      title: 'Total Shootings By Race Asian',
       childIndex: 2,
-      hasNextSibling: true
+      hasNextSibling: true,
+      jsx: totalShootingsAsianJSX
     },
     '/nativeamerican': {
-      title: 'Total Shootings By Race - Native American',
+      title: 'Total Shootings By Race Native American',
       childIndex: 3,
-      hasNextSibling: true
+      hasNextSibling: true,
+      jsx: totalShootingsNativeAmericanJSX
     },
     '/white': {
-      title: 'Total Shootings By Race - White',
+      title: 'Total Shootings By Race White',
       childIndex: 4,
       hasNextSibling: false,
-      isLastChildRoute: true
+      isLastChildRoute: true,
+      jsx: totalShootingsWhiteJSX
     }
   },
   '/percapita': {

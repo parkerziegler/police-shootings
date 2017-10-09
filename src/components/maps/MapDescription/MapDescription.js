@@ -125,18 +125,18 @@ class MapDescription extends React.Component {
 
 	render() {
 
-		const { mapType, insetHeader, maps } = this.props;
+		const { mapType, insetHeader, router, maps } = this.props;
 
 		const children = () => {
 			switch (mapType) {
 				case 'choropleth':
 					return {
-						text: this.getJSXForChoropleth(),
+						text: router.result.jsx ? router.result.jsx : this.getJSXForChoropleth(),
 						stat: <div className='inset-subheader'>{Number(maps.activeState.shootingsPerMillion).toFixed(2) + " shootings per million"}</div>
 					};
 				case 'proportional':
 					return {
-						text: this.getJSXForProportional(),
+						text: router.result.jsx ? router.result.jsx : this.getJSXForProportional(),
 						stat: <div className='inset-subheader'>{maps.activeState.shootings + " shootings"}</div>
 					};
 				default:
@@ -153,7 +153,7 @@ class MapDescription extends React.Component {
 			transitionLeave={false}
 			component={FirstChild}>
 				<div className='map-description-container'>
-					<div className='inset-header'>{insetHeader}</div>
+					<div className='inset-header'>{router.result.title}</div>
 					<div className='inset-subheader'>By State</div>
 					{children().text}
 					<div className='state-name'>{maps.activeState.stateName}</div>
@@ -169,7 +169,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
 	maps: state.mapReducer,
 	insetHeader: ownProps.insetHeader,
-	mapType: ownProps.mapType
+	mapType: ownProps.mapType,
+	router: state.router
   };
 };
 
