@@ -19,20 +19,20 @@ class Map extends React.Component {
 
 	componentDidMount() {
 
-    // define a new legend - we'll let D3 really take the reins here
-    const { mapType } = this.props;
+    // // define a new legend - we'll let D3 really take the reins here
+    // const { mapType } = this.props;
 
-    // switch on the mapType prop to determine which legend to render
-    switch (mapType) {
-      case 'choropleth':
-        this.generateChoroplethLegend();
-        break;
-      case 'proportional':
-        this.generateProportionalSymbolLegend();
-        break;
-      default:
-        return;
-    }
+    // // switch on the mapType prop to determine which legend to render
+    // switch (mapType) {
+    //   case 'choropleth':
+    //     this.generateChoroplethLegend();
+    //     break;
+    //   case 'proportional':
+    //     this.generateProportionalSymbolLegend();
+    //     break;
+    //   default:
+    //     return;
+    // }
 
   }
   
@@ -76,7 +76,7 @@ class Map extends React.Component {
 
     // set up a scale for the radius, the max will be the max in the dataset
     let radius = d3.scaleSqrt()
-      .domain([0, 372])
+      .domain([0, maxState])
       .range([0, 80]);
 
     // define a similar function to the one in this.generatePath - this actually
@@ -143,54 +143,63 @@ class Map extends React.Component {
 
   generateProportionalSymbolLegend() {
 
-    // locate the svg we will be appending our legend to
-    let svgLegend = d3.select('.map.proportional').append('svg');
+    const { maps } = this.props;
 
-    // start by adding a title
-    svgLegend.append("text")
-    .attr("transform", "translate(825, 360)")
-    .attr("font-size", "12px")
-    .attr("font-family", "HelveticaNeue-Bold, Helvetica, sans-serif")
-    .attr("y", 20)
-    .text("Number Shootings");
+    // for circles, we need to sort the data in descending order
+    // this ensures that smaller circles will render last - on top of larger circles
+    let shootingsArray = _.map(_.orderBy(maps.geoData.objects.states.geometries, ['properties.numShootings'], ['desc']), (feature) => {
+      return feature.properties.numShootings;
+    });
+    
+    // also get the max number of shootings in the dataset - this will
+    // help us set up a d3 scale appropriate for the data
+    let maxState = d3.max(shootingsArray);
+
+    // we'll use d3 to generate quantiles for the legend
+    let quantiles = [0.75, 0.5, 0.1];
+
+    let legendValues = _.map(quantiles, (tick) => {
+      return _.round(d3.quantile(shootingsArray, tick), -1);
+    });
+
+    // check to see if all values are under 10
+    let allUnder10 = _.every(legendValues, (value) => {
+      return value < 10
+    });
+
+    // if so, just render a single circle
+    if (allUnder10) {
+      legendValues = [5];
+    }
 
     // set up a scale for the radii of the circles, using square roots
     // to ensure we are comparing circle propotionally (by area)
     let radius = d3.scaleSqrt()
-      .domain([0, 372])
+      .domain([0, maxState])
       .range([0, 80]);
+      
+    let legendCircles = legendValues.map((value, i) => {
+      return <circle cy={-radius(value)} r={radius(value)} stroke="#B24739" strokeWidth="0.5" fill="none" key={i}/>;
+    });
 
-    // some data to scale the size of the circles
-    let circlesLegendData = [10, 50, 100];
-    let width = 300;
-    let height = 100;
+    let legendLabels = legendValues.map((value, i) => {
 
-    // add the a <g> element to hold the circles
-    let circlesLegend = svgLegend.append("g")
-        .attr("class", "legend-circles")
-        .attr("transform", "translate(875, 475)")
-        .selectAll("g")
-        .data(circlesLegendData)
-        .enter()
-        .append("g");
+      if (value === 0) {
+        return;
+      }
 
-    // append a circle for each entry in the circlesLegendData array
-    circlesLegend.append("circle")
-        .attr("cy", function(d){ return -radius(d); })
-        .attr("r", radius)
-        .attr("fill", "none")
-        .attr("stroke", "#B24739")
-        .attr("stroke-width", "0.5");
-        
-    // finally, add some labels 
-    circlesLegend.append("text")
-        .text(function(d){ return d; })
-        .attr("y", function(d) { return -2 * radius(d); })
-        .attr("dy", "1.3em")
-        .attr("text-anchor", "middle")
-        .attr("fill", "#666")
-        .attr("font-size", "10px")
-        .attr("font-family", "HelveticaNeue-Bold, Helvetica, sans-serif");
+      return <text y={-2 * radius(value)} dy="1.3em" textAnchor="middle" fill="#666" className="legend-label" key={i}>{value}</text>
+    });
+
+    return (
+      <g height="300" width="100" transform="translate(875, 475)">
+        <text transform="translate(-55, 5)" className='legend-title' y="20">Number Shootings</text>
+        <g>
+          {legendCircles}
+          {legendLabels}
+        </g>
+      </g>
+    );
   }
 
   render() {
@@ -208,8 +217,12 @@ class Map extends React.Component {
           let choropleth = this.generatePath(geoPath, data);
           return choropleth;
         case 'proportional':
-          let proportional = this.generateCircle(geoPath, data);
-          return proportional;
+          let map = this.generateCircle(geoPath, data);
+          let legend = this.generateProportionalSymbolLegend();
+          return {
+            map,
+            legend
+          };
         default:
           return;
       }
@@ -221,12 +234,9 @@ class Map extends React.Component {
 			<div className='map-container'>
 	      <svg className={`map ${mapType}`}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
 	          <g>
-	            {paths}
-              {/* if the mapType is proportional, add StateLabels to the circles */}
-              {mapType === 'proportional' ? _.map(data, (feature, i) => {
-                return <StateLabel feature={feature} stateAbbreviation={feature.properties.stateAbbreviation} key={i} />;
-              }) : null}
+	            {paths.map}
 	          </g>
+            {paths.legend}
 	      </svg>
 			</div>
     );
@@ -243,23 +253,6 @@ const mapStateToProps = (state, ownProps) => {
 export default connect(mapStateToProps)(Map);
 
 Map.propTypes = {
+  maps: PropTypes.object.isRequired,
   mapType: PropTypes.string.isRequired
-};
-
-// just use a simple stateless functional component to render the state labels
-const StateLabel = (props) => {
-
-  // get the centroid of the state
-  let centroid = d3.geoPath().centroid(props.feature);
-
-  // translate the labels to be centered in the circle
-  let translate = "translate(" + (centroid[0] - 8) + ", " + (centroid[1] + 2) + ")";
-
-  // return a state label
-  return <text transform={translate} className='state-label'>{props.stateAbbreviation}</text>;
-};
-
-StateLabel.propTypes = {
-  feature: PropTypes.object.isRequired,
-  stateAbbreviation: PropTypes.string.isRequired
 };

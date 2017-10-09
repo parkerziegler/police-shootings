@@ -17,7 +17,7 @@ class State extends React.Component {
   constructor(props) {
     super(props);
 		this.getStateColor = this.getStateColor.bind(this);
-    this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
+    this.onInteractionHandler = this.onInteractionHandler.bind(this);
     this.getJSX = this.getJSX.bind(this);
   }
 
@@ -51,11 +51,11 @@ class State extends React.Component {
     }
 	}
 
-	onMouseEnterHandler(event) {
+	onInteractionHandler(event) {
 
     const { stateName, numShootings, population, dispatch } = this.props;
 
-    // when a user hovers on a state, dispatch an action to set this state
+    // when a user hovers or clicks on a state, dispatch an action to set this state
     // as the activeState in the mapsReducer
 		let state = {
       stateName,
@@ -76,20 +76,29 @@ class State extends React.Component {
         case 'choropleth':
           let fill = this.getStateColor(numShootings / population * 1000000);
         
-          return <path className='states' d={path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onMouseEnterHandler} />;
+          return <path className='states' d={path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onInteractionHandler} />;
         case 'proportional':
-          console.log(i);
-          let translate = geoPath().centroid(feature);
+
+          // get the centroid of the state
+          let centroid = geoPath().centroid(feature);
+    
+          // translate the labels to be centered in the circle
+          let translate = "translate(" + (centroid[0] - 8) + ", " + (centroid[1] + 2) + ")";
+
           return (
-            <CSSTransitionGroup
-              transitionName={`state-transition-${i}`}
-              transitionAppear={true}
-              transitionAppearTimeout={500}
-              transitionEnter={false}
-              transitionLeave={false}
-              component={FirstChild}>
-              <circle className={`states raw state-transition-${i}`} r={radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + translate + ")"} opacity={0.75} onMouseEnter={this.onMouseEnterHandler}/>
-          </CSSTransitionGroup>);
+            <g className='state-container'>
+              <CSSTransitionGroup
+                  transitionName={`state-transition-${i}`}
+                  transitionAppear={true}
+                  transitionAppearTimeout={500}
+                  transitionEnter={false}
+                  transitionLeave={false}
+                  component={FirstChild}>
+                  <circle className={`states raw state-transition-${i}`} r={radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + centroid + ")"} opacity={0.75} onMouseEnter={this.onInteractionHandler} onClick={this.onInteractionHandler} onTouchStart={this.onInteractionHandler} />
+              </CSSTransitionGroup>
+              <text transform={translate} className='state-label' onMouseEnter={this.onInteractionHandler} onClick={this.onInteractionHandler} onTouchStart={this.onInteractionHandler} >{feature.properties.stateAbbreviation}</text>
+            </g>
+          );
         default:
           return;
       }
@@ -130,3 +139,4 @@ export default connect(mapStateToProps)(State);
 //   feature: PropTypes.object.isRequired,
 //   radius: PropTypes.number
 // };
+

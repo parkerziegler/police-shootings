@@ -1,59 +1,36 @@
-$helvetica: 'HelveticaNeue', sans-serif;
-
-$breakpoints: (
-	mobile: 480px,
-	tablet: 768px,
-	desktop: 1024px
-);
-
-$label-font-sizes: (
-	null: 8px,
-	mobile: 10px,
-	tablet: 14px,
-	desktop: 14px
-);
-
-
-@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
-	@each $fs-breakpoint, $fs-font-size in $fs-map {
-		@if $fs-breakpoint == null {
-			font-size: $fs-font-size;
-		}
-		@else {
-			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
-				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint)
-			}
-			@media screen and (min-width: $fs-breakpoint) {
-				font-size: $fs-font-size;
-			}
-		}
-	}
-}
+@import '../../../stylesheets/constants.scss';
 
 .map-container {
+    @include flex-column;
     width: 70%;
-    display: flex;
-    flex-direction: column;
 
     .map {
-      flex: 0 1 auto;
+        overflow: visible;
 
-        .states {
-            stroke: #FFFFFF;
-            stroke-width: 0.25px;
-        }
+        .state-container {
 
-        .states:hover {
-            opacity: 0.75;
-        }
+            &:hover {
+                
+                .states {
+                    opacity: 0.75;
+                }
 
-        .states.raw:hover {
-            opacity: 0.5;
-        }
+                .states.raw {
+                    opacity: 0.5;
+                }
+            }
+            
+            .states {
+                stroke: #FFFFFF;
+                stroke-width: 0.25px;
+            }
 
-        .state-label {
-            font-family: $helvetica;
-            @include font-size($label-font-sizes);
+            .state-label {
+                @include font-size($label-font-sizes);
+                font-family: $helvetica;
+                cursor: default;
+            }
+
         }
     }
 }
@@ -68,5 +45,13 @@ $label-font-sizes: (
         fill-opacity: 1;
         transition: fill-opacity $i * 50ms ease-in 100ms;
     }
+}
+
+.legend-title {
+    font: 700 12px $helvetica;
+}
+
+.legend-label {
+    font: 10px $helvetica;
 }
   
