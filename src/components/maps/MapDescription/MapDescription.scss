@@ -6,6 +6,7 @@
     height: auto;
     padding: 10px 10px 10px 10px;
     text-align: left;
+    flex: 0 0 auto;
 
     .inset-header {
         @include font-size($font-sizes);
@@ -43,4 +44,13 @@
     .map-description-container {
         width: 95%;
     }
+}
+
+.description-transition-appear {
+    opacity: 0;
+}
+
+.description-transition-appear.description-transition-appear-active {
+    opacity: 1;
+    transition: opacity 2s ease-in 1s;
 }

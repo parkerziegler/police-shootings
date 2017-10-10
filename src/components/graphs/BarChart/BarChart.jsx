@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { VictoryChart, VictoryBar, VictoryAxis, VictoryTheme } from 'victory';
+import { VictoryChart, VictoryBar, VictoryAxis } from 'victory';
 import * as _ from 'lodash';
 import moment from 'moment';
 

@@ -184,7 +184,7 @@ class Map extends React.Component {
     let legendLabels = legendValues.map((value, i) => {
 
       if (value === 0) {
-        return;
+        return [];
       }
 
       return <text y={-2 * radius(value)} dy="1.3em" textAnchor="middle" fill="#666" className="legend-label" key={i}>{value}</text>

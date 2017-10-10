@@ -31,11 +31,12 @@ body {
 		width: 100%;
 	
 		.page-content {
-			display: flex;
+			@include flex-column;
 			justify-content: center;
 			align-items: center;
 			max-height: 100%;
 			max-width: 100%;
+			overflow: auto;
 		}
 	}
 }

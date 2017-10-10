@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from 'redux-saga/effects';
+import { put, takeLatest, select } from 'redux-saga/effects';
 import * as _ from 'lodash';
 import * as actionTypes from '../constants/action-types';
 import * as stateNames from '../assets/state-names';

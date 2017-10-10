@@ -8,7 +8,7 @@ import BarChart from './components/graphs/BarChart/BarChart';
 import Chevron from './components/navigation/Chevron/Chevron';
 import { callAPI } from './actions/mapActions';
 import PropTypes from 'prop-types';
-import { Link, Fragment } from 'redux-little-router';
+import { Fragment } from 'redux-little-router';
 import * as _ from 'lodash';
 
 class App extends Component {
@@ -171,29 +171,31 @@ class App extends Component {
           <Chevron className='chevron-link vertical' path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z" href={previousChildRoute} visible={previousChildRoute !== '/'} />
           <div className='page-container'>
             <Chevron className='chevron-link horizontal' path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" href={previousMainRoute} visible={previousMainRoute !== '/' || router.route === '/total-shootings'} />
-            <Fragment forRoute={'/'}>
-              <Home />
-            </Fragment>
-            <Fragment forRoute={'/total-shootings'}>
-              <div className='raw'>
-                <Map mapType='proportional' />
-                <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
-              </div>
-            </Fragment>
-            <Fragment forRoute={'/total-shootings/black'}></Fragment>
-            <Fragment forRoute={'/total-shootings/latino'}></Fragment>
-            <Fragment forRoute={'/total-shootings/asian'}></Fragment>
-            <Fragment forRoute={'/total-shootings/nativeamerican'}></Fragment>
-            <Fragment forRoute={'/total-shootings/white'}></Fragment>
-            <Fragment forRoute={'/percapita'}>
-              <div className='percapita'>
-                <Map mapType='choropleth' />
-                <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
-              </div>
-            </Fragment>
-            <Fragment forRoute={'/shootingsbydate'}>
-                <BarChart />
-            </Fragment>
+            <div className='page-content'>
+              <Fragment forRoute={'/'}>
+                <Home />
+              </Fragment>
+              <Fragment forRoute={'/total-shootings'}>
+                <div className='raw'>
+                  <Map mapType='proportional' />
+                  <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
+                </div>
+              </Fragment>
+              <Fragment forRoute={'/total-shootings/black'}></Fragment>
+              <Fragment forRoute={'/total-shootings/latino'}></Fragment>
+              <Fragment forRoute={'/total-shootings/asian'}></Fragment>
+              <Fragment forRoute={'/total-shootings/nativeamerican'}></Fragment>
+              <Fragment forRoute={'/total-shootings/white'}></Fragment>
+              <Fragment forRoute={'/percapita'}>
+                <div className='percapita'>
+                  <Map mapType='choropleth' />
+                  <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
+                </div>
+              </Fragment>
+              <Fragment forRoute={'/shootingsbydate'}>
+                  <BarChart />
+              </Fragment>
+            </div>
             <Chevron className='chevron-link horizontal' path="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z" href={nextMainRoute} visible={nextMainRoute !== '/'} />
           </div>
           <Chevron className='chevron-link vertical' path="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z" href={nextChildRoute} visible={nextChildRoute !== '/'} nextSlide={router.routes[nextChildRoute].title}/>

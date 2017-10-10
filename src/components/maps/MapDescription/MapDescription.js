@@ -125,7 +125,7 @@ class MapDescription extends React.Component {
 
 	render() {
 
-		const { mapType, insetHeader, router, maps } = this.props;
+		const { mapType, router, maps } = this.props;
 
 		const children = () => {
 			switch (mapType) {

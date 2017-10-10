@@ -141,12 +141,12 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(mapStateToProps)(State);
 
-// State.propTypes = {
-//   stateName: PropTypes.string.isRequired,
-//   numShootings: PropTypes.number.isRequired,
-//   population: PropTypes.number.isRequired,
-//   path: PropTypes.string.isRequired,
-//   feature: PropTypes.object.isRequired,
-//   radius: PropTypes.number
-// };
-
+State.propTypes = {
+  maps: PropTypes.object.isRequired,
+  stateName: PropTypes.string.isRequired,
+  numShootings: PropTypes.number.isRequired,
+  population: PropTypes.number.isRequired,
+  path: PropTypes.string.isRequired,
+  feature: PropTypes.object.isRequired,
+  radius: PropTypes.number
+};
