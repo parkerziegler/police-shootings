@@ -36,7 +36,8 @@ body {
 			align-items: center;
 			max-height: 100%;
 			max-width: 100%;
-			overflow: auto;
+			overflow-y: auto;
+			overflow-x: hidden;
 		}
 	}
 }
