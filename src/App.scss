@@ -34,8 +34,7 @@ body {
 			@include flex-column;
 			justify-content: center;
 			align-items: center;
-			max-height: 100%;
-			max-width: 100%;
+			height: 85%;
 			overflow-y: auto;
 			overflow-x: hidden;
 		}

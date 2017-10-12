@@ -34,9 +34,9 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      max-height: 100%;
-      max-width: 100%;
-      overflow: auto; }
+      height: 85%;
+      overflow-y: auto;
+      overflow-x: hidden; }
 
 .percapita,
 .raw {

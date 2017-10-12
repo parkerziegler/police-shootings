@@ -1,17 +1,45 @@
 @import '../../../stylesheets/_constants';
 
+$chevron-sizes: (
+	null: 30px,
+	mobile: 30px,
+	tablet: 40px,
+	desktop: 40px
+);
+
+@mixin chevron-size($svg-map, $svg-breakpoints: $breakpoints) {
+	@each $svg-breakpoint, $svg-size in $svg-map {
+		@if $svg-breakpoint == null {
+            height: $svg-size;
+            width: $svg-size;
+		}
+		@else {
+			@if map-has-key($svg-breakpoints, $svg-breakpoint) {
+				$svg-breakpoint: map-get($svg-breakpoints, $svg-breakpoint)
+			}
+			@media screen and (min-width: $svg-breakpoint) {
+				height: $svg-size;
+                width: $svg-size;
+			}
+		}
+	}
+}
+
 .chevron-link {
     text-decoration: none;
+    flex: 0 0 auto;
 }
 
 .chevron-link.horizontal {
-   min-width: 5%;
-    flex: 0 0 auto;
+    @include chevron-size($chevron-sizes, $breakpoints);
 }
 
-.chevron-link.vertical {
+.chevron-link.bottom {
+    min-height: 10%;
+}
+
+.chevron-link.top {
     min-height: 5%;
-    flex: 0 0 auto;
 }
 
 .chevron {
@@ -28,6 +56,10 @@
         div {
             opacity: 0.5;
         }
+    }
+
+    svg {
+        @include chevron-size($chevron-sizes, $breakpoints);
     }
 
     .slide-title {

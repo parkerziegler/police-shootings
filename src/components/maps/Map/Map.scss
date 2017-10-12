@@ -11,27 +11,27 @@
         .state-container {
 
             &:hover {
-                
-                .states {
-                    opacity: 0.75;
-                }
 
                 .states.raw {
                     opacity: 0.5;
                 }
             }
-            
-            .states {
-                stroke: #FFFFFF;
-                stroke-width: 0.25px;
-            }
 
-            .state-label {
-                @include font-size($label-font-sizes);
-                font-family: $helvetica;
-                cursor: default;
-            }
+        }
 
+        .states {
+            stroke: #FFFFFF;
+            stroke-width: 0.25px;
+
+            &:hover {
+                fill-opacity: 0.75;
+            }
+        }
+
+        .state-label {
+            @include font-size($label-font-sizes);
+            font-family: $helvetica;
+            cursor: default;
         }
     }
 }

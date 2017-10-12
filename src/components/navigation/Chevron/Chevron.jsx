@@ -13,7 +13,7 @@ const Chevron = (props) => {
                 {props.nextSlide && props.visible ?
                 <div className='slide-title'>{props.nextSlide}</div> : null}
                 {props.visible ?
-                <svg width="40" height="40" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#6C7680" d={props.path}/>
                 </svg> : null}
                 

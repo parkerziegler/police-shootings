@@ -168,7 +168,7 @@ class App extends Component {
       <div></div> :
       <Fragment forRoute={'/'}>
         <div className='layout'>
-          <Chevron className='chevron-link vertical' path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z" href={previousChildRoute} visible={previousChildRoute !== '/'} />
+          <Chevron className='chevron-link top' path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z" href={previousChildRoute} visible={previousChildRoute !== '/'} />
           <div className='page-container'>
             <Chevron className='chevron-link horizontal' path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" href={previousMainRoute} visible={previousMainRoute !== '/' || router.route === '/total-shootings'} />
             <div className='page-content'>
@@ -198,7 +198,7 @@ class App extends Component {
             </div>
             <Chevron className='chevron-link horizontal' path="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z" href={nextMainRoute} visible={nextMainRoute !== '/'} />
           </div>
-          <Chevron className='chevron-link vertical' path="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z" href={nextChildRoute} visible={nextChildRoute !== '/'} nextSlide={router.routes[nextChildRoute].title}/>
+          <Chevron className='chevron-link bottom' path="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z" href={nextChildRoute} visible={nextChildRoute !== '/'} nextSlide={router.routes[nextChildRoute].title}/>
         </div>
       </Fragment>;
 
