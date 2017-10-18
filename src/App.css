@@ -36,7 +36,8 @@ body {
       align-items: center;
       height: 95%;
       overflow-y: auto;
-      overflow-x: hidden; }
+      overflow-x: hidden;
+      width: 100%; }
 
 .percapita,
 .raw {
