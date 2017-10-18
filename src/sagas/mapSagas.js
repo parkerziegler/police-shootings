@@ -16,7 +16,7 @@ const axiosCallAPI = () => {
     return axios.all([
         axios.get("https://d3js.org/us-10m.v1.json"),
         axios.get('https://thecountedapi.com/api/counted'),
-        axios.get('https://api.census.gov/data/2016/pep/population?get=POP,GEONAME&for=state:*&key=' + CENSUS_API_KEY),
+        axios.get("https://api.census.gov/data/2015/acs5?get=B02001_003E,B03002_012E,B02001_005E,B02001_004E,B02001_002E,B01003_001E&for=state:*&key=" + CENSUS_API_KEY)
     ]);
 };
 
@@ -33,6 +33,19 @@ function* callAPI(action) {
     
         // group the shootings data by state
         let dataByState = _.groupBy(response[1].data, 'state');
+
+        let populationStats = _.drop(response[2].data).map((state) => {
+            
+            return {
+                id: _.parseInt(state[state.length -1]),
+                populationBlack: _.parseInt(state[0]),
+                populationHispanic: _.parseInt(state[1]),
+                populationAsian: _.parseInt(state[2]),
+                populationAIAN: _.parseInt(state[3]),
+                populationWhite: _.parseInt(state[4]),
+                population: _.parseInt(state[5])
+            };
+        });
         
         // next, modify the topojson data and join the attributes from the shootings data
         // we can just modify the existing object in place
@@ -45,26 +58,31 @@ function* callAPI(action) {
     
             // once we have a match state, use it to obtain population data from the Census
             let matchShootings = dataByState[matchState.code];
-    
-            // some lodash trickery to make the join and deal with the schema design
-            // of the Census API
-            let populationData = _.invert(_.fromPairs(response[2].data));
-            let matchPopulation = _.parseInt(populationData[matchState.name]);
+
+            let matchPopulation = _.find(populationStats, (item) => {
+                return item.id === matchState.id;
+            });
     
             // finally, recompose the state object
-            state.properties = {};
-            state.properties.stateAbbreviation = matchState.code;
-            state.properties.stateName = matchState.name;
-            state.properties.numShootings = matchShootings.length;
-            state.properties.population = matchPopulation;
-            state.properties.shootingsPerCapita = matchShootings.length / matchPopulation;
+            state.properties = {
+                stateAbbreviation: matchState.code,
+                stateName: matchState.name,
+                numShootings: matchShootings.length,
+                population: matchPopulation.population,
+                shootingsPerCapita: matchShootings.length / matchPopulation.population,
+                populationBlack: matchPopulation.populationBlack,
+                populationHispanic: matchPopulation.populationHispanic,
+                populationAsian: matchPopulation.populationAsian,
+                populationAIAN: matchPopulation.populationAIAN,
+                populationWhite: matchPopulation.populationWhite
+            };
     
         });
     
         // once processing finishes, send the newly altered topojson data from d3 off to redux
         // also send off the Census data for easy access
         yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: response[0].data });
-        yield put({ type: actionTypes.SEND_CENSUS_DATA_TO_REDUCER, censusData: response[2].data });
+        yield put({ type: actionTypes.SEND_CENSUS_DATA_TO_REDUCER, censusData: populationStats });
 
     } catch (error) {
         

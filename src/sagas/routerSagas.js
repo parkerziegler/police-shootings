@@ -39,40 +39,33 @@ const filterShootingsData = (data, filterKey = null, filterValue = null) => {
     }
 };
 
-// a function for joining the shootingsData, geoData, and censusData together
+// a function for joining the shootingsData and geoData together
 // this function get run when we change routes and need to recompose
 // our topojson object in place
-const joinShootingsDataToGeoData = (shootingsData, geoData, censusData) => {
+const joinShootingsDataToGeoData = (shootingsData, geoData) => {
 
     if (!geoData) {
         return;
     } else {
         let dataByState = _.groupBy(shootingsData, 'state');
         
-        _.map(geoData.objects.states.geometries, (state) => {
+         _.map(geoData.objects.states.geometries, (state) => {
     
             // parse the id as an int so we can join it to the state data lookup we have
             // stored in constants
             state.id = _.parseInt(state.id);
             let matchState = _.find(stateNames, ['id', state.id]);
     
-            // once we have a match state, use it to obtain population data from the Census
+            // once we have a match state, use it to obtain
+            // the number of shootings
             let matchShootings = dataByState[matchState.code];
             let numShootings = matchShootings ? matchShootings.length : 0;
     
-            // some lodash trickery to make the join
-            let populationData = _.invert(_.fromPairs(censusData));
-            let matchPopulation = _.parseInt(populationData[matchState.name]);
-    
             // finally, recompose the object
-            state.properties = {};
-            state.properties.stateAbbreviation = matchState.code;
-            state.properties.stateName = matchState.name;
-            state.properties.numShootings = numShootings;
-            state.properties.population = matchPopulation;
-            state.properties.shootingsPerCapita = numShootings / matchPopulation;
-    
-            return state;
+            state.properties = {
+                ...state.properties,
+                numShootings
+            };
         });
     
         return geoData;
@@ -86,19 +79,27 @@ function* handleLocationChanged(action) {
 
         // read the shootings data from the redux store
         const reduxStore = yield select();
-        let shootingsData = reduxStore.mapReducer.shootingsData;
 
-        // obtain the proper data filter based on the route
-        let { filterKey, filterValue } = shootingsFilters[action.payload.route];
+        // check if this route needs data
+        let router = reduxStore.router;
 
-        // filter the shootings data
-        let filteredData = filterShootingsData(shootingsData, filterKey, filterValue);
+        if (router.routes[action.payload.route].index === 1 || router.routes[action.payload.route].index === 2 || (router.routes[action.payload.route].childIndex >= 0 && router.routes[action.payload.route].childIndex <= 4)) {
 
-        // join it to the topojson data
-        let geoData = joinShootingsDataToGeoData(filteredData, reduxStore.mapReducer.geoData, reduxStore.mapReducer.censusData);
+            let shootingsData = reduxStore.mapReducer.shootingsData;
+
+            // obtain the proper data filter based on the route
+            let { filterKey, filterValue } = shootingsFilters[action.payload.route];
+
+            // filter the shootings data
+            let filteredData = filterShootingsData(shootingsData, filterKey, filterValue);
+
+            // join it to the topojson data
+            let geoData = joinShootingsDataToGeoData(filteredData, reduxStore.mapReducer.geoData, reduxStore.mapReducer.censusData);
+            
+            // send this data to redux so our Map component can read from it
+            yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: geoData });
+        }
         
-        // send this data to redux so our Map component can read from it
-        yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: geoData });
         
     } catch (error) {
 
