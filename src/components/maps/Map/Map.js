@@ -47,7 +47,7 @@ class Map extends React.Component {
         let path = geoPath(feature);
 
         // return a state component
-        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} i={i} key={i} />;
+        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} feature={feature} i={i} key={i} />;
 
       });
       
