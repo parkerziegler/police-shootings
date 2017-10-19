@@ -106,7 +106,7 @@ class App extends Component {
           return '/';
         }
 
-        return route.parent.title === currentRoute.title && route.childIndex === 0;
+        return route.parent.title === currentRoute.title && (route.childIndex === 0 || route.childIndex === 5);
       });
 
       // there is no previous child route for the parent

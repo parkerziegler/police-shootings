@@ -55,7 +55,34 @@ const routes = {
   },
   '/percapita': {
     title: 'Shootings Per Million By State',
-    index: 2
+    index: 2,
+    hasChildren: true,
+    '/black': {
+      title: 'Shootings Per Million By Race African American',
+      childIndex: 5,
+      hasNextSibling: true    
+    },
+    '/latino': {
+      title: 'Shootings Per Million By Race Latino',
+      childIndex: 6,
+      hasNextSibling: true
+    },
+    '/asian': {
+      title: 'Shootings Per Million By Race Asian',
+      childIndex: 7,
+      hasNextSibling: true
+    },
+    '/nativeamerican': {
+      title: 'Shootings Per Million By Race Native American',
+      childIndex: 8,
+      hasNextSibling: true
+    },
+    '/white': {
+      title: 'Shootings Per Million By Race White',
+      childIndex: 9,
+      hasNextSibling: false,
+      isLastChildRoute: true
+    }
   },
   '/shootingsbydate': {
     title: 'Shootings By Date',
