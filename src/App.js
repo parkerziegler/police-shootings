@@ -98,7 +98,7 @@ class App extends Component {
     if (currentRoute.hasChildren) {
 
       // the next child route will be the first child
-      // and will its parent will have the same title as
+      // and its parent will have the same title as
       // the current route
       nextChildRoute = _.findKey(router.routes, (route) => {
 
@@ -106,7 +106,7 @@ class App extends Component {
           return '/';
         }
 
-        return route.parent.title === currentRoute.title && (route.childIndex === 0 || route.childIndex === 5);
+        return route.parent.title === currentRoute.title && route.childIndex === 0;
       });
 
       // there is no previous child route for the parent
@@ -120,11 +120,11 @@ class App extends Component {
 
       nextChildRoute = _.findKey(router.routes, (route) => {
 
-        return route.childIndex === currentChildRouteIndex + 1;
+        return route.parent.title === currentRoute.parent.title && route.childIndex === currentChildRouteIndex + 1;
       });
 
       previousChildRoute = currentChildRouteIndex === 0 ? currentRoute.parent.route : _.findKey(router.routes, (route) => {
-        return route.childIndex === currentChildRouteIndex - 1;
+        return route.parent.title === currentRoute.parent.title && route.childIndex === currentChildRouteIndex - 1;
       });
 
     } else if (currentRoute.isLastChildRoute) {
@@ -137,7 +137,7 @@ class App extends Component {
       // add a check to see if the previous route is the parent
       // if not, get the previous child route
       previousChildRoute = currentChildRouteIndex === 0 ? currentRoute.parent.route : _.findKey(router.routes, (route) => {
-        return route.childIndex === currentChildRouteIndex - 1;
+        return route.parent.title === currentRoute.parent.title && route.childIndex === currentChildRouteIndex - 1;
       });
 
     } else {

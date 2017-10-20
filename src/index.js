@@ -59,27 +59,27 @@ const routes = {
     hasChildren: true,
     '/black': {
       title: 'Shootings Per Million By Race African American',
-      childIndex: 5,
+      childIndex: 0,
       hasNextSibling: true    
     },
     '/latino': {
       title: 'Shootings Per Million By Race Latino',
-      childIndex: 6,
+      childIndex: 1,
       hasNextSibling: true
     },
     '/asian': {
       title: 'Shootings Per Million By Race Asian',
-      childIndex: 7,
+      childIndex: 2,
       hasNextSibling: true
     },
     '/nativeamerican': {
       title: 'Shootings Per Million By Race Native American',
-      childIndex: 8,
+      childIndex: 3,
       hasNextSibling: true
     },
     '/white': {
       title: 'Shootings Per Million By Race White',
-      childIndex: 9,
+      childIndex: 4,
       hasNextSibling: false,
       isLastChildRoute: true
     }
