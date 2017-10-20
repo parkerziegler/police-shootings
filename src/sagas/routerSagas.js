@@ -19,6 +19,11 @@ const shootingsFilters = {
     '/total-shootings/nativeamerican': { filterKey: 'race', filterValue: 'Native American'},
     '/total-shootings/white': { filterKey: 'race', filterValue: 'White' },
     '/percapita': { filterKey: null, filterValue: null },
+    '/percapita/black': { filterKey: 'race', filterValue: 'Black' },
+    '/percapita/latino': { filterKey: 'race', filterValue: 'Hispanic/Latino' },
+    '/percapita/asian': { filterKey: 'race', filterValue: 'Asian/Pacific Islander' },
+    '/percapita/nativeamerican': { filterKey: 'race', filterValue: 'Native American'},
+    '/percapita/white': { filterKey: 'race', filterValue: 'White' },
     '/shootingsbydate': { filterKey: null, filterValue: null }
 };
 
@@ -94,7 +99,7 @@ function* handleLocationChanged(action) {
             let filteredData = filterShootingsData(shootingsData, filterKey, filterValue);
 
             // join it to the topojson data
-            let geoData = joinShootingsDataToGeoData(filteredData, reduxStore.mapReducer.geoData, reduxStore.mapReducer.censusData);
+            let geoData = joinShootingsDataToGeoData(filteredData, reduxStore.mapReducer.geoData);
             
             // send this data to redux so our Map component can read from it
             yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: geoData });
