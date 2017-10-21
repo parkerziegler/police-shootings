@@ -43,7 +43,7 @@ function* callAPI(action) {
                 populationAsian: _.parseInt(state[2]),
                 populationAIAN: _.parseInt(state[3]),
                 populationWhite: _.parseInt(state[4]),
-                population: _.parseInt(state[5])
+                populationTotal: _.parseInt(state[5])
             };
         });
         
@@ -68,8 +68,9 @@ function* callAPI(action) {
                 stateAbbreviation: matchState.code,
                 stateName: matchState.name,
                 numShootings: matchShootings.length,
-                population: matchPopulation.population,
-                shootingsPerCapita: matchShootings.length / matchPopulation.population,
+                population: matchPopulation.populationTotal,
+                populationTotal: matchPopulation.populationTotal,
+                shootingsPerCapita: matchShootings.length / matchPopulation.populationTotal,
                 populationBlack: matchPopulation.populationBlack,
                 populationHispanic: matchPopulation.populationHispanic,
                 populationAsian: matchPopulation.populationAsian,

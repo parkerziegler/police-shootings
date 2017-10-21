@@ -11,20 +11,20 @@ export function* watchLocationChanged() {
 // a lookup defining which filters to apply on the data when a particular
 // route is hit
 const shootingsFilters = {
-    '/': { filterKey: null, filterValue: null },
-    '/total-shootings': { filterKey: null, filterValue: null },
-    '/total-shootings/black': { filterKey: 'race', filterValue: 'Black' },
-    '/total-shootings/latino': { filterKey: 'race', filterValue: 'Hispanic/Latino' },
-    '/total-shootings/asian': { filterKey: 'race', filterValue: 'Asian/Pacific Islander' },
-    '/total-shootings/nativeamerican': { filterKey: 'race', filterValue: 'Native American'},
-    '/total-shootings/white': { filterKey: 'race', filterValue: 'White' },
-    '/percapita': { filterKey: null, filterValue: null },
-    '/percapita/black': { filterKey: 'race', filterValue: 'Black' },
-    '/percapita/latino': { filterKey: 'race', filterValue: 'Hispanic/Latino' },
-    '/percapita/asian': { filterKey: 'race', filterValue: 'Asian/Pacific Islander' },
-    '/percapita/nativeamerican': { filterKey: 'race', filterValue: 'Native American'},
-    '/percapita/white': { filterKey: 'race', filterValue: 'White' },
-    '/shootingsbydate': { filterKey: null, filterValue: null }
+    '/': { filterKey: null, filterValue: null, populationValue: 'population' },
+    '/total-shootings': { filterKey: null, filterValue: null, populationValue: 'population' },
+    '/total-shootings/black': { filterKey: 'race', filterValue: 'Black', populationValue: 'population' },
+    '/total-shootings/latino': { filterKey: 'race', filterValue: 'Hispanic/Latino', populationValue: 'population' },
+    '/total-shootings/asian': { filterKey: 'race', filterValue: 'Asian/Pacific Islander', populationValue: 'population' },
+    '/total-shootings/nativeamerican': { filterKey: 'race', filterValue: 'Native American', populationValue: 'population'},
+    '/total-shootings/white': { filterKey: 'race', filterValue: 'White', populationValue: 'population' },
+    '/percapita': { filterKey: null, filterValue: null, populationValue: 'populationTotal' },
+    '/percapita/black': { filterKey: 'race', filterValue: 'Black', populationValue: 'populationBlack' },
+    '/percapita/latino': { filterKey: 'race', filterValue: 'Hispanic/Latino', populationValue: 'populationHispanic' },
+    '/percapita/asian': { filterKey: 'race', filterValue: 'Asian/Pacific Islander', populationValue: 'populationAsian' },
+    '/percapita/nativeamerican': { filterKey: 'race', filterValue: 'Native American', populationValue: 'populationAIAN' },
+    '/percapita/white': { filterKey: 'race', filterValue: 'White', populationValue: 'populationWhite' },
+    '/shootingsbydate': { filterKey: null, filterValue: null, populationValue: 'population' }
 };
 
 // a function for filtering the shootings data
@@ -47,7 +47,7 @@ const filterShootingsData = (data, filterKey = null, filterValue = null) => {
 // a function for joining the shootingsData and geoData together
 // this function get run when we change routes and need to recompose
 // our topojson object in place
-const joinShootingsDataToGeoData = (shootingsData, geoData) => {
+const joinShootingsDataToGeoData = (shootingsData, geoData, populationFilter) => {
 
     if (!geoData) {
         return;
@@ -65,11 +65,13 @@ const joinShootingsDataToGeoData = (shootingsData, geoData) => {
             // the number of shootings
             let matchShootings = dataByState[matchState.code];
             let numShootings = matchShootings ? matchShootings.length : 0;
+            let population = state.properties[populationFilter];
     
             // finally, recompose the object
             state.properties = {
                 ...state.properties,
-                numShootings
+                numShootings,
+                population
             };
         });
     
@@ -93,13 +95,13 @@ function* handleLocationChanged(action) {
             let shootingsData = reduxStore.mapReducer.shootingsData;
 
             // obtain the proper data filter based on the route
-            let { filterKey, filterValue } = shootingsFilters[action.payload.route];
+            let { filterKey, filterValue, populationValue } = shootingsFilters[action.payload.route];
 
             // filter the shootings data
             let filteredData = filterShootingsData(shootingsData, filterKey, filterValue);
 
             // join it to the topojson data
-            let geoData = joinShootingsDataToGeoData(filteredData, reduxStore.mapReducer.geoData);
+            let geoData = joinShootingsDataToGeoData(filteredData, reduxStore.mapReducer.geoData, populationValue);
             
             // send this data to redux so our Map component can read from it
             yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: geoData });
