@@ -95,48 +95,84 @@ class Map extends React.Component {
 
   generateChoroplethLegend() {
 
-    // locate the svg that we'll render our legend into
-    let svgLegend = d3.select('.map.choropleth').append('svg');
+    // // locate the svg that we'll render our legend into
+    // let svgLegend = d3.select('.map.choropleth').append('svg');
 
     // now create a legend
     // start by storing all color values in an array
     let colorLegend = ["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)"];
     
-    // append the rectangles we'll use for our choropleth
-    // assign the color based on their index in colorLegend
-    svgLegend.append("g")
-        .attr("transform", "translate(500, 525)")
-        .selectAll("rect")
-        .data(colorLegend)
-        .enter()
-        .append("rect")
-        .attr("fill", function(d, i){ return colorLegend[i]; })
-        .attr("x", function(d, i){ return (i * 30); })
-        .attr("y", 30)
-        .attr("width", 30)
-        .attr("height", 20);
+    // // append the rectangles we'll use for our choropleth
+    // // assign the color based on their index in colorLegend
+    // svgLegend.append("g")
+    //     .attr("transform", "translate(500, 525)")
+    //     .selectAll("rect")
+    //     .data(colorLegend)
+    //     .enter()
+    //     .append("rect")
+    //     .attr("fill", function(d, i){ return colorLegend[i]; })
+    //     .attr("x", function(d, i){ return (i * 30); })
+    //     .attr("y", 30)
+    //     .attr("width", 30)
+    //     .attr("height", 20);
 
-    // add a title to the legend
-    svgLegend.append("text")
-      .attr("transform", "translate(500, 525)")
-      .attr("font-size", "12px")
-      .attr("font-family", "HelveticaNeue-Bold, Helvetica, sans-serif")
-      .attr("y", 20)
-      .text("Shootings Per Million");
+    // // add a title to the legend
+    // svgLegend.append("text")
+    //   .attr("transform", "translate(500, 525)")
+    //   .attr("font-size", "12px")
+    //   .attr("font-family", "HelveticaNeue-Bold, Helvetica, sans-serif")
+    //   .attr("y", 20)
+    //   .text("Shootings Per Million");
 
-    // add labels to the legend
-    let labelsLegend = ["0-1", "1-3", "3-5", "5-7", "7-10", "10-12", "12-15", ">15"];
-    svgLegend.append("g")
-      .attr("transform", "translate(500, 525)")
-      .selectAll("text")
-      .data(labelsLegend)
-      .enter()
-      .append("text")
-      .attr("font-size", "10px")
-      .attr("font-family", "HelveticaNeue-Light, Helvetica, sans-serif")
-      .attr("x", function(d, i) { return (i * 30); })
-      .attr("y", 60)
-      .text(function(d) { return d; });
+    // // add labels to the legend
+    // let labelsLegend = ["0-1", "1-3", "3-5", "5-7", "7-10", "10-12", "12-15", ">15"];
+    // svgLegend.append("g")
+    //   .attr("transform", "translate(500, 525)")
+    //   .selectAll("text")
+    //   .data(labelsLegend)
+    //   .enter()
+    //   .append("text")
+    //   .attr("font-size", "10px")
+    //   .attr("font-family", "HelveticaNeue-Light, Helvetica, sans-serif")
+    //   .attr("x", function(d, i) { return (i * 30); })
+    //   .attr("y", 60)
+    //   .text(function(d) { return d; });
+
+    // destructure props
+    const { maps } = this.props;
+
+    // for choropleth, we'll want to generate a set of rects
+    // map over our data obtain the shootings per million of each
+    let sorted = _.sortBy(maps.geoData.objects.states.geometries, (feature) => {
+      return feature.properties.numShootings / feature.properties.population * 1000000;
+    });
+
+    let shootingsArray = _.map(sorted, (feature) => {
+      return feature.properties.numShootings / feature.properties.population * 1000000;
+    });
+
+    let legendValues = d3.ticks(d3.min(shootingsArray), d3.max(shootingsArray), 6);
+
+    let legendRects = [];
+    let legendTexts = [];
+
+    legendValues.forEach((value, i) => {
+      
+      let rect = <rect fill={colorLegend[i]} x={i * 30} y={30} width={30} height={20} key={`rect-${i}`}/>;
+
+      let text = <text fontSize="10px" fontFamily="HelveticaNeue-Light, Helvetica, sans-serif" x={i * 30} y={60} key={`text-${i}`}>{value}</text>;
+
+      legendRects.push(rect);
+      legendTexts.push(text);
+    });
+    
+
+    return (
+      <g transform="translate(500, 525)">
+        {legendRects}
+        {legendTexts}
+      </g>
+    );
 
   }
 
@@ -213,15 +249,19 @@ class Map extends React.Component {
     const generatePaths = () => {
 
       let map;
+      let legend;
+
       switch (mapType) {
         case 'choropleth':
           map = this.generatePath(geoPath, data);
+          legend = this.generateChoroplethLegend();
           return {
-            map
+            map,
+            legend
           };
         case 'proportional':
           map = this.generateCircle(geoPath, data);
-          let legend = this.generateProportionalSymbolLegend();
+          legend = this.generateProportionalSymbolLegend();
           return {
             map,
             legend
