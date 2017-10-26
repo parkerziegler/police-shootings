@@ -53,3 +53,11 @@ export const sendCensusDataToReducer = (censusData) => {
 		censusData
 	};
 };
+
+export const setChoroplethBreaks = (choroplethBreaks) => {
+
+	return {
+		type: actionTypes.SET_CHOROPLETH_BREAKS,
+		choroplethBreaks
+	};
+};

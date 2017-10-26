@@ -4,6 +4,7 @@ import './Map.css';
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
 import * as _ from 'lodash';
+import * as actions from '../../../actions/mapActions';
 import State from '../State/State';
 import PropTypes from 'prop-types';
 
@@ -16,28 +17,20 @@ class Map extends React.Component {
     this.generateChoroplethLegend = this.generateChoroplethLegend.bind(this);
     this.generateProportionalSymbolLegend = this.generateProportionalSymbolLegend.bind(this);
   }
-
-	componentDidMount() {
-
-    // define a new legend - we'll let D3 really take the reins here
-    const { mapType } = this.props;
-
-    // switch on the mapType prop to determine which legend to render
-    switch (mapType) {
-      case 'choropleth':
-        this.generateChoroplethLegend();
-        break;
-      case 'proportional':
-        return;
-      default:
-        return;
-    }
-
-  }
   
   generatePath(geoPath, data) {
 
-    const { mapType } = this.props;
+    const { mapType, maps } = this.props;
+
+    let sorted = _.sortBy(maps.geoData.objects.states.geometries, (feature) => {
+      return feature.properties.numShootings / feature.properties.population * 1000000;
+    });
+
+    let shootingsArray = _.map(sorted, (feature) => {
+      return feature.properties.numShootings / feature.properties.population * 1000000;
+    });
+
+    let choroplethBreaks = this.getChoroplethBreaks(shootingsArray);
 
     // iterate over the topojson data
     const featurePath = () => {
@@ -46,8 +39,22 @@ class Map extends React.Component {
         // render an svg path using the geographic path generator
         let path = geoPath(feature);
 
+        let shootingsPerCapita = feature.properties.numShootings / feature.properties.population * 1000000;
+
+        let breaks = _.keys(choroplethBreaks)
+
+        let fill;
+        
+        _.forEach(breaks, (key, i) => {
+
+          if (_.parseInt(key, 10) < shootingsPerCapita && shootingsPerCapita < _.parseInt(breaks[i + 1], 10)) {
+
+            fill = choroplethBreaks[key];
+          }
+        });
+
         // return a state component
-        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} feature={feature} i={i} key={i} />;
+        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} feature={feature} i={i} key={i}fill={fill} />;
 
       });
       
@@ -59,6 +66,25 @@ class Map extends React.Component {
     let paths = featurePath();
     return paths;
 
+  }
+
+  getChoroplethBreaks(shootingsArray) {
+
+    const colors = ["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)"];
+
+    // generate breaks using d3.ticks
+    let legendValues = d3.ticks(d3.min(shootingsArray), d3.max(shootingsArray), 6).slice(0, 7);
+    
+    // once we determine the choropleth breaks, compose an object
+    // that easily stores the colors they map to
+    let choroplethBreaks = legendValues.reduce((acc, value, i) => {
+      
+      acc[value] = colors[i];
+      return acc;
+
+    }, {});
+
+    return choroplethBreaks;
   }
 
   generateCircle(geoPath, data) {
@@ -83,7 +109,7 @@ class Map extends React.Component {
     const featurePath = () => {
       let pathComponent = _.map(data, (feature, i) => {
         let path = geoPath(feature);
-        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} radius={radius(feature.properties.numShootings)} feature={feature} i={i} key={i}/>;
+        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} radius={radius(feature.properties.numShootings)} feature={feature} i={i} fill={"#B24739"} key={i}/>;
       });
       return pathComponent;
     }
@@ -95,51 +121,12 @@ class Map extends React.Component {
 
   generateChoroplethLegend() {
 
-    // // locate the svg that we'll render our legend into
-    // let svgLegend = d3.select('.map.choropleth').append('svg');
+    // destructure props
+    const { maps, dispatch } = this.props;
 
     // now create a legend
     // start by storing all color values in an array
     let colorLegend = ["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)"];
-    
-    // // append the rectangles we'll use for our choropleth
-    // // assign the color based on their index in colorLegend
-    // svgLegend.append("g")
-    //     .attr("transform", "translate(500, 525)")
-    //     .selectAll("rect")
-    //     .data(colorLegend)
-    //     .enter()
-    //     .append("rect")
-    //     .attr("fill", function(d, i){ return colorLegend[i]; })
-    //     .attr("x", function(d, i){ return (i * 30); })
-    //     .attr("y", 30)
-    //     .attr("width", 30)
-    //     .attr("height", 20);
-
-    // // add a title to the legend
-    // svgLegend.append("text")
-    //   .attr("transform", "translate(500, 525)")
-    //   .attr("font-size", "12px")
-    //   .attr("font-family", "HelveticaNeue-Bold, Helvetica, sans-serif")
-    //   .attr("y", 20)
-    //   .text("Shootings Per Million");
-
-    // // add labels to the legend
-    // let labelsLegend = ["0-1", "1-3", "3-5", "5-7", "7-10", "10-12", "12-15", ">15"];
-    // svgLegend.append("g")
-    //   .attr("transform", "translate(500, 525)")
-    //   .selectAll("text")
-    //   .data(labelsLegend)
-    //   .enter()
-    //   .append("text")
-    //   .attr("font-size", "10px")
-    //   .attr("font-family", "HelveticaNeue-Light, Helvetica, sans-serif")
-    //   .attr("x", function(d, i) { return (i * 30); })
-    //   .attr("y", 60)
-    //   .text(function(d) { return d; });
-
-    // destructure props
-    const { maps } = this.props;
 
     // for choropleth, we'll want to generate a set of rects
     // map over our data obtain the shootings per million of each
@@ -151,7 +138,18 @@ class Map extends React.Component {
       return feature.properties.numShootings / feature.properties.population * 1000000;
     });
 
-    let legendValues = d3.ticks(d3.min(shootingsArray), d3.max(shootingsArray), 6);
+    let legendValues = d3.ticks(d3.min(shootingsArray), d3.max(shootingsArray), 6).slice(0, 7);
+
+    // once we determine the choropleth breaks, send them to redux so
+    // we can use them
+    let choroplethBreaks = legendValues.reduce((acc, value, i) => {
+      
+      acc[value] = colorLegend[i];
+      return acc;
+
+    }, {});
+
+    // dispatch(actions.setChoroplethBreaks(choroplethBreaks));
 
     let legendRects = [];
     let legendTexts = [];
@@ -166,7 +164,6 @@ class Map extends React.Component {
       legendTexts.push(text);
     });
     
-
     return (
       <g transform="translate(500, 525)">
         {legendRects}

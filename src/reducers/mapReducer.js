@@ -11,7 +11,8 @@ const initialState = {
 		stateName: 'New Mexico',
 		shootings: 43,
 		shootingsPerMillion: 20.66
-	}
+	},
+	choroplethBreaks: {}
 };
 
 export const mapReducer = (state = initialState, action) => {
@@ -39,6 +40,11 @@ export const mapReducer = (state = initialState, action) => {
 		case actionTypes.GET_HOVERED_STATE_DATA:
 			return { ...state,
 				activeState: action.state
+			};
+		case actionTypes.SET_CHOROPLETH_BREAKS:
+			return {
+				...state,
+				choroplethBreaks: action.choroplethBreaks
 			};
         default:
             return state;
