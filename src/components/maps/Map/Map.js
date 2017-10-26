@@ -4,9 +4,10 @@ import './Map.css';
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
 import * as _ from 'lodash';
-import * as actions from '../../../actions/mapActions';
 import State from '../State/State';
 import PropTypes from 'prop-types';
+
+const colors = ["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)"];
 
 class Map extends React.Component {
 
@@ -20,71 +21,54 @@ class Map extends React.Component {
   
   generatePath(geoPath, data) {
 
-    const { mapType, maps } = this.props;
-
-    let sorted = _.sortBy(maps.geoData.objects.states.geometries, (feature) => {
-      return feature.properties.numShootings / feature.properties.population * 1000000;
-    });
-
-    let shootingsArray = _.map(sorted, (feature) => {
-      return feature.properties.numShootings / feature.properties.population * 1000000;
-    });
-
-    let choroplethBreaks = this.getChoroplethBreaks(shootingsArray);
+    const { mapType } = this.props;
 
     // iterate over the topojson data
-    const featurePath = () => {
-      let pathComponent = _.map(data, (feature, i) => {
+    let pathComponent = _.map(data, (feature, i) => {
 
-        // render an svg path using the geographic path generator
-        let path = geoPath(feature);
+      // render an svg path using the geographic path generator
+      let path = geoPath(feature);
 
-        let shootingsPerCapita = feature.properties.numShootings / feature.properties.population * 1000000;
+      let shootingsPerCapita = feature.properties.numShootings / feature.properties.population * 1000000;
 
-        let breaks = _.keys(choroplethBreaks)
+      let breaks = this.getChoroplethBreaks();
 
-        let fill;
-        
-        _.forEach(breaks, (key, i) => {
+      let fill = shootingsPerCapita === 0 ? '#F3F7F6' : colors[_.sortedIndex(breaks, shootingsPerCapita) - 1];
 
-          if (_.parseInt(key, 10) < shootingsPerCapita && shootingsPerCapita < _.parseInt(breaks[i + 1], 10)) {
+      // return a state component
+      return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} feature={feature} i={i} key={i} fill={fill} />;
 
-            fill = choroplethBreaks[key];
-          }
-        });
-
-        // return a state component
-        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} feature={feature} i={i} key={i}fill={fill} />;
-
-      });
-      
-      // return all of the paths
-      return pathComponent;
-    }
-
-    // invoke the function and return the components
-    let paths = featurePath();
-    return paths;
+    });
+    
+    // return all of the paths
+    return pathComponent;
 
   }
 
-  getChoroplethBreaks(shootingsArray) {
+  getChoroplethBreaks() {
 
-    const colors = ["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)"];
+    const { maps } = this.props;
 
-    // generate breaks using d3.ticks
-    let legendValues = d3.ticks(d3.min(shootingsArray), d3.max(shootingsArray), 6).slice(0, 7);
-    
-    // once we determine the choropleth breaks, compose an object
-    // that easily stores the colors they map to
-    let choroplethBreaks = legendValues.reduce((acc, value, i) => {
-      
-      acc[value] = colors[i];
-      return acc;
+    // for choropleth, we'll want to generate a set of rects
+    // map over our data obtain the shootings per million of each
+    let shootingsArray = _.sortBy(_.map(maps.geoData.objects.states.geometries, (feature) => {
+      return feature.properties.numShootings / feature.properties.population * 1000000;
+    }), (tick) => {
+      return tick;
+    });
 
-    }, {});
+    // we'll use quantiles to generate our choropleth breaks
+    let quantiles = [0, 0.1, 0.25, 0.5, 0.75, 0.9, 1];
 
-    return choroplethBreaks;
+    let legendValues = _.uniq(_.map(quantiles, (tick) => {
+      return _.round(d3.quantile(shootingsArray, tick));
+    }));
+
+    if (legendValues[0] !== 0) {
+      legendValues = _.concat([0], _.take(legendValues, legendValues.length - 1))
+    }
+
+    return legendValues;
   }
 
   generateCircle(geoPath, data) {
@@ -104,59 +88,28 @@ class Map extends React.Component {
       .domain([0, maxState])
       .range([0, 80]);
 
-    // define a similar function to the one in this.generatePath - this actually
-    // returns our svg paths
-    const featurePath = () => {
-      let pathComponent = _.map(data, (feature, i) => {
-        let path = geoPath(feature);
-        return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} radius={radius(feature.properties.numShootings)} feature={feature} i={i} fill={"#B24739"} key={i}/>;
-      });
-      return pathComponent;
-    }
+    // return our svg paths
+    let pathComponent = _.map(data, (feature, i) => {
 
-    let paths = featurePath();
-    return paths;
+      let path = geoPath(feature);
+      
+      return <State mapType={mapType} stateName={feature.properties.stateName} numShootings={feature.properties.numShootings} population={feature.properties.population} path={path} radius={radius(feature.properties.numShootings)} feature={feature} i={i} fill={"#B24739"} key={i}/>;
+    });
+
+    return pathComponent;
 
   }
 
   generateChoroplethLegend() {
 
-    // destructure props
-    const { maps, dispatch } = this.props;
-
-    // now create a legend
-    // start by storing all color values in an array
-    let colorLegend = ["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)"];
-
-    // for choropleth, we'll want to generate a set of rects
-    // map over our data obtain the shootings per million of each
-    let sorted = _.sortBy(maps.geoData.objects.states.geometries, (feature) => {
-      return feature.properties.numShootings / feature.properties.population * 1000000;
-    });
-
-    let shootingsArray = _.map(sorted, (feature) => {
-      return feature.properties.numShootings / feature.properties.population * 1000000;
-    });
-
-    let legendValues = d3.ticks(d3.min(shootingsArray), d3.max(shootingsArray), 6).slice(0, 7);
-
-    // once we determine the choropleth breaks, send them to redux so
-    // we can use them
-    let choroplethBreaks = legendValues.reduce((acc, value, i) => {
-      
-      acc[value] = colorLegend[i];
-      return acc;
-
-    }, {});
-
-    // dispatch(actions.setChoroplethBreaks(choroplethBreaks));
+    let legendValues = this.getChoroplethBreaks();
 
     let legendRects = [];
     let legendTexts = [];
 
     legendValues.forEach((value, i) => {
       
-      let rect = <rect fill={colorLegend[i]} x={i * 30} y={30} width={30} height={20} key={`rect-${i}`}/>;
+      let rect = <rect fill={colors[i]} x={i * 30} y={30} width={30} height={20} key={`rect-${i}`}/>;
 
       let text = <text fontSize="10px" fontFamily="HelveticaNeue-Light, Helvetica, sans-serif" x={i * 30} y={60} key={`text-${i}`}>{value}</text>;
 
