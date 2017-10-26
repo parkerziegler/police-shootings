@@ -25,6 +25,9 @@ class State extends React.Component {
   // based on the number of shootings per capita
 	getStateColor(shootingsPerCapita) {
 
+    // destructure props
+    // const { maps } = this.props;
+
 		if (shootingsPerCapita < 1) {
       return "rgb(247,251,255)";
     }
@@ -68,19 +71,18 @@ class State extends React.Component {
   
   getJSX() {
 
-    const { mapType, numShootings, population, feature, path, radius, i } = this.props;
+    const { mapType, numShootings, population, feature, path, radius, fill, i } = this.props;
 
     // define a function to get the appropriate JSX based on mapType
     const data = () => {
       switch(mapType) {
         case 'choropleth':
-          let fill = this.getStateColor(numShootings / population * 1000000);
         
           return (
             <CSSTransitionGroup
               transitionName={`state-transition-${i}`}
               transitionAppear={true}
-              transitionAppearTimeout={500}
+              transitionAppearTimeout={5000}
               transitionEnter={false}
               transitionLeave={false}
               component={FirstChild}>
@@ -100,11 +102,11 @@ class State extends React.Component {
               <CSSTransitionGroup
                   transitionName={`state-transition-${i}`}
                   transitionAppear={true}
-                  transitionAppearTimeout={500}
+                  transitionAppearTimeout={5000}
                   transitionEnter={false}
                   transitionLeave={false}
                   component={FirstChild}>
-                  <circle className={`states raw state-transition-${i}`} r={radius} fill={"#B24739"} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + centroid + ")"} opacity={0.75} onMouseEnter={this.onInteractionHandler} onClick={this.onInteractionHandler} onTouchStart={this.onInteractionHandler} />
+                  <circle className={`states raw state-transition-${i}`} r={radius} fill={fill} stroke="#FFFFFF" strokeWidth={0.5} transform={"translate(" + centroid + ")"} opacity={0.75} onMouseEnter={this.onInteractionHandler} onClick={this.onInteractionHandler} onTouchStart={this.onInteractionHandler} />
               </CSSTransitionGroup>
               <text transform={translate} className='state-label' onMouseEnter={this.onInteractionHandler} onClick={this.onInteractionHandler} onTouchStart={this.onInteractionHandler} >{feature.properties.stateAbbreviation}</text>
             </g>
