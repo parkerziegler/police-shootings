@@ -71,7 +71,7 @@ class State extends React.Component {
   
   getJSX() {
 
-    const { mapType, numShootings, population, feature, path, radius, fill, i } = this.props;
+    const { mapType, feature, path, radius, fill, i } = this.props;
 
     // define a function to get the appropriate JSX based on mapType
     const data = () => {
