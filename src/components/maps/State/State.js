@@ -16,43 +16,9 @@ class State extends React.Component {
 
   constructor(props) {
     super(props);
-		this.getStateColor = this.getStateColor.bind(this);
     this.onInteractionHandler = this.onInteractionHandler.bind(this);
     this.getJSX = this.getJSX.bind(this);
   }
-
-  // a simple method to retun a color for a state
-  // based on the number of shootings per capita
-	getStateColor(shootingsPerCapita) {
-
-    // destructure props
-    // const { maps } = this.props;
-
-		if (shootingsPerCapita < 1) {
-      return "rgb(247,251,255)";
-    }
-    else if (shootingsPerCapita < 3) {
-      return "rgb(222,235,247)";
-    }
-    else if (shootingsPerCapita < 5) {
-      return "rgb(198,219,239)";
-    }
-    else if (shootingsPerCapita < 7) {
-      return "rgb(158,202,225)";
-    }
-    else if (shootingsPerCapita < 10) {
-      return "rgb(107,174,214)";
-    }
-    else if (shootingsPerCapita < 12) {
-      return "rgb(66,146,198)";
-    }
-    else if (shootingsPerCapita < 15) {
-      return "rgb(33,113,181)";
-    }
-    else {
-      return "rgb(8,81,156)";
-    }
-	}
 
 	onInteractionHandler(event) {
 
@@ -83,8 +49,8 @@ class State extends React.Component {
               transitionName={`state-transition-${i}`}
               transitionAppear={true}
               transitionAppearTimeout={5000}
-              transitionEnter={false}
-              transitionLeave={false}
+              transitionEnterTimeout={2500}
+              transitionLeaveTimeout={2500}
               component={FirstChild}>
               <path className={`states state-transition-${i}`} d={path} fill={fill} stroke="#FFFFFF" strokeWidth={0.25} onMouseEnter={this.onInteractionHandler} onClick={this.onInteractionHandler} onTouchStart={this.onInteractionHandler} />
             </CSSTransitionGroup>
