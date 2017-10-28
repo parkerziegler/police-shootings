@@ -1,9 +1,10 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest, select } from 'redux-saga/effects';
 import * as _ from 'lodash';
 import axios from 'axios';
 import * as actionTypes from '../constants/action-types';
 import * as stateNames from '../assets/state-names';
 import { CENSUS_API_KEY } from '../config';
+import { initializeCurrentLocation } from 'redux-little-router';
 
 // define a watcher generator to listen for when CALL_API is dispatched
 export function* watchAPICall() {
@@ -84,6 +85,12 @@ function* callAPI(action) {
         // also send off the Census data for easy access
         yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: response[0].data });
         yield put({ type: actionTypes.SEND_CENSUS_DATA_TO_REDUCER, censusData: populationStats });
+
+        const reduxStore = yield select();
+
+        if (reduxStore.router) {
+            yield put(initializeCurrentLocation(reduxStore.router));
+        }
 
     } catch (error) {
         
