@@ -2,12 +2,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
-import { routerForBrowser, initializeCurrentLocation } from 'redux-little-router';
+import { routerForBrowser } from 'redux-little-router';
 import { mapReducer } from './reducers/mapReducer';
 import { Provider } from 'react-redux';
 import App from './App';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/rootSaga';
+import { callAPI } from './actions/mapActions';
 import { totalShootingsJSX, totalShootingsBlackJSX, totalShootingsLatinoJSX, totalShootingsAsianJSX, totalShootingsNativeAmericanJSX, totalShootingsWhiteJSX } from './components/maps/MapDescription/Descriptions';
 
 // define routes for the application
@@ -18,35 +19,47 @@ const routes = {
   },
   '/total-shootings': {
     title: 'Total Shootings',
+    descTitle: 'Total Shootings',
+    descSubtitle: 'By State',
     index: 1,
     hasChildren: true,
     jsx: totalShootingsJSX,
     '/black': {
       title: 'Total Shootings By Race African American',
+      descTitle: 'Total Shootings',
+      descSubtitle: 'African American',
       childIndex: 0,
       hasNextSibling: true,
       jsx: totalShootingsBlackJSX
     },
     '/latino': {
       title: 'Total Shootings By Race Latino',
+      descTitle: 'Total Shootings',
+      descSubtitle: 'Latino',
       childIndex: 1,
       hasNextSibling: true,
       jsx: totalShootingsLatinoJSX
     },
     '/asian': {
       title: 'Total Shootings By Race Asian',
+      descTitle: 'Total Shootings',
+      descSubtitle: 'Asian',
       childIndex: 2,
       hasNextSibling: true,
       jsx: totalShootingsAsianJSX
     },
     '/nativeamerican': {
       title: 'Total Shootings By Race Native American',
+      descTitle: 'Total Shootings',
+      descSubtitle: 'Native American',
       childIndex: 3,
       hasNextSibling: true,
       jsx: totalShootingsNativeAmericanJSX
     },
     '/white': {
       title: 'Total Shootings By Race White',
+      descTitle: 'Total Shootings',
+      descSubtitle: 'White',
       childIndex: 4,
       hasNextSibling: false,
       isLastChildRoute: true,
@@ -55,30 +68,42 @@ const routes = {
   },
   '/percapita': {
     title: 'Shootings Per Million By State',
+    descTitle: 'Shootings Per Million',
+    descSubtitle: 'By State',
     index: 2,
     hasChildren: true,
     '/black': {
       title: 'Shootings Per Million By Race African American',
+      descTitle: 'Shootings Per Million',
+      descSubtitle: 'African American',
       childIndex: 0,
       hasNextSibling: true    
     },
     '/latino': {
       title: 'Shootings Per Million By Race Latino',
+      descTitle: 'Shootings Per Million',
+      descSubtitle: 'Latino',
       childIndex: 1,
       hasNextSibling: true
     },
     '/asian': {
       title: 'Shootings Per Million By Race Asian',
+      descTitle: 'Shootings Per Million',
+      descSubtitle: 'Asian',
       childIndex: 2,
       hasNextSibling: true
     },
     '/nativeamerican': {
       title: 'Shootings Per Million By Race Native American',
+      descTitle: 'Shootings Per Million',
+      descSubtitle: 'Native American',
       childIndex: 3,
       hasNextSibling: true
     },
     '/white': {
       title: 'Shootings Per Million By Race White',
+      descTitle: 'Shootings Per Million',
+      descSubtitle: 'White',
       childIndex: 4,
       hasNextSibling: false,
       isLastChildRoute: true
@@ -114,10 +139,11 @@ export const store = createStore(
 sagaMiddleware.run(rootSaga);
 
 // get the initial location of the router
-const initialLocation = store.getState().router;
-if (initialLocation) {
-  store.dispatch(initializeCurrentLocation(initialLocation));
-}
+store.dispatch(callAPI());
+// const initialLocation = store.getState().router;
+// if (initialLocation) {
+//   store.dispatch(initializeCurrentLocation(initialLocation));
+// }
 
 // render the App
 ReactDOM.render(
