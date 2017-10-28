@@ -58,14 +58,14 @@ class Map extends React.Component {
     });
 
     // we'll use quantiles to generate our choropleth breaks
-    let quantiles = [0, 0.1, 0.25, 0.5, 0.75, 0.9, 1];
+    let quantiles = [0, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95];
 
     let legendValues = _.uniq(_.map(quantiles, (tick) => {
       return _.round(d3.quantile(shootingsArray, tick));
     }));
 
     if (legendValues[0] !== 0) {
-      legendValues = _.concat([0], _.take(legendValues, legendValues.length - 1))
+      legendValues = _.concat([0], legendValues)
     }
 
     return legendValues;
@@ -227,7 +227,7 @@ class Map extends React.Component {
 			<div className='map-container'>
 	      <svg className={`map ${mapType}`}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
 	          <g>
-	            {paths.map}
+              {paths.map}
 	          </g>
             {paths.legend}
 	      </svg>
