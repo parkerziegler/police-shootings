@@ -38,12 +38,23 @@
 
 @for $i from 0 through 50 {
 
-    .state-transition-#{$i}-appear {
+    .state-transition-#{$i}-appear,
+    .state-transition-#{$i}-enter {
         fill-opacity: 0.01;
     }
-    
-    .state-transition-#{$i}-appear.state-transition-#{$i}-appear-active {
+
+    .state-transition-#{$i}-leave {
         fill-opacity: 1;
+    }
+    
+    .state-transition-#{$i}-appear.state-transition-#{$i}-appear-active,
+    .state-transition-#{$i}-enter.state-transition-#{$i}-enter-active  {
+        fill-opacity: 1;
+        transition: fill-opacity $i * 50ms ease-in 100ms;
+    }
+
+    .state-transition-#{$i}-leave.state-transition-#{$i}-leave-active {
+        fill-opacity: 0.01;
         transition: fill-opacity $i * 50ms ease-in 100ms;
     }
 }

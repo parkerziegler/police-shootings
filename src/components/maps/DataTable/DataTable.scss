@@ -9,6 +9,7 @@ $button-font-sizes: (
 
 .data-table {
     @include flex-column;
+    flex: 0 0 auto;
 
     .table-button-container {
         @include flex-row;

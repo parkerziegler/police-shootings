@@ -153,8 +153,8 @@ class MapDescription extends React.Component {
 			transitionLeave={false}
 			component={FirstChild}>
 				<div className='map-description-container'>
-					<div className='inset-header'>{router.result.title}</div>
-					<div className='inset-subheader'>By State</div>
+					<div className='inset-header'>{router.result.descTitle}</div>
+					<div className='inset-subheader'>{router.result.descSubtitle}</div>
 					{children().text}
 					<div className='state-name'>{maps.activeState.stateName}</div>
 					{children().stat}

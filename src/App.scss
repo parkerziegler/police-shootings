@@ -47,8 +47,7 @@ body {
 
 	@include flex-row;
 	width: 100%;
-	height: auto;
-	align-items: center;
+	height: 100%;
 
 
 	@media only screen and (max-width: 900px) {
