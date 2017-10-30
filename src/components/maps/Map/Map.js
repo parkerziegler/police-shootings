@@ -119,6 +119,7 @@ class Map extends React.Component {
     
     return (
       <g transform="translate(500, 525)">
+        <text fontSize="10px" fontFamily="HelveticaNeue-Bold, Helvetica, sans-serif" y={20}>Shootings Per Million</text>
         {legendRects}
         {legendTexts}
       </g>
