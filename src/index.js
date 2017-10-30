@@ -9,7 +9,7 @@ import App from './App';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/rootSaga';
 import { callAPI } from './actions/mapActions';
-import { totalShootingsJSX, totalShootingsBlackJSX, totalShootingsLatinoJSX, totalShootingsAsianJSX, totalShootingsNativeAmericanJSX, totalShootingsWhiteJSX } from './components/maps/MapDescription/Descriptions';
+import { totalShootingsJSX, totalShootingsBlackJSX, totalShootingsLatinoJSX, totalShootingsAsianJSX, totalShootingsNativeAmericanJSX, totalShootingsWhiteJSX, shootingsPerCapitaJSX, shootingsPerCapitaBlackJSX, shootingsPerCapitaLatinoJSX, shootingsPerCapitaAsianJSX, shootingsPerCapitaNativeAmericanJSX, shootingsPerCapitaWhiteJSX } from './components/maps/MapDescription/Descriptions';
 
 // define routes for the application
 const routes = {
@@ -72,33 +72,38 @@ const routes = {
     descSubtitle: 'By State',
     index: 2,
     hasChildren: true,
+    jsx: shootingsPerCapitaJSX,
     '/black': {
       title: 'Shootings Per Million By Race African American',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'African American',
       childIndex: 0,
-      hasNextSibling: true    
+      hasNextSibling: true,
+      jsx: shootingsPerCapitaBlackJSX 
     },
     '/latino': {
       title: 'Shootings Per Million By Race Latino',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'Latino',
       childIndex: 1,
-      hasNextSibling: true
+      hasNextSibling: true,
+      jsx: shootingsPerCapitaLatinoJSX
     },
     '/asian': {
       title: 'Shootings Per Million By Race Asian',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'Asian',
       childIndex: 2,
-      hasNextSibling: true
+      hasNextSibling: true,
+      jsx: shootingsPerCapitaAsianJSX
     },
     '/nativeamerican': {
       title: 'Shootings Per Million By Race Native American',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'Native American',
       childIndex: 3,
-      hasNextSibling: true
+      hasNextSibling: true,
+      jsx: shootingsPerCapitaNativeAmericanJSX
     },
     '/white': {
       title: 'Shootings Per Million By Race White',
@@ -106,7 +111,8 @@ const routes = {
       descSubtitle: 'White',
       childIndex: 4,
       hasNextSibling: false,
-      isLastChildRoute: true
+      isLastChildRoute: true,
+      jsx: shootingsPerCapitaWhiteJSX
     }
   },
   '/shootingsbydate': {
