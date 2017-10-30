@@ -72,7 +72,9 @@ class DataTable extends React.Component {
 		if (mapType === 'choropleth') {
 
 			// obtain our table data by looking at our reducer
-			let states = _.slice(_.orderBy(maps.geoData.objects.states.geometries, ['properties.shootingsPerCapita'], ascDesc), 0, 5);
+			let states = _.slice(_.orderBy(maps.geoData.objects.states.geometries, (state) => {
+				return state.properties.numShootings / state.properties.population * 1000000;
+			}, ascDesc), 0, 5);
 
 			// next render divs for both the state name and
 			// shootings per capita
@@ -81,7 +83,7 @@ class DataTable extends React.Component {
 			});
 
 			let stateStats = _.map(states, (state, i) => {
-				return <div className='row' key={i}>{_.round(state.properties.shootingsPerCapita * 1000000, 2)}</div>;
+				return <div className='row' key={i}>{_.round(state.properties.numShootings / state.properties.population * 1000000, 2)}</div>;
 			});
 
 			// return these in an object to be rendered
