@@ -27,12 +27,48 @@ export const totalShootingsAsianJSX = (
 
 export const totalShootingsNativeAmericanJSX = (
     <div className='text'>
-        Police ivnolved shootings of Native Americans were mainly concentrated in western states with larger indigenous populations. <b>Arizona</b> had the greatest number of shootings with <b>9</b>. <b>Alaksa</b> and <b>Washington</b> had the second and third highest counts, at <b>7</b> and <b>6</b> respectively.<br/><br />Hover over a state to obtain the number of shootings.
+        Police involved shootings of Native Americans were mainly concentrated in western states with larger indigenous populations. <b>Arizona</b> had the greatest number of shootings with <b>9</b>. <b>Alaksa</b> and <b>Washington</b> had the second and third highest counts, at <b>7</b> and <b>6</b> respectively.<br/><br />Hover over a state to obtain the number of shootings.
     </div>
 );
 
 export const totalShootingsWhiteJSX = (
     <div className='text'>
         The majority of people shot by the police between 2015 and 2016 were white. <b>California</b>, <b>Texas</b>, and <b>Florida</b> had the greatest number of shootings at <b>125</b>, <b>92</b>, and <b>74</b>, respectively. Open carry states like <b>Arizona</b> and <b>Oklahoma</b> also had high counts. A high incidence of shootings is also visible in stretches of Appalachia and the southern United States. <br/><br />Hover over a state to obtain the number of shootings. 
+    </div>
+);
+
+export const shootingsPerCapitaJSX = (
+    <div className='text'>
+        Of all 50 states, <b>New Mexico</b> had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the <b>District of Columbia</b> being an exception. Four of the five lowest rates were found in the northeastern United States. <br/><br />Hover over a state to obtain the number of shootings per million. 
+    </div>
+);
+
+export const shootingsPerCapitaBlackJSX = (
+    <div className='text'>
+        Per million African American residents, <b>Oklahoma</b> had the highest rate of police shootings at <b>68.21</b>. <b>West Virginia</b> and <b>Nebraska</b> had the second and third highest rates at <b>48.89</b> and <b>43.45</b> respectively. Only <b>10</b> states had no shootings of African Americans in this time period. <br/><br />Hover over a state to obtain the number of shootings per million. 
+    </div>
+);
+
+export const shootingsPerCapitaLatinoJSX = (
+    <div className='text'>
+        The western United States demonstrated a much higher incidence of police involved shootings of Latinos than other parts of the country. Southwest border states like <b>New Mexico</b> (<b>24.23</b> shootings per million Latino residents) and intermountain West states like <b>Idaho</b> (<b>20.91</b>) had generally higher rates than eastern states. <br/><br />Hover over a state to obtain the number of shootings per million.
+    </div>
+);
+
+export const shootingsPerCapitaAsianJSX = (
+    <div className='text'>
+        On a per capita basis, Asians were the least likely of all races to be killed by police between 2015 and 2016. In fact, <b>a majority of states (35)</b> had no shootings of Asians during this time period. <b>Colorado</b>, <b>Louisiana</b>, and <b>Hawaii</b> were major outliers to this trend, demonstrating the highest rates of shootings of Asians.<br/><br />Hover over a state to obtain the number of shootings per million.
+    </div>
+);
+
+export const shootingsPerCapitaNativeAmericanJSX = (
+    <div className='text'>
+        <b>Native americans are killed by police at a higher rate than any other race in the country.</b> While Midwestern states with larger indigenous populations demonstrate consistently inflated rates, northwestern states like <b>Alaska</b> and <b>Washington</b> retain many of the highest rates. <b>Vermont</b> is an extreme outlier in the dataset, its rate of shootings being the result of a small indigenous population.<br/><br />Hover over a state to obtain the number of shootings per million.
+    </div>
+);
+
+export const shootingsPerCapitaWhiteJSX = (
+    <div className='text'>
+        Shootings of whites by police closely mirrored the geography of the nation as a whole. Western states like <b>Oklahoma</b>, <b>Wyoming</b>, and <b>New Mexico</b> demonstrated the highest rates while the northeastern United States had consistently low rates. Of all races, whites were the second least likely to be shot by the police. Perhaps most startingly, no whites were killed in the <b>District of Columbia</b> during this time period, meaning the city's high rate of police shootings were exclusively of people of color.<br/><br />Hover over a state to obtain the number of shootings per million.
     </div>
 );
