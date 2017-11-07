@@ -5,6 +5,7 @@
     width: 30%;
     padding: 10px 10px 10px 10px;
     text-align: left;
+    justify-content: center;
 
     .inset-header {
         @include font-size($font-sizes);
