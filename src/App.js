@@ -5,6 +5,8 @@ import Home from './components/home/Home';
 import Map from './components/maps/Map/Map';
 import MapDescription from './components/maps/MapDescription/MapDescription';
 import BarChart from './components/graphs/BarChart/BarChart';
+import ChartDescription from './components/graphs/ChartDescription/ChartDescription';
+import { shootingsByDayJSX } from './components/graphs/ChartDescription/Descriptions';
 import Chevron from './components/navigation/Chevron/Chevron';
 import { callAPI } from './actions/mapActions';
 import PropTypes from 'prop-types';
@@ -20,9 +22,9 @@ class App extends Component {
     this.getChildRoutes = this.getChildRoutes.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
 
-    // on componentWillMount, invoke our callAPI saga to get our data
+    // on componentDidMount, invoke our callAPI saga to get our data
     const { dispatch } = this.props;
     dispatch(callAPI());
   }
@@ -193,7 +195,10 @@ class App extends Component {
                 </div>
               </Fragment>
               <Fragment forRoute={'/shootingsbydate'}>
+                <div className='chart-layout'>
                   <BarChart />
+                  <ChartDescription jsx={shootingsByDayJSX} />
+                </div>
               </Fragment>
             </div>
             <Chevron className='chevron-link horizontal' path="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z" href={nextMainRoute} visible={nextMainRoute !== '/'} />
