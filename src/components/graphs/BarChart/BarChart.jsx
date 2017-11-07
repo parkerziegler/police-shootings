@@ -6,43 +6,37 @@ import moment from 'moment';
 
 class BarChart extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
 
-        const { maps } = this.props;
-
-        let dates = _.map(maps.shootingsData, (record) => {
-            return moment(`${record.month} - ${record.day} - ${record.year}`, "MMMM - D - YYYY").valueOf();
-        });
-
-        let groupByDate = _.groupBy(dates, ((date) => {
-            return date;
-        }));
-
-        let data = _.map(_.keys(groupByDate), (key) => {
-
-            return { date: _.parseInt(key, 10), count: groupByDate[key].length }
-        });
+        const { data } = this.props;
+        console.log(data);
 
         return (
-            <VictoryChart animate={{
-                onLoad: {
-                    duration: 2000,
-                    before: () => ({ opacity: 0, _y: 0 }),
-                    after: (datum) => ({ opacity: 1, _y: datum._y })
-                }
-            }}>
+            <VictoryChart width={1200} height={400}>
                 <VictoryAxis scale="time" tickValues={[new Date(2015, 3, 1), new Date(2015, 9, 1), new Date(2016, 2, 1), new Date(2016, 8, 1)]} tickFormat={(t) => moment(t).format('MMM YYYY')} />
                 <VictoryAxis dependentAxis />
-                <VictoryBar data={data.sort()} x="date" y="count" scale="time"/>
+                <VictoryBar data={data.sort()} x="date" y="count" scale="time" animate={{
+                    onLoad: {
+                        duration: 2000,
+                        easing: "linear",
+                        before: () => ({ opacity: 0.3, _y: 0 }),
+                        after: (datum) => ({ opacity: 1, _y: datum._y })
+                    }
+                }} style={{ data: { fill: (datum) => datum.color } }}/>
             </VictoryChart>
         );
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
 
     return {
-        maps: state.mapReducer
+        maps: state.mapReducer,
+        data: ownProps.data
     };
 };
 

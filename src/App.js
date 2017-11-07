@@ -6,12 +6,12 @@ import Map from './components/maps/Map/Map';
 import MapDescription from './components/maps/MapDescription/MapDescription';
 import BarChart from './components/graphs/BarChart/BarChart';
 import ChartDescription from './components/graphs/ChartDescription/ChartDescription';
-import { shootingsByDayJSX } from './components/graphs/ChartDescription/Descriptions';
 import Chevron from './components/navigation/Chevron/Chevron';
 import { callAPI } from './actions/mapActions';
 import PropTypes from 'prop-types';
 import { Fragment } from 'redux-little-router';
 import * as _ from 'lodash';
+import moment from 'moment';
 
 class App extends Component {
 
@@ -20,6 +20,7 @@ class App extends Component {
     this.findKey = this.findKey.bind(this);
     this.getMainRoutes = this.getMainRoutes.bind(this);
     this.getChildRoutes = this.getChildRoutes.bind(this);
+    this.getShootingsByDate = this.getShootingsByDate.bind(this);
   }
 
   componentDidMount() {
@@ -156,6 +157,43 @@ class App extends Component {
 
   }
 
+  getShootingsByDate(interval) {
+
+    const { maps } = this.props;
+
+    const getColor = (count) => {
+
+      if (count < 2){
+        return "#dadaeb";
+      }
+      else if (count < 4){
+        return "#bcbddc";
+      }
+      else if (count < 6){
+        return "#9e9ac8";
+      }
+      else {
+        return "#756bb1";
+      }
+    };
+
+    if (interval === 'day') {
+      
+      let dates = _.map(maps.shootingsData, (record) => {
+          return moment(`${record.month} - ${record.day} - ${record.year}`, "MMMM - D - YYYY").valueOf();
+      });
+
+      let groupByDate = _.groupBy(dates, date => date);
+
+      let data = _.map(_.keys(groupByDate), (key) => {
+
+          return { date: _.parseInt(key, 10), count: groupByDate[key].length, color: getColor(groupByDate[key].length) }
+      });
+
+      return data;
+    }
+  }
+
   render() {
 
     // destructure props
@@ -196,8 +234,8 @@ class App extends Component {
               </Fragment>
               <Fragment forRoute={'/shootingsbydate'}>
                 <div className='chart-layout'>
-                  <BarChart />
-                  <ChartDescription jsx={shootingsByDayJSX} />
+                  <ChartDescription title='Shootings By Day' subtitle='January 1, 2015 - December 31, 2016' />
+                  <BarChart data={this.getShootingsByDate('day')} />
                 </div>
               </Fragment>
             </div>

@@ -59,7 +59,7 @@ body {
 }
 
 .chart-layout {
-	@include flex-row;
+	@include flex-column;
 	width: 100%;
 	height: 100%;
 
