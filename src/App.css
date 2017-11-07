@@ -50,6 +50,12 @@ body {
     .raw .map-container {
       width: 100%; } }
 
+.chart-layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%; }
+
 @media only screen and (max-width: 900px) {
   .percapita,
   .raw {
