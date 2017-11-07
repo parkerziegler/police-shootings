@@ -23,11 +23,15 @@ class BarChart extends React.Component {
             return { date: _.parseInt(key, 10), count: groupByDate[key].length }
         });
 
-        console.log(data);
-
         return (
-            <VictoryChart>
-                <VictoryAxis scale="time" tickValues={[new Date(2015, 3, 1), new Date(2015, 9, 1), new Date(2016, 2, 1), new Date(2016, 8, 1)]} tickFormat={(t) => moment(t).format('MMM YYYY')}/>
+            <VictoryChart animate={{
+                onLoad: {
+                    duration: 2000,
+                    before: () => ({ opacity: 0, _y: 0 }),
+                    after: (datum) => ({ opacity: 1, _y: datum._y })
+                }
+            }}>
+                <VictoryAxis scale="time" tickValues={[new Date(2015, 3, 1), new Date(2015, 9, 1), new Date(2016, 2, 1), new Date(2016, 8, 1)]} tickFormat={(t) => moment(t).format('MMM YYYY')} />
                 <VictoryAxis dependentAxis />
                 <VictoryBar data={data.sort()} x="date" y="count" scale="time"/>
             </VictoryChart>
