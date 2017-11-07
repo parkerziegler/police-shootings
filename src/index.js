@@ -9,7 +9,7 @@ import App from './App';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/rootSaga';
 import { callAPI } from './actions/mapActions';
-import { totalShootingsJSX, totalShootingsBlackJSX, totalShootingsLatinoJSX, totalShootingsAsianJSX, totalShootingsNativeAmericanJSX, totalShootingsWhiteJSX, shootingsPerCapitaJSX, shootingsPerCapitaBlackJSX, shootingsPerCapitaLatinoJSX, shootingsPerCapitaAsianJSX, shootingsPerCapitaNativeAmericanJSX, shootingsPerCapitaWhiteJSX } from './components/maps/MapDescription/Descriptions';
+import { totalShootingsJSX, totalShootingsBlackJSX, totalShootingsLatinoJSX, totalShootingsAsianJSX, totalShootingsNativeAmericanJSX, totalShootingsWhiteJSX, shootingsPerCapitaJSX, shootingsPerCapitaBlackJSX, shootingsPerCapitaLatinoJSX, shootingsPerCapitaAsianJSX, shootingsPerCapitaNativeAmericanJSX, shootingsPerCapitaWhiteJSX, shootingsByDayJSX } from './components/maps/MapDescription/Descriptions';
 
 // define routes for the application
 const routes = {
@@ -118,7 +118,8 @@ const routes = {
   '/shootingsbydate': {
     title: 'Shootings By Date',
     index: 3,
-    isLastRoute: true
+    isLastRoute: true,
+    jsx: shootingsByDayJSX
   }
 };
 
