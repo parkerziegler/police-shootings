@@ -72,3 +72,9 @@ export const shootingsPerCapitaWhiteJSX = (
         Shootings of whites by police closely mirrored the geography of the nation as a whole. Western states like <b>Oklahoma</b>, <b>Wyoming</b>, and <b>New Mexico</b> demonstrated the highest rates while the northeastern United States had consistently low rates. Of all races, whites were the second least likely to be shot by the police. Perhaps most startingly, no whites were killed in the <b>District of Columbia</b> during this time period, meaning the city's high rate of police shootings were exclusively of people of color.<br/><br />Hover over a state to obtain the number of shootings per million.
     </div>
 );
+
+export const shootingsByDayJSX = (
+    <div className='chart-text'>
+        Police involved shootings display a more or less stochastic distribution across the time period surveyed. July 2015 and March 2015 had the most shootings of any month at 124 and 113, respectively. June 2015 and April 2016 tied for the least, each with 80 shootings.
+    </div>
+);

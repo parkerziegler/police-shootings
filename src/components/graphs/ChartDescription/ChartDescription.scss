@@ -1,6 +1,27 @@
-@import '../../../stylesheets/_constants.scss';
+@import '../../../stylesheets/constants.scss';
 
-.chart-description {
-    color: $black;
-    font: 14px $helvetica;
+.chart-description-container {
+    @include flex-column;
+    text-align: left;
+
+    .chart-title {
+        @include font-size($font-sizes);
+        color: $black;
+        font-family: $helvetica;
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+
+    .chart-subtitle {
+        @include font-size($subheader-font-sizes);
+        color: #666666;
+        font-family: $helvetica;
+        margin-bottom: 10px;
+    }
+
+    .chart-text {
+        color: $black;
+        font: 14px $helvetica;
+        margin-bottom: 10px;
+    }
 }
