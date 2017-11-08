@@ -1,0 +1,38 @@
+@import '../../../stylesheets/constants.scss';
+
+.filter-container {
+    @include flex-row;
+    justify-content: space-around;
+    align-items: center;
+
+    input[type="radio"] {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    label.filter {
+        @include font-size($filters-font-sizes);
+        font-family: $helvetica;
+        color: #756bb1;
+        border: 1px solid #756bb1;
+        padding: 5px;
+        border-radius: 15px;
+        display: inline-block;
+        min-width: 100px;
+
+
+        &:hover {
+            @include transition(background-color 0.2s ease-in, color 0.5s ease-in);
+            background-color: #756bb1;
+            color: #ffffff;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        
+        label.filter {
+            min-width: 0px;
+        }
+    }
+}

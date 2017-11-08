@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 import { Fragment } from 'redux-little-router';
 import * as _ from 'lodash';
 import moment from 'moment';
+import Filters from './components/graphs/Filters/Filters';
 
 class App extends Component {
 
@@ -203,6 +204,9 @@ class App extends Component {
     let { previousMainRoute, nextMainRoute } = this.getMainRoutes();
     let { previousChildRoute, nextChildRoute } = this.getChildRoutes();
 
+    // filters for when we reach our charts
+    let filters = [{id: 'two', label: '2 or Fewer', className: 'filter'}, {id: 'five', label: '5 or Fewer', className: 'filter'}, {id: 'eight', label: '8 or Fewer', className: 'filter'}, {id: 'all', label: 'All', className: 'filter'}, {id: 'zero', label: 'None', className: 'filter'}];
+
     // TODO - implement a Spinner solution
     let component = maps.fetchingData ?
       <div></div> :
@@ -236,6 +240,7 @@ class App extends Component {
                 <div className='chart-layout'>
                   <ChartDescription title='Shootings By Day' subtitle='January 1, 2015 - December 31, 2016' />
                   <BarChart data={this.getShootingsByDate('day')} />
+                  <Filters radios={filters} checkedValue="all" onChangeHandler={() => console.log('change')} containerClassName="filter-container" />
                 </div>
               </Fragment>
             </div>

@@ -3,6 +3,7 @@
 .map-container {
     @include flex-column;
     flex: 0 0 auto;
+    justify-content: center;
     width: 70%;
 
     .map {

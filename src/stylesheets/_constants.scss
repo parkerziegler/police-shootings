@@ -27,6 +27,12 @@ $label-font-sizes: (
 	tablet: 10px,
 	desktop: 12px
 );
+$filters-font-sizes: (
+	null: 10px,
+	mobile: 10px,
+	tablet: 13px,
+	desktop: 16px
+);
 
 
 @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
@@ -53,4 +59,11 @@ $label-font-sizes: (
 @mixin flex-row {
     display: flex;
     flex-direction: row;
+}
+
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
 }
