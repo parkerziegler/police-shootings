@@ -11,8 +11,8 @@ import { callAPI } from './actions/mapActions';
 import PropTypes from 'prop-types';
 import { Fragment } from 'redux-little-router';
 import * as _ from 'lodash';
-import moment from 'moment';
 import Filters from './components/graphs/Filters/Filters';
+import * as actions from './actions/mapActions';
 
 class App extends Component {
 
@@ -21,7 +21,6 @@ class App extends Component {
     this.findKey = this.findKey.bind(this);
     this.getMainRoutes = this.getMainRoutes.bind(this);
     this.getChildRoutes = this.getChildRoutes.bind(this);
-    this.getShootingsByDate = this.getShootingsByDate.bind(this);
   }
 
   componentDidMount() {
@@ -158,54 +157,17 @@ class App extends Component {
 
   }
 
-  getShootingsByDate(interval) {
-
-    const { maps } = this.props;
-
-    const getColor = (count) => {
-
-      if (count < 2){
-        return "#dadaeb";
-      }
-      else if (count < 4){
-        return "#bcbddc";
-      }
-      else if (count < 6){
-        return "#9e9ac8";
-      }
-      else {
-        return "#756bb1";
-      }
-    };
-
-    if (interval === 'day') {
-      
-      let dates = _.map(maps.shootingsData, (record) => {
-          return moment(`${record.month} - ${record.day} - ${record.year}`, "MMMM - D - YYYY").valueOf();
-      });
-
-      let groupByDate = _.groupBy(dates, date => date);
-
-      let data = _.map(_.keys(groupByDate), (key) => {
-
-          return { date: _.parseInt(key, 10), count: groupByDate[key].length, color: getColor(groupByDate[key].length) }
-      });
-
-      return data;
-    }
-  }
-
   render() {
 
     // destructure props
-    const { maps, router } = this.props;
+    const { maps, router, dispatch } = this.props;
 
     // obtain routes from getMainRoutes and getChildRoutes method
     let { previousMainRoute, nextMainRoute } = this.getMainRoutes();
     let { previousChildRoute, nextChildRoute } = this.getChildRoutes();
 
     // filters for when we reach our charts
-    let filters = [{id: 'two', label: '2 or Fewer', className: 'filter'}, {id: 'five', label: '5 or Fewer', className: 'filter'}, {id: 'eight', label: '8 or Fewer', className: 'filter'}, {id: 'all', label: 'All', className: 'filter'}, {id: 'zero', label: 'None', className: 'filter'}];
+    let filters = [{id: '2', label: '2 or Fewer', className: 'filter'}, {id: '4', label: '4 or Fewer', className: 'filter'}, {id: '6', label: '6 or Fewer', className: 'filter'}, {id: '100', label: 'All', className: 'filter'}];
 
     // TODO - implement a Spinner solution
     let component = maps.fetchingData ?
@@ -239,8 +201,8 @@ class App extends Component {
               <Fragment forRoute={'/shootingsbydate'}>
                 <div className='chart-layout'>
                   <ChartDescription title='Shootings By Day' subtitle='January 1, 2015 - December 31, 2016' />
-                  <BarChart data={this.getShootingsByDate('day')} />
-                  <Filters radios={filters} checkedValue="all" onChangeHandler={() => console.log('change')} containerClassName="filter-container" />
+                  <BarChart />
+                  <Filters radios={filters} checkedValue={maps.temporalFilter} onChangeHandler={(event) => dispatch(actions.setTemporalFilterOnShootingsData(event.target.id))} containerClassName="filter-container" />
                 </div>
               </Fragment>
             </div>
