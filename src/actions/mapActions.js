@@ -54,10 +54,18 @@ export const sendCensusDataToReducer = (censusData) => {
 	};
 };
 
-export const setChoroplethBreaks = (choroplethBreaks) => {
+export const setTemporalFilterOnShootingsData = (temporalFilter) => {
 
 	return {
-		type: actionTypes.SET_CHOROPLETH_BREAKS,
-		choroplethBreaks
+		type: actionTypes.SET_TEMPORAL_FILTER_ON_SHOOTINGS_DATA,
+		temporalFilter
+	};
+};
+
+export const sendShootingsByDateToReducer = (shootingsByDate) => {
+
+	return {
+		type: actionTypes.SEND_SHOOTINGS_BY_DATE_TO_REDUCER,
+		shootingsByDate
 	};
 };

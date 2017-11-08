@@ -2,6 +2,7 @@ import { put, takeLatest, select } from 'redux-saga/effects';
 import * as _ from 'lodash';
 import * as actionTypes from '../constants/action-types';
 import * as stateNames from '../assets/state-names';
+import moment from 'moment';
 
 // define a watcher saga to listen for when ROUTER_LOCATION_CHANGED is dispatched by the router
 export function* watchLocationChanged() {
@@ -106,7 +107,60 @@ function* handleLocationChanged(action) {
             // send this data to redux so our Map component can read from it
             yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: geoData });
         }
-        
+
+        if (router.routes[action.payload.route].index === 3) {
+
+            // a function for generating different colors on bars of different heights
+            const getColor = (count) => {
+
+                if (count < 2){
+                    return "#dadaeb";
+                }
+                else if (count < 4){
+                    return "#bcbddc";
+                }
+                else if (count < 6){
+                    return "#9e9ac8";
+                }
+                else {
+                    return "#756bb1";
+                }
+            };
+
+            // we'll handle the shootings by date route separately
+            let shootingsData = reduxStore.mapReducer.shootingsData; 
+
+            // we need to obtain all dates within the range Jan 1, 2015 - Dec 1, 2015
+            const getAllDatesInRange = (startDate, endDate) => {
+
+                let dateArray = [];
+                while (moment(startDate, "MM/DD/YYYY").isSameOrBefore(moment(endDate, "MM/DD/YYYY"))) {
+
+                    dateArray.push(moment(startDate, "MM/DD/YYYY").valueOf());
+                    startDate = moment(startDate, "MM/DD/YYYY").add(1, 'day');
+                };
+                return dateArray;
+            };
+
+            let allDates = getAllDatesInRange('01/01/2015', '12/31/2016');
+
+			let dates = _.map(shootingsData, (record) => {
+				return moment(`${record.month} - ${record.day} - ${record.year}`, "MMMM - D - YYYY").valueOf();
+            });
+            
+            let daysWithNoShootings = _.difference(allDates, dates);
+
+            // group shootings by their date
+			let groupByDate = _.groupBy(_.concat(dates, daysWithNoShootings), date => date);
+
+            // return data - we'll send this off to redux to be consumed by victory
+			let shootingsByDate = _.map(_.keys(groupByDate), (key) => {
+
+				return { date: _.parseInt(key, 10), count: groupByDate[key].length, color: getColor(groupByDate[key].length) }
+            });
+            
+            yield put({ type: actionTypes.SEND_SHOOTINGS_BY_DATE_TO_REDUCER, shootingsByDate: shootingsByDate.sort((a, b) => a - b) });
+        }
         
     } catch (error) {
 

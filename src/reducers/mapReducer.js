@@ -12,7 +12,8 @@ const initialState = {
 		shootings: 43,
 		shootingsPerMillion: 20.66
 	},
-	choroplethBreaks: {}
+	temporalFilter: '100',
+	shootingsByDate: []
 };
 
 export const mapReducer = (state = initialState, action) => {
@@ -38,13 +39,19 @@ export const mapReducer = (state = initialState, action) => {
 				censusData: action.censusData
 			};
 		case actionTypes.GET_HOVERED_STATE_DATA:
-			return { ...state,
-				activeState: action.state
-			};
-		case actionTypes.SET_CHOROPLETH_BREAKS:
 			return {
 				...state,
-				choroplethBreaks: action.choroplethBreaks
+				activeState: action.state
+			};
+		case actionTypes.SET_TEMPORAL_FILTER_ON_SHOOTINGS_DATA:
+			return {
+				...state,
+				temporalFilter: action.temporalFilter
+			};
+		case actionTypes.SEND_SHOOTINGS_BY_DATE_TO_REDUCER:
+			return {
+				...state,
+				shootingsByDate: action.shootingsByDate
 			};
         default:
             return state;
