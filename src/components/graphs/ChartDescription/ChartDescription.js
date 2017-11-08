@@ -4,10 +4,6 @@ import { connect } from 'react-redux';
 
 class ChartDescription extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
 
         const { title, subtitle, router } = this.props;
@@ -16,7 +12,7 @@ class ChartDescription extends React.Component {
             <div className='chart-description-container'>
                 <div className='chart-title'>{title}</div>
                 <div className='chart-subtitle'>{subtitle}</div>
-                <div className='chart-text'>{router.result.jsx}</div>
+                {/*<div className='chart-text'>{router.result.jsx}</div>*/}
             </div>
         )
     }

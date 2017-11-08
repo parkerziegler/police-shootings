@@ -9,6 +9,12 @@
         display: none;
         opacity: 0;
         visibility: hidden;
+
+    }
+
+    input[type="radio"]:checked + label.filter {
+        background-color: #756bb1;
+        color: #ffffff;
     }
 
     label.filter {
