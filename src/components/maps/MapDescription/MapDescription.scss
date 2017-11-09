@@ -3,9 +3,9 @@
 .map-description-container {
     @include flex-column;
     width: 30%;
-    padding: 10px 10px 10px 10px;
     text-align: left;
     justify-content: center;
+    flex: 0 0 auto;
 
     .inset-header {
         @include font-size($font-sizes);
@@ -36,7 +36,7 @@
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
 
     .map-description-container {
         width: 95%;

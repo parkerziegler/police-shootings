@@ -38,7 +38,7 @@ class MapDescription extends React.Component {
 			<CSSTransitionGroup
 			transitionName="description-transition"
 			transitionAppear={true}
-			transitionAppearTimeout={500}
+			transitionAppearTimeout={3000}
 			transitionEnter={false}
 			transitionLeave={false}
 			component={FirstChild}>

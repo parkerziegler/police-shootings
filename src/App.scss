@@ -1,7 +1,6 @@
 @import './stylesheets/constants.scss';
 
 body {
-	@include flex-column;
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -42,20 +41,8 @@ body {
 	}
 }
 
-.percapita,
-.raw {
-
+.map-layout {
 	@include flex-row;
-	width: 100%;
-	height: 100%;
-
-
-	@media only screen and (max-width: 900px) {
-
-		.map-container {
-			width: 100%;
-		}
-	}
 }
 
 .chart-layout {
@@ -65,10 +52,9 @@ body {
 
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
 
-	.percapita,
-	.raw {
+	.map-layout {
 		@include flex-column;
 	}
 }

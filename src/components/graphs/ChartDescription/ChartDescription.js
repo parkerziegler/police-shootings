@@ -6,7 +6,7 @@ class ChartDescription extends React.Component {
 
     render() {
 
-        const { title, subtitle, router } = this.props;
+        const { title, subtitle } = this.props;
 
         return (
             <div className='chart-description-container'>

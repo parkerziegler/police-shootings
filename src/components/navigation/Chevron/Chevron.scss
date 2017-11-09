@@ -35,11 +35,11 @@ $chevron-sizes: (
 }
 
 .chevron-link.bottom {
-    min-height: 10%;
+    /*min-height: 10%;*/
 }
 
 .chevron-link.top {
-    min-height: 5%;
+    /*min-height: 5%;*/
 }
 
 .chevron {
@@ -65,8 +65,8 @@ $chevron-sizes: (
     .slide-title {
         @include font-size($subheader-font-sizes);
         font-family: $roboto;
-        color: #6C7680;
-        text-decoration: none;
+        color: $gray;
+        /* text-decoration: none; */
     }
 
 }

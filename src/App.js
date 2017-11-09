@@ -182,7 +182,7 @@ class App extends Component {
                 <Home />
               </Fragment>
               <Fragment forRoute={'/total-shootings'}>
-                <div className='raw'>
+                <div className='map-layout'>
                   <Map mapType='proportional' />
                   <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
                 </div>
@@ -193,12 +193,12 @@ class App extends Component {
               <Fragment forRoute={'/total-shootings/nativeamerican'}></Fragment>
               <Fragment forRoute={'/total-shootings/white'}></Fragment>
               <Fragment forRoute={'/percapita'}>
-                <div className='percapita'>
+                <div className='map-layout'>
                   <Map mapType='choropleth' />
                   <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
                 </div>
-              </Fragment>
-              <Fragment forRoute={'/shootingsbydate'}>
+            </Fragment>
+            <Fragment forRoute={'/shootingsbydate'}>
                 <div className='chart-layout'>
                   <ChartDescription title='Shootings By Day' subtitle='January 1, 2015 - December 31, 2016' />
                   <BarChart />
