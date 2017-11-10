@@ -20,7 +20,8 @@ const Filters = (props) => {
     });
 
     return (
-        <form>
+        <form className='filter-form'>
+            <div className='filter-title'>Apply Filters</div>
             <div className={containerClassName}>
                 {radioButtons}
             </div>

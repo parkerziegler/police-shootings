@@ -151,10 +151,21 @@ function* handleLocationChanged(action) {
             let daysWithNoShootings = _.difference(allDates, dates);
 
             // group shootings by their date
-			let groupByDate = _.groupBy(_.concat(dates, daysWithNoShootings), date => date);
+            let groupByDate = _.groupBy(_.concat(dates, daysWithNoShootings), date => date);
 
             // return data - we'll send this off to redux to be consumed by victory
 			let shootingsByDate = _.map(_.keys(groupByDate), (key) => {
+                
+                if (groupByDate[key].length === 1) {
+
+                    let isZero = _.includes(daysWithNoShootings, groupByDate[key][0])
+
+                    if (isZero) {
+                        return { date: _.parseInt(key, 10), count: 0, color: getColor(groupByDate[key].length) };
+                    } else {
+                        return { date: _.parseInt(key, 10), count: groupByDate[key].length, color: getColor(groupByDate[key].length) };
+                    }
+                }
 
 				return { date: _.parseInt(key, 10), count: groupByDate[key].length, color: getColor(groupByDate[key].length) }
             });
