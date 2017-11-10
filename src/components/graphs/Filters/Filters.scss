@@ -1,22 +1,29 @@
 @import '../../../stylesheets/constants.scss';
 
+.filter-title {
+    @include font-size($subheader-font-sizes);
+    color: #666666;
+    font-family: $helvetica;
+    text-align: left;
+    margin: 10px;
+}
+
 .filter-container {
     @include flex-row;
-    justify-content: space-around;
     align-items: center;
-
+    
     input[type="radio"] {
         display: none;
         opacity: 0;
         visibility: hidden;
-
+        
     }
-
+    
     input[type="radio"]:checked + label.filter {
         background-color: #756bb1;
         color: #ffffff;
     }
-
+    
     label.filter {
         @include font-size($filters-font-sizes);
         font-family: $helvetica;
@@ -26,15 +33,15 @@
         border-radius: 15px;
         display: inline-block;
         min-width: 100px;
-
-
+        margin: 10px;
+        
         &:hover {
             @include transition(background-color 0.2s ease-in, color 0.5s ease-in);
             background-color: #756bb1;
             color: #ffffff;
         }
     }
-
+    
     @media only screen and (max-width: 480px) {
         
         label.filter {

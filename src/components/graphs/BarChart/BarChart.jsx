@@ -13,7 +13,7 @@ class BarChart extends React.Component {
         let data = maps.shootingsByDate.filter(({ count }) => count <= Number(maps.temporalFilter))
 
         return (
-            <VictoryChart width={1200} height={400}>
+            <VictoryChart width={1000} height={400} padding={40}>
                 <VictoryAxis scale="time" tickValues={[new Date(2015, 3, 1), new Date(2015, 9, 1), new Date(2016, 2, 1), new Date(2016, 8, 1)]} tickFormat={(t) => moment(t).format('MMM YYYY')} />
                 <VictoryAxis dependentAxis />
                 <VictoryBar data={data} x="date" y="count" scale="time" animate={{
