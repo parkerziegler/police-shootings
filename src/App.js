@@ -7,7 +7,6 @@ import MapDescription from './components/maps/MapDescription/MapDescription';
 import BarChart from './components/graphs/BarChart/BarChart';
 import ChartDescription from './components/graphs/ChartDescription/ChartDescription';
 import Chevron from './components/navigation/Chevron/Chevron';
-import { callAPI } from './actions/mapActions';
 import PropTypes from 'prop-types';
 import { Fragment } from 'redux-little-router';
 import * as _ from 'lodash';
@@ -21,13 +20,6 @@ class App extends Component {
     this.findKey = this.findKey.bind(this);
     this.getMainRoutes = this.getMainRoutes.bind(this);
     this.getChildRoutes = this.getChildRoutes.bind(this);
-  }
-
-  componentDidMount() {
-
-    // on componentDidMount, invoke our callAPI saga to get our data
-    const { dispatch } = this.props;
-    dispatch(callAPI());
   }
 
   findKey(index) {
