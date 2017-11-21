@@ -12,7 +12,7 @@ export function* watchAPICall() {
 }
 
 // define a function that will return our axios promise
-const axiosCallAPI = () => {
+export const axiosCallAPI = () => {
 
     return axios.all([
         axios.get("https://d3js.org/us-10m.v1.json"),
@@ -22,7 +22,7 @@ const axiosCallAPI = () => {
 };
 
 // define a generator to be handle fetching our API data
-function* callAPI(action) {
+export function* callAPI(action) {
 
     try {
 
