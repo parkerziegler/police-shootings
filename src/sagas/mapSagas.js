@@ -16,7 +16,7 @@ const axiosCallAPI = () => {
 
     return axios.all([
         axios.get("https://d3js.org/us-10m.v1.json"),
-        axios.get('https://thecountedapi.com/api/counted'),
+        axios.get(`${process.env.PUBLIC_URL}/shootings-data.json`),
         axios.get("https://api.census.gov/data/2015/acs5?get=B02001_003E,B03002_012E,B02001_005E,B02001_004E,B02001_002E,B01003_001E&for=state:*&key=" + CENSUS_API_KEY)
     ]);
 };
