@@ -16,3 +16,10 @@ it('renders all expected child divs', () => {
   
   expect(wrapper.dive().find('.page-content').children()).toHaveLength(6);
 });
+
+it('matches the Jest snapshot', () => {
+
+  const wrapper = shallow(<Home store={store} />);
+
+  expect(wrapper).toMatchSnapshot();
+});
