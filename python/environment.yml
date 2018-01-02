@@ -1,0 +1,7 @@
+name: python-pandas
+
+dependencies:
+  - python=2.7.13
+  - numpy
+  - scipy
+  - pandas
