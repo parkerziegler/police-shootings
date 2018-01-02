@@ -1,5 +1,5 @@
-import { store } from '../../../index';
-import Map from './Map';
+import { store } from '../src/index';
+import Map from '../src/components/maps/Map/Map';
 
 it('renders without crashing', () => {
 

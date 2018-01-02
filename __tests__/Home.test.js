@@ -1,5 +1,5 @@
-import { store } from '../../index';
-import Home from './Home';
+import { store } from '../src/index';
+import Home from '../src/components/home/Home';
 
 it('renders without crashing', () => {
   shallow(
@@ -10,9 +10,6 @@ it('renders without crashing', () => {
 it('renders all expected child divs', () => {
 
   const wrapper = shallow(<Home store={store} />);
-
-  // example of how to debug output
-  console.log(wrapper.dive().find('.page-content').children().debug());
   
   expect(wrapper.dive().find('.page-content').children()).toHaveLength(6);
 });

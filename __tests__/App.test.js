@@ -1,5 +1,5 @@
-import { store } from './index';
-import App from './App';
+import { store } from '../src/index';
+import App from '../src/App';
 
 it('renders without crashing', () => {
   shallow(
