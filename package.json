@@ -8,6 +8,7 @@
     "d3": "4.7.4",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.4",
+    "enzyme-to-json": "^3.3.0",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^16.1.0",
@@ -38,5 +39,10 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build&&gh-pages -d build",
     "coverage": "npm test -- --coverage"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
