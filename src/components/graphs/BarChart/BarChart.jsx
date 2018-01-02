@@ -18,8 +18,8 @@ class BarChart extends React.Component {
                 <VictoryAxis dependentAxis />
                 <VictoryBar data={data} x="date" y="count" scale="time" animate={{
                     onLoad: {
-                        duration: 2000,
-                        easing: "linear",
+                        duration: 1000,
+                        easing: "polyInOut",
                         before: () => ({ opacity: 0.3, _y: 0 }),
                         after: (datum) => ({ opacity: 1, _y: datum._y })
                     }
