@@ -1,0 +1,22 @@
+# use node_js as language flag
+language: node_js
+
+# use latest of v8
+node_js:
+  - "8"
+
+# use npm v3 to avoid bugginess of v4 and v5
+before_install:
+  - npm install -g npm@3
+
+script:
+  - yarn run test
+  - yarn run build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  local_dir: ${TRAVIS_BUILD_DIR}/build
+  on:
+    branch: master
