@@ -1,0 +1,54 @@
+/** A constants SCSS partial for storing common variables and mixins */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.chart-description-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .chart-description-container .chart-title-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left; }
+    .chart-description-container .chart-title-container .chart-title {
+      font-size: 16px;
+      color: #000000;
+      font-family: "HelveticaNeue", "Helvetica", sans-serif;
+      font-weight: bold;
+      margin-bottom: 3px; }
+      @media screen and (min-width: 480px) {
+        .chart-description-container .chart-title-container .chart-title {
+          font-size: 18px; } }
+      @media screen and (min-width: 768px) {
+        .chart-description-container .chart-title-container .chart-title {
+          font-size: 22px; } }
+      @media screen and (min-width: 1024px) {
+        .chart-description-container .chart-title-container .chart-title {
+          font-size: 28px; } }
+    .chart-description-container .chart-title-container .chart-subtitle {
+      font-size: 12px;
+      color: #666666;
+      font-family: "HelveticaNeue", "Helvetica", sans-serif;
+      margin-bottom: 10px; }
+      @media screen and (min-width: 480px) {
+        .chart-description-container .chart-title-container .chart-subtitle {
+          font-size: 14px; } }
+      @media screen and (min-width: 768px) {
+        .chart-description-container .chart-title-container .chart-subtitle {
+          font-size: 18px; } }
+      @media screen and (min-width: 1024px) {
+        .chart-description-container .chart-title-container .chart-subtitle {
+          font-size: 21px; } }
+    .chart-description-container .chart-title-container .chart-subtitle.annotate {
+      font-size: 10px; }
+      @media screen and (min-width: 480px) {
+        .chart-description-container .chart-title-container .chart-subtitle.annotate {
+          font-size: 10px; } }
+      @media screen and (min-width: 768px) {
+        .chart-description-container .chart-title-container .chart-subtitle.annotate {
+          font-size: 13px; } }
+      @media screen and (min-width: 1024px) {
+        .chart-description-container .chart-title-container .chart-subtitle.annotate {
+          font-size: 16px; } }
+    .chart-description-container .chart-title-container .chart-text {
+      color: #000000;
+      font: 14px "HelveticaNeue", "Helvetica", sans-serif;
+      margin-bottom: 10px; }

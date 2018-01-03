@@ -1,0 +1,66 @@
+/** A constants SCSS partial for storing common variables and mixins */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.chevron-link {
+  text-decoration: none;
+  flex: 0 0 auto; }
+
+.chevron-link.horizontal {
+  height: 30px;
+  width: 30px; }
+  @media screen and (min-width: 480px) {
+    .chevron-link.horizontal {
+      height: 30px;
+      width: 30px; } }
+  @media screen and (min-width: 768px) {
+    .chevron-link.horizontal {
+      height: 40px;
+      width: 40px; } }
+  @media screen and (min-width: 1024px) {
+    .chevron-link.horizontal {
+      height: 40px;
+      width: 40px; } }
+
+.chevron-link.bottom {
+  /*min-height: 10%;*/ }
+
+.chevron-link.top {
+  /*min-height: 5%;*/ }
+
+.chevron {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .chevron:hover svg {
+    fill-opacity: 0.5; }
+  .chevron:hover div {
+    opacity: 0.5; }
+  .chevron svg {
+    height: 30px;
+    width: 30px; }
+    @media screen and (min-width: 480px) {
+      .chevron svg {
+        height: 30px;
+        width: 30px; } }
+    @media screen and (min-width: 768px) {
+      .chevron svg {
+        height: 40px;
+        width: 40px; } }
+    @media screen and (min-width: 1024px) {
+      .chevron svg {
+        height: 40px;
+        width: 40px; } }
+  .chevron .slide-title {
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    color: #6C7680;
+    /* text-decoration: none; */ }
+    @media screen and (min-width: 480px) {
+      .chevron .slide-title {
+        font-size: 14px; } }
+    @media screen and (min-width: 768px) {
+      .chevron .slide-title {
+        font-size: 18px; } }
+    @media screen and (min-width: 1024px) {
+      .chevron .slide-title {
+        font-size: 21px; } }

@@ -1,0 +1,58 @@
+/** A constants SCSS partial for storing common variables and mixins */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.filter-title {
+  font-size: 12px;
+  color: #666666;
+  font-family: "HelveticaNeue", "Helvetica", sans-serif;
+  text-align: left;
+  margin: 10px; }
+  @media screen and (min-width: 480px) {
+    .filter-title {
+      font-size: 14px; } }
+  @media screen and (min-width: 768px) {
+    .filter-title {
+      font-size: 18px; } }
+  @media screen and (min-width: 1024px) {
+    .filter-title {
+      font-size: 21px; } }
+
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .filter-container input[type="radio"] {
+    display: none;
+    opacity: 0;
+    visibility: hidden; }
+  .filter-container input[type="radio"]:checked + label.filter {
+    background-color: #756bb1;
+    color: #ffffff; }
+  .filter-container label.filter {
+    font-size: 10px;
+    font-family: "HelveticaNeue", "Helvetica", sans-serif;
+    color: #756bb1;
+    border: 1px solid #756bb1;
+    padding: 5px;
+    border-radius: 15px;
+    display: inline-block;
+    min-width: 100px;
+    margin: 10px; }
+    @media screen and (min-width: 480px) {
+      .filter-container label.filter {
+        font-size: 10px; } }
+    @media screen and (min-width: 768px) {
+      .filter-container label.filter {
+        font-size: 13px; } }
+    @media screen and (min-width: 1024px) {
+      .filter-container label.filter {
+        font-size: 16px; } }
+    .filter-container label.filter:hover {
+      -moz-transition: background-color 0.2s ease-in, color 0.5s ease-in;
+      -o-transition: background-color 0.2s ease-in, color 0.5s ease-in;
+      -webkit-transition: background-color 0.2s ease-in, color 0.5s ease-in;
+      transition: background-color 0.2s ease-in, color 0.5s ease-in;
+      background-color: #756bb1;
+      color: #ffffff; }
+  @media only screen and (max-width: 480px) {
+    .filter-container label.filter {
+      min-width: 0px; } }

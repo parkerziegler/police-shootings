@@ -1,0 +1,856 @@
+/** A constants SCSS partial for storing common variables and mixins */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  flex: 0 0 auto; }
+  .map-container .map {
+    overflow: visible; }
+    .map-container .map .state-container:hover .states.raw {
+      opacity: 0.5; }
+    .map-container .map .states {
+      stroke: #FFFFFF;
+      stroke-width: 0.25px; }
+      .map-container .map .states:hover {
+        fill-opacity: 0.75; }
+    .map-container .map .state-label {
+      font-size: 8px;
+      font-family: "HelveticaNeue", "Helvetica", sans-serif;
+      cursor: default; }
+      @media screen and (min-width: 480px) {
+        .map-container .map .state-label {
+          font-size: 8px; } }
+      @media screen and (min-width: 768px) {
+        .map-container .map .state-label {
+          font-size: 10px; } }
+      @media screen and (min-width: 1024px) {
+        .map-container .map .state-label {
+          font-size: 12px; } }
+
+@media only screen and (max-width: 768px) {
+  .map-container {
+    width: 100%; } }
+
+.state-transition-0-appear,
+.state-transition-0-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-0-leave {
+  fill-opacity: 1; }
+
+.state-transition-0-appear.state-transition-0-appear-active,
+.state-transition-0-enter.state-transition-0-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 0ms ease-in 100ms; }
+
+.state-transition-0-leave.state-transition-0-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 0ms ease-in 100ms; }
+
+.state-transition-1-appear,
+.state-transition-1-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-1-leave {
+  fill-opacity: 1; }
+
+.state-transition-1-appear.state-transition-1-appear-active,
+.state-transition-1-enter.state-transition-1-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 50ms ease-in 100ms; }
+
+.state-transition-1-leave.state-transition-1-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 50ms ease-in 100ms; }
+
+.state-transition-2-appear,
+.state-transition-2-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-2-leave {
+  fill-opacity: 1; }
+
+.state-transition-2-appear.state-transition-2-appear-active,
+.state-transition-2-enter.state-transition-2-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 100ms ease-in 100ms; }
+
+.state-transition-2-leave.state-transition-2-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 100ms ease-in 100ms; }
+
+.state-transition-3-appear,
+.state-transition-3-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-3-leave {
+  fill-opacity: 1; }
+
+.state-transition-3-appear.state-transition-3-appear-active,
+.state-transition-3-enter.state-transition-3-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 150ms ease-in 100ms; }
+
+.state-transition-3-leave.state-transition-3-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 150ms ease-in 100ms; }
+
+.state-transition-4-appear,
+.state-transition-4-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-4-leave {
+  fill-opacity: 1; }
+
+.state-transition-4-appear.state-transition-4-appear-active,
+.state-transition-4-enter.state-transition-4-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 200ms ease-in 100ms; }
+
+.state-transition-4-leave.state-transition-4-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 200ms ease-in 100ms; }
+
+.state-transition-5-appear,
+.state-transition-5-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-5-leave {
+  fill-opacity: 1; }
+
+.state-transition-5-appear.state-transition-5-appear-active,
+.state-transition-5-enter.state-transition-5-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 250ms ease-in 100ms; }
+
+.state-transition-5-leave.state-transition-5-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 250ms ease-in 100ms; }
+
+.state-transition-6-appear,
+.state-transition-6-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-6-leave {
+  fill-opacity: 1; }
+
+.state-transition-6-appear.state-transition-6-appear-active,
+.state-transition-6-enter.state-transition-6-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 300ms ease-in 100ms; }
+
+.state-transition-6-leave.state-transition-6-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 300ms ease-in 100ms; }
+
+.state-transition-7-appear,
+.state-transition-7-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-7-leave {
+  fill-opacity: 1; }
+
+.state-transition-7-appear.state-transition-7-appear-active,
+.state-transition-7-enter.state-transition-7-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 350ms ease-in 100ms; }
+
+.state-transition-7-leave.state-transition-7-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 350ms ease-in 100ms; }
+
+.state-transition-8-appear,
+.state-transition-8-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-8-leave {
+  fill-opacity: 1; }
+
+.state-transition-8-appear.state-transition-8-appear-active,
+.state-transition-8-enter.state-transition-8-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 400ms ease-in 100ms; }
+
+.state-transition-8-leave.state-transition-8-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 400ms ease-in 100ms; }
+
+.state-transition-9-appear,
+.state-transition-9-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-9-leave {
+  fill-opacity: 1; }
+
+.state-transition-9-appear.state-transition-9-appear-active,
+.state-transition-9-enter.state-transition-9-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 450ms ease-in 100ms; }
+
+.state-transition-9-leave.state-transition-9-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 450ms ease-in 100ms; }
+
+.state-transition-10-appear,
+.state-transition-10-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-10-leave {
+  fill-opacity: 1; }
+
+.state-transition-10-appear.state-transition-10-appear-active,
+.state-transition-10-enter.state-transition-10-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 500ms ease-in 100ms; }
+
+.state-transition-10-leave.state-transition-10-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 500ms ease-in 100ms; }
+
+.state-transition-11-appear,
+.state-transition-11-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-11-leave {
+  fill-opacity: 1; }
+
+.state-transition-11-appear.state-transition-11-appear-active,
+.state-transition-11-enter.state-transition-11-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 550ms ease-in 100ms; }
+
+.state-transition-11-leave.state-transition-11-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 550ms ease-in 100ms; }
+
+.state-transition-12-appear,
+.state-transition-12-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-12-leave {
+  fill-opacity: 1; }
+
+.state-transition-12-appear.state-transition-12-appear-active,
+.state-transition-12-enter.state-transition-12-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 600ms ease-in 100ms; }
+
+.state-transition-12-leave.state-transition-12-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 600ms ease-in 100ms; }
+
+.state-transition-13-appear,
+.state-transition-13-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-13-leave {
+  fill-opacity: 1; }
+
+.state-transition-13-appear.state-transition-13-appear-active,
+.state-transition-13-enter.state-transition-13-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 650ms ease-in 100ms; }
+
+.state-transition-13-leave.state-transition-13-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 650ms ease-in 100ms; }
+
+.state-transition-14-appear,
+.state-transition-14-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-14-leave {
+  fill-opacity: 1; }
+
+.state-transition-14-appear.state-transition-14-appear-active,
+.state-transition-14-enter.state-transition-14-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 700ms ease-in 100ms; }
+
+.state-transition-14-leave.state-transition-14-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 700ms ease-in 100ms; }
+
+.state-transition-15-appear,
+.state-transition-15-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-15-leave {
+  fill-opacity: 1; }
+
+.state-transition-15-appear.state-transition-15-appear-active,
+.state-transition-15-enter.state-transition-15-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 750ms ease-in 100ms; }
+
+.state-transition-15-leave.state-transition-15-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 750ms ease-in 100ms; }
+
+.state-transition-16-appear,
+.state-transition-16-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-16-leave {
+  fill-opacity: 1; }
+
+.state-transition-16-appear.state-transition-16-appear-active,
+.state-transition-16-enter.state-transition-16-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 800ms ease-in 100ms; }
+
+.state-transition-16-leave.state-transition-16-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 800ms ease-in 100ms; }
+
+.state-transition-17-appear,
+.state-transition-17-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-17-leave {
+  fill-opacity: 1; }
+
+.state-transition-17-appear.state-transition-17-appear-active,
+.state-transition-17-enter.state-transition-17-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 850ms ease-in 100ms; }
+
+.state-transition-17-leave.state-transition-17-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 850ms ease-in 100ms; }
+
+.state-transition-18-appear,
+.state-transition-18-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-18-leave {
+  fill-opacity: 1; }
+
+.state-transition-18-appear.state-transition-18-appear-active,
+.state-transition-18-enter.state-transition-18-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 900ms ease-in 100ms; }
+
+.state-transition-18-leave.state-transition-18-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 900ms ease-in 100ms; }
+
+.state-transition-19-appear,
+.state-transition-19-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-19-leave {
+  fill-opacity: 1; }
+
+.state-transition-19-appear.state-transition-19-appear-active,
+.state-transition-19-enter.state-transition-19-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 950ms ease-in 100ms; }
+
+.state-transition-19-leave.state-transition-19-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 950ms ease-in 100ms; }
+
+.state-transition-20-appear,
+.state-transition-20-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-20-leave {
+  fill-opacity: 1; }
+
+.state-transition-20-appear.state-transition-20-appear-active,
+.state-transition-20-enter.state-transition-20-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1000ms ease-in 100ms; }
+
+.state-transition-20-leave.state-transition-20-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1000ms ease-in 100ms; }
+
+.state-transition-21-appear,
+.state-transition-21-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-21-leave {
+  fill-opacity: 1; }
+
+.state-transition-21-appear.state-transition-21-appear-active,
+.state-transition-21-enter.state-transition-21-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1050ms ease-in 100ms; }
+
+.state-transition-21-leave.state-transition-21-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1050ms ease-in 100ms; }
+
+.state-transition-22-appear,
+.state-transition-22-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-22-leave {
+  fill-opacity: 1; }
+
+.state-transition-22-appear.state-transition-22-appear-active,
+.state-transition-22-enter.state-transition-22-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1100ms ease-in 100ms; }
+
+.state-transition-22-leave.state-transition-22-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1100ms ease-in 100ms; }
+
+.state-transition-23-appear,
+.state-transition-23-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-23-leave {
+  fill-opacity: 1; }
+
+.state-transition-23-appear.state-transition-23-appear-active,
+.state-transition-23-enter.state-transition-23-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1150ms ease-in 100ms; }
+
+.state-transition-23-leave.state-transition-23-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1150ms ease-in 100ms; }
+
+.state-transition-24-appear,
+.state-transition-24-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-24-leave {
+  fill-opacity: 1; }
+
+.state-transition-24-appear.state-transition-24-appear-active,
+.state-transition-24-enter.state-transition-24-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1200ms ease-in 100ms; }
+
+.state-transition-24-leave.state-transition-24-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1200ms ease-in 100ms; }
+
+.state-transition-25-appear,
+.state-transition-25-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-25-leave {
+  fill-opacity: 1; }
+
+.state-transition-25-appear.state-transition-25-appear-active,
+.state-transition-25-enter.state-transition-25-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1250ms ease-in 100ms; }
+
+.state-transition-25-leave.state-transition-25-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1250ms ease-in 100ms; }
+
+.state-transition-26-appear,
+.state-transition-26-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-26-leave {
+  fill-opacity: 1; }
+
+.state-transition-26-appear.state-transition-26-appear-active,
+.state-transition-26-enter.state-transition-26-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1300ms ease-in 100ms; }
+
+.state-transition-26-leave.state-transition-26-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1300ms ease-in 100ms; }
+
+.state-transition-27-appear,
+.state-transition-27-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-27-leave {
+  fill-opacity: 1; }
+
+.state-transition-27-appear.state-transition-27-appear-active,
+.state-transition-27-enter.state-transition-27-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1350ms ease-in 100ms; }
+
+.state-transition-27-leave.state-transition-27-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1350ms ease-in 100ms; }
+
+.state-transition-28-appear,
+.state-transition-28-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-28-leave {
+  fill-opacity: 1; }
+
+.state-transition-28-appear.state-transition-28-appear-active,
+.state-transition-28-enter.state-transition-28-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1400ms ease-in 100ms; }
+
+.state-transition-28-leave.state-transition-28-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1400ms ease-in 100ms; }
+
+.state-transition-29-appear,
+.state-transition-29-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-29-leave {
+  fill-opacity: 1; }
+
+.state-transition-29-appear.state-transition-29-appear-active,
+.state-transition-29-enter.state-transition-29-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1450ms ease-in 100ms; }
+
+.state-transition-29-leave.state-transition-29-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1450ms ease-in 100ms; }
+
+.state-transition-30-appear,
+.state-transition-30-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-30-leave {
+  fill-opacity: 1; }
+
+.state-transition-30-appear.state-transition-30-appear-active,
+.state-transition-30-enter.state-transition-30-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1500ms ease-in 100ms; }
+
+.state-transition-30-leave.state-transition-30-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1500ms ease-in 100ms; }
+
+.state-transition-31-appear,
+.state-transition-31-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-31-leave {
+  fill-opacity: 1; }
+
+.state-transition-31-appear.state-transition-31-appear-active,
+.state-transition-31-enter.state-transition-31-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1550ms ease-in 100ms; }
+
+.state-transition-31-leave.state-transition-31-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1550ms ease-in 100ms; }
+
+.state-transition-32-appear,
+.state-transition-32-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-32-leave {
+  fill-opacity: 1; }
+
+.state-transition-32-appear.state-transition-32-appear-active,
+.state-transition-32-enter.state-transition-32-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1600ms ease-in 100ms; }
+
+.state-transition-32-leave.state-transition-32-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1600ms ease-in 100ms; }
+
+.state-transition-33-appear,
+.state-transition-33-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-33-leave {
+  fill-opacity: 1; }
+
+.state-transition-33-appear.state-transition-33-appear-active,
+.state-transition-33-enter.state-transition-33-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1650ms ease-in 100ms; }
+
+.state-transition-33-leave.state-transition-33-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1650ms ease-in 100ms; }
+
+.state-transition-34-appear,
+.state-transition-34-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-34-leave {
+  fill-opacity: 1; }
+
+.state-transition-34-appear.state-transition-34-appear-active,
+.state-transition-34-enter.state-transition-34-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1700ms ease-in 100ms; }
+
+.state-transition-34-leave.state-transition-34-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1700ms ease-in 100ms; }
+
+.state-transition-35-appear,
+.state-transition-35-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-35-leave {
+  fill-opacity: 1; }
+
+.state-transition-35-appear.state-transition-35-appear-active,
+.state-transition-35-enter.state-transition-35-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1750ms ease-in 100ms; }
+
+.state-transition-35-leave.state-transition-35-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1750ms ease-in 100ms; }
+
+.state-transition-36-appear,
+.state-transition-36-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-36-leave {
+  fill-opacity: 1; }
+
+.state-transition-36-appear.state-transition-36-appear-active,
+.state-transition-36-enter.state-transition-36-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1800ms ease-in 100ms; }
+
+.state-transition-36-leave.state-transition-36-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1800ms ease-in 100ms; }
+
+.state-transition-37-appear,
+.state-transition-37-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-37-leave {
+  fill-opacity: 1; }
+
+.state-transition-37-appear.state-transition-37-appear-active,
+.state-transition-37-enter.state-transition-37-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1850ms ease-in 100ms; }
+
+.state-transition-37-leave.state-transition-37-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1850ms ease-in 100ms; }
+
+.state-transition-38-appear,
+.state-transition-38-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-38-leave {
+  fill-opacity: 1; }
+
+.state-transition-38-appear.state-transition-38-appear-active,
+.state-transition-38-enter.state-transition-38-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1900ms ease-in 100ms; }
+
+.state-transition-38-leave.state-transition-38-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1900ms ease-in 100ms; }
+
+.state-transition-39-appear,
+.state-transition-39-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-39-leave {
+  fill-opacity: 1; }
+
+.state-transition-39-appear.state-transition-39-appear-active,
+.state-transition-39-enter.state-transition-39-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 1950ms ease-in 100ms; }
+
+.state-transition-39-leave.state-transition-39-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 1950ms ease-in 100ms; }
+
+.state-transition-40-appear,
+.state-transition-40-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-40-leave {
+  fill-opacity: 1; }
+
+.state-transition-40-appear.state-transition-40-appear-active,
+.state-transition-40-enter.state-transition-40-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2000ms ease-in 100ms; }
+
+.state-transition-40-leave.state-transition-40-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2000ms ease-in 100ms; }
+
+.state-transition-41-appear,
+.state-transition-41-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-41-leave {
+  fill-opacity: 1; }
+
+.state-transition-41-appear.state-transition-41-appear-active,
+.state-transition-41-enter.state-transition-41-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2050ms ease-in 100ms; }
+
+.state-transition-41-leave.state-transition-41-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2050ms ease-in 100ms; }
+
+.state-transition-42-appear,
+.state-transition-42-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-42-leave {
+  fill-opacity: 1; }
+
+.state-transition-42-appear.state-transition-42-appear-active,
+.state-transition-42-enter.state-transition-42-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2100ms ease-in 100ms; }
+
+.state-transition-42-leave.state-transition-42-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2100ms ease-in 100ms; }
+
+.state-transition-43-appear,
+.state-transition-43-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-43-leave {
+  fill-opacity: 1; }
+
+.state-transition-43-appear.state-transition-43-appear-active,
+.state-transition-43-enter.state-transition-43-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2150ms ease-in 100ms; }
+
+.state-transition-43-leave.state-transition-43-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2150ms ease-in 100ms; }
+
+.state-transition-44-appear,
+.state-transition-44-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-44-leave {
+  fill-opacity: 1; }
+
+.state-transition-44-appear.state-transition-44-appear-active,
+.state-transition-44-enter.state-transition-44-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2200ms ease-in 100ms; }
+
+.state-transition-44-leave.state-transition-44-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2200ms ease-in 100ms; }
+
+.state-transition-45-appear,
+.state-transition-45-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-45-leave {
+  fill-opacity: 1; }
+
+.state-transition-45-appear.state-transition-45-appear-active,
+.state-transition-45-enter.state-transition-45-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2250ms ease-in 100ms; }
+
+.state-transition-45-leave.state-transition-45-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2250ms ease-in 100ms; }
+
+.state-transition-46-appear,
+.state-transition-46-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-46-leave {
+  fill-opacity: 1; }
+
+.state-transition-46-appear.state-transition-46-appear-active,
+.state-transition-46-enter.state-transition-46-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2300ms ease-in 100ms; }
+
+.state-transition-46-leave.state-transition-46-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2300ms ease-in 100ms; }
+
+.state-transition-47-appear,
+.state-transition-47-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-47-leave {
+  fill-opacity: 1; }
+
+.state-transition-47-appear.state-transition-47-appear-active,
+.state-transition-47-enter.state-transition-47-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2350ms ease-in 100ms; }
+
+.state-transition-47-leave.state-transition-47-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2350ms ease-in 100ms; }
+
+.state-transition-48-appear,
+.state-transition-48-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-48-leave {
+  fill-opacity: 1; }
+
+.state-transition-48-appear.state-transition-48-appear-active,
+.state-transition-48-enter.state-transition-48-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2400ms ease-in 100ms; }
+
+.state-transition-48-leave.state-transition-48-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2400ms ease-in 100ms; }
+
+.state-transition-49-appear,
+.state-transition-49-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-49-leave {
+  fill-opacity: 1; }
+
+.state-transition-49-appear.state-transition-49-appear-active,
+.state-transition-49-enter.state-transition-49-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2450ms ease-in 100ms; }
+
+.state-transition-49-leave.state-transition-49-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2450ms ease-in 100ms; }
+
+.state-transition-50-appear,
+.state-transition-50-enter {
+  fill-opacity: 0.01; }
+
+.state-transition-50-leave {
+  fill-opacity: 1; }
+
+.state-transition-50-appear.state-transition-50-appear-active,
+.state-transition-50-enter.state-transition-50-enter-active {
+  fill-opacity: 1;
+  transition: fill-opacity 2500ms ease-in 100ms; }
+
+.state-transition-50-leave.state-transition-50-leave-active {
+  fill-opacity: 0.01;
+  transition: fill-opacity 2500ms ease-in 100ms; }
+
+.legend-title {
+  font: 700 12px "HelveticaNeue", "Helvetica", sans-serif; }
+
+.legend-label {
+  font: 10px "HelveticaNeue", "Helvetica", sans-serif; }
