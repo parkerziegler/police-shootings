@@ -25,8 +25,11 @@
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "node-sass-chokidar": "0.0.2",
     "npm-run-all": "^4.0.2",
+    "prettier": "^1.9.2",
     "react-scripts": "0.9.5"
   },
   "scripts": {
@@ -38,11 +41,30 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build&&gh-pages -d build",
-    "coverage": "npm test -- --coverage"
+    "coverage": "npm test -- --coverage",
+    "precommit": "lint-staged"
   },
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.jsx": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "prettier --write",
+      "git add"
     ]
   }
 }
