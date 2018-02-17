@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import './App.css';
-import Home from './components/home/Home';
-import Map from './components/maps/Map/Map';
-import MapDescription from './components/maps/MapDescription/MapDescription';
-import BarChart from './components/graphs/BarChart/BarChart';
-import ChartDescription from './components/graphs/ChartDescription/ChartDescription';
-import Chevron from './components/navigation/Chevron/Chevron';
-import PropTypes from 'prop-types';
-import { Fragment } from 'redux-little-router';
-import * as _ from 'lodash';
-import Filters from './components/graphs/Filters/Filters';
-import * as actions from './actions/mapActions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import "./App.css";
+import Home from "./components/home/Home";
+import Map from "./components/maps/Map/Map";
+import MapDescription from "./components/maps/MapDescription/MapDescription";
+import BarChart from "./components/graphs/BarChart/BarChart";
+import ChartDescription from "./components/graphs/ChartDescription/ChartDescription";
+import Chevron from "./components/navigation/Chevron/Chevron";
+import PropTypes from "prop-types";
+import { Fragment } from "redux-little-router";
+import * as _ from "lodash";
+import Filters from "./components/graphs/Filters/Filters";
+import * as actions from "./actions/mapActions";
 
 class App extends Component {
-
   constructor() {
     super();
     this.findKey = this.findKey.bind(this);
@@ -23,19 +22,17 @@ class App extends Component {
   }
 
   findKey(index) {
-
     // destructure props
     const { router } = this.props;
 
     // this is just a utility method to find the route index
     // that matches the one we passed in
-    return _.findKey(router.routes, (route) => {
+    return _.findKey(router.routes, route => {
       return route.index === index;
     });
   }
 
   getMainRoutes() {
-
     // destructure props
     const { router } = this.props;
 
@@ -47,38 +44,37 @@ class App extends Component {
     let currentRoute = router.result;
 
     if (currentRoute.parent) {
-
       // this is a child route and has no main routes
       // just return '/'
-      previousMainRoute = '/';
-      nextMainRoute = '/';
+      previousMainRoute = "/";
+      nextMainRoute = "/";
     } else {
-
       // this is a main nav route
       // determine the previous and next routes
 
       // get the index of the previous main route
       let previousRouteIndex = currentRoute.index - 1;
-    
+
       // add a check to see if we're on the initial route
-      previousMainRoute = previousRouteIndex === -1 ? '/' : this.findKey(previousRouteIndex);
+      previousMainRoute =
+        previousRouteIndex === -1 ? "/" : this.findKey(previousRouteIndex);
 
       // get the index of the next main route
       let nextRouteIndex = currentRoute.index + 1;
 
       // add a check to see if this is the last route
-      nextMainRoute = currentRoute.isLastRoute ? '/' : this.findKey(nextRouteIndex);
+      nextMainRoute = currentRoute.isLastRoute
+        ? "/"
+        : this.findKey(nextRouteIndex);
     }
 
     return {
       previousMainRoute,
       nextMainRoute
     };
-
   }
 
   getChildRoutes() {
-
     const { router } = this.props;
 
     // here we need to determine previous and next routes
@@ -91,66 +87,72 @@ class App extends Component {
     // if the route has children, it is the parent
     // of the sub-navigation
     if (currentRoute.hasChildren) {
-
       // the next child route will be the first child
       // and its parent will have the same title as
       // the current route
-      nextChildRoute = _.findKey(router.routes, (route) => {
-
+      nextChildRoute = _.findKey(router.routes, route => {
         if (!route.parent) {
-          return '/';
+          return "/";
         }
 
-        return route.parent.title === currentRoute.title && route.childIndex === 0;
+        return (
+          route.parent.title === currentRoute.title && route.childIndex === 0
+        );
       });
 
       // there is no previous child route for the parent
-      previousChildRoute = '/';
-
+      previousChildRoute = "/";
     } else if (currentRoute.hasNextSibling) {
-
       // if the child route is bordered by other child routes,
       // implement similar logic to the main navigation
       let currentChildRouteIndex = currentRoute.childIndex;
 
-      nextChildRoute = _.findKey(router.routes, (route) => {
-
-        return route.parent.title === currentRoute.parent.title && route.childIndex === currentChildRouteIndex + 1;
+      nextChildRoute = _.findKey(router.routes, route => {
+        return (
+          route.parent.title === currentRoute.parent.title &&
+          route.childIndex === currentChildRouteIndex + 1
+        );
       });
 
-      previousChildRoute = currentChildRouteIndex === 0 ? currentRoute.parent.route : _.findKey(router.routes, (route) => {
-        return route.parent.title === currentRoute.parent.title && route.childIndex === currentChildRouteIndex - 1;
-      });
-
+      previousChildRoute =
+        currentChildRouteIndex === 0
+          ? currentRoute.parent.route
+          : _.findKey(router.routes, route => {
+              return (
+                route.parent.title === currentRoute.parent.title &&
+                route.childIndex === currentChildRouteIndex - 1
+              );
+            });
     } else if (currentRoute.isLastChildRoute) {
-
       // for the last child route, there is no next child
       let currentChildRouteIndex = currentRoute.childIndex;
-      
-      nextChildRoute = '/';
+
+      nextChildRoute = "/";
 
       // add a check to see if the previous route is the parent
       // if not, get the previous child route
-      previousChildRoute = currentChildRouteIndex === 0 ? currentRoute.parent.route : _.findKey(router.routes, (route) => {
-        return route.parent.title === currentRoute.parent.title && route.childIndex === currentChildRouteIndex - 1;
-      });
-
+      previousChildRoute =
+        currentChildRouteIndex === 0
+          ? currentRoute.parent.route
+          : _.findKey(router.routes, route => {
+              return (
+                route.parent.title === currentRoute.parent.title &&
+                route.childIndex === currentChildRouteIndex - 1
+              );
+            });
     } else {
-
       // if this is not a child route, no need to worry about child navigation
-      nextChildRoute = '/';
-      previousChildRoute = '/';
+      nextChildRoute = "/";
+      previousChildRoute = "/";
     }
 
     return {
       previousChildRoute,
       nextChildRoute
     };
-
   }
 
   render() {
-
     // destructure props
     const { maps, router, dispatch } = this.props;
 
@@ -159,56 +161,109 @@ class App extends Component {
     let { previousChildRoute, nextChildRoute } = this.getChildRoutes();
 
     // filters for when we reach our charts
-    let filters = [{id: '2', label: '2 or Fewer', className: 'filter'}, {id: '4', label: '4 or Fewer', className: 'filter'}, {id: '6', label: '6 or Fewer', className: 'filter'}, {id: '100', label: 'All', className: 'filter'}];
+    let filters = [
+      { id: "2", label: "2 or Fewer", className: "filter" },
+      { id: "4", label: "4 or Fewer", className: "filter" },
+      { id: "6", label: "6 or Fewer", className: "filter" },
+      { id: "100", label: "All", className: "filter" }
+    ];
 
     // TODO - implement a Spinner solution
-    let component = maps.fetchingData ?
-      <div></div> :
-      <Fragment forRoute={'/'}>
-        <div className='layout'>
-          <Chevron className='chevron-link top' path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z" href={previousChildRoute} visible={previousChildRoute !== '/'} />
-          <div className='page-container'>
-            <Chevron className='chevron-link horizontal' path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z" href={previousMainRoute} visible={previousMainRoute !== '/' || router.route === '/total-shootings'} />
-            <div className='page-content'>
-              <Fragment forRoute={'/'}>
+    let component = maps.fetchingData ? (
+      <div />
+    ) : (
+      <Fragment forRoute={"/"}>
+        <div className="layout">
+          <Chevron
+            className="chevron-link top"
+            path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"
+            href={previousChildRoute}
+            visible={previousChildRoute !== "/"}
+          />
+          <div className="page-container">
+            <Chevron
+              className="chevron-link horizontal"
+              path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"
+              href={previousMainRoute}
+              visible={
+                previousMainRoute !== "/" || router.route === "/total-shootings"
+              }
+            />
+            <div className="page-content">
+              <Fragment forRoute={"/"}>
                 <Home />
               </Fragment>
-              <Fragment forRoute={'/total-shootings'}>
-                <div className='map-layout'>
-                  <Map mapType='proportional' />
-                  <MapDescription mapType='proportional' insetHeader='Total Shootings'/>
+              <Fragment forRoute={"/total-shootings"}>
+                <div className="map-layout">
+                  <Map mapType="proportional" />
+                  <MapDescription
+                    mapType="proportional"
+                    insetHeader="Total Shootings"
+                  />
                 </div>
               </Fragment>
-              <Fragment forRoute={'/total-shootings/black'}></Fragment>
-              <Fragment forRoute={'/total-shootings/latino'}></Fragment>
-              <Fragment forRoute={'/total-shootings/asian'}></Fragment>
-              <Fragment forRoute={'/total-shootings/nativeamerican'}></Fragment>
-              <Fragment forRoute={'/total-shootings/white'}></Fragment>
-              <Fragment forRoute={'/percapita'}>
-                <div className='map-layout'>
-                  <Map mapType='choropleth' />
-                  <MapDescription mapType='choropleth' insetHeader='Shootings per Million' />
+              <Fragment forRoute={"/total-shootings/black"} />
+              <Fragment forRoute={"/total-shootings/latino"} />
+              <Fragment forRoute={"/total-shootings/asian"} />
+              <Fragment forRoute={"/total-shootings/nativeamerican"} />
+              <Fragment forRoute={"/total-shootings/white"} />
+              <Fragment forRoute={"/percapita"}>
+                <div className="map-layout">
+                  <Map mapType="choropleth" />
+                  <MapDescription
+                    mapType="choropleth"
+                    insetHeader="Shootings per Million"
+                  />
                 </div>
-            </Fragment>
-            <Fragment forRoute={'/shootingsbydate'}>
-                <div className='chart-layout'>
-                  <ChartDescription title='Shootings By Day' subtitle='January 1, 2015 - December 31, 2016' />
+              </Fragment>
+              <Fragment forRoute={"/shootingsbydate"}>
+                <div className="chart-layout">
+                  <ChartDescription
+                    title="Shootings By Day"
+                    subtitle="January 1, 2015 - December 31, 2016"
+                  />
                   <BarChart />
-                  <Filters radios={filters} checkedValue={maps.temporalFilter} onChangeHandler={(event) => dispatch(actions.setTemporalFilterOnShootingsData(event.target.id))} containerClassName="filter-container" />
+                  <Filters
+                    radios={filters}
+                    checkedValue={maps.temporalFilter}
+                    onChangeHandler={event =>
+                      dispatch(
+                        actions.setTemporalFilterOnShootingsData(
+                          event.target.id
+                        )
+                      )
+                    }
+                    containerClassName="filter-container"
+                  />
                 </div>
+              </Fragment>
+              <Fragment forRoute={"/shootingsbydate/line"}>
+                <div>New development!</div>
               </Fragment>
             </div>
-            <Chevron className='chevron-link horizontal' path="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z" href={nextMainRoute} visible={nextMainRoute !== '/'} />
+            <Chevron
+              className="chevron-link horizontal"
+              path="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+              href={nextMainRoute}
+              visible={nextMainRoute !== "/"}
+            />
           </div>
-          <Chevron className='chevron-link bottom' path="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z" href={nextChildRoute} visible={nextChildRoute !== '/'} nextSlide={router.routes[nextChildRoute].descSubtitle}/>
+          <Chevron
+            className="chevron-link bottom"
+            path="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"
+            href={nextChildRoute}
+            visible={true}
+            nextSlide={router.routes[nextChildRoute].descSubtitle}
+          />
         </div>
-      </Fragment>;
+      </Fragment>
+    );
 
     return component;
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     maps: state.mapReducer,
     router: state.router
@@ -222,4 +277,3 @@ App.propTypes = {
   maps: PropTypes.object.isRequired,
   router: PropTypes.object.isRequired
 };
-
