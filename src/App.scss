@@ -1,60 +1,46 @@
-@import './stylesheets/constants.scss';
+@import "./stylesheets/constants.scss";
 
+html,
 body {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
-#root {
-	height: 100%;
-	width: 100%;
-}
+.root {
+  @include flex-column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 
-.layout {
-	@include flex-column;
-	height: 100%;
-	width: 100%;
-	justify-content: space-around;
-	align-items: center;
+  .page-container {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-width: 100%;
 
-	.page-container {
-		@include flex-row;
-		justify-content: space-between;
-		align-items: center;
-		text-align: center;
-		height: 100%;
-		width: 100%;
-	
-		.page-content {
-			@include flex-column;
-			justify-content: center;
-			align-items: center;
-			height: 95%;
-			overflow-y: auto;
-			overflow-x: hidden;
-			width: 100%;
-		}
-	}
+    .page-content {
+      @include flex-column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 .map-layout {
-	@include flex-row;
+  @include flex-row;
 }
 
 .chart-layout {
-	@include flex-column;
-	width: 100%;
-	height: 100%;
-
+  @include flex-column;
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 768px) {
-
-	.map-layout {
-		@include flex-column;
-	}
+  .map-layout {
+    @include flex-column;
+  }
 }
