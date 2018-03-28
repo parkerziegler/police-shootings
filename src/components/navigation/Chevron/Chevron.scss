@@ -1,73 +1,60 @@
-@import '../../../stylesheets/_constants';
+@import "../../../stylesheets/_constants";
 
 $chevron-sizes: (
-	null: 30px,
-	mobile: 30px,
-	tablet: 40px,
-	desktop: 40px
+  null: 30px,
+  mobile: 30px,
+  tablet: 40px,
+  desktop: 40px
 );
 
 @mixin chevron-size($svg-map, $svg-breakpoints: $breakpoints) {
-	@each $svg-breakpoint, $svg-size in $svg-map {
-		@if $svg-breakpoint == null {
-            height: $svg-size;
-            width: $svg-size;
-		}
-		@else {
-			@if map-has-key($svg-breakpoints, $svg-breakpoint) {
-				$svg-breakpoint: map-get($svg-breakpoints, $svg-breakpoint)
-			}
-			@media screen and (min-width: $svg-breakpoint) {
-				height: $svg-size;
-                width: $svg-size;
-			}
-		}
-	}
+  @each $svg-breakpoint, $svg-size in $svg-map {
+    @if $svg-breakpoint == null {
+      height: $svg-size;
+      width: $svg-size;
+    } @else {
+      @if map-has-key($svg-breakpoints, $svg-breakpoint) {
+        $svg-breakpoint: map-get($svg-breakpoints, $svg-breakpoint);
+      }
+      @media screen and (min-width: $svg-breakpoint) {
+        height: $svg-size;
+        width: $svg-size;
+      }
+    }
+  }
 }
 
 .chevron-link {
-    text-decoration: none;
-    flex: 0 0 auto;
+  text-decoration: none;
+  flex: 0 0 auto;
 }
 
 .chevron-link.horizontal {
-    @include chevron-size($chevron-sizes, $breakpoints);
-}
-
-.chevron-link.bottom {
-    /*min-height: 10%;*/
-}
-
-.chevron-link.top {
-    /*min-height: 5%;*/
+  @include chevron-size($chevron-sizes, $breakpoints);
 }
 
 .chevron {
-    @include flex-row;
-    justify-content: center;
-    align-items: center;
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
 
-    &:hover {
-
-        svg {
-            fill-opacity: 0.5;
-        }
-
-        div {
-            opacity: 0.5;
-        }
-    }
-
+  &:hover {
     svg {
-        @include chevron-size($chevron-sizes, $breakpoints);
+      fill-opacity: 0.5;
     }
 
-    .slide-title {
-        @include font-size($subheader-font-sizes);
-        font-family: $roboto;
-        color: $gray;
-        /* text-decoration: none; */
+    div {
+      opacity: 0.5;
     }
+  }
 
+  svg {
+    @include chevron-size($chevron-sizes, $breakpoints);
+  }
+
+  .slide-title {
+    @include font-size($subheader-font-sizes);
+    font-family: $roboto;
+    color: $gray;
+  }
 }
-
