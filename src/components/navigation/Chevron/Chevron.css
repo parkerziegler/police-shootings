@@ -1,44 +1,37 @@
 /** A constants SCSS partial for storing common variables and mixins */
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-.chevron-link {
-  text-decoration: none;
-  flex: 0 0 auto;
-}
-
-.chevron-link.horizontal {
+.chevron {
   height: 30px;
   width: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
 }
 @media screen and (min-width: 480px) {
-  .chevron-link.horizontal {
+  .chevron {
     height: 30px;
     width: 30px;
   }
 }
 @media screen and (min-width: 768px) {
-  .chevron-link.horizontal {
+  .chevron {
     height: 40px;
     width: 40px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .chevron-link.horizontal {
+  .chevron {
     height: 40px;
     width: 40px;
   }
 }
-
-.chevron {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.chevron:hover {
+  cursor: pointer;
 }
 .chevron:hover svg {
   fill-opacity: 0.5;
-}
-.chevron:hover div {
-  opacity: 0.5;
 }
 .chevron svg {
   height: 30px;

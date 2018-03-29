@@ -133,15 +133,7 @@ const routes = {
     title: "Shootings By Date",
     index: 3,
     isLastRoute: true,
-    jsx: shootingsByDayJSX,
-    hasChildren: true,
-    "/line": {
-      title: "Shootings By Date",
-      childIndex: 0,
-      hasNextSibling: false,
-      isLastChildRoute: true,
-      jsx: shootingsByDayJSX
-    }
+    jsx: shootingsByDayJSX
   }
 };
 

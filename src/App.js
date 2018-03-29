@@ -5,14 +5,10 @@ import "./App.css";
 import Home from "./components/home/Home";
 import Map from "./components/maps/Map/Map";
 import MapDescription from "./components/maps/MapDescription/MapDescription";
-import BarChart from "./components/graphs/BarChart/BarChart";
-import ChartDescription from "./components/graphs/ChartDescription/ChartDescription";
 import Chevron from "./components/navigation/Chevron/Chevron";
 import PropTypes from "prop-types";
-import { Fragment, go, goBack, push } from "redux-little-router";
+import { Fragment, goBack, push } from "redux-little-router";
 import { findKey } from "lodash";
-import Filters from "./components/graphs/Filters/Filters";
-import * as actions from "./actions/mapActions";
 import * as ChevronPaths from "./constants/chevron-paths";
 
 class App extends Component {
@@ -20,6 +16,7 @@ class App extends Component {
     super(props);
     this.goToNext = this.goToNext.bind(this);
     this.goToPrevious = this.goToPrevious.bind(this);
+    this.getChevronVisibility = this.getChevronVisibility.bind(this);
   }
 
   goToNext() {
@@ -28,11 +25,41 @@ class App extends Component {
       router.routes,
       route => route.index === router.result.index + 1
     );
-    this.props.dispatch(push(nextRoute));
+    dispatch(push(nextRoute));
   }
 
   goToPrevious() {
-    this.props.dispatch(goBack());
+    const { dispatch } = this.props;
+    dispatch(goBack());
+  }
+
+  getChevronVisibility(position) {
+    const { router } = this.props;
+    const currentRoute = router.result;
+    switch (position) {
+      case "right":
+        if (!currentRoute.isLastRoute) {
+          return true;
+        }
+        return false;
+      case "left":
+        if (currentRoute.index) {
+          return true;
+        }
+        return false;
+      case "down":
+        if (currentRoute.hasChildren || currentRoute.hasNextSibling) {
+          return true;
+        }
+        return false;
+      case "up":
+        if (currentRoute.parent) {
+          return true;
+        }
+        return false;
+      default:
+        return false;
+    }
   }
 
   render() {
@@ -42,12 +69,16 @@ class App extends Component {
     ) : (
       <Fragment forRoute={"/"}>
         <React.Fragment>
-          <Chevron className="chevron-link top" path={ChevronPaths.ChevronUp} />
+          <Chevron
+            path={ChevronPaths.ChevronUp}
+            visible={this.getChevronVisibility("up")}
+            onClick={() => console.log("Todo")}
+          />
           <div className="page-container">
             <Chevron
-              className="chevron-link horizontal"
-              path={ChevronPaths.ChevronRight}
+              path={ChevronPaths.ChevronLeft}
               onClick={this.goToPrevious}
+              visible={this.getChevronVisibility("left")}
             />
             <div className="page-content">
               <Fragment forRoute={"/"}>
@@ -73,14 +104,15 @@ class App extends Component {
               </Fragment>
             </div>
             <Chevron
-              className="chevron-link horizontal"
-              path={ChevronPaths.ChevronLeft}
+              path={ChevronPaths.ChevronRight}
               onClick={this.goToNext}
+              visible={this.getChevronVisibility("right")}
             />
           </div>
           <Chevron
-            className="chevron-link bottom"
             path={ChevronPaths.ChevronDown}
+            visible={this.getChevronVisibility("down")}
+            onClick={() => console.log("Todo")}
           />
         </React.Fragment>
       </Fragment>

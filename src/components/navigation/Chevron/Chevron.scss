@@ -24,27 +24,18 @@ $chevron-sizes: (
   }
 }
 
-.chevron-link {
-  text-decoration: none;
-  flex: 0 0 auto;
-}
-
-.chevron-link.horizontal {
-  @include chevron-size($chevron-sizes, $breakpoints);
-}
-
 .chevron {
+  @include chevron-size($chevron-sizes, $breakpoints);
   @include flex-row;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
 
   &:hover {
+    cursor: pointer;
+
     svg {
       fill-opacity: 0.5;
-    }
-
-    div {
-      opacity: 0.5;
     }
   }
 
