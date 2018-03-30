@@ -1,5 +1,5 @@
 /** A constants SCSS partial for storing common variables and mixins */
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 html,
 body {
   margin: 0;

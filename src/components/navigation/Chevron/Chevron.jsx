@@ -1,6 +1,6 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import "./Chevron.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import '../../../stylesheets/Chevron.css';
 
 const Chevron = ({ onClick, path, visible }) => {
   return (
@@ -17,7 +17,7 @@ const Chevron = ({ onClick, path, visible }) => {
 Chevron.propTypes = {
   path: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  visible: PropTypes.bool.isRequired
+  visible: PropTypes.bool.isRequired,
 };
 
 export default Chevron;
