@@ -101,10 +101,8 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    maps: state.mapReducer,
-  };
-};
+const mapStateToProps = state => ({
+  maps: state.mapReducer,
+});
 
 export default connect(mapStateToProps)(Home);

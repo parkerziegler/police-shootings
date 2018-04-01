@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Fragment, push } from 'redux-little-router';
+import { findKey } from 'lodash';
 
 import './App.css';
 import Home from './components/home/Home';
 import Map from './components/maps/Map/Map';
 import MapDescription from './components/maps/MapDescription/MapDescription';
 import Chevron from './components/navigation/Chevron/Chevron';
-import PropTypes from 'prop-types';
-import { Fragment, goBack, push } from 'redux-little-router';
-import { findKey } from 'lodash';
 import * as ChevronPaths from './constants/chevron-paths';
 
 class App extends Component {
@@ -31,8 +31,12 @@ class App extends Component {
   }
 
   goToPrevious() {
-    const { dispatch } = this.props;
-    dispatch(goBack());
+    const { router, dispatch } = this.props;
+    const prevRoute = findKey(
+      router.routes,
+      route => route.index === router.result.index - 1
+    );
+    dispatch(push(prevRoute));
   }
 
   goToNextChild() {
@@ -56,11 +60,11 @@ class App extends Component {
     const { router, dispatch } = this.props;
     const currentRoute = router.result;
     const prevRoute = findKey(router.routes, route => {
-      if (currentRoute.childIndex === 0) {
-        return route.parent.route;
+      if (!currentRoute.childIndex) {
+        return route.index === currentRoute.parent.index;
       }
       return (
-        route.childIndex === router.result.childIndex - 1 &&
+        route.childIndex === currentRoute.childIndex - 1 &&
         route.parent.index === currentRoute.parent.index
       );
     });
@@ -72,7 +76,7 @@ class App extends Component {
     const currentRoute = router.result;
     switch (position) {
       case 'right':
-        if (!currentRoute.isLastRoute) {
+        if (!currentRoute.isLastRoute && !currentRoute.childIndex) {
           return true;
         }
         return false;
