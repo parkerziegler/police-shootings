@@ -10,6 +10,7 @@ import Map from './components/maps/Map/Map';
 import MapDescription from './components/maps/MapDescription/MapDescription';
 import Chevron from './components/navigation/Chevron/Chevron';
 import * as ChevronPaths from './constants/chevron-paths';
+import Line from './components/graphs/Line/Line';
 
 class App extends Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class App extends Component {
     const currentRoute = router.result;
     switch (position) {
       case 'right':
-        if (!currentRoute.isLastRoute && !currentRoute.childIndex) {
+        if (!currentRoute.isLastRoute && !currentRoute.parent) {
           return true;
         }
         return false;
@@ -139,6 +140,9 @@ class App extends Component {
                     insetHeader="Shootings per Million"
                   />
                 </div>
+              </Fragment>
+              <Fragment forRoute={'/shootingsbydate'}>
+                <Line />
               </Fragment>
             </div>
             <Chevron

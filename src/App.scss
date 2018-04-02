@@ -1,4 +1,4 @@
-@import "./stylesheets/constants.scss";
+@import './stylesheets/constants.scss';
 
 html,
 body {
@@ -9,8 +9,6 @@ body {
 
 .root {
   @include flex-column;
-  height: 100%;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
 
