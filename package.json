@@ -16,12 +16,12 @@
     "react-redux": "^5.0.4",
     "react-router": "^4.2.0",
     "react-test-renderer": "^16.1.0",
-    "react-transition-group": "^1.2.0",
+    "react-transition-group": "^2.3.0",
     "redux": "^3.6.0",
     "redux-little-router": "^15.1.0",
     "redux-saga": "^0.15.6",
     "topojson": "^2.2.0",
-    "victory": "^0.22.2"
+    "victory": "^0.25.7"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
@@ -34,7 +34,8 @@
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css":
+      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
@@ -45,26 +46,12 @@
     "precommit": "lint-staged"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.jsx": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.css": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["prettier --write", "git add"],
+    "*.jsx": ["prettier --write", "git add"],
+    "*.scss": ["prettier --write", "git add"],
+    "*.css": ["prettier --write", "git add"]
   }
 }
