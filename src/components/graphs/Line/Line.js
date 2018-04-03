@@ -9,25 +9,49 @@ class Line extends React.Component {
     const { maps } = this.props;
 
     return (
-      <VictoryChart width={1000} height={400} padding={40}>
+      <VictoryChart
+        width={1000}
+        height={400}
+        padding={40}
+        domainPadding={{ y: 20 }}
+      >
         <VictoryAxis
           scale="time"
           tickValues={[
-            new Date(2015, 3, 1),
-            new Date(2015, 9, 1),
-            new Date(2016, 2, 1),
-            new Date(2016, 8, 1),
+            new Date(2014, 12, 1),
+            new Date(2015, 2, 1),
+            new Date(2015, 5, 1),
+            new Date(2015, 8, 1),
+            new Date(2015, 11, 1),
           ]}
-          tickFormat={t => moment(t).format('MMM YYYY')}
+          tickFormat={t => moment(t).format('MMMM')}
         />
         <VictoryAxis dependentAxis />
         <VictoryLine
-          data={maps.shootingsByDate}
-          x="date"
-          y="count"
+          data={maps.shootingsByDate[0]}
           scale="time"
+          style={{
+            data: {
+              stroke: '#7B52A1',
+            },
+          }}
           animate={{
-            duration: 20000,
+            onEnter: {
+              duration: 2000,
+            },
+          }}
+        />
+        <VictoryLine
+          data={maps.shootingsByDate[1]}
+          scale="time"
+          style={{
+            data: {
+              stroke: '#9FA152',
+            },
+          }}
+          animate={{
+            duration: 2000,
+            delay: 1000,
           }}
         />
       </VictoryChart>
