@@ -1,103 +1,97 @@
-import { put, takeLatest, select } from "redux-saga/effects";
-import * as _ from "lodash";
-import * as actionTypes from "../constants/action-types";
-import * as stateNames from "../assets/state-names";
-import moment from "moment";
+import { put, takeLatest, select } from 'redux-saga/effects';
+import * as _ from 'lodash';
+import * as actionTypes from '../constants/action-types';
+import * as stateNames from '../assets/state-names';
+import moment from 'moment';
 
 // define a watcher saga to listen for when ROUTER_LOCATION_CHANGED is dispatched by the router
 export function* watchLocationChanged() {
-  yield takeLatest("ROUTER_LOCATION_CHANGED", handleLocationChanged);
+  yield takeLatest('ROUTER_LOCATION_CHANGED', handleLocationChanged);
 }
 
 // a lookup defining which filters to apply on the data when a particular
 // route is hit
 const shootingsFilters = {
-  "/": { filterKey: null, filterValue: null, populationValue: "population" },
-  "/total-shootings": {
+  '/': { filterKey: null, filterValue: null, populationValue: 'population' },
+  '/total-shootings': {
     filterKey: null,
     filterValue: null,
-    populationValue: "population"
+    populationValue: 'population',
   },
-  "/total-shootings/black": {
-    filterKey: "raceethnicity",
-    filterValue: "Black",
-    populationValue: "population"
+  '/total-shootings/black': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Black',
+    populationValue: 'population',
   },
-  "/total-shootings/latino": {
-    filterKey: "raceethnicity",
-    filterValue: "Hispanic/Latino",
-    populationValue: "population"
+  '/total-shootings/latino': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Hispanic/Latino',
+    populationValue: 'population',
   },
-  "/total-shootings/asian": {
-    filterKey: "raceethnicity",
-    filterValue: "Asian/Pacific Islander",
-    populationValue: "population"
+  '/total-shootings/asian': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Asian/Pacific Islander',
+    populationValue: 'population',
   },
-  "/total-shootings/nativeamerican": {
-    filterKey: "raceethnicity",
-    filterValue: "Native American",
-    populationValue: "population"
+  '/total-shootings/nativeamerican': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Native American',
+    populationValue: 'population',
   },
-  "/total-shootings/white": {
-    filterKey: "raceethnicity",
-    filterValue: "White",
-    populationValue: "population"
+  '/total-shootings/white': {
+    filterKey: 'raceethnicity',
+    filterValue: 'White',
+    populationValue: 'population',
   },
-  "/percapita": {
+  '/percapita': {
     filterKey: null,
     filterValue: null,
-    populationValue: "populationTotal"
+    populationValue: 'populationTotal',
   },
-  "/percapita/black": {
-    filterKey: "raceethnicity",
-    filterValue: "Black",
-    populationValue: "populationBlack"
+  '/percapita/black': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Black',
+    populationValue: 'populationBlack',
   },
-  "/percapita/latino": {
-    filterKey: "raceethnicity",
-    filterValue: "Hispanic/Latino",
-    populationValue: "populationHispanic"
+  '/percapita/latino': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Hispanic/Latino',
+    populationValue: 'populationHispanic',
   },
-  "/percapita/asian": {
-    filterKey: "raceethnicity",
-    filterValue: "Asian/Pacific Islander",
-    populationValue: "populationAsian"
+  '/percapita/asian': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Asian/Pacific Islander',
+    populationValue: 'populationAsian',
   },
-  "/percapita/nativeamerican": {
-    filterKey: "raceethnicity",
-    filterValue: "Native American",
-    populationValue: "populationAIAN"
+  '/percapita/nativeamerican': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Native American',
+    populationValue: 'populationAIAN',
   },
-  "/percapita/white": {
-    filterKey: "raceethnicity",
-    filterValue: "White",
-    populationValue: "populationWhite"
+  '/percapita/white': {
+    filterKey: 'raceethnicity',
+    filterValue: 'White',
+    populationValue: 'populationWhite',
   },
-  "/shootingsbydate": {
+  '/shootingsbydate': {
     filterKey: null,
     filterValue: null,
-    populationValue: "population"
-  }
+    populationValue: 'population',
+  },
 };
 
 // a function for filtering the shootings data
-// accepts a single key-value pair
+// filters the data given a key and a value for that key
 const filterShootingsData = (data, filterKey = null, filterValue = null) => {
-  // copy over the data so we don't operate
-  // on the original structure
-  let clone = [...data];
-
+  const clone = [...data];
   if (filterKey && filterValue) {
-    return clone.filter(entry => {
-      return entry[filterKey] === filterValue;
-    });
-  } else {
-    return clone;
+    return clone.filter(entry => entry[filterKey] === filterValue);
   }
+  return clone;
 };
 
 // a function for joining the shootingsData and geoData together
-// this function get run when we change routes and need to recompose
+// this function gets run on route change, recomposing
 // our topojson object in place
 const joinShootingsDataToGeoData = (
   shootingsData,
@@ -106,31 +100,91 @@ const joinShootingsDataToGeoData = (
 ) => {
   if (!geoData) {
     return;
-  } else {
-    let dataByState = _.groupBy(shootingsData, "state");
-
-    _.map(geoData.objects.states.geometries, state => {
-      // parse the id as an int so we can join it to the state data lookup we have
-      // stored in constants
-      state.id = _.parseInt(state.id);
-      let matchState = _.find(stateNames, ["id", state.id]);
-
-      // once we have a match state, use it to obtain
-      // the number of shootings
-      let matchShootings = dataByState[matchState.code];
-      let numShootings = matchShootings ? matchShootings.length : 0;
-      let population = state.properties[populationFilter];
-
-      // finally, recompose the object
-      state.properties = {
-        ...state.properties,
-        numShootings,
-        population
-      };
-    });
-
-    return geoData;
   }
+
+  const dataByState = _.groupBy(shootingsData, 'state');
+  geoData.objects.states.geometries.map(state => {
+    // parse the id as an int so we can join it to the state data lookup we have
+    // stored in constants
+    state.id = parseInt(state.id, 10);
+    const matchState = stateNames.find(({ id }) => id === state.id);
+
+    // once we have a match state, use it to obtain
+    // the number of shootings and population value for the filter
+    const matchShootings = dataByState[matchState.code];
+    const numShootings = matchShootings ? matchShootings.length : 0;
+    const population = state.properties[populationFilter];
+
+    // finally, recompose the object
+    state.properties = {
+      ...state.properties,
+      numShootings,
+      population,
+    };
+  });
+
+  return geoData;
+};
+
+// function for generating proper topojson data based on route and filtes
+const handleMapRoutes = (route, shootingsData, geoData) => {
+  // obtain the proper data filter based on the route
+  const { filterKey, filterValue, populationValue } = shootingsFilters[route];
+
+  // filter the shootings data
+  const filteredData = filterShootingsData(
+    shootingsData,
+    filterKey,
+    filterValue
+  );
+
+  // join it to the topojson data
+  return joinShootingsDataToGeoData(filteredData, geoData, populationValue);
+};
+
+const getAllDatesInRange = (startDate, endDate) => {
+  const dateArray = [];
+  while (
+    moment(startDate, 'MM/DD/YYYY').isSameOrBefore(
+      moment(endDate, 'MM/DD/YYYY')
+    )
+  ) {
+    dateArray.push(moment(startDate, 'MM/DD/YYYY').valueOf());
+    startDate = moment(startDate, 'MM/DD/YYYY').add(1, 'day');
+  }
+  return dateArray;
+};
+
+// function for generating the datasets for the year line graph
+const handleDateRoutes = shootingsData => {
+  // group shootings by month and year and return as two collections to redux
+  const shootingsByDate = shootingsData.map(shooting => {
+    return {
+      month: shooting.month,
+      year: shooting.year,
+    };
+  });
+
+  // partition the data based on year
+  const shootingsByYear = _.partition(
+    shootingsByDate,
+    shooting => shooting.year === 2015
+  );
+
+  // group by month within each year
+  const groupByMonth = shootingsByYear.map(year => {
+    return _.groupBy(year, ({ month, year }) =>
+      moment(`${month} - 2015`, 'MMMM - YYYY').valueOf()
+    );
+  });
+
+  const data = groupByMonth.map(year => {
+    return Object.keys(year).map(month => ({
+      x: parseInt(month, 10),
+      y: year[month].length,
+    }));
+  });
+  return data;
 };
 
 // our generator function to run our handleLocationChanged saga
@@ -138,119 +192,34 @@ function* handleLocationChanged(action) {
   try {
     // read the shootings data from the redux store
     const reduxStore = yield select();
+    const shootingsData = reduxStore.mapReducer.shootingsData;
+    const geoData = reduxStore.mapReducer.geoData;
+    const router = reduxStore.router;
 
-    // check if this route needs data
-    let router = reduxStore.router;
-
+    // check if this route is map-based
     if (
       router.routes[action.payload.route].index === 1 ||
       router.routes[action.payload.route].index === 2 ||
       (router.routes[action.payload.route].childIndex >= 0 &&
         router.routes[action.payload.route].childIndex <= 4)
     ) {
-      let shootingsData = reduxStore.mapReducer.shootingsData;
-
-      // obtain the proper data filter based on the route
-      let { filterKey, filterValue, populationValue } = shootingsFilters[
-        action.payload.route
-      ];
-
-      // filter the shootings data
-      let filteredData = filterShootingsData(
+      const data = handleMapRoutes(
+        action.payload.route,
         shootingsData,
-        filterKey,
-        filterValue
-      );
-
-      // join it to the topojson data
-      let geoData = joinShootingsDataToGeoData(
-        filteredData,
-        reduxStore.mapReducer.geoData,
-        populationValue
+        geoData
       );
 
       // send this data to redux so our Map component can read from it
-      yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data: geoData });
+      yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data });
     }
 
+    // check if this is the line graph
     if (router.routes[action.payload.route].index === 3) {
-      // a function for generating different colors on bars of different heights
-      const getColor = count => {
-        if (count < 2) {
-          return "#dadaeb";
-        } else if (count < 4) {
-          return "#bcbddc";
-        } else if (count < 6) {
-          return "#9e9ac8";
-        } else {
-          return "#756bb1";
-        }
-      };
-
-      // we'll handle the shootings by date route separately
-      let shootingsData = reduxStore.mapReducer.shootingsData;
-
-      // we need to obtain all dates within the range Jan 1, 2015 - Dec 1, 2015
-      const getAllDatesInRange = (startDate, endDate) => {
-        let dateArray = [];
-        while (
-          moment(startDate, "MM/DD/YYYY").isSameOrBefore(
-            moment(endDate, "MM/DD/YYYY")
-          )
-        ) {
-          dateArray.push(moment(startDate, "MM/DD/YYYY").valueOf());
-          startDate = moment(startDate, "MM/DD/YYYY").add(1, "day");
-        }
-        return dateArray;
-      };
-
-      let allDates = getAllDatesInRange("01/01/2015", "12/31/2016");
-
-      let dates = _.map(shootingsData, record => {
-        return moment(
-          `${record.month} - ${record.day} - ${record.year}`,
-          "MMMM - D - YYYY"
-        ).valueOf();
-      });
-
-      let daysWithNoShootings = _.difference(allDates, dates);
-
-      // group shootings by their date
-      let groupByDate = _.groupBy(
-        _.concat(dates, daysWithNoShootings),
-        date => date
-      );
-
-      // return data - we'll send this off to redux to be consumed by victory
-      let shootingsByDate = _.map(_.keys(groupByDate), key => {
-        if (groupByDate[key].length === 1) {
-          let isZero = _.includes(daysWithNoShootings, groupByDate[key][0]);
-
-          if (isZero) {
-            return {
-              date: _.parseInt(key, 10),
-              count: 0,
-              color: getColor(groupByDate[key].length)
-            };
-          } else {
-            return {
-              date: _.parseInt(key, 10),
-              count: groupByDate[key].length,
-              color: getColor(groupByDate[key].length)
-            };
-          }
-        }
-
-        return {
-          date: _.parseInt(key, 10),
-          count: groupByDate[key].length,
-          color: getColor(groupByDate[key].length)
-        };
-      });
+      const shootingsByDate = handleDateRoutes(shootingsData);
 
       yield put({
         type: actionTypes.SEND_SHOOTINGS_BY_DATE_TO_REDUCER,
-        shootingsByDate: shootingsByDate.sort((a, b) => a - b)
+        shootingsByDate,
       });
     }
   } catch (error) {
