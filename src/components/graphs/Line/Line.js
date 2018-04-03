@@ -5,18 +5,6 @@ import * as _ from 'lodash';
 import moment from 'moment';
 
 class Line extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: props.maps.shootingsByDate.slice(0, 100),
-    };
-    this.loadMore = this.loadMore.bind(this);
-  }
-
-  loadMore() {
-    console.log('Time to load more!');
-  }
-
   render() {
     const { maps } = this.props;
 
@@ -34,13 +22,12 @@ class Line extends React.Component {
         />
         <VictoryAxis dependentAxis />
         <VictoryLine
-          data={this.state.data}
+          data={maps.shootingsByDate}
           x="date"
           y="count"
           scale="time"
           animate={{
-            duration: 1000,
-            onEnd: () => this.loadMore(),
+            duration: 20000,
           }}
         />
       </VictoryChart>
