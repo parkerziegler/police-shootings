@@ -1,5 +1,6 @@
 # d3-react-map
 [![Build Status](https://travis-ci.org/parkerziegler/d3-react-map.svg?branch=master)](https://travis-ci.org/parkerziegler/d3-react-map)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ### Demo
 Check out the app live [here](https://parkerziegler.github.io/d3-react-map/). This app is currently undergoing rapid development changes, some of them breaking. The app deployed to the demo is (**mostly**) functional, but if you catch an error please open an issue.
