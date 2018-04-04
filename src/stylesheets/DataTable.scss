@@ -1,0 +1,61 @@
+@import './_constants.scss';
+
+$button-font-sizes: (
+  null: 10px,
+  mobile: 12px,
+  tablet: 15px,
+  desktop: 18px
+);
+
+.data-table {
+  @include flex-column;
+  flex: 0 0 auto;
+
+  .table-button-container {
+    @include flex-row;
+    justify-content: space-around;
+    width: 60%;
+
+    .button {
+      @include font-size($button-font-sizes);
+      font-family: $helvetica;
+      width: 40%;
+      height: auto;
+      background: #50505e;
+      flex: 0 0 auto;
+      padding: 5px 5px 5px 5px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    div:first-child {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    div:last-child {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+
+  .table {
+    @include flex-row;
+    margin-top: 10px;
+
+    div {
+      @include flex-column;
+      width: 80%;
+
+      .table-header {
+        font: 700 13px $helvetica;
+        padding: 5px 0 5px 0;
+      }
+
+      .row {
+        font: 400 12px $roboto;
+        padding: 2px 0 2px 0;
+      }
+    }
+  }
+}
