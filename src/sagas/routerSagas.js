@@ -1,8 +1,9 @@
 import { put, takeLatest, select } from 'redux-saga/effects';
-import * as _ from 'lodash';
+import { groupBy, partition } from 'lodash';
+import moment from 'moment';
+
 import * as actionTypes from '../constants/action-types';
 import * as stateNames from '../assets/state-names';
-import moment from 'moment';
 
 // define a watcher saga to listen for when ROUTER_LOCATION_CHANGED is dispatched by the router
 export function* watchLocationChanged() {
@@ -102,14 +103,14 @@ const joinShootingsDataToGeoData = (
     return;
   }
 
-  const dataByState = _.groupBy(shootingsData, 'state');
-  geoData.objects.states.geometries.map(state => {
-    // parse the id as an int so we can join it to the state data lookup we have
+  const dataByState = groupBy(shootingsData, 'state');
+  geoData.objects.states.geometries.forEach(state => {
+    // parse the id as an int so it can join to the state data
     // stored in constants
     state.id = parseInt(state.id, 10);
     const matchState = stateNames.find(({ id }) => id === state.id);
 
-    // once we have a match state, use it to obtain
+    // once a match state is found, use it to obtain
     // the number of shootings and population value for the filter
     const matchShootings = dataByState[matchState.code];
     const numShootings = matchShootings ? matchShootings.length : 0;
@@ -142,20 +143,7 @@ const handleMapRoutes = (route, shootingsData, geoData) => {
   return joinShootingsDataToGeoData(filteredData, geoData, populationValue);
 };
 
-const getAllDatesInRange = (startDate, endDate) => {
-  const dateArray = [];
-  while (
-    moment(startDate, 'MM/DD/YYYY').isSameOrBefore(
-      moment(endDate, 'MM/DD/YYYY')
-    )
-  ) {
-    dateArray.push(moment(startDate, 'MM/DD/YYYY').valueOf());
-    startDate = moment(startDate, 'MM/DD/YYYY').add(1, 'day');
-  }
-  return dateArray;
-};
-
-// function for generating the datasets for the year line graph
+// function for generating the datasets for the parallel year line graph
 const handleDateRoutes = shootingsData => {
   // group shootings by month and year and return as two collections to redux
   const shootingsByDate = shootingsData.map(shooting => {
@@ -166,14 +154,14 @@ const handleDateRoutes = shootingsData => {
   });
 
   // partition the data based on year
-  const shootingsByYear = _.partition(
+  const shootingsByYear = partition(
     shootingsByDate,
     shooting => shooting.year === 2015
   );
 
   // group by month within each year
   const groupByMonth = shootingsByYear.map(year => {
-    return _.groupBy(year, ({ month, year }) =>
+    return groupBy(year, ({ month, year }) =>
       moment(`${month} - 2015`, 'MMMM - YYYY').valueOf()
     );
   });
