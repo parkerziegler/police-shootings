@@ -1,5 +1,5 @@
 import { put, takeLatest, select } from 'redux-saga/effects';
-import { groupBy, partition } from 'lodash';
+import { groupBy, partition, findKey } from 'lodash';
 import moment from 'moment';
 
 import * as actionTypes from '../constants/action-types';
@@ -108,7 +108,8 @@ const joinShootingsDataToGeoData = (
     // parse the id as an int so it can join to the state data
     // stored in constants
     state.id = parseInt(state.id, 10);
-    const matchState = stateNames.find(({ id }) => id === state.id);
+    const matchId = findKey(stateNames, ({ id }) => id === state.id);
+    const matchState = stateNames[matchId];
 
     // once a match state is found, use it to obtain
     // the number of shootings and population value for the filter
