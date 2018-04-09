@@ -1,12 +1,21 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { VictoryChart, VictoryLine, VictoryAxis } from 'victory';
+import {
+  VictoryChart,
+  VictoryLine,
+  VictoryAxis,
+  VictoryLabel,
+  VictoryAnimation,
+} from 'victory';
 import * as _ from 'lodash';
 import moment from 'moment';
 
+import '../../../stylesheets/Line.css';
+
 class Line extends React.Component {
   render() {
-    const { maps } = this.props;
+    const { maps: { shootingsByDate } } = this.props;
+    const [stats2015, stats2016] = shootingsByDate;
 
     return (
       <VictoryChart
@@ -28,7 +37,7 @@ class Line extends React.Component {
         />
         <VictoryAxis dependentAxis />
         <VictoryLine
-          data={maps.shootingsByDate[0]}
+          data={stats2015}
           scale="time"
           style={{
             data: {
@@ -41,8 +50,14 @@ class Line extends React.Component {
             },
           }}
         />
+        <VictoryAnimation
+          data={[{ fill: 'transparent' }, { fill: '#7B52A1' }]}
+          delay={2000}
+        >
+          {style => <VictoryLabel x={950} y={240} text="2015" style={style} />}
+        </VictoryAnimation>
         <VictoryLine
-          data={maps.shootingsByDate[1]}
+          data={stats2016}
           scale="time"
           style={{
             data: {
@@ -51,9 +66,15 @@ class Line extends React.Component {
           }}
           animate={{
             duration: 2000,
-            delay: 1000,
+            delay: 2000,
           }}
         />
+        <VictoryAnimation
+          data={[{ fill: 'transparent' }, { fill: '#9FA152' }]}
+          delay={4000}
+        >
+          {style => <VictoryLabel x={950} y={325} text="2016" style={style} />}
+        </VictoryAnimation>
       </VictoryChart>
     );
   }
