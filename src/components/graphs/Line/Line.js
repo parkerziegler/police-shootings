@@ -10,8 +10,6 @@ import {
 import * as _ from 'lodash';
 import moment from 'moment';
 
-import '../../../stylesheets/Line.css';
-
 class Line extends React.Component {
   render() {
     const { maps: { shootingsByDate } } = this.props;
