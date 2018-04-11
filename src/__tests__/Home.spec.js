@@ -1,5 +1,5 @@
-import { store } from '../src/index';
-import Home from '../src/components/home/Home';
+import { store } from '../index';
+import Home from '../components/home/Home';
 
 describe('<Home />', () => {
   it('renders without crashing', () => {

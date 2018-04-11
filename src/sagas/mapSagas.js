@@ -102,6 +102,6 @@ export function* callAPI(action) {
     }
   } catch (error) {
     // log the error
-    console.log(error);
+    // console.log(error);
   }
 }

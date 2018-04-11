@@ -150,6 +150,7 @@ const sagaMiddleware = createSagaMiddleware();
 // create our redux store, applying the router and the saga middleware
 export const store = createStore(
   combineReducers({ router: reducer, mapReducer }),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   compose(enhancer, applyMiddleware(middleware, sagaMiddleware))
 );
 

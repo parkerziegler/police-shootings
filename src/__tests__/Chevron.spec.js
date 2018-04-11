@@ -1,5 +1,5 @@
-import Chevron from '../src/components/navigation/Chevron/Chevron';
-import { ChevronUp } from '../src/constants/chevron-paths';
+import Chevron from '../components/navigation/Chevron/Chevron';
+import { ChevronUp } from '../constants/chevron-paths';
 
 describe('<Chevron />', () => {
   const mock = jest.fn();
