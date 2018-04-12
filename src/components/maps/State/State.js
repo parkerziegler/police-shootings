@@ -13,7 +13,7 @@ class State extends React.Component {
     this.onInteractionHandler = this.onInteractionHandler.bind(this);
   }
 
-  onInteractionHandler(event) {
+  onInteractionHandler() {
     const { stateName, numShootings, population, dispatch } = this.props;
     // when a user hovers or clicks on a state, dispatch an action to set this state
     // as the activeState in the mapsReducer
@@ -78,20 +78,10 @@ class State extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  maps: state.mapReducer,
-  stateName: ownProps.stateName,
-  numShootings: ownProps.numShootings,
-  population: ownProps.population,
-  path: ownProps.path,
-  feature: ownProps.feature,
-  radius: ownProps.radius,
-});
-
-export default connect(mapStateToProps)(State);
+export default connect()(State);
 
 State.propTypes = {
-  maps: PropTypes.object.isRequired,
+  mapType: PropTypes.string.isRequired,
   stateName: PropTypes.string.isRequired,
   numShootings: PropTypes.number.isRequired,
   population: PropTypes.number.isRequired,
