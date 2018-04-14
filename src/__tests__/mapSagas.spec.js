@@ -1,12 +1,24 @@
 import { call, put } from 'redux-saga/effects';
+import { cloneableGenerator } from 'redux-saga/utils';
 import { callAPI, axiosCallAPI } from '../sagas/mapSagas';
 import {
   CALL_API,
   SEND_SHOOTINGS_DATA_TO_REDUCER,
+  SEND_API_DATA_TO_REDUCER,
 } from '../constants/action-types';
 
-it('should make the API request on generator start', () => {
-  const generator = callAPI({ type: CALL_API });
+describe('mapSagas', () => {
+  const mock = [
+    { data: 'topojson' },
+    { data: 'shootingsData' },
+    { data: 'censusData' },
+  ];
 
-  expect(generator.next().value).toEqual(call(axiosCallAPI));
+  it('should execute the saga correctly', () => {
+    const generator = cloneableGenerator(callAPI)();
+    expect(generator.next().value).toEqual(call(axiosCallAPI));
+    expect(generator.next(mock).value).toEqual(
+      put({ type: SEND_SHOOTINGS_DATA_TO_REDUCER, data: 'shootingsData' })
+    );
+  });
 });
