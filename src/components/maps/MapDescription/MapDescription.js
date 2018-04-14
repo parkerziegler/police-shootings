@@ -39,7 +39,6 @@ class MapDescription extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
   maps: state.mapReducer,
-  insetHeader: ownProps.insetHeader,
   mapType: ownProps.mapType,
   router: state.router,
 });
@@ -47,6 +46,5 @@ const mapStateToProps = (state, ownProps) => ({
 export default connect(mapStateToProps)(MapDescription);
 
 MapDescription.propTypes = {
-  insetHeader: PropTypes.string.isRequired,
   mapType: PropTypes.string.isRequired,
 };

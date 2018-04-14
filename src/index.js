@@ -24,6 +24,7 @@ import {
   shootingsPerCapitaNativeAmericanJSX,
   shootingsPerCapitaWhiteJSX,
   shootingsByDayJSX,
+  shootingsByDayBlackJSX,
 } from './constants/descriptions';
 
 // define routes for the application
@@ -33,6 +34,7 @@ const routes = {
     index: 0,
   },
   '/total-shootings': {
+    type: 'map',
     title: 'Total Shootings',
     descTitle: 'Total Shootings',
     descSubtitle: 'By State',
@@ -40,6 +42,7 @@ const routes = {
     hasChildren: true,
     jsx: totalShootingsJSX,
     '/black': {
+      type: 'map',
       title: 'Total Shootings By Race African American',
       descTitle: 'Total Shootings',
       descSubtitle: 'African American',
@@ -48,6 +51,7 @@ const routes = {
       jsx: totalShootingsBlackJSX,
     },
     '/latino': {
+      type: 'map',
       title: 'Total Shootings By Race Latino',
       descTitle: 'Total Shootings',
       descSubtitle: 'Latino',
@@ -56,6 +60,7 @@ const routes = {
       jsx: totalShootingsLatinoJSX,
     },
     '/asian': {
+      type: 'map',
       title: 'Total Shootings By Race Asian',
       descTitle: 'Total Shootings',
       descSubtitle: 'Asian',
@@ -64,6 +69,7 @@ const routes = {
       jsx: totalShootingsAsianJSX,
     },
     '/nativeamerican': {
+      type: 'map',
       title: 'Total Shootings By Race Native American',
       descTitle: 'Total Shootings',
       descSubtitle: 'Native American',
@@ -72,6 +78,7 @@ const routes = {
       jsx: totalShootingsNativeAmericanJSX,
     },
     '/white': {
+      type: 'map',
       title: 'Total Shootings By Race White',
       descTitle: 'Total Shootings',
       descSubtitle: 'White',
@@ -82,6 +89,7 @@ const routes = {
     },
   },
   '/percapita': {
+    type: 'map',
     title: 'Shootings Per Million By State',
     descTitle: 'Shootings Per Million',
     descSubtitle: 'By State',
@@ -89,6 +97,7 @@ const routes = {
     hasChildren: true,
     jsx: shootingsPerCapitaJSX,
     '/black': {
+      type: 'map',
       title: 'Shootings Per Million By Race African American',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'African American',
@@ -97,6 +106,7 @@ const routes = {
       jsx: shootingsPerCapitaBlackJSX,
     },
     '/latino': {
+      type: 'map',
       title: 'Shootings Per Million By Race Latino',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'Latino',
@@ -105,6 +115,7 @@ const routes = {
       jsx: shootingsPerCapitaLatinoJSX,
     },
     '/asian': {
+      type: 'map',
       title: 'Shootings Per Million By Race Asian',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'Asian',
@@ -113,6 +124,7 @@ const routes = {
       jsx: shootingsPerCapitaAsianJSX,
     },
     '/nativeamerican': {
+      type: 'map',
       title: 'Shootings Per Million By Race Native American',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'Native American',
@@ -121,6 +133,7 @@ const routes = {
       jsx: shootingsPerCapitaNativeAmericanJSX,
     },
     '/white': {
+      type: 'map',
       title: 'Shootings Per Million By Race White',
       descTitle: 'Shootings Per Million',
       descSubtitle: 'White',
@@ -131,10 +144,55 @@ const routes = {
     },
   },
   '/shootingsbydate': {
+    type: 'line',
     title: 'Shootings By Date',
+    descTitle: 'Total Shootings By Date',
     index: 3,
     isLastRoute: true,
     jsx: shootingsByDayJSX,
+    hasChildren: true,
+    '/black': {
+      type: 'line',
+      title: 'Shootings By Date By Race African American',
+      descTitle: 'Total Shootings By Date',
+      descSubtitle: 'African American',
+      childIndex: 0,
+      hasNextSibling: true,
+      jsx: shootingsByDayBlackJSX,
+    },
+    '/latino': {
+      type: 'line',
+      title: 'Shootings By Date By Race Latino',
+      descTitle: 'Total Shootings By Date',
+      descSubtitle: 'Latino',
+      childIndex: 1,
+      hasNextSibling: true,
+    },
+    '/asian': {
+      type: 'line',
+      title: 'Shootings By Date By Race Asian',
+      descTitle: 'Total Shootings By Date',
+      descSubtitle: 'Asian',
+      childIndex: 2,
+      hasNextSibling: true,
+    },
+    '/nativeamerican': {
+      type: 'line',
+      title: 'Shootings By Date By Race Native American',
+      descTitle: 'Total Shootings By Date',
+      descSubtitle: 'Native American',
+      childIndex: 3,
+      hasNextSibling: true,
+    },
+    '/white': {
+      type: 'line',
+      title: 'Shootings By Date By Race White',
+      descTitle: 'Total Shootings By Date',
+      descSubtitle: 'White',
+      childIndex: 4,
+      hasNextSibling: false,
+      isLastChildRoute: true,
+    },
   },
 };
 

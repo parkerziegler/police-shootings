@@ -146,10 +146,21 @@ export const shootingsPerCapitaWhiteJSX = (
 );
 
 export const shootingsByDayJSX = (
-  <div className="chart-text">
+  <div className="text">
     Police involved shootings display a more or less stochastic distribution
-    across the time period surveyed. July 2015 and March 2015 had the most
-    shootings of any month at 124 and 113, respectively. June 2015 and April
-    2016 tied for the least, each with 80 shootings.
+    across the time period surveyed. <b>July 2015</b> and <b>March 2015</b> had
+    the most shootings of any month at <b>124</b> and <b>113</b>, respectively.{' '}
+    <b>June 2015</b> and <b>April 2016</b> tied for the least, each with{' '}
+    <b>80</b> shootings.
+  </div>
+);
+
+export const shootingsByDayBlackJSX = (
+  <div className="text">
+    Shootings of African Americans spiked in <b>March of 2015</b>, when 37 were
+    killed in a single month. The fewest occurred in the{' '}
+    <b>last month of 2016</b>, when <b>14</b> people were killed. Unfortunately,
+    killings of African Americans remain fairly steady across the two years,
+    with a median of <b>23.5</b> people per month.
   </div>
 );

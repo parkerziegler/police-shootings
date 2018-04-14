@@ -11,6 +11,7 @@ import MapDescription from './components/maps/MapDescription/MapDescription';
 import Chevron from './components/navigation/Chevron/Chevron';
 import * as ChevronPaths from './constants/chevron-paths';
 import Line from './components/graphs/Line/Line';
+import LineDescription from './components/graphs/LineDescription/LineDescription';
 
 class App extends Component {
   constructor(props) {
@@ -126,23 +127,20 @@ class App extends Component {
               <Fragment forRoute={'/total-shootings'}>
                 <div className="map-layout">
                   <Map mapType="proportional" />
-                  <MapDescription
-                    mapType="proportional"
-                    insetHeader="Total Shootings"
-                  />
+                  <MapDescription mapType="proportional" />
                 </div>
               </Fragment>
               <Fragment forRoute={'/percapita'}>
                 <div className="map-layout">
                   <Map mapType="choropleth" />
-                  <MapDescription
-                    mapType="choropleth"
-                    insetHeader="Shootings per Million"
-                  />
+                  <MapDescription mapType="choropleth" />
                 </div>
               </Fragment>
               <Fragment forRoute={'/shootingsbydate'}>
-                <Line />
+                <div className="chart-layout">
+                  <LineDescription />
+                  <Line />
+                </div>
               </Fragment>
             </div>
             <Chevron

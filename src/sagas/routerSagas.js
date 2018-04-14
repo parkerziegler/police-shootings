@@ -79,6 +79,31 @@ const shootingsFilters = {
     filterValue: null,
     populationValue: 'population',
   },
+  '/shootingsbydate/black': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Black',
+    populationValue: 'populationBlack',
+  },
+  '/shootingsbydate/latino': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Hispanic/Latino',
+    populationValue: 'populationHispanic',
+  },
+  '/shootingsbydate/asian': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Asian/Pacific Islander',
+    populationValue: 'populationAsian',
+  },
+  '/shootingsbydate/nativeamerican': {
+    filterKey: 'raceethnicity',
+    filterValue: 'Native American',
+    populationValue: 'populationAIAN',
+  },
+  '/shootingsbydate/white': {
+    filterKey: 'raceethnicity',
+    filterValue: 'White',
+    populationValue: 'populationWhite',
+  },
 };
 
 // a function for filtering the shootings data
@@ -145,9 +170,16 @@ const handleMapRoutes = (route, shootingsData, geoData) => {
 };
 
 // function for generating the datasets for the parallel year line graph
-const handleDateRoutes = shootingsData => {
+const handleDateRoutes = (route, shootingsData) => {
+  // filter the shootings data based on route
+  const { filterKey, filterValue } = shootingsFilters[route];
+  const filteredData = filterShootingsData(
+    shootingsData,
+    filterKey,
+    filterValue
+  );
   // group shootings by month and year and return as two collections to redux
-  const shootingsByDate = shootingsData.map(shooting => {
+  const shootingsByDate = filteredData.map(shooting => {
     return {
       month: shooting.month,
       year: shooting.year,
@@ -186,12 +218,7 @@ function* handleLocationChanged(action) {
     const router = reduxStore.router;
 
     // check if this route is map-based
-    if (
-      router.routes[action.payload.route].index === 1 ||
-      router.routes[action.payload.route].index === 2 ||
-      (router.routes[action.payload.route].childIndex >= 0 &&
-        router.routes[action.payload.route].childIndex <= 4)
-    ) {
+    if (router.routes[action.payload.route].type === 'map') {
       const data = handleMapRoutes(
         action.payload.route,
         shootingsData,
@@ -203,8 +230,11 @@ function* handleLocationChanged(action) {
     }
 
     // check if this is the line graph
-    if (router.routes[action.payload.route].index === 3) {
-      const shootingsByDate = handleDateRoutes(shootingsData);
+    if (router.routes[action.payload.route].type === 'line') {
+      const shootingsByDate = handleDateRoutes(
+        action.payload.route,
+        shootingsData
+      );
 
       yield put({
         type: actionTypes.SEND_SHOOTINGS_BY_DATE_TO_REDUCER,

@@ -68,7 +68,7 @@ class Line extends React.Component {
         />
         <VictoryAnimation
           data={[{ fill: 'transparent' }, { fill: '#9FA152' }]}
-          delay={4000}
+          delay={3000}
         >
           {style => <VictoryLabel x={950} y={325} text="2016" style={style} />}
         </VictoryAnimation>
