@@ -1,5 +1,14 @@
 /** A constants SCSS partial for storing common variables and mixins */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+.line-description-transition-appear {
+  opacity: 0;
+}
+
+.line-description-transition-appear.line-description-transition-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
 .line-description-container {
   display: flex;
   flex-direction: row;

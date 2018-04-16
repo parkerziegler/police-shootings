@@ -1,5 +1,14 @@
 @import './_constants.scss';
 
+.line-description-transition-appear {
+  opacity: 0;
+}
+
+.line-description-transition-appear.line-description-transition-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
 .line-description-container {
   @include flex-row;
   text-align: left;
@@ -30,9 +39,3 @@
     margin-bottom: 10px;
   }
 }
-
-// @media only screen and (max-width: 768px) {
-//   .line-description-container {
-//     max-width: 100%;
-//   }
-// }

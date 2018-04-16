@@ -8,12 +8,43 @@ import {
   VictoryAnimation,
 } from 'victory';
 import moment from 'moment';
+import { median } from 'd3';
+
+const LabelPositionMap = {
+  '/shootingsbydate': {
+    2015: 240,
+    2016: 325,
+  },
+  '/shootingsbydate/black': {
+    2015: 215,
+    2016: 350,
+  },
+  '/shootingsbydate/latino': {
+    2015: 120,
+    2016: 280,
+  },
+  '/shootingsbydate/asian': {
+    2015: 45,
+    2016: 255,
+  },
+};
+
+const DelayMap = {
+  '/shootingsbydate': 2000,
+  '/shootingsbydate/black': 0,
+  '/shootingsbydate/latino': 0,
+  '/shootingsbydate/asian': 0,
+};
 
 class Line extends React.Component {
   render() {
-    const { maps: { shootingsByDate } } = this.props;
+    const { maps: { shootingsByDate }, router } = this.props;
     const [stats2015, stats2016] = shootingsByDate;
-
+    const labelPosition = LabelPositionMap[router.route];
+    const delay = DelayMap[router.route];
+    console.log(
+      stats2015 && median(stats2015.concat(stats2016).map(({ y }) => y))
+    );
     return (
       <VictoryChart
         width={1000}
@@ -31,8 +62,9 @@ class Line extends React.Component {
             new Date(2015, 11, 1),
           ]}
           tickFormat={t => moment(t).format('MMMM')}
+          label="Month"
         />
-        <VictoryAxis dependentAxis />
+        <VictoryAxis dependentAxis label="Number of Shootings" />
         <VictoryLine
           data={stats2015}
           scale="time"
@@ -49,9 +81,16 @@ class Line extends React.Component {
         />
         <VictoryAnimation
           data={[{ fill: 'transparent' }, { fill: '#7B52A1' }]}
-          delay={2000}
+          delay={delay}
         >
-          {style => <VictoryLabel x={950} y={240} text="2015" style={style} />}
+          {style => (
+            <VictoryLabel
+              x={950}
+              y={labelPosition ? labelPosition['2015'] : 240}
+              text="2015"
+              style={style}
+            />
+          )}
         </VictoryAnimation>
         <VictoryLine
           data={stats2016}
@@ -62,15 +101,24 @@ class Line extends React.Component {
             },
           }}
           animate={{
-            duration: 2000,
-            delay: 2000,
+            onEnter: {
+              duration: 2000,
+            },
+            delay,
           }}
         />
         <VictoryAnimation
           data={[{ fill: 'transparent' }, { fill: '#9FA152' }]}
-          delay={3000}
+          delay={delay + 1000}
         >
-          {style => <VictoryLabel x={950} y={325} text="2016" style={style} />}
+          {style => (
+            <VictoryLabel
+              x={950}
+              y={labelPosition ? labelPosition['2016'] : 325}
+              text="2016"
+              style={style}
+            />
+          )}
         </VictoryAnimation>
       </VictoryChart>
     );
@@ -80,6 +128,7 @@ class Line extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     maps: state.mapReducer,
+    router: state.router,
   };
 };
 

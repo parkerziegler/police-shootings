@@ -164,3 +164,23 @@ export const shootingsByDayBlackJSX = (
     with a median of <b>23.5</b> people per month.
   </div>
 );
+
+export const shootingsByDayLatinoJSX = (
+  <div className="text">
+    Shootings of Latinos peaked in <b>July of 2015</b> and <b>March of 2016</b>{' '}
+    at <b>21 people </b> in each of those months. Shootings fell sharply in{' '}
+    <b>May of 2015</b> to <b>6</b>. However, this is an outlier in the data.
+    Median shootings per month of Latinos was at <b>16.5</b> people per month.
+  </div>
+);
+
+export const shootingsByDayAsianJsx = (
+  <div className="text">
+    Shootings of Asians were infrequent across the two years surveyed, reaching
+    a maximum of <b>5</b> in <b>December of 2015</b>. Every other month ranged
+    between <b>1 and 3 shootings</b>, with a median of <b>2</b> across the time
+    period.
+  </div>
+);
+
+export const shootingsByDayNativeAmericanJsx = <div className="text" />;

@@ -389,7 +389,8 @@ exports[`<MapDescription /> renders properly 1`] = `
             <b>
                     113
             </b>
-            , respectively. 
+            , respectively.
+             
             <b>
                     June 2015
             </b>
@@ -397,7 +398,8 @@ exports[`<MapDescription /> renders properly 1`] = `
             <b>
                     April 2016
             </b>
-             tied for the least, each with 
+             tied for the least, each with
+             
             <b>
                     80
             </b>
@@ -411,6 +413,27 @@ exports[`<MapDescription /> renders properly 1`] = `
           "descSubtitle": "Asian",
           "descTitle": "Total Shootings By Date",
           "hasNextSibling": true,
+          "jsx": <div
+            className="text"
+    >
+            Shootings of Asians were infrequent across the two years surveyed, reaching a maximum of 
+            <b>
+                    5
+            </b>
+             in 
+            <b>
+                    December of 2015
+            </b>
+            . Every other month ranged between 
+            <b>
+                    1 and 3 shootings
+            </b>
+            , with a median of 
+            <b>
+                    2
+            </b>
+             across the time period.
+    </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -435,7 +458,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         113
               </b>
-              , respectively. 
+              , respectively.
+               
               <b>
                         June 2015
               </b>
@@ -443,7 +467,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         April 2016
               </b>
-               tied for the least, each with 
+               tied for the least, each with
+               
               <b>
                         80
               </b>
@@ -468,7 +493,8 @@ exports[`<MapDescription /> renders properly 1`] = `
             <b>
                     March of 2015
             </b>
-            , when 37 were killed in a single month. The fewest occurred in the 
+            , when 37 were killed in a single month. The fewest occurred in the
+             
             <b>
                     last month of 2016
             </b>
@@ -506,7 +532,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         113
               </b>
-              , respectively. 
+              , respectively.
+               
               <b>
                         June 2015
               </b>
@@ -514,7 +541,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         April 2016
               </b>
-               tied for the least, each with 
+               tied for the least, each with
+               
               <b>
                         80
               </b>
@@ -532,6 +560,35 @@ exports[`<MapDescription /> renders properly 1`] = `
           "descSubtitle": "Latino",
           "descTitle": "Total Shootings By Date",
           "hasNextSibling": true,
+          "jsx": <div
+            className="text"
+    >
+            Shootings of Latinos peaked in 
+            <b>
+                    July of 2015
+            </b>
+             and 
+            <b>
+                    March of 2016
+            </b>
+             at 
+            <b>
+                    21 people 
+            </b>
+             in each of those months. Shootings fell sharply in 
+            <b>
+                    May of 2015
+            </b>
+             to 
+            <b>
+                    6
+            </b>
+            . However, this is an outlier in the data. Median shootings per month of Latinos was at 
+            <b>
+                    16.5
+            </b>
+             people per month.
+    </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -556,7 +613,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         113
               </b>
-              , respectively. 
+              , respectively.
+               
               <b>
                         June 2015
               </b>
@@ -564,7 +622,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         April 2016
               </b>
-               tied for the least, each with 
+               tied for the least, each with
+               
               <b>
                         80
               </b>
@@ -606,7 +665,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         113
               </b>
-              , respectively. 
+              , respectively.
+               
               <b>
                         June 2015
               </b>
@@ -614,7 +674,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         April 2016
               </b>
-               tied for the least, each with 
+               tied for the least, each with
+               
               <b>
                         80
               </b>
@@ -657,7 +718,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         113
               </b>
-              , respectively. 
+              , respectively.
+               
               <b>
                         June 2015
               </b>
@@ -665,7 +727,8 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         April 2016
               </b>
-               tied for the least, each with 
+               tied for the least, each with
+               
               <b>
                         80
               </b>
