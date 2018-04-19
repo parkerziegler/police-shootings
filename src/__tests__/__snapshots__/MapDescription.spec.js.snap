@@ -571,11 +571,13 @@ exports[`<MapDescription /> renders properly 1`] = `
             <b>
                     March of 2016
             </b>
-             at 
+             
+            at 
             <b>
                     21 people 
             </b>
-             in each of those months. Shootings fell sharply in 
+             in each of those months. Shootings fell sharply in
+             
             <b>
                     May of 2015
             </b>
