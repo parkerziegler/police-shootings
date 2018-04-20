@@ -1,6 +1,7 @@
 import { put, takeLatest, select } from 'redux-saga/effects';
-import { groupBy, partition, findKey } from 'lodash';
+import { groupBy, partition, findKey, unionBy } from 'lodash';
 import moment from 'moment';
+import * as d3 from 'd3';
 
 import * as actionTypes from '../constants/action-types';
 import * as stateNames from '../assets/state-names';
@@ -202,10 +203,20 @@ const handleDateRoutes = (route, shootingsData) => {
   const data = groupByMonth.map(year => {
     return Object.keys(year).map(month => ({
       x: parseInt(month, 10),
-      y: year[month].length,
+      y: year[month].length || 0,
     }));
   });
-  return data;
+
+  const emptyMonths = d3.timeMonth
+    .range(new Date(2015, 0, 1), new Date(2016, 0, 1))
+    .map(date => ({ x: moment(date).valueOf(), y: 0 }));
+
+  const [data2015, data2016] = data;
+
+  return [
+    unionBy(data2015, emptyMonths, 'x'),
+    unionBy(data2016, emptyMonths, 'x'),
+  ];
 };
 
 // our generator function to run our handleLocationChanged saga

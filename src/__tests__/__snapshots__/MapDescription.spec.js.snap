@@ -403,7 +403,15 @@ exports[`<MapDescription /> renders properly 1`] = `
             <b>
                     80
             </b>
-             shootings.
+             shootings. Median shootings per month were 
+            <b>
+                    91
+            </b>
+             over the two year period, with a standard deviation of 
+            <b>
+                    10.2
+            </b>
+            .
     </div>,
           "title": "Shootings By Date",
           "type": "line",
@@ -432,7 +440,11 @@ exports[`<MapDescription /> renders properly 1`] = `
             <b>
                     2
             </b>
-             across the time period.
+             across the time period and a standard deviation of 
+            <b>
+                    1.26
+            </b>
+            .
     </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
@@ -472,7 +484,15 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         80
               </b>
-               shootings.
+               shootings. Median shootings per month were 
+              <b>
+                        91
+              </b>
+               over the two year period, with a standard deviation of 
+              <b>
+                        10.2
+              </b>
+              .
     </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
@@ -506,7 +526,12 @@ exports[`<MapDescription /> renders properly 1`] = `
             <b>
                     23.5
             </b>
-             people per month.
+             people per month and a standard deviation of
+             
+            <b>
+                    5.22
+            </b>
+            .
     </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
@@ -546,7 +571,15 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         80
               </b>
-               shootings.
+               shootings. Median shootings per month were 
+              <b>
+                        91
+              </b>
+               over the two year period, with a standard deviation of 
+              <b>
+                        10.2
+              </b>
+              .
     </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
@@ -589,7 +622,11 @@ exports[`<MapDescription /> renders properly 1`] = `
             <b>
                     16.5
             </b>
-             people per month.
+             people per month, with a standard deviation of 
+            <b>
+                    3.49
+            </b>
+            .
     </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
@@ -629,7 +666,15 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         80
               </b>
-               shootings.
+               shootings. Median shootings per month were 
+              <b>
+                        91
+              </b>
+               over the two year period, with a standard deviation of 
+              <b>
+                        10.2
+              </b>
+              .
     </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
@@ -643,6 +688,32 @@ exports[`<MapDescription /> renders properly 1`] = `
           "descSubtitle": "Native American",
           "descTitle": "Total Shootings By Date",
           "hasNextSibling": true,
+          "jsx": <div
+            className="text"
+    >
+            Median shootings of Native Americans between 2015 and 2016 were only one fewer per month than Asians, at 
+            <b>
+                    1
+            </b>
+            , despite the fact that their total population is considerably smaller. The standard deviation was actually higher at 
+            <b>
+                    1.56
+            </b>
+            .Shootings peaked in 
+            <b>
+                    September of 2015
+            </b>
+             and
+             
+            <b>
+                    January of 2016
+            </b>
+             at 
+            <b>
+                    5
+            </b>
+            .
+    </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -681,7 +752,15 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         80
               </b>
-               shootings.
+               shootings. Median shootings per month were 
+              <b>
+                        91
+              </b>
+               over the two year period, with a standard deviation of 
+              <b>
+                        10.2
+              </b>
+              .
     </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
@@ -696,6 +775,36 @@ exports[`<MapDescription /> renders properly 1`] = `
           "descTitle": "Total Shootings By Date",
           "hasNextSibling": false,
           "isLastChildRoute": true,
+          "jsx": <div
+            className="text"
+    >
+            Shootings of whites reached a median of 
+            <b>
+                    46.5
+            </b>
+             between 2015 and 2016, peaking to a high of 
+            <b>
+                    69
+            </b>
+             in 
+            <b>
+                    July of 2015
+            </b>
+             and reaching a low in
+             
+            <b>
+                    the same month in 2016
+            </b>
+             at 
+            <b>
+                    38
+            </b>
+            . The standard deviation was the highest for any racial group at 
+            <b>
+                    6.89
+            </b>
+            .
+    </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -734,7 +843,15 @@ exports[`<MapDescription /> renders properly 1`] = `
               <b>
                         80
               </b>
-               shootings.
+               shootings. Median shootings per month were 
+              <b>
+                        91
+              </b>
+               over the two year period, with a standard deviation of 
+              <b>
+                        10.2
+              </b>
+              .
     </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",

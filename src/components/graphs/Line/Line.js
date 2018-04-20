@@ -8,7 +8,7 @@ import {
   VictoryAnimation,
 } from 'victory';
 import moment from 'moment';
-import { median } from 'd3';
+import { median, deviation } from 'd3';
 
 const LabelPositionMap = {
   '/shootingsbydate': {
@@ -25,7 +25,15 @@ const LabelPositionMap = {
   },
   '/shootingsbydate/asian': {
     2015: 45,
-    2016: 255,
+    2016: 225,
+  },
+  '/shootingsbydate/nativeamerican': {
+    2015: 345,
+    2016: 225,
+  },
+  '/shootingsbydate/white': {
+    2015: 320,
+    2016: 225,
   },
 };
 
@@ -45,6 +53,7 @@ class Line extends React.Component {
     console.log(
       stats2015 && median(stats2015.concat(stats2016).map(({ y }) => y))
     );
+    console.log(stats2015 && deviation(stats2015.concat(stats2016), d => d.y));
     return (
       <VictoryChart
         width={1000}
@@ -64,7 +73,11 @@ class Line extends React.Component {
           tickFormat={t => moment(t).format('MMMM')}
           label="Month"
         />
-        <VictoryAxis dependentAxis label="Number of Shootings" />
+        <VictoryAxis
+          dependentAxis
+          tickFormat={t => parseInt(t, 10)}
+          label="Number of Shootings"
+        />
         <VictoryLine
           data={stats2015}
           scale="time"
@@ -104,12 +117,12 @@ class Line extends React.Component {
             onEnter: {
               duration: 2000,
             },
-            delay,
+            // delay,
           }}
         />
         <VictoryAnimation
           data={[{ fill: 'transparent' }, { fill: '#9FA152' }]}
-          delay={delay + 1000}
+          delay={delay}
         >
           {style => (
             <VictoryLabel

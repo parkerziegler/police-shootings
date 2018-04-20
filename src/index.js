@@ -27,6 +27,8 @@ import {
   shootingsByDayBlackJSX,
   shootingsByDayLatinoJSX,
   shootingsByDayAsianJsx,
+  shootingsByDayNativeAmericanJsx,
+  shootingsByDayWhiteJSX,
 } from './constants/descriptions';
 
 // define routes for the application
@@ -187,6 +189,7 @@ const routes = {
       descSubtitle: 'Native American',
       childIndex: 3,
       hasNextSibling: true,
+      jsx: shootingsByDayNativeAmericanJsx,
     },
     '/white': {
       type: 'line',
@@ -196,6 +199,7 @@ const routes = {
       childIndex: 4,
       hasNextSibling: false,
       isLastChildRoute: true,
+      jsx: shootingsByDayWhiteJSX,
     },
   },
 };

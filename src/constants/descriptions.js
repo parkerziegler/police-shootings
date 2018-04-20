@@ -151,7 +151,8 @@ export const shootingsByDayJSX = (
     across the time period surveyed. <b>July 2015</b> and <b>March 2015</b> had
     the most shootings of any month at <b>124</b> and <b>113</b>, respectively.{' '}
     <b>June 2015</b> and <b>April 2016</b> tied for the least, each with{' '}
-    <b>80</b> shootings.
+    <b>80</b> shootings. Median shootings per month were <b>91</b> over the two
+    year period, with a standard deviation of <b>10.2</b>.
   </div>
 );
 
@@ -161,7 +162,8 @@ export const shootingsByDayBlackJSX = (
     killed in a single month. The fewest occurred in the{' '}
     <b>last month of 2016</b>, when <b>14</b> people were killed. Unfortunately,
     killings of African Americans remain fairly steady across the two years,
-    with a median of <b>23.5</b> people per month.
+    with a median of <b>23.5</b> people per month and a standard deviation of{' '}
+    <b>5.22</b>.
   </div>
 );
 
@@ -170,7 +172,8 @@ export const shootingsByDayLatinoJSX = (
     Shootings of Latinos peaked in <b>July of 2015</b> and <b>March of 2016</b>{' '}
     at <b>21 people </b> in each of those months. Shootings fell sharply in{' '}
     <b>May of 2015</b> to <b>6</b>. However, this is an outlier in the data.
-    Median shootings per month of Latinos was at <b>16.5</b> people per month.
+    Median shootings per month of Latinos was at <b>16.5</b> people per month,
+    with a standard deviation of <b>3.49</b>.
   </div>
 );
 
@@ -179,8 +182,25 @@ export const shootingsByDayAsianJsx = (
     Shootings of Asians were infrequent across the two years surveyed, reaching
     a maximum of <b>5</b> in <b>December of 2015</b>. Every other month ranged
     between <b>1 and 3 shootings</b>, with a median of <b>2</b> across the time
-    period.
+    period and a standard deviation of <b>1.26</b>.
   </div>
 );
 
-export const shootingsByDayNativeAmericanJsx = <div className="text" />;
+export const shootingsByDayNativeAmericanJsx = (
+  <div className="text">
+    Median shootings of Native Americans between 2015 and 2016 were only one
+    fewer per month than Asians, at <b>1</b>, despite the fact that their total
+    population is considerably smaller. The standard deviation was actually
+    higher at <b>1.56</b>.Shootings peaked in <b>September of 2015</b> and{' '}
+    <b>January of 2016</b> at <b>5</b>.
+  </div>
+);
+
+export const shootingsByDayWhiteJSX = (
+  <div className="text">
+    Shootings of whites reached a median of <b>46.5</b> between 2015 and 2016,
+    peaking to a high of <b>69</b> in <b>July of 2015</b> and reaching a low in{' '}
+    <b>the same month in 2016</b> at <b>38</b>. The standard deviation was the
+    highest for any racial group at <b>6.89</b>.
+  </div>
+);
