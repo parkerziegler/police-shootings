@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DataTable /> component renders correctly 1`] = `
+<div
+  className="data-table"
+>
+  <div
+    className="table-button-container"
+  >
+    <div
+      className="button"
+      id="highest"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "background": "#4292C6",
+          "border": "1px solid #6BAED6",
+          "color": "#FFFFFF",
+        }
+      }
+    >
+      Highest
+    </div>
+    <div
+      className="button"
+      id="lowest"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "background": "#FFFFFF",
+          "border": "1px solid #4292C6",
+          "color": "#4292C6",
+        }
+      }
+    >
+      Lowest
+    </div>
+  </div>
+  <div
+    className="table"
+  >
+    <div>
+      <div
+        className="table-header"
+      >
+        State
+      </div>
+      <div
+        className="row"
+        key="0"
+      >
+        New Mexico
+      </div>
+      <div
+        className="row"
+        key="1"
+      >
+        District of Columbia
+      </div>
+      <div
+        className="row"
+        key="2"
+      >
+        Oklahoma
+      </div>
+      <div
+        className="row"
+        key="3"
+      >
+        Alaska
+      </div>
+      <div
+        className="row"
+        key="4"
+      >
+        Arizona
+      </div>
+    </div>
+    <div>
+      <div
+        className="table-header"
+      >
+        Shootings Per Million
+      </div>
+      <div
+        className="row"
+        key="0"
+      >
+        20.63
+      </div>
+      <div
+        className="row"
+        key="1"
+      >
+        18.53
+      </div>
+      <div
+        className="row"
+        key="2"
+      >
+        17.92
+      </div>
+      <div
+        className="row"
+        key="3"
+      >
+        17.73
+      </div>
+      <div
+        className="row"
+        key="4"
+      >
+        14.15
+      </div>
+    </div>
+  </div>
+</div>
+`;

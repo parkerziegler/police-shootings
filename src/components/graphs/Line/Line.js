@@ -8,52 +8,50 @@ import {
   VictoryAnimation,
 } from 'victory';
 import moment from 'moment';
-import { median, deviation } from 'd3';
-
-const LabelPositionMap = {
-  '/shootingsbydate': {
-    2015: 240,
-    2016: 325,
-  },
-  '/shootingsbydate/black': {
-    2015: 215,
-    2016: 350,
-  },
-  '/shootingsbydate/latino': {
-    2015: 120,
-    2016: 280,
-  },
-  '/shootingsbydate/asian': {
-    2015: 45,
-    2016: 225,
-  },
-  '/shootingsbydate/nativeamerican': {
-    2015: 345,
-    2016: 225,
-  },
-  '/shootingsbydate/white': {
-    2015: 320,
-    2016: 225,
-  },
-};
-
-const DelayMap = {
-  '/shootingsbydate': 2000,
-  '/shootingsbydate/black': 0,
-  '/shootingsbydate/latino': 0,
-  '/shootingsbydate/asian': 0,
-};
 
 class Line extends React.Component {
+  constructor(props) {
+    super(props);
+    this.LabelPositionMap = {
+      '/shootingsbydate': {
+        2015: 240,
+        2016: 325,
+      },
+      '/shootingsbydate/black': {
+        2015: 215,
+        2016: 350,
+      },
+      '/shootingsbydate/latino': {
+        2015: 120,
+        2016: 280,
+      },
+      '/shootingsbydate/asian': {
+        2015: 45,
+        2016: 225,
+      },
+      '/shootingsbydate/nativeamerican': {
+        2015: 345,
+        2016: 225,
+      },
+      '/shootingsbydate/white': {
+        2015: 320,
+        2016: 225,
+      },
+    };
+    this.DelayMap = {
+      '/shootingsbydate': 2000,
+      '/shootingsbydate/black': 0,
+      '/shootingsbydate/latino': 0,
+      '/shootingsbydate/asian': 0,
+      '/shootingsbydate/nativeamerican': 0,
+      '/shootingsbydate/white': 0,
+    };
+  }
   render() {
     const { maps: { shootingsByDate }, router } = this.props;
     const [stats2015, stats2016] = shootingsByDate;
-    const labelPosition = LabelPositionMap[router.route];
-    const delay = DelayMap[router.route];
-    console.log(
-      stats2015 && median(stats2015.concat(stats2016).map(({ y }) => y))
-    );
-    console.log(stats2015 && deviation(stats2015.concat(stats2016), d => d.y));
+    const labelPosition = this.LabelPositionMap[router.route];
+    const delay = this.DelayMap[router.route];
     return (
       <VictoryChart
         width={1000}
@@ -117,7 +115,6 @@ class Line extends React.Component {
             onEnter: {
               duration: 2000,
             },
-            // delay,
           }}
         />
         <VictoryAnimation
