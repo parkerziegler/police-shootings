@@ -29,7 +29,6 @@ export function* callAPI(action) {
   try {
     // call the API, using yield to wait for its response
     const [topojson, shootingsData, censusData] = yield call(axiosCallAPI);
-
     // send the raw shootings data off to redux for storage
     yield put({
       type: actionTypes.SEND_SHOOTINGS_DATA_TO_REDUCER,
@@ -56,25 +55,30 @@ export function* callAPI(action) {
     // we can just modify the existing object in place
     topojson.data.objects.states.geometries.forEach(state => {
       // parse the id as an int to join it to state data
+      console.log('58');
       state.id = parseInt(state.id, 10);
       const key = findKey(stateNames, ({ id }) => id === state.id);
       const matchState = stateNames[key];
+      console.log('62');
 
       // once we have a match state, use it to obtain shooting and population data
       const matchShootings = dataByState[matchState.code];
       const matchPopulation = populationStats.find(
         ({ id }) => id === matchState.id
       );
+      console.log(matchShootings);
+      console.log('69');
 
       // finally, recompose the state object
       state.properties = {
         stateAbbreviation: matchState.code,
         stateName: matchState.name,
-        numShootings: matchShootings.length,
+        numShootings: matchShootings ? matchShootings.length : 0,
         population: matchPopulation.populationTotal,
         populationTotal: matchPopulation.populationTotal,
-        shootingsPerCapita:
-          matchShootings.length / matchPopulation.populationTotal,
+        shootingsPerCapita: matchShootings
+          ? matchShootings.length / matchPopulation.populationTotal
+          : 0,
         populationBlack: matchPopulation.populationBlack,
         populationHispanic: matchPopulation.populationHispanic,
         populationAsian: matchPopulation.populationAsian,
