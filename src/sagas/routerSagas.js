@@ -220,14 +220,11 @@ const handleDateRoutes = (route, shootingsData) => {
 };
 
 // our generator function to run our handleLocationChanged saga
-function* handleLocationChanged(action) {
+export function* handleLocationChanged(action) {
   try {
     // read the shootings data from the redux store
-    const reduxStore = yield select();
-    const shootingsData = reduxStore.mapReducer.shootingsData;
-    const geoData = reduxStore.mapReducer.geoData;
-    const router = reduxStore.router;
-
+    const { shootingsData, geoData } = yield select(state => state.mapReducer);
+    const router = yield select(state => state.router);
     // check if this route is map-based
     if (router.routes[action.payload.route].type === 'map') {
       const data = handleMapRoutes(
@@ -239,7 +236,6 @@ function* handleLocationChanged(action) {
       // send this data to redux so our Map component can read from it
       yield put({ type: actionTypes.SEND_API_DATA_TO_REDUCER, data });
     }
-
     // check if this is the line graph
     if (router.routes[action.payload.route].type === 'line') {
       const shootingsByDate = handleDateRoutes(
