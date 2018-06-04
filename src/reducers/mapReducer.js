@@ -1,19 +1,19 @@
 // import necessary modules
-import * as actionTypes from "../constants/action-types";
+import * as actionTypes from '../constants/action-types';
 
 // define our initial reducer state
-const initialState = {
+export const initialState = {
   fetchingData: true,
   geoData: [],
   shootingsData: [],
   censusData: [],
   activeState: {
-    stateName: "New Mexico",
+    stateName: 'New Mexico',
     shootings: 43,
-    shootingsPerMillion: 20.66
+    shootingsPerMillion: 20.66,
   },
-  temporalFilter: "100",
-  shootingsByDate: []
+  temporalFilter: '100',
+  shootingsByDate: [],
 };
 
 export const mapReducer = (state = initialState, action) => {
@@ -21,38 +21,33 @@ export const mapReducer = (state = initialState, action) => {
     case actionTypes.CALL_API:
       return {
         ...state,
-        fetchingData: true
+        fetchingData: true,
       };
     case actionTypes.SEND_API_DATA_TO_REDUCER:
       return {
         ...state,
         geoData: action.data,
-        fetchingData: false
+        fetchingData: false,
       };
     case actionTypes.SEND_SHOOTINGS_DATA_TO_REDUCER:
       return {
         ...state,
-        shootingsData: action.data
+        shootingsData: action.data,
       };
     case actionTypes.SEND_CENSUS_DATA_TO_REDUCER:
       return {
         ...state,
-        censusData: action.censusData
+        censusData: action.censusData,
       };
     case actionTypes.GET_HOVERED_STATE_DATA:
       return {
         ...state,
-        activeState: action.state
-      };
-    case actionTypes.SET_TEMPORAL_FILTER_ON_SHOOTINGS_DATA:
-      return {
-        ...state,
-        temporalFilter: action.temporalFilter
+        activeState: action.state,
       };
     case actionTypes.SEND_SHOOTINGS_BY_DATE_TO_REDUCER:
       return {
         ...state,
-        shootingsByDate: action.shootingsByDate
+        shootingsByDate: action.shootingsByDate,
       };
     default:
       return state;
