@@ -12,6 +12,9 @@ before_install:
 script:
   - yarn run test
   - yarn run build
+  - yarn run coverage
+  # Upload to coveralls, but don't _fail_ if coveralls is down.
+  - cat coverage/lcov.info | node_modules/.bin/coveralls || echo "Coveralls upload failed"
 
 deploy:
   provider: pages
