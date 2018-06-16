@@ -126,7 +126,7 @@ const joinShootingsDataToGeoData = (
   populationFilter
 ) => {
   if (!geoData) {
-    return;
+    return [];
   }
 
   const dataByState = groupBy(shootingsData, 'state');
@@ -154,7 +154,7 @@ const joinShootingsDataToGeoData = (
   return geoData;
 };
 
-// function for generating proper topojson data based on route and filtes
+// function for generating proper topojson data based on route and filters
 const handleMapRoutes = (route, shootingsData, geoData) => {
   // obtain the proper data filter based on the route
   const { filterKey, filterValue, populationValue } = shootingsFilters[route];

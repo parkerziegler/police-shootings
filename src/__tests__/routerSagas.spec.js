@@ -58,6 +58,9 @@ describe('routerSagas', () => {
         '/total-shootings': {
           type: 'map',
         },
+        '/total-shootings/black': {
+          type: 'map',
+        },
         '/shootingsbydate': {
           type: 'line',
         },
@@ -80,6 +83,29 @@ describe('routerSagas', () => {
   it('handles map specific routes', () => {
     return expectSaga(handleLocationChanged, action)
       .withState(mockState)
+      .put.actionType(actionTypes.SEND_API_DATA_TO_REDUCER)
+      .run();
+  });
+
+  it('filters data to match request of sub-pathed routes', () => {
+    return expectSaga(handleLocationChanged, {
+      type: 'ROUTER_LOCATION_CHANGED',
+      payload: { route: '/total-shootings/black' },
+    })
+      .withState(mockState)
+      .put.actionType(actionTypes.SEND_API_DATA_TO_REDUCER)
+      .run();
+  });
+
+  it('handles map routes with empty geoData', () => {
+    return expectSaga(handleLocationChanged, {
+      type: 'ROUTER_LOCATION_CHANGED',
+      payload: { route: '/total-shootings/black' },
+    })
+      .withState({
+        ...mockState,
+        mapReducer: { ...mockState.mapReducer, geoData: null },
+      })
       .put.actionType(actionTypes.SEND_API_DATA_TO_REDUCER)
       .run();
   });
