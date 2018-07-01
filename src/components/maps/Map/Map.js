@@ -10,7 +10,7 @@ import { colors } from '../../../constants/colors';
 import '../../../stylesheets/Map.css';
 import State from '../State/State';
 
-class Map extends React.Component {
+export class Map extends React.Component {
   constructor(props) {
     super(props);
     this.generatePath = this.generatePath.bind(this);
@@ -224,32 +224,26 @@ class Map extends React.Component {
       .domain([0, maxState])
       .range([0, 80]);
 
-    const legendComponents = legendValues.map((value, i) => {
-      if (!value) {
-        return [];
-      }
-
-      return (
-        <g key={i}>
-          <circle
-            cy={-radius(value)}
-            r={radius(value)}
-            stroke="#B24739"
-            strokeWidth="0.5"
-            fill="none"
-          />
-          <text
-            y={-2 * radius(value)}
-            dy="1.3em"
-            textAnchor="middle"
-            fill="#666"
-            className="legend-label"
-          >
-            {value}
-          </text>
-        </g>
-      );
-    });
+    const legendComponents = legendValues.map((value, i) => (
+      <g key={i}>
+        <circle
+          cy={-radius(value)}
+          r={radius(value)}
+          stroke="#B24739"
+          strokeWidth="0.5"
+          fill="none"
+        />
+        <text
+          y={-2 * radius(value)}
+          dy="1.3em"
+          textAnchor="middle"
+          fill="#666"
+          className="legend-label"
+        >
+          {value}
+        </text>
+      </g>
+    ));
 
     return (
       <g height="300" width="100" transform="translate(875, 475)">
