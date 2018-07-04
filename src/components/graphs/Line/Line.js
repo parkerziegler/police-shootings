@@ -9,7 +9,7 @@ import {
 } from 'victory';
 import moment from 'moment';
 
-class Line extends React.Component {
+export class Line extends React.Component {
   constructor(props) {
     super(props);
     this.LabelPositionMap = {
