@@ -15,4 +15,10 @@ describe('<Line />', () => {
     const wrapper = shallow(<Line {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders the full DOM without crashing', () => {
+    const wrapper = mount(<Line {...props} />);
+    expect(wrapper).toMatchSnapshot();
+    wrapper.unmount();
+  });
 });
