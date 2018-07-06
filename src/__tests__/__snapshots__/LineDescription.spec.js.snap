@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LineDescription /> renders without crashing 1`] = `
+<TransitionGroup
+  childFactory={[Function]}
+  component={null}
+>
+  <CSSTransition
+    appear={true}
+    classNames="line-description-transition"
+    timeout={3000}
+  >
+    <div
+      className="line-description-container"
+    >
+      <div
+        className="line-description-title"
+      >
+        <div
+          className="title"
+        >
+          Title
+        </div>
+        <div
+          className="subtitle"
+        >
+          Subtitle
+        </div>
+      </div>
+      Description
+    </div>
+  </CSSTransition>
+</TransitionGroup>
+`;

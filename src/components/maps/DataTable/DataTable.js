@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import '../../../stylesheets/DataTable.css';
 import { round, orderBy } from 'lodash';
 
-class DataTable extends React.Component {
+export class DataTable extends React.Component {
   constructor() {
     super();
     this.state = {

@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import '../../../stylesheets/LineDescription.css';
 
-const LineDescription = ({ title, subtitle, description }) => (
+export const LineDescription = ({ title, subtitle, description }) => (
   <TransitionGroup component={null}>
     <CSSTransition
       appear
@@ -21,6 +22,12 @@ const LineDescription = ({ title, subtitle, description }) => (
     </CSSTransition>
   </TransitionGroup>
 );
+
+LineDescription.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = state => ({
   title: state.router.result.descTitle,
