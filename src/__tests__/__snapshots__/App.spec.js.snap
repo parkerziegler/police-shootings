@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders an empty div when fetchingData is true 1`] = `<div />`;
+
+exports[`<App /> renders correct chevron visibility across all routes 1`] = `
+<Connect(getContext(WithId))
+  forRoute="/"
+>
+  <React.Fragment>
+    <Chevron
+      direction="up"
+      onClick={[Function]}
+      path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"
+      visible={false}
+    />
+    <div
+      className="page-container"
+    >
+      <Chevron
+        direction="left"
+        onClick={[Function]}
+        path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"
+        visible={false}
+      />
+      <div
+        className="page-content"
+      >
+        <Connect(getContext(WithId))
+          forRoute="/"
+        >
+          <Connect(Home) />
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/total-shootings"
+        >
+          <div
+            className="map-layout"
+          >
+            <Connect(Map)
+              mapType="proportional"
+            />
+            <Connect(MapDescription)
+              mapType="proportional"
+            />
+          </div>
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/percapita"
+        >
+          <div
+            className="map-layout"
+          >
+            <Connect(Map)
+              mapType="choropleth"
+            />
+            <Connect(MapDescription)
+              mapType="choropleth"
+            />
+          </div>
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/shootingsbydate"
+        >
+          <div
+            className="chart-layout"
+          >
+            <Connect(Component) />
+            <Connect(Line) />
+          </div>
+        </Connect(getContext(WithId))>
+      </div>
+      <Chevron
+        direction="right"
+        onClick={[Function]}
+        path="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+        visible={true}
+      />
+    </div>
+    <Chevron
+      direction="down"
+      onClick={[Function]}
+      path="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"
+      visible={false}
+    />
+  </React.Fragment>
+</Connect(getContext(WithId))>
+`;
+
+exports[`<App /> renders correct chevron visibility across all routes 2`] = `
+<Connect(getContext(WithId))
+  forRoute="/"
+>
+  <React.Fragment>
+    <Chevron
+      direction="up"
+      onClick={[Function]}
+      path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"
+      visible={true}
+    />
+    <div
+      className="page-container"
+    >
+      <Chevron
+        direction="left"
+        onClick={[Function]}
+        path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"
+        visible={false}
+      />
+      <div
+        className="page-content"
+      >
+        <Connect(getContext(WithId))
+          forRoute="/"
+        >
+          <Connect(Home) />
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/total-shootings"
+        >
+          <div
+            className="map-layout"
+          >
+            <Connect(Map)
+              mapType="proportional"
+            />
+            <Connect(MapDescription)
+              mapType="proportional"
+            />
+          </div>
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/percapita"
+        >
+          <div
+            className="map-layout"
+          >
+            <Connect(Map)
+              mapType="choropleth"
+            />
+            <Connect(MapDescription)
+              mapType="choropleth"
+            />
+          </div>
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/shootingsbydate"
+        >
+          <div
+            className="chart-layout"
+          >
+            <Connect(Component) />
+            <Connect(Line) />
+          </div>
+        </Connect(getContext(WithId))>
+      </div>
+      <Chevron
+        direction="right"
+        onClick={[Function]}
+        path="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+        visible={false}
+      />
+    </div>
+    <Chevron
+      direction="down"
+      onClick={[Function]}
+      path="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"
+      visible={false}
+    />
+  </React.Fragment>
+</Connect(getContext(WithId))>
+`;
+
+exports[`<App /> renders without crashing 1`] = `
+<Connect(getContext(WithId))
+  forRoute="/"
+>
+  <React.Fragment>
+    <Chevron
+      direction="up"
+      onClick={[Function]}
+      path="M1683 1331l-166 165q-19 19-45 19t-45-19l-531-531-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"
+      visible={false}
+    />
+    <div
+      className="page-container"
+    >
+      <Chevron
+        direction="left"
+        onClick={[Function]}
+        path="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"
+        visible={true}
+      />
+      <div
+        className="page-content"
+      >
+        <Connect(getContext(WithId))
+          forRoute="/"
+        >
+          <Connect(Home) />
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/total-shootings"
+        >
+          <div
+            className="map-layout"
+          >
+            <Connect(Map)
+              mapType="proportional"
+            />
+            <Connect(MapDescription)
+              mapType="proportional"
+            />
+          </div>
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/percapita"
+        >
+          <div
+            className="map-layout"
+          >
+            <Connect(Map)
+              mapType="choropleth"
+            />
+            <Connect(MapDescription)
+              mapType="choropleth"
+            />
+          </div>
+        </Connect(getContext(WithId))>
+        <Connect(getContext(WithId))
+          forRoute="/shootingsbydate"
+        >
+          <div
+            className="chart-layout"
+          >
+            <Connect(Component) />
+            <Connect(Line) />
+          </div>
+        </Connect(getContext(WithId))>
+      </div>
+      <Chevron
+        direction="right"
+        onClick={[Function]}
+        path="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+        visible={true}
+      />
+    </div>
+    <Chevron
+      direction="down"
+      onClick={[Function]}
+      path="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"
+      visible={true}
+    />
+  </React.Fragment>
+</Connect(getContext(WithId))>
+`;

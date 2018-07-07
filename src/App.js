@@ -13,7 +13,7 @@ import * as ChevronPaths from './constants/chevron-paths';
 import Line from './components/graphs/Line/Line';
 import LineDescription from './components/graphs/LineDescription/LineDescription';
 
-class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props);
     this.goToNext = this.goToNext.bind(this);
@@ -110,12 +110,14 @@ class App extends Component {
       <Fragment forRoute={'/'}>
         <React.Fragment>
           <Chevron
+            direction="up"
             path={ChevronPaths.ChevronUp}
             visible={this.getChevronVisibility('up')}
             onClick={this.goToPreviousChild}
           />
           <div className="page-container">
             <Chevron
+              direction="left"
               path={ChevronPaths.ChevronLeft}
               onClick={this.goToPrevious}
               visible={this.getChevronVisibility('left')}
@@ -144,12 +146,14 @@ class App extends Component {
               </Fragment>
             </div>
             <Chevron
+              direction="right"
               path={ChevronPaths.ChevronRight}
               onClick={this.goToNext}
               visible={this.getChevronVisibility('right')}
             />
           </div>
           <Chevron
+            direction="down"
             path={ChevronPaths.ChevronDown}
             visible={this.getChevronVisibility('down')}
             onClick={this.goToNextChild}

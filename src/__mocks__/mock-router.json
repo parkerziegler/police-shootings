@@ -1,0 +1,3407 @@
+{
+  "pathname": "/percapita",
+  "basename": "/d3-react-map",
+  "search": "",
+  "hash": "",
+  "query": {},
+  "route": "/percapita",
+  "params": {},
+  "result": {
+    "type": "map",
+    "title": "Shootings Per Million By State",
+    "descTitle": "Shootings Per Million",
+    "descSubtitle": "By State",
+    "index": 2,
+    "hasChildren": true,
+    "jsx": {
+      "type": "div",
+      "key": null,
+      "ref": null,
+      "props": {
+        "className": "text",
+        "children": [
+          "Of all 50 states, ",
+          {
+            "type": "b",
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": "New Mexico"
+            },
+            "_owner": null,
+            "_store": {}
+          },
+          " had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the ",
+          {
+            "type": "b",
+            "key": null,
+            "ref": null,
+            "props": {
+              "children": "District of Columbia"
+            },
+            "_owner": null,
+            "_store": {}
+          },
+          " being an exception. Four of the five lowest rates were found in the northeastern United States. ",
+          {
+            "type": "br",
+            "key": null,
+            "ref": null,
+            "props": {},
+            "_owner": null,
+            "_store": {}
+          },
+          {
+            "type": "br",
+            "key": null,
+            "ref": null,
+            "props": {},
+            "_owner": null,
+            "_store": {}
+          },
+          "Hover over a state to obtain the number of shootings per million."
+        ]
+      },
+      "_owner": null,
+      "_store": {}
+    }
+  },
+  "routes": {
+    "/total-shootings/black": {
+      "type": "map",
+      "title": "Total Shootings By Race African American",
+      "descTitle": "Total Shootings",
+      "descSubtitle": "African American",
+      "childIndex": 0,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Shootings of African Americans by police were heavily concentrated along the Eastern seaboard and in the southern United States. However,",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "California"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the greatest number of shootings of black Americans at",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "62"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Florida"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Texas"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the second and third highest totals at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "50"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "41"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", respectively. States with low African American populations in the intermountain West and the Northeast, such as",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Montana"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Idaho"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Maine"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Vermont"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " were among the few with no shootings of black Americans.",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Total Shootings",
+        "descTitle": "Total Shootings",
+        "descSubtitle": "By State",
+        "index": 1,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "California"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of shootings in this time period at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "372"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ". ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Texas"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Florida"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the second and third greatest counts at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "205"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "144"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "North Dakota"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the fewest shootings of all states with only",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ".",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/total-shootings"
+      }
+    },
+    "/total-shootings/latino": {
+      "type": "map",
+      "title": "Total Shootings By Race Latino",
+      "descTitle": "Total Shootings",
+      "descSubtitle": "Latino",
+      "childIndex": 1,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Shootings of Latinos by police were spatially concentrated in the Southwest along the U.S. - Mexico border. ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "California"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the greatest number of shootings at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "154"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", more than double that of the second highest,",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Texas"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "67"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Arizona"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "New Mexico"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", and",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Colorado"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " all demonstrated high counts as well.",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Total Shootings",
+        "descTitle": "Total Shootings",
+        "descSubtitle": "By State",
+        "index": 1,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "California"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of shootings in this time period at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "372"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ". ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Texas"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Florida"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the second and third greatest counts at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "205"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "144"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "North Dakota"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the fewest shootings of all states with only",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ".",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/total-shootings"
+      }
+    },
+    "/total-shootings/asian": {
+      "type": "map",
+      "title": "Total Shootings By Race Asian",
+      "descTitle": "Total Shootings",
+      "descSubtitle": "Asian",
+      "childIndex": 2,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Shootings of Asian Americans demonstrate a high level of spatial variability, with many states having none at all between 2015 and 2016.",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "California"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " once again had the greatest number of shootings at",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "16"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Hawaii"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the second largest number, ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "6"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", likely owing to a larger Asian American population than other states.",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Total Shootings",
+        "descTitle": "Total Shootings",
+        "descSubtitle": "By State",
+        "index": 1,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "California"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of shootings in this time period at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "372"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ". ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Texas"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Florida"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the second and third greatest counts at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "205"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "144"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "North Dakota"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the fewest shootings of all states with only",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ".",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/total-shootings"
+      }
+    },
+    "/total-shootings/nativeamerican": {
+      "type": "map",
+      "title": "Total Shootings By Race Native American",
+      "descTitle": "Total Shootings",
+      "descSubtitle": "Native American",
+      "childIndex": 3,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Police involved shootings of Native Americans were mainly concentrated in western states with larger indigenous populations. ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Arizona"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the greatest number of shootings with ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "9"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Alaksa"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Washington"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the second and third highest counts, at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "7"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "6"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " respectively.",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Total Shootings",
+        "descTitle": "Total Shootings",
+        "descSubtitle": "By State",
+        "index": 1,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "California"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of shootings in this time period at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "372"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ". ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Texas"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Florida"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the second and third greatest counts at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "205"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "144"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "North Dakota"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the fewest shootings of all states with only",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ".",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/total-shootings"
+      }
+    },
+    "/total-shootings/white": {
+      "type": "map",
+      "title": "Total Shootings By Race White",
+      "descTitle": "Total Shootings",
+      "descSubtitle": "White",
+      "childIndex": 4,
+      "hasNextSibling": false,
+      "isLastChildRoute": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "The majority of people shot by the police between 2015 and 2016 were white.",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "California"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Texas"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Florida"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the greatest number of shootings at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "125"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "92"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "74"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", respectively. Open carry states like ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Arizona"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Oklahoma"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " also had high counts. A high incidence of shootings is also visible in stretches of Appalachia and the southern United States. ",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Total Shootings",
+        "descTitle": "Total Shootings",
+        "descSubtitle": "By State",
+        "index": 1,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "California"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of shootings in this time period at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "372"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ". ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Texas"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "Florida"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the second and third greatest counts at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "205"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "144"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "North Dakota"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the fewest shootings of all states with only",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ".",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/total-shootings"
+      }
+    },
+    "/percapita/black": {
+      "type": "map",
+      "title": "Shootings Per Million By Race African American",
+      "descTitle": "Shootings Per Million",
+      "descSubtitle": "African American",
+      "childIndex": 0,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Per million African American residents, ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Oklahoma"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the highest rate of police shootings at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "68.21"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "West Virginia"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Nebraska"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the second and third highest rates at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "48.89"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "43.45"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " respectively. Only ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "10"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " states had no shootings of African Americans in this time period. ",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings per million."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Shootings Per Million By State",
+        "descTitle": "Shootings Per Million",
+        "descSubtitle": "By State",
+        "index": 2,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "New Mexico"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "District of Columbia"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " being an exception. Four of the five lowest rates were found in the northeastern United States. ",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings per million."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/percapita"
+      }
+    },
+    "/percapita/latino": {
+      "type": "map",
+      "title": "Shootings Per Million By Race Latino",
+      "descTitle": "Shootings Per Million",
+      "descSubtitle": "Latino",
+      "childIndex": 1,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "The western United States demonstrated a much higher incidence of police involved shootings of Latinos than other parts of the country. Southwest border states like ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "New Mexico"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " (",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "24.23"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " shootings per million Latino residents) and intermountain West states like ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Idaho"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " (",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "20.91"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ") had generally higher rates than eastern states. ",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings per million."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Shootings Per Million By State",
+        "descTitle": "Shootings Per Million",
+        "descSubtitle": "By State",
+        "index": 2,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "New Mexico"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "District of Columbia"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " being an exception. Four of the five lowest rates were found in the northeastern United States. ",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings per million."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/percapita"
+      }
+    },
+    "/percapita/asian": {
+      "type": "map",
+      "title": "Shootings Per Million By Race Asian",
+      "descTitle": "Shootings Per Million",
+      "descSubtitle": "Asian",
+      "childIndex": 2,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "On a per capita basis, Asians were the least likely of all races to be killed by police between 2015 and 2016. In fact,",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "a majority of states (35)"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had no shootings of Asians during this time period. ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Colorado"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Louisiana"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Hawaii"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " were major outliers to this trend, demonstrating the highest rates of shootings of Asians.",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings per million."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Shootings Per Million By State",
+        "descTitle": "Shootings Per Million",
+        "descSubtitle": "By State",
+        "index": 2,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "New Mexico"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "District of Columbia"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " being an exception. Four of the five lowest rates were found in the northeastern United States. ",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings per million."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/percapita"
+      }
+    },
+    "/percapita/nativeamerican": {
+      "type": "map",
+      "title": "Shootings Per Million By Race Native American",
+      "descTitle": "Shootings Per Million",
+      "descSubtitle": "Native American",
+      "childIndex": 3,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children":
+                  "Native americans are killed by police at a higher rate than any other race in the country."
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " ",
+            "While Midwestern states with larger indigenous populations demonstrate consistently inflated rates, northwestern states like ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Alaska"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Washington"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " retain many of the highest rates. ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Vermont"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " is an extreme outlier in the dataset, its rate of shootings being the result of a small indigenous population.",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings per million."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Shootings Per Million By State",
+        "descTitle": "Shootings Per Million",
+        "descSubtitle": "By State",
+        "index": 2,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "New Mexico"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "District of Columbia"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " being an exception. Four of the five lowest rates were found in the northeastern United States. ",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings per million."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/percapita"
+      }
+    },
+    "/percapita/white": {
+      "type": "map",
+      "title": "Shootings Per Million By Race White",
+      "descTitle": "Shootings Per Million",
+      "descSubtitle": "White",
+      "childIndex": 4,
+      "hasNextSibling": false,
+      "isLastChildRoute": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Shootings of whites by police closely mirrored the geography of the nation as a whole. Western states like ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Oklahoma"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Wyoming"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", and",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "New Mexico"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " demonstrated the highest rates while the northeastern United States had consistently low rates. Of all races, whites were the second least likely to be shot by the police. Perhaps most startingly, no whites were killed in the ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "District of Columbia"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " during this time period, meaning the city's high rate of police shootings were exclusively of people of color.",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings per million."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "map",
+        "title": "Shootings Per Million By State",
+        "descTitle": "Shootings Per Million",
+        "descSubtitle": "By State",
+        "index": 2,
+        "hasChildren": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Of all 50 states, ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "New Mexico"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "District of Columbia"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " being an exception. Four of the five lowest rates were found in the northeastern United States. ",
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              {
+                "type": "br",
+                "key": null,
+                "ref": null,
+                "props": {},
+                "_owner": null,
+                "_store": {}
+              },
+              "Hover over a state to obtain the number of shootings per million."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "route": "/percapita"
+      }
+    },
+    "/shootingsbydate/black": {
+      "type": "line",
+      "title": "Shootings By Date By Race African American",
+      "descTitle": "Total Shootings By Date",
+      "descSubtitle": "African American",
+      "childIndex": 0,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Shootings of African Americans spiked in ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "March of 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", when 37 were killed in a single month. The fewest occurred in the",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "last month of 2016"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", when ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "14"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " people were killed. Unfortunately, killings of African Americans remain fairly steady across the two years, with a median of ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "23.5"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " people per month and a standard deviation of",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "5.22"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            "."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "line",
+        "title": "Shootings By Date",
+        "descTitle": "Total Shootings By Date",
+        "index": 3,
+        "isLastRoute": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Police involved shootings display a more or less stochastic distribution across the time period surveyed. ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "July 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "March 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the most shootings of any month at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "124"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "113"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "June 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "April 2016"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " tied for the least, each with",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "80"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " shootings. Median shootings per month were ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "91"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " over the two year period, with a standard deviation of ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "10.2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              "."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "hasChildren": true,
+        "route": "/shootingsbydate"
+      }
+    },
+    "/shootingsbydate/latino": {
+      "type": "line",
+      "title": "Shootings By Date By Race Latino",
+      "descTitle": "Total Shootings By Date",
+      "descSubtitle": "Latino",
+      "childIndex": 1,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Shootings of Latinos peaked in ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "July of 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "March of 2016"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " ",
+            "at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "21 people "
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " in each of those months. Shootings fell sharply in",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "May of 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " to ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "6"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". However, this is an outlier in the data. Median shootings per month of Latinos was at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "16.5"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " people per month, with a standard deviation of ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "3.49"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            "."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "line",
+        "title": "Shootings By Date",
+        "descTitle": "Total Shootings By Date",
+        "index": 3,
+        "isLastRoute": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Police involved shootings display a more or less stochastic distribution across the time period surveyed. ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "July 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "March 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the most shootings of any month at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "124"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "113"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "June 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "April 2016"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " tied for the least, each with",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "80"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " shootings. Median shootings per month were ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "91"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " over the two year period, with a standard deviation of ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "10.2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              "."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "hasChildren": true,
+        "route": "/shootingsbydate"
+      }
+    },
+    "/shootingsbydate/asian": {
+      "type": "line",
+      "title": "Shootings By Date By Race Asian",
+      "descTitle": "Total Shootings By Date",
+      "descSubtitle": "Asian",
+      "childIndex": 2,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Shootings of Asians were infrequent across the two years surveyed, reaching a maximum of ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "5"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " in ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "December of 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". Every other month ranged between ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "1 and 3 shootings"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", with a median of ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "2"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " across the time period and a standard deviation of ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "1.26"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            "."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "line",
+        "title": "Shootings By Date",
+        "descTitle": "Total Shootings By Date",
+        "index": 3,
+        "isLastRoute": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Police involved shootings display a more or less stochastic distribution across the time period surveyed. ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "July 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "March 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the most shootings of any month at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "124"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "113"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "June 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "April 2016"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " tied for the least, each with",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "80"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " shootings. Median shootings per month were ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "91"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " over the two year period, with a standard deviation of ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "10.2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              "."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "hasChildren": true,
+        "route": "/shootingsbydate"
+      }
+    },
+    "/shootingsbydate/nativeamerican": {
+      "type": "line",
+      "title": "Shootings By Date By Race Native American",
+      "descTitle": "Total Shootings By Date",
+      "descSubtitle": "Native American",
+      "childIndex": 3,
+      "hasNextSibling": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Median shootings of Native Americans between 2015 and 2016 were only one fewer per month than Asians, at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "1"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", despite the fact that their total population is considerably smaller. The standard deviation was actually higher at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "1.56"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ".Shootings peaked in ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "September of 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "January of 2016"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "5"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            "."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "line",
+        "title": "Shootings By Date",
+        "descTitle": "Total Shootings By Date",
+        "index": 3,
+        "isLastRoute": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Police involved shootings display a more or less stochastic distribution across the time period surveyed. ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "July 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "March 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the most shootings of any month at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "124"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "113"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "June 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "April 2016"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " tied for the least, each with",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "80"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " shootings. Median shootings per month were ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "91"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " over the two year period, with a standard deviation of ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "10.2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              "."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "hasChildren": true,
+        "route": "/shootingsbydate"
+      }
+    },
+    "/shootingsbydate/white": {
+      "type": "line",
+      "title": "Shootings By Date By Race White",
+      "descTitle": "Total Shootings By Date",
+      "descSubtitle": "White",
+      "childIndex": 4,
+      "hasNextSibling": false,
+      "isLastChildRoute": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Shootings of whites reached a median of ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "46.5"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " between 2015 and 2016, peaking to a high of ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "69"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " in ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "July of 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and reaching a low in",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "the same month in 2016"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "38"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". The standard deviation was the highest for any racial group at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "6.89"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            "."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "parent": {
+        "type": "line",
+        "title": "Shootings By Date",
+        "descTitle": "Total Shootings By Date",
+        "index": 3,
+        "isLastRoute": true,
+        "jsx": {
+          "type": "div",
+          "key": null,
+          "ref": null,
+          "props": {
+            "className": "text",
+            "children": [
+              "Police involved shootings display a more or less stochastic distribution across the time period surveyed. ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "July 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "March 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " had the most shootings of any month at ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "124"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "113"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              ", respectively.",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "June 2015"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " and ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "April 2016"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " tied for the least, each with",
+              " ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "80"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " shootings. Median shootings per month were ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "91"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              " over the two year period, with a standard deviation of ",
+              {
+                "type": "b",
+                "key": null,
+                "ref": null,
+                "props": {
+                  "children": "10.2"
+                },
+                "_owner": null,
+                "_store": {}
+              },
+              "."
+            ]
+          },
+          "_owner": null,
+          "_store": {}
+        },
+        "hasChildren": true,
+        "route": "/shootingsbydate"
+      }
+    },
+    "/": {
+      "title": "Intro",
+      "index": 0
+    },
+    "/total-shootings": {
+      "type": "map",
+      "title": "Total Shootings",
+      "descTitle": "Total Shootings",
+      "descSubtitle": "By State",
+      "index": 1,
+      "hasChildren": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Of all 50 states, ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "California"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the greatest number of shootings in this time period at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "372"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ". ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Texas"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "Florida"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the second and third greatest counts at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "205"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "144"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", respectively.",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "North Dakota"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the fewest shootings of all states with only",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "2"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ".",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      }
+    },
+    "/percapita": {
+      "type": "map",
+      "title": "Shootings Per Million By State",
+      "descTitle": "Shootings Per Million",
+      "descSubtitle": "By State",
+      "index": 2,
+      "hasChildren": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Of all 50 states, ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "New Mexico"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "District of Columbia"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " being an exception. Four of the five lowest rates were found in the northeastern United States. ",
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            {
+              "type": "br",
+              "key": null,
+              "ref": null,
+              "props": {},
+              "_owner": null,
+              "_store": {}
+            },
+            "Hover over a state to obtain the number of shootings per million."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      }
+    },
+    "/shootingsbydate": {
+      "type": "line",
+      "title": "Shootings By Date",
+      "descTitle": "Total Shootings By Date",
+      "index": 3,
+      "isLastRoute": true,
+      "jsx": {
+        "type": "div",
+        "key": null,
+        "ref": null,
+        "props": {
+          "className": "text",
+          "children": [
+            "Police involved shootings display a more or less stochastic distribution across the time period surveyed. ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "July 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "March 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " had the most shootings of any month at ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "124"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "113"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            ", respectively.",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "June 2015"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " and ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "April 2016"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " tied for the least, each with",
+            " ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "80"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " shootings. Median shootings per month were ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "91"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            " over the two year period, with a standard deviation of ",
+            {
+              "type": "b",
+              "key": null,
+              "ref": null,
+              "props": {
+                "children": "10.2"
+              },
+              "_owner": null,
+              "_store": {}
+            },
+            "."
+          ]
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "hasChildren": true
+    }
+  },
+  "queue": []
+}
