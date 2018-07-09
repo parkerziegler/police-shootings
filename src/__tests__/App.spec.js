@@ -1,5 +1,6 @@
 import { App } from '../App';
 import mockRouter from '../__mocks__/mock-router.json';
+import { push } from 'redux-little-router';
 
 describe('<App />', () => {
   const props = {
@@ -39,5 +40,128 @@ describe('<App />', () => {
     expect(wrapper).toMatchSnapshot();
 
     expect(wrapper.instance().getChevronVisibility('random')).toBe(false);
+  });
+
+  it('handles goToPreviousChild properly when navigating from child to parent', () => {
+    const dispatch = jest.fn();
+    const wrapper = shallow(
+      <App
+        {...props}
+        router={{
+          ...mockRouter,
+          result: {
+            parent: {
+              index: 2,
+            },
+          },
+        }}
+        dispatch={dispatch}
+      />
+    );
+
+    wrapper.instance().goToPreviousChild();
+    expect(dispatch).toHaveBeenCalledWith(push('/percapita'));
+  });
+
+  it('handles goToPreviousChild properly on nested routes', () => {
+    const dispatch = jest.fn();
+    const wrapper = shallow(
+      <App
+        {...props}
+        router={{
+          ...mockRouter,
+          result: {
+            childIndex: 1,
+            parent: {
+              index: 2,
+            },
+          },
+        }}
+        dispatch={dispatch}
+      />
+    );
+
+    wrapper.instance().goToPreviousChild();
+    expect(dispatch).toHaveBeenCalledWith(push('/percapita/black'));
+  });
+
+  it('handles goToNextChild properly when navigating from parent to child', () => {
+    const dispatch = jest.fn();
+    const wrapper = shallow(
+      <App
+        {...props}
+        router={{
+          ...mockRouter,
+          result: {
+            index: 2,
+            hasChildren: true,
+          },
+        }}
+        dispatch={dispatch}
+      />
+    );
+
+    wrapper.instance().goToNextChild();
+    expect(dispatch).toHaveBeenCalledWith(push('/percapita/black'));
+  });
+
+  it('handles goToNextChild properly on nested routes', () => {
+    const dispatch = jest.fn();
+    const wrapper = shallow(
+      <App
+        {...props}
+        router={{
+          ...mockRouter,
+          result: {
+            childIndex: 0,
+            parent: {
+              index: 2,
+            },
+          },
+        }}
+        dispatch={dispatch}
+      />
+    );
+
+    wrapper.instance().goToNextChild();
+    expect(dispatch).toHaveBeenCalledWith(push('/percapita/latino'));
+  });
+
+  it('handles goToPrevious properly on parent routes', () => {
+    const dispatch = jest.fn();
+    const wrapper = shallow(
+      <App
+        {...props}
+        router={{
+          ...mockRouter,
+          result: {
+            index: 2,
+          },
+        }}
+        dispatch={dispatch}
+      />
+    );
+
+    wrapper.instance().goToPrevious();
+    expect(dispatch).toHaveBeenCalledWith(push('/total-shootings'));
+  });
+
+  it('handles goToNext properly on parent routes', () => {
+    const dispatch = jest.fn();
+    const wrapper = shallow(
+      <App
+        {...props}
+        router={{
+          ...mockRouter,
+          result: {
+            index: 2,
+          },
+        }}
+        dispatch={dispatch}
+      />
+    );
+
+    wrapper.instance().goToNext();
+    expect(dispatch).toHaveBeenCalledWith(push('/shootingsbydate'));
   });
 });
