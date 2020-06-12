@@ -44664,6 +44664,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={0}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={2958208}
             radius={80}
             stateName="Arkansas"
@@ -44699,6 +44700,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={1}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={38421464}
             radius={80}
             stateName="California"
@@ -44734,6 +44736,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={2}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={12873761}
             radius={80}
             stateName="Illinois"
@@ -44769,6 +44772,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={3}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={2892987}
             radius={80}
             stateName="Kansas"
@@ -44804,6 +44808,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={4}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={2988081}
             radius={80}
             stateName="Mississippi"
@@ -44839,6 +44844,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={5}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={11575977}
             radius={80}
             stateName="Ohio"
@@ -44874,6 +44880,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={6}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={26538614}
             radius={80}
             stateName="Texas"
@@ -44909,6 +44916,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={7}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={4830620}
             radius={80}
             stateName="Alabama"
@@ -44944,6 +44952,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={8}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={3093526}
             radius={80}
             stateName="Iowa"
@@ -44979,6 +44988,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={9}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={4625253}
             radius={80}
             stateName="Louisiana"
@@ -45014,6 +45024,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={10}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={5419171}
             radius={80}
             stateName="Minnesota"
@@ -45049,6 +45060,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={11}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={6045448}
             radius={80}
             stateName="Missouri"
@@ -45084,6 +45096,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={12}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={1869365}
             radius={80}
             stateName="Nebraska"
@@ -45119,6 +45132,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={13}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={6641928}
             radius={80}
             stateName="Arizona"
@@ -45154,6 +45168,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={14}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={5278906}
             radius={80}
             stateName="Colorado"
@@ -45189,6 +45204,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={15}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={6568645}
             radius={80}
             stateName="Indiana"
@@ -45224,6 +45240,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={16}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={9900571}
             radius={80}
             stateName="Michigan"
@@ -45259,6 +45276,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={17}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={1014699}
             radius={80}
             stateName="Montana"
@@ -45294,6 +45312,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={18}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={19673174}
             radius={80}
             stateName="New York"
@@ -45329,6 +45348,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={19}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={3939233}
             radius={80}
             stateName="Oregon"
@@ -45364,6 +45384,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={20}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={8256630}
             radius={80}
             stateName="Virginia"
@@ -45399,6 +45420,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={21}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={579679}
             radius={80}
             stateName="Wyoming"
@@ -45434,6 +45456,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={22}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={9845333}
             radius={80}
             stateName="North Carolina"
@@ -45469,6 +45492,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={23}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={3849733}
             radius={80}
             stateName="Oklahoma"
@@ -45504,6 +45528,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={24}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={6499615}
             radius={80}
             stateName="Tennessee"
@@ -45539,6 +45564,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={25}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={5742117}
             radius={80}
             stateName="Wisconsin"
@@ -45574,6 +45600,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={26}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={733375}
             radius={80}
             stateName="Alaska"
@@ -45609,6 +45636,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={27}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={626604}
             radius={80}
             stateName="Vermont"
@@ -45644,6 +45672,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={28}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={721640}
             radius={80}
             stateName="North Dakota"
@@ -45679,6 +45708,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={29}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={10006693}
             radius={80}
             stateName="Georgia"
@@ -45714,6 +45744,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={30}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={1329100}
             radius={80}
             stateName="Maine"
@@ -45749,6 +45780,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={31}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={1053661}
             radius={80}
             stateName="Rhode Island"
@@ -45784,6 +45816,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={32}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={1851420}
             radius={80}
             stateName="West Virginia"
@@ -45819,6 +45852,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={33}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={1616547}
             radius={80}
             stateName="Idaho"
@@ -45854,6 +45888,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={34}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={843190}
             radius={80}
             stateName="South Dakota"
@@ -45889,6 +45924,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={35}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={2084117}
             radius={80}
             stateName="New Mexico"
@@ -45924,6 +45960,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={36}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={6985464}
             radius={80}
             stateName="Washington"
@@ -45959,6 +45996,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={37}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={12779559}
             radius={80}
             stateName="Pennsylvania"
@@ -45994,6 +46032,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={38}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={19645772}
             radius={80}
             stateName="Florida"
@@ -46029,6 +46068,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={39}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={2903379}
             radius={80}
             stateName="Utah"
@@ -46064,6 +46104,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={40}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={4397353}
             radius={80}
             stateName="Kentucky"
@@ -46099,6 +46140,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={41}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={1324201}
             radius={80}
             stateName="New Hampshire"
@@ -46134,6 +46176,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={42}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={4777576}
             radius={80}
             stateName="South Carolina"
@@ -46169,6 +46212,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={43}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={2798636}
             radius={80}
             stateName="Nevada"
@@ -46204,6 +46248,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={44}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={1406299}
             radius={80}
             stateName="Hawaii"
@@ -46239,6 +46284,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={45}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={8904413}
             radius={80}
             stateName="New Jersey"
@@ -46274,6 +46320,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={46}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={3593222}
             radius={80}
             stateName="Connecticut"
@@ -46309,6 +46356,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={47}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={5930538}
             radius={80}
             stateName="Maryland"
@@ -46344,6 +46392,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={48}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={6705586}
             radius={80}
             stateName="Massachusetts"
@@ -46379,6 +46428,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={49}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={926454}
             radius={80}
             stateName="Delaware"
@@ -46414,6 +46464,7 @@ exports[`<Map /> renders the proportional circle legend correctly when all value
             i={50}
             mapType="proportional"
             numShootings={1}
+            path={null}
             population={647484}
             radius={80}
             stateName="District of Columbia"

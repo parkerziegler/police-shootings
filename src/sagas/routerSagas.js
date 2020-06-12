@@ -4,7 +4,7 @@ import moment from 'moment';
 import * as d3 from 'd3';
 
 import * as actionTypes from '../constants/action-types';
-import * as stateNames from '../assets/state-names';
+import * as stateNames from '../assets/state-names.json';
 
 // define a watcher saga to listen for when ROUTER_LOCATION_CHANGED is dispatched by the router
 export function* watchLocationChanged() {
@@ -112,7 +112,7 @@ const shootingsFilters = {
 const filterShootingsData = (data, filterKey = null, filterValue = null) => {
   const clone = [...data];
   if (filterKey && filterValue) {
-    return clone.filter(entry => entry[filterKey] === filterValue);
+    return clone.filter((entry) => entry[filterKey] === filterValue);
   }
   return clone;
 };
@@ -130,12 +130,12 @@ const joinShootingsDataToGeoData = (
   }
 
   const dataByState = groupBy(shootingsData, 'state');
-  geoData.objects.states.geometries.forEach(state => {
+  geoData.objects.states.geometries.forEach((state) => {
     // parse the id as an int so it can join to the state data
     // stored in constants
     state.id = parseInt(state.id, 10);
-    const matchId = findKey(stateNames, ({ id }) => id === state.id);
-    const matchState = stateNames[matchId];
+    const matchId = findKey(stateNames.default, ({ id }) => id === state.id);
+    const matchState = stateNames.default[matchId];
 
     // once a match state is found, use it to obtain
     // the number of shootings and population value for the filter
@@ -180,7 +180,7 @@ const handleDateRoutes = (route, shootingsData) => {
     filterValue
   );
   // group shootings by month and year and return as two collections to redux
-  const shootingsByDate = filteredData.map(shooting => {
+  const shootingsByDate = filteredData.map((shooting) => {
     return {
       month: shooting.month,
       year: shooting.year,
@@ -190,18 +190,18 @@ const handleDateRoutes = (route, shootingsData) => {
   // partition the data based on year
   const shootingsByYear = partition(
     shootingsByDate,
-    shooting => shooting.year === 2015
+    (shooting) => shooting.year === 2015
   );
 
   // group by month within each year
-  const groupByMonth = shootingsByYear.map(year => {
+  const groupByMonth = shootingsByYear.map((year) => {
     return groupBy(year, ({ month, year }) =>
       moment(`${month} - 2015`, 'MMMM - YYYY').valueOf()
     );
   });
 
-  const data = groupByMonth.map(year => {
-    return Object.keys(year).map(month => ({
+  const data = groupByMonth.map((year) => {
+    return Object.keys(year).map((month) => ({
       x: parseInt(month, 10),
       y: year[month].length || 0,
     }));
@@ -209,7 +209,7 @@ const handleDateRoutes = (route, shootingsData) => {
 
   const emptyMonths = d3.timeMonth
     .range(new Date(2015, 0, 1), new Date(2016, 0, 1))
-    .map(date => ({ x: moment(date).valueOf(), y: 0 }));
+    .map((date) => ({ x: moment(date).valueOf(), y: 0 }));
 
   const [data2015, data2016] = data;
 
@@ -223,8 +223,10 @@ const handleDateRoutes = (route, shootingsData) => {
 export function* handleLocationChanged(action) {
   try {
     // read the shootings data from the redux store
-    const { shootingsData, geoData } = yield select(state => state.mapReducer);
-    const router = yield select(state => state.router);
+    const { shootingsData, geoData } = yield select(
+      (state) => state.mapReducer
+    );
+    const router = yield select((state) => state.router);
     // check if this route is map-based
     if (router.routes[action.payload.route].type === 'map') {
       const data = handleMapRoutes(

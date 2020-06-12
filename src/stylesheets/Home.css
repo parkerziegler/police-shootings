@@ -1,98 +1,72 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 /** A constants SCSS partial for storing common variables and mixins */
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 /** Use a SCSS loop to create the transition classes to be used
 by the react-transition-group add-on */
 .home-transition-0-appear {
-  opacity: 0.01;
-}
+  opacity: 0.01; }
 
 .home-transition-0-appear.home-transition-0-appear-active {
   opacity: 1;
-  transition: opacity 1s ease-in 0s;
-}
+  transition: opacity 1s ease-in 0s; }
 
 .home-transition-1-appear {
-  opacity: 0.01;
-}
+  opacity: 0.01; }
 
 .home-transition-1-appear.home-transition-1-appear-active {
   opacity: 1;
-  transition: opacity 1s ease-in 2s;
-}
+  transition: opacity 1s ease-in 2s; }
 
 .home-transition-2-appear {
-  opacity: 0.01;
-}
+  opacity: 0.01; }
 
 .home-transition-2-appear.home-transition-2-appear-active {
   opacity: 1;
-  transition: opacity 1s ease-in 4s;
-}
+  transition: opacity 1s ease-in 4s; }
 
 .home-transition-3-appear {
-  opacity: 0.01;
-}
+  opacity: 0.01; }
 
 .home-transition-3-appear.home-transition-3-appear-active {
   opacity: 1;
-  transition: opacity 1s ease-in 6s;
-}
+  transition: opacity 1s ease-in 6s; }
 
 .home-transition-4-appear {
-  opacity: 0.01;
-}
+  opacity: 0.01; }
 
 .home-transition-4-appear.home-transition-4-appear-active {
   opacity: 1;
-  transition: opacity 1s ease-in 8s;
-}
+  transition: opacity 1s ease-in 8s; }
 
 .home-transition-5-appear {
-  opacity: 0.01;
-}
+  opacity: 0.01; }
 
 .home-transition-5-appear.home-transition-5-appear-active {
   opacity: 1;
-  transition: opacity 1s ease-in 10s;
-}
+  transition: opacity 1s ease-in 10s; }
 
 .home-text {
   font-size: 16px;
-  font-family: 'Source Code Pro', monospace, sans-serif;
-}
-@media screen and (min-width: 480px) {
-  .home-text {
-    font-size: 18px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .home-text {
-    font-size: 22px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .home-text {
-    font-size: 28px;
-  }
-}
+  font-family: "Source Code Pro", monospace, sans-serif; }
+  @media screen and (min-width: 480px) {
+    .home-text {
+      font-size: 18px; } }
+  @media screen and (min-width: 768px) {
+    .home-text {
+      font-size: 22px; } }
+  @media screen and (min-width: 1024px) {
+    .home-text {
+      font-size: 28px; } }
 
 .home-text-large {
   font-size: 16px;
-  font-family: 'Source Code Pro', monospace, sans-serif;
-}
-@media screen and (min-width: 480px) {
-  .home-text-large {
-    font-size: 22px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .home-text-large {
-    font-size: 28px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .home-text-large {
-    font-size: 36px;
-  }
-}
+  font-family: "Source Code Pro", monospace, sans-serif; }
+  @media screen and (min-width: 480px) {
+    .home-text-large {
+      font-size: 22px; } }
+  @media screen and (min-width: 768px) {
+    .home-text-large {
+      font-size: 28px; } }
+  @media screen and (min-width: 1024px) {
+    .home-text-large {
+      font-size: 36px; } }

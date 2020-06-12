@@ -4,40 +4,40 @@
   "private": true,
   "homepage": "https://parkerziegler.github.io/d3-react-map/",
   "dependencies": {
-    "axios": "^0.16.1",
-    "d3": "4.7.4",
-    "enzyme": "^3.1.0",
-    "enzyme-adapter-react-16": "^1.0.4",
-    "enzyme-to-json": "^3.3.0",
-    "moment": "^2.18.1",
-    "prop-types": "^15.5.10",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "axios": "^0.19.2",
+    "d3": "^5.16.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.26.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-redux": "^5.0.4",
     "react-router": "^4.2.0",
-    "react-test-renderer": "^16.1.0",
+    "react-test-renderer": "^16.13.1",
     "react-transition-group": "^2.3.0",
     "redux": "^3.6.0",
-    "redux-little-router": "^15.1.0",
+    "redux-little-router": "^15.1.2",
     "redux-saga": "^0.15.6",
     "redux-saga-test-plan": "^3.7.0",
     "topojson": "^2.2.0",
     "victory": "^0.25.7"
   },
   "devDependencies": {
-    "coveralls": "^3.0.1",
+    "coveralls": "^3.1.0",
     "gh-pages": "^1.0.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^6.0.0",
-    "node-sass-chokidar": "0.0.2",
-    "npm-run-all": "^4.0.2",
-    "prettier": "^1.9.2",
-    "react-scripts": "1.0.17"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.10",
+    "node-sass-chokidar": "1.4.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
@@ -48,13 +48,42 @@
     "precommit": "lint-staged"
   },
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"],
-    "*.jsx": ["prettier --write", "git add"],
-    "*.scss": ["prettier --write", "git add"],
-    "*.css": ["prettier --write", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.jsx": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

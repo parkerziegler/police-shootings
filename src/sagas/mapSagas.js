@@ -4,7 +4,7 @@ import axios from 'axios';
 import { initializeCurrentLocation } from 'redux-little-router';
 
 import * as actionTypes from '../constants/action-types';
-import * as stateNames from '../assets/state-names';
+import * as stateNames from '../assets/state-names.json';
 import { CENSUS_API_KEY } from '../config';
 
 // define a watcher generator to listen for when CALL_API is dispatched
@@ -12,20 +12,30 @@ export function* watchAPICall() {
   yield takeLatest('CALL_API', callAPI);
 }
 
+const CENSUS_CATEGORY_BY_RACE = {
+  black: 'B02001_003E',
+  hispanic: 'B03002_012E',
+  asian: 'B02001_005E',
+  nativeAmerican: 'B02001_004E',
+  white: 'B02001_002E',
+  total: 'B01003_001E',
+};
+
 // define a function that will return our axios promise
 export const axiosCallAPI = () => {
   return axios.all([
     axios.get('https://d3js.org/us-10m.v1.json'),
     axios.get(`${process.env.PUBLIC_URL}/shootings-data.json`),
     axios.get(
-      'https://api.census.gov/data/2015/acs5?get=B02001_003E,B03002_012E,B02001_005E,B02001_004E,B02001_002E,B01003_001E&for=state:*&key=' +
-        CENSUS_API_KEY
+      `https://api.census.gov/data/2015/acs/acs5?get=${Object.values(
+        CENSUS_CATEGORY_BY_RACE
+      ).join(',')}&for=state:*&key=` + CENSUS_API_KEY
     ),
   ]);
 };
 
 // define a sagahandle fetching our API data
-export function* callAPI(action) {
+export function* callAPI() {
   try {
     // call the API, using yield to wait for its response
     const [topojson, shootingsData, censusData] = yield call(axiosCallAPI);
@@ -39,7 +49,7 @@ export function* callAPI(action) {
     const dataByState = groupBy(shootingsData.data, 'state');
 
     // reformat the census data
-    const populationStats = drop(censusData.data).map(state => {
+    const populationStats = drop(censusData.data).map((state) => {
       return {
         id: parseInt(state[state.length - 1], 10),
         populationBlack: parseInt(state[0], 10),
@@ -53,11 +63,11 @@ export function* callAPI(action) {
 
     // next, modify the topojson data and join the attributes from the shootings data
     // we can just modify the existing object in place
-    topojson.data.objects.states.geometries.forEach(state => {
+    topojson.data.objects.states.geometries.forEach((state) => {
       // parse the id as an int to join it to state data
       state.id = parseInt(state.id, 10);
-      const key = findKey(stateNames, ({ id }) => id === state.id);
-      const matchState = stateNames[key];
+      const key = findKey(stateNames.default, ({ id }) => id === state.id);
+      const matchState = stateNames.default[key];
 
       // once we have a match state, use it to obtain shooting and population data
       const matchShootings = dataByState[matchState.code];
@@ -96,12 +106,12 @@ export function* callAPI(action) {
     });
 
     // initalize the location so redux-little-router works with sagas
-    const router = yield select(state => state.router);
+    const router = yield select((state) => state.router);
     if (router) {
       yield put(initializeCurrentLocation(router));
     }
   } catch (error) {
     // log the error
-    // console.log(error);
+    console.log(error);
   }
 }

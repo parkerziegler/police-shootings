@@ -45,20 +45,20 @@ exports[`<MapDescription /> renders properly 1`] = `
           "index": 2,
           "jsx": <div
             className="text"
-    >
+          >
             Of all 50 states, 
             <b>
-                    New Mexico
+              New Mexico
             </b>
              had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the 
             <b>
-                    District of Columbia
+              District of Columbia
             </b>
              being an exception. Four of the five lowest rates were found in the northeastern United States. 
             <br />
             <br />
             Hover over a state to obtain the number of shootings per million.
-    </div>,
+          </div>,
           "title": "Shootings Per Million By State",
           "type": "map",
         },
@@ -69,29 +69,29 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             On a per capita basis, Asians were the least likely of all races to be killed by police between 2015 and 2016. In fact,
              
             <b>
-                    a majority of states (35)
+              a majority of states (35)
             </b>
              had no shootings of Asians during this time period. 
             <b>
-                    Colorado
+              Colorado
             </b>
             , 
             <b>
-                    Louisiana
+              Louisiana
             </b>
             , and 
             <b>
-                    Hawaii
+              Hawaii
             </b>
              were major outliers to this trend, demonstrating the highest rates of shootings of Asians.
             <br />
             <br />
             Hover over a state to obtain the number of shootings per million.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Shootings Per Million",
@@ -99,20 +99,20 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 2,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        New Mexico
+                New Mexico
               </b>
                had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the 
               <b>
-                        District of Columbia
+                District of Columbia
               </b>
                being an exception. Four of the five lowest rates were found in the northeastern United States. 
               <br />
               <br />
               Hover over a state to obtain the number of shootings per million.
-    </div>,
+            </div>,
             "route": "/percapita",
             "title": "Shootings Per Million By State",
             "type": "map",
@@ -127,42 +127,42 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Per million African American residents, 
             <b>
-                    Oklahoma
+              Oklahoma
             </b>
              had the highest rate of police shootings at 
             <b>
-                    68.21
+              68.21
             </b>
             . 
             <b>
-                    West Virginia
+              West Virginia
             </b>
              and
              
             <b>
-                    Nebraska
+              Nebraska
             </b>
              had the second and third highest rates at 
             <b>
-                    48.89
+              48.89
             </b>
              and
              
             <b>
-                    43.45
+              43.45
             </b>
              respectively. Only 
             <b>
-                    10
+              10
             </b>
              states had no shootings of African Americans in this time period. 
             <br />
             <br />
             Hover over a state to obtain the number of shootings per million.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Shootings Per Million",
@@ -170,20 +170,20 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 2,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        New Mexico
+                New Mexico
               </b>
                had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the 
               <b>
-                        District of Columbia
+                District of Columbia
               </b>
                being an exception. Four of the five lowest rates were found in the northeastern United States. 
               <br />
               <br />
               Hover over a state to obtain the number of shootings per million.
-    </div>,
+            </div>,
             "route": "/percapita",
             "title": "Shootings Per Million By State",
             "type": "map",
@@ -198,28 +198,28 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             The western United States demonstrated a much higher incidence of police involved shootings of Latinos than other parts of the country. Southwest border states like 
             <b>
-                    New Mexico
+              New Mexico
             </b>
              (
             <b>
-                    24.23
+              24.23
             </b>
              shootings per million Latino residents) and intermountain West states like 
             <b>
-                    Idaho
+              Idaho
             </b>
              (
             <b>
-                    20.91
+              20.91
             </b>
             ) had generally higher rates than eastern states. 
             <br />
             <br />
             Hover over a state to obtain the number of shootings per million.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Shootings Per Million",
@@ -227,20 +227,20 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 2,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        New Mexico
+                New Mexico
               </b>
                had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the 
               <b>
-                        District of Columbia
+                District of Columbia
               </b>
                being an exception. Four of the five lowest rates were found in the northeastern United States. 
               <br />
               <br />
               Hover over a state to obtain the number of shootings per million.
-    </div>,
+            </div>,
             "route": "/percapita",
             "title": "Shootings Per Million By State",
             "type": "map",
@@ -255,29 +255,29 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             <b>
-                    Native americans are killed by police at a higher rate than any other race in the country.
+              Native americans are killed by police at a higher rate than any other race in the country.
             </b>
              
             While Midwestern states with larger indigenous populations demonstrate consistently inflated rates, northwestern states like 
             <b>
-                    Alaska
+              Alaska
             </b>
              and
              
             <b>
-                    Washington
+              Washington
             </b>
              retain many of the highest rates. 
             <b>
-                    Vermont
+              Vermont
             </b>
              is an extreme outlier in the dataset, its rate of shootings being the result of a small indigenous population.
             <br />
             <br />
             Hover over a state to obtain the number of shootings per million.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Shootings Per Million",
@@ -285,20 +285,20 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 2,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        New Mexico
+                New Mexico
               </b>
                had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the 
               <b>
-                        District of Columbia
+                District of Columbia
               </b>
                being an exception. Four of the five lowest rates were found in the northeastern United States. 
               <br />
               <br />
               Hover over a state to obtain the number of shootings per million.
-    </div>,
+            </div>,
             "route": "/percapita",
             "title": "Shootings Per Million By State",
             "type": "map",
@@ -314,29 +314,29 @@ exports[`<MapDescription /> renders properly 1`] = `
           "isLastChildRoute": true,
           "jsx": <div
             className="text"
-    >
+          >
             Shootings of whites by police closely mirrored the geography of the nation as a whole. Western states like 
             <b>
-                    Oklahoma
+              Oklahoma
             </b>
             , 
             <b>
-                    Wyoming
+              Wyoming
             </b>
             , and
              
             <b>
-                    New Mexico
+              New Mexico
             </b>
              demonstrated the highest rates while the northeastern United States had consistently low rates. Of all races, whites were the second least likely to be shot by the police. Perhaps most startingly, no whites were killed in the 
             <b>
-                    District of Columbia
+              District of Columbia
             </b>
              during this time period, meaning the city's high rate of police shootings were exclusively of people of color.
             <br />
             <br />
             Hover over a state to obtain the number of shootings per million.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Shootings Per Million",
@@ -344,20 +344,20 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 2,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        New Mexico
+                New Mexico
               </b>
                had the greatest number of police shootings per million residents between 2015 and 2016. Western states in general demonstrated higher rates than the eastern and northern United States, with the 
               <b>
-                        District of Columbia
+                District of Columbia
               </b>
                being an exception. Four of the five lowest rates were found in the northeastern United States. 
               <br />
               <br />
               Hover over a state to obtain the number of shootings per million.
-    </div>,
+            </div>,
             "route": "/percapita",
             "title": "Shootings Per Million By State",
             "type": "map",
@@ -372,47 +372,47 @@ exports[`<MapDescription /> renders properly 1`] = `
           "isLastRoute": true,
           "jsx": <div
             className="text"
-    >
+          >
             Police involved shootings display a more or less stochastic distribution across the time period surveyed. 
             <b>
-                    July 2015
+              July 2015
             </b>
              and 
             <b>
-                    March 2015
+              March 2015
             </b>
              had the most shootings of any month at 
             <b>
-                    124
+              124
             </b>
              and 
             <b>
-                    113
+              113
             </b>
             , respectively.
              
             <b>
-                    June 2015
+              June 2015
             </b>
              and 
             <b>
-                    April 2016
+              April 2016
             </b>
              tied for the least, each with
              
             <b>
-                    80
+              80
             </b>
              shootings. Median shootings per month were 
             <b>
-                    91
+              91
             </b>
              over the two year period, with a standard deviation of 
             <b>
-                    10.2
+              10.2
             </b>
             .
-    </div>,
+          </div>,
           "title": "Shootings By Date",
           "type": "line",
         },
@@ -423,29 +423,29 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Shootings of Asians were infrequent across the two years surveyed, reaching a maximum of 
             <b>
-                    5
+              5
             </b>
              in 
             <b>
-                    December of 2015
+              December of 2015
             </b>
             . Every other month ranged between 
             <b>
-                    1 and 3 shootings
+              1 and 3 shootings
             </b>
             , with a median of 
             <b>
-                    2
+              2
             </b>
              across the time period and a standard deviation of 
             <b>
-                    1.26
+              1.26
             </b>
             .
-    </div>,
+          </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -453,47 +453,47 @@ exports[`<MapDescription /> renders properly 1`] = `
             "isLastRoute": true,
             "jsx": <div
               className="text"
-    >
+            >
               Police involved shootings display a more or less stochastic distribution across the time period surveyed. 
               <b>
-                        July 2015
+                July 2015
               </b>
                and 
               <b>
-                        March 2015
+                March 2015
               </b>
                had the most shootings of any month at 
               <b>
-                        124
+                124
               </b>
                and 
               <b>
-                        113
+                113
               </b>
               , respectively.
                
               <b>
-                        June 2015
+                June 2015
               </b>
                and 
               <b>
-                        April 2016
+                April 2016
               </b>
                tied for the least, each with
                
               <b>
-                        80
+                80
               </b>
                shootings. Median shootings per month were 
               <b>
-                        91
+                91
               </b>
                over the two year period, with a standard deviation of 
               <b>
-                        10.2
+                10.2
               </b>
               .
-    </div>,
+            </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
             "type": "line",
@@ -508,31 +508,31 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Shootings of African Americans spiked in 
             <b>
-                    March of 2015
+              March of 2015
             </b>
             , when 37 were killed in a single month. The fewest occurred in the
              
             <b>
-                    last month of 2016
+              last month of 2016
             </b>
             , when 
             <b>
-                    14
+              14
             </b>
              people were killed. Unfortunately, killings of African Americans remain fairly steady across the two years, with a median of 
             <b>
-                    23.5
+              23.5
             </b>
              people per month and a standard deviation of
              
             <b>
-                    5.22
+              5.22
             </b>
             .
-    </div>,
+          </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -540,47 +540,47 @@ exports[`<MapDescription /> renders properly 1`] = `
             "isLastRoute": true,
             "jsx": <div
               className="text"
-    >
+            >
               Police involved shootings display a more or less stochastic distribution across the time period surveyed. 
               <b>
-                        July 2015
+                July 2015
               </b>
                and 
               <b>
-                        March 2015
+                March 2015
               </b>
                had the most shootings of any month at 
               <b>
-                        124
+                124
               </b>
                and 
               <b>
-                        113
+                113
               </b>
               , respectively.
                
               <b>
-                        June 2015
+                June 2015
               </b>
                and 
               <b>
-                        April 2016
+                April 2016
               </b>
                tied for the least, each with
                
               <b>
-                        80
+                80
               </b>
                shootings. Median shootings per month were 
               <b>
-                        91
+                91
               </b>
                over the two year period, with a standard deviation of 
               <b>
-                        10.2
+                10.2
               </b>
               .
-    </div>,
+            </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
             "type": "line",
@@ -595,39 +595,39 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Shootings of Latinos peaked in 
             <b>
-                    July of 2015
+              July of 2015
             </b>
              and 
             <b>
-                    March of 2016
+              March of 2016
             </b>
              
             at 
             <b>
-                    21 people 
+              21 people 
             </b>
              in each of those months. Shootings fell sharply in
              
             <b>
-                    May of 2015
+              May of 2015
             </b>
              to 
             <b>
-                    6
+              6
             </b>
             . However, this is an outlier in the data. Median shootings per month of Latinos was at 
             <b>
-                    16.5
+              16.5
             </b>
              people per month, with a standard deviation of 
             <b>
-                    3.49
+              3.49
             </b>
             .
-    </div>,
+          </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -635,47 +635,47 @@ exports[`<MapDescription /> renders properly 1`] = `
             "isLastRoute": true,
             "jsx": <div
               className="text"
-    >
+            >
               Police involved shootings display a more or less stochastic distribution across the time period surveyed. 
               <b>
-                        July 2015
+                July 2015
               </b>
                and 
               <b>
-                        March 2015
+                March 2015
               </b>
                had the most shootings of any month at 
               <b>
-                        124
+                124
               </b>
                and 
               <b>
-                        113
+                113
               </b>
               , respectively.
                
               <b>
-                        June 2015
+                June 2015
               </b>
                and 
               <b>
-                        April 2016
+                April 2016
               </b>
                tied for the least, each with
                
               <b>
-                        80
+                80
               </b>
                shootings. Median shootings per month were 
               <b>
-                        91
+                91
               </b>
                over the two year period, with a standard deviation of 
               <b>
-                        10.2
+                10.2
               </b>
               .
-    </div>,
+            </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
             "type": "line",
@@ -690,30 +690,30 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Median shootings of Native Americans between 2015 and 2016 were only one fewer per month than Asians, at 
             <b>
-                    1
+              1
             </b>
             , despite the fact that their total population is considerably smaller. The standard deviation was actually higher at 
             <b>
-                    1.56
+              1.56
             </b>
             .Shootings peaked in 
             <b>
-                    September of 2015
+              September of 2015
             </b>
              and
              
             <b>
-                    January of 2016
+              January of 2016
             </b>
              at 
             <b>
-                    5
+              5
             </b>
             .
-    </div>,
+          </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -721,47 +721,47 @@ exports[`<MapDescription /> renders properly 1`] = `
             "isLastRoute": true,
             "jsx": <div
               className="text"
-    >
+            >
               Police involved shootings display a more or less stochastic distribution across the time period surveyed. 
               <b>
-                        July 2015
+                July 2015
               </b>
                and 
               <b>
-                        March 2015
+                March 2015
               </b>
                had the most shootings of any month at 
               <b>
-                        124
+                124
               </b>
                and 
               <b>
-                        113
+                113
               </b>
               , respectively.
                
               <b>
-                        June 2015
+                June 2015
               </b>
                and 
               <b>
-                        April 2016
+                April 2016
               </b>
                tied for the least, each with
                
               <b>
-                        80
+                80
               </b>
                shootings. Median shootings per month were 
               <b>
-                        91
+                91
               </b>
                over the two year period, with a standard deviation of 
               <b>
-                        10.2
+                10.2
               </b>
               .
-    </div>,
+            </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
             "type": "line",
@@ -777,34 +777,34 @@ exports[`<MapDescription /> renders properly 1`] = `
           "isLastChildRoute": true,
           "jsx": <div
             className="text"
-    >
+          >
             Shootings of whites reached a median of 
             <b>
-                    46.5
+              46.5
             </b>
              between 2015 and 2016, peaking to a high of 
             <b>
-                    69
+              69
             </b>
              in 
             <b>
-                    July of 2015
+              July of 2015
             </b>
              and reaching a low in
              
             <b>
-                    the same month in 2016
+              the same month in 2016
             </b>
              at 
             <b>
-                    38
+              38
             </b>
             . The standard deviation was the highest for any racial group at 
             <b>
-                    6.89
+              6.89
             </b>
             .
-    </div>,
+          </div>,
           "parent": Object {
             "descTitle": "Total Shootings By Date",
             "hasChildren": true,
@@ -812,47 +812,47 @@ exports[`<MapDescription /> renders properly 1`] = `
             "isLastRoute": true,
             "jsx": <div
               className="text"
-    >
+            >
               Police involved shootings display a more or less stochastic distribution across the time period surveyed. 
               <b>
-                        July 2015
+                July 2015
               </b>
                and 
               <b>
-                        March 2015
+                March 2015
               </b>
                had the most shootings of any month at 
               <b>
-                        124
+                124
               </b>
                and 
               <b>
-                        113
+                113
               </b>
               , respectively.
                
               <b>
-                        June 2015
+                June 2015
               </b>
                and 
               <b>
-                        April 2016
+                April 2016
               </b>
                tied for the least, each with
                
               <b>
-                        80
+                80
               </b>
                shootings. Median shootings per month were 
               <b>
-                        91
+                91
               </b>
                over the two year period, with a standard deviation of 
               <b>
-                        10.2
+                10.2
               </b>
               .
-    </div>,
+            </div>,
             "route": "/shootingsbydate",
             "title": "Shootings By Date",
             "type": "line",
@@ -867,46 +867,46 @@ exports[`<MapDescription /> renders properly 1`] = `
           "index": 1,
           "jsx": <div
             className="text"
-    >
+          >
             Of all 50 states, 
             <b>
-                    California
+              California
             </b>
              had the greatest number of shootings in this time period at 
             <b>
-                    372
+              372
             </b>
             . 
             <b>
-                    Texas
+              Texas
             </b>
              and 
             <b>
-                    Florida
+              Florida
             </b>
              had the second and third greatest counts at 
             <b>
-                    205
+              205
             </b>
              and 
             <b>
-                    144
+              144
             </b>
             , respectively.
              
             <b>
-                    North Dakota
+              North Dakota
             </b>
              had the fewest shootings of all states with only
              
             <b>
-                    2
+              2
             </b>
             .
             <br />
             <br />
             Hover over a state to obtain the number of shootings.
-    </div>,
+          </div>,
           "title": "Total Shootings",
           "type": "map",
         },
@@ -917,30 +917,30 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Shootings of Asian Americans demonstrate a high level of spatial variability, with many states having none at all between 2015 and 2016.
              
             <b>
-                    California
+              California
             </b>
              once again had the greatest number of shootings at
              
             <b>
-                    16
+              16
             </b>
             . 
             <b>
-                    Hawaii
+              Hawaii
             </b>
              had the second largest number, 
             <b>
-                    6
+              6
             </b>
             , likely owing to a larger Asian American population than other states.
             <br />
             <br />
             Hover over a state to obtain the number of shootings.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Total Shootings",
@@ -948,46 +948,46 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 1,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        California
+                California
               </b>
                had the greatest number of shootings in this time period at 
               <b>
-                        372
+                372
               </b>
               . 
               <b>
-                        Texas
+                Texas
               </b>
                and 
               <b>
-                        Florida
+                Florida
               </b>
                had the second and third greatest counts at 
               <b>
-                        205
+                205
               </b>
                and 
               <b>
-                        144
+                144
               </b>
               , respectively.
                
               <b>
-                        North Dakota
+                North Dakota
               </b>
                had the fewest shootings of all states with only
                
               <b>
-                        2
+                2
               </b>
               .
               <br />
               <br />
               Hover over a state to obtain the number of shootings.
-    </div>,
+            </div>,
             "route": "/total-shootings",
             "title": "Total Shootings",
             "type": "map",
@@ -1002,55 +1002,55 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Shootings of African Americans by police were heavily concentrated along the Eastern seaboard and in the southern United States. However,
              
             <b>
-                    California
+              California
             </b>
              had the greatest number of shootings of black Americans at
              
             <b>
-                    62
+              62
             </b>
             . 
             <b>
-                    Florida
+              Florida
             </b>
              and 
             <b>
-                    Texas
+              Texas
             </b>
              had the second and third highest totals at 
             <b>
-                    50
+              50
             </b>
              and 
             <b>
-                    41
+              41
             </b>
             , respectively. States with low African American populations in the intermountain West and the Northeast, such as
              
             <b>
-                    Montana
+              Montana
             </b>
             , 
             <b>
-                    Idaho
+              Idaho
             </b>
             , 
             <b>
-                    Maine
+              Maine
             </b>
             , and 
             <b>
-                    Vermont
+              Vermont
             </b>
              were among the few with no shootings of black Americans.
             <br />
             <br />
             Hover over a state to obtain the number of shootings.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Total Shootings",
@@ -1058,46 +1058,46 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 1,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        California
+                California
               </b>
                had the greatest number of shootings in this time period at 
               <b>
-                        372
+                372
               </b>
               . 
               <b>
-                        Texas
+                Texas
               </b>
                and 
               <b>
-                        Florida
+                Florida
               </b>
                had the second and third greatest counts at 
               <b>
-                        205
+                205
               </b>
                and 
               <b>
-                        144
+                144
               </b>
               , respectively.
                
               <b>
-                        North Dakota
+                North Dakota
               </b>
                had the fewest shootings of all states with only
                
               <b>
-                        2
+                2
               </b>
               .
               <br />
               <br />
               Hover over a state to obtain the number of shootings.
-    </div>,
+            </div>,
             "route": "/total-shootings",
             "title": "Total Shootings",
             "type": "map",
@@ -1112,42 +1112,42 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Shootings of Latinos by police were spatially concentrated in the Southwest along the U.S. - Mexico border. 
             <b>
-                    California
+              California
             </b>
              had the greatest number of shootings at 
             <b>
-                    154
+              154
             </b>
             , more than double that of the second highest,
              
             <b>
-                    Texas
+              Texas
             </b>
             , at 
             <b>
-                    67
+              67
             </b>
             . 
             <b>
-                    Arizona
+              Arizona
             </b>
             , 
             <b>
-                    New Mexico
+              New Mexico
             </b>
             , and
              
             <b>
-                    Colorado
+              Colorado
             </b>
              all demonstrated high counts as well.
             <br />
             <br />
             Hover over a state to obtain the number of shootings.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Total Shootings",
@@ -1155,46 +1155,46 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 1,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        California
+                California
               </b>
                had the greatest number of shootings in this time period at 
               <b>
-                        372
+                372
               </b>
               . 
               <b>
-                        Texas
+                Texas
               </b>
                and 
               <b>
-                        Florida
+                Florida
               </b>
                had the second and third greatest counts at 
               <b>
-                        205
+                205
               </b>
                and 
               <b>
-                        144
+                144
               </b>
               , respectively.
                
               <b>
-                        North Dakota
+                North Dakota
               </b>
                had the fewest shootings of all states with only
                
               <b>
-                        2
+                2
               </b>
               .
               <br />
               <br />
               Hover over a state to obtain the number of shootings.
-    </div>,
+            </div>,
             "route": "/total-shootings",
             "title": "Total Shootings",
             "type": "map",
@@ -1209,38 +1209,38 @@ exports[`<MapDescription /> renders properly 1`] = `
           "hasNextSibling": true,
           "jsx": <div
             className="text"
-    >
+          >
             Police involved shootings of Native Americans were mainly concentrated in western states with larger indigenous populations. 
             <b>
-                    Arizona
+              Arizona
             </b>
              had the greatest number of shootings with 
             <b>
-                    9
+              9
             </b>
             . 
             <b>
-                    Alaksa
+              Alaksa
             </b>
              and
              
             <b>
-                    Washington
+              Washington
             </b>
              had the second and third highest counts, at 
             <b>
-                    7
+              7
             </b>
              and
              
             <b>
-                    6
+              6
             </b>
              respectively.
             <br />
             <br />
             Hover over a state to obtain the number of shootings.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Total Shootings",
@@ -1248,46 +1248,46 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 1,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        California
+                California
               </b>
                had the greatest number of shootings in this time period at 
               <b>
-                        372
+                372
               </b>
               . 
               <b>
-                        Texas
+                Texas
               </b>
                and 
               <b>
-                        Florida
+                Florida
               </b>
                had the second and third greatest counts at 
               <b>
-                        205
+                205
               </b>
                and 
               <b>
-                        144
+                144
               </b>
               , respectively.
                
               <b>
-                        North Dakota
+                North Dakota
               </b>
                had the fewest shootings of all states with only
                
               <b>
-                        2
+                2
               </b>
               .
               <br />
               <br />
               Hover over a state to obtain the number of shootings.
-    </div>,
+            </div>,
             "route": "/total-shootings",
             "title": "Total Shootings",
             "type": "map",
@@ -1303,45 +1303,45 @@ exports[`<MapDescription /> renders properly 1`] = `
           "isLastChildRoute": true,
           "jsx": <div
             className="text"
-    >
+          >
             The majority of people shot by the police between 2015 and 2016 were white.
              
             <b>
-                    California
+              California
             </b>
             , 
             <b>
-                    Texas
+              Texas
             </b>
             , and 
             <b>
-                    Florida
+              Florida
             </b>
              had the greatest number of shootings at 
             <b>
-                    125
+              125
             </b>
             , 
             <b>
-                    92
+              92
             </b>
             , and 
             <b>
-                    74
+              74
             </b>
             , respectively. Open carry states like 
             <b>
-                    Arizona
+              Arizona
             </b>
              and 
             <b>
-                    Oklahoma
+              Oklahoma
             </b>
              also had high counts. A high incidence of shootings is also visible in stretches of Appalachia and the southern United States. 
             <br />
             <br />
             Hover over a state to obtain the number of shootings.
-    </div>,
+          </div>,
           "parent": Object {
             "descSubtitle": "By State",
             "descTitle": "Total Shootings",
@@ -1349,46 +1349,46 @@ exports[`<MapDescription /> renders properly 1`] = `
             "index": 1,
             "jsx": <div
               className="text"
-    >
+            >
               Of all 50 states, 
               <b>
-                        California
+                California
               </b>
                had the greatest number of shootings in this time period at 
               <b>
-                        372
+                372
               </b>
               . 
               <b>
-                        Texas
+                Texas
               </b>
                and 
               <b>
-                        Florida
+                Florida
               </b>
                had the second and third greatest counts at 
               <b>
-                        205
+                205
               </b>
                and 
               <b>
-                        144
+                144
               </b>
               , respectively.
                
               <b>
-                        North Dakota
+                North Dakota
               </b>
                had the fewest shootings of all states with only
                
               <b>
-                        2
+                2
               </b>
               .
               <br />
               <br />
               Hover over a state to obtain the number of shootings.
-    </div>,
+            </div>,
             "route": "/total-shootings",
             "title": "Total Shootings",
             "type": "map",
