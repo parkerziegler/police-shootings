@@ -1,13 +1,8 @@
 # use node_js as language flag
 language: node_js
 
-# use latest of v8
 node_js:
-  - "8"
-
-# use npm v3 to avoid bugginess of v4 and v5
-before_install:
-  - npm install -g npm@3
+  - '10'
 
 script:
   - yarn run test
