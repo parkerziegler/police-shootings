@@ -21,7 +21,7 @@ exports[`<MapDescription /> renders properly 1`] = `
   }
   router={
     Object {
-      "basename": "/d3-react-map",
+      "basename": "/police-shootings",
       "hash": "",
       "key": undefined,
       "params": Object {},

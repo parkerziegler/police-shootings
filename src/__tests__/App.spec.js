@@ -15,10 +15,9 @@ describe('<App />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders an empty div when fetchingData is true', () => {
+  it('renders null when fetchingData is true', () => {
     const wrapper = shallow(<App {...props} maps={{ fetchingData: true }} />);
-    expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find('div')).toHaveLength(1);
+    expect(wrapper.type()).toBeNull();
   });
 
   it('renders correct chevron visibility across all routes', () => {

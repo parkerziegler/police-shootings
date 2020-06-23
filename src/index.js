@@ -207,7 +207,7 @@ const routes = {
 // create the router
 const { reducer, middleware, enhancer } = routerForBrowser({
   routes,
-  basename: '/d3-react-map',
+  basename: '/police-shootings',
 });
 
 // create our saga middleware - we'll use this handle our side effects

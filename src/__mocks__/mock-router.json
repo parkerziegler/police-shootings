@@ -1,6 +1,6 @@
 {
   "pathname": "/percapita",
-  "basename": "/d3-react-map",
+  "basename": "/police-shootings",
   "search": "",
   "hash": "",
   "query": {},
@@ -1782,8 +1782,7 @@
               "key": null,
               "ref": null,
               "props": {
-                "children":
-                  "Native americans are killed by police at a higher rate than any other race in the country."
+                "children": "Native americans are killed by police at a higher rate than any other race in the country."
               },
               "_owner": null,
               "_store": {}
