@@ -37,11 +37,8 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "TZ=America/New_York react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build&&gh-pages -d build",
@@ -54,23 +51,7 @@
     ]
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.jsx": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.css": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
+    "*.{js,jsx,scss,css,json}": [
       "prettier --write",
       "git add"
     ]

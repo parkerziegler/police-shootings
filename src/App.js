@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Fragment, push } from 'redux-little-router';
 import { findKey } from 'lodash';
 
-import './App.css';
 import Home from './components/home/Home';
 import Map from './components/maps/Map/Map';
 import MapDescription from './components/maps/MapDescription/MapDescription';
@@ -12,6 +11,8 @@ import Chevron from './components/navigation/Chevron/Chevron';
 import * as ChevronPaths from './constants/chevron-paths';
 import Line from './components/graphs/Line/Line';
 import LineDescription from './components/graphs/LineDescription/LineDescription';
+
+import './App.scss';
 
 export class App extends Component {
   constructor(props) {

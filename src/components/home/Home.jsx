@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import differenceInDays from 'date-fns/differenceInDays';
 
-import '../../App.css';
-import '../../stylesheets/Home.css';
+import '../../stylesheets/Home.scss';
 
 class Home extends React.Component {
   constructor(props) {

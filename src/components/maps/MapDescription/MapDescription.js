@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
-import '../../../stylesheets/MapDescription.css';
+import '../../../stylesheets/MapDescription.scss';
 import DataTable from '../DataTable/DataTable';
 
 class MapDescription extends React.Component {

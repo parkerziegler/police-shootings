@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../../stylesheets/Chevron.css';
+import '../../../stylesheets/Chevron.scss';
 
 const Chevron = ({ onClick, path, visible, direction }) => {
   return (

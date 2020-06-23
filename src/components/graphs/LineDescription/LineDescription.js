@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-import '../../../stylesheets/LineDescription.css';
+import '../../../stylesheets/LineDescription.scss';
 
 export const LineDescription = ({ title, subtitle, description }) => (
   <TransitionGroup component={null}>
@@ -29,7 +29,7 @@ LineDescription.propTypes = {
   description: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   title: state.router.result.descTitle,
   subtitle: state.router.result.descSubtitle,
   description: state.router.result.jsx,

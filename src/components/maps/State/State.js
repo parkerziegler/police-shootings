@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { geoPath } from 'd3';
 import PropTypes from 'prop-types';
 
-import '../../../App.css';
-import '../../../stylesheets/Map.css';
 import { getHoveredStateData } from '../../../actions/mapActions';
 
 class State extends React.Component {
@@ -20,7 +18,7 @@ class State extends React.Component {
     const state = {
       stateName,
       shootings: numShootings,
-      shootingsPerMillion: numShootings / population * 1000000,
+      shootingsPerMillion: (numShootings / population) * 1000000,
     };
     dispatch(getHoveredStateData(state));
   }

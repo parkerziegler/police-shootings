@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import '../../../stylesheets/DataTable.css';
 import { round, orderBy } from 'lodash';
+
+import '../../../stylesheets/DataTable.scss';
 
 export class DataTable extends React.Component {
   constructor() {

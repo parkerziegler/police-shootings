@@ -7,7 +7,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 import { colors } from '../../../constants/colors';
-import '../../../stylesheets/Map.css';
+import '../../../stylesheets/Map.scss';
 import State from '../State/State';
 
 export class Map extends React.Component {
@@ -29,8 +29,7 @@ export class Map extends React.Component {
           // render an svg path using the geographic path generator
           const path = geoPath(feature);
           const shootingsPerCapita =
-            feature.properties.numShootings /
-            feature.properties.population *
+            (feature.properties.numShootings / feature.properties.population) *
             1000000;
           const breaks = this.getChoroplethBreaks();
           // find the color that corresponds to the break
@@ -69,10 +68,9 @@ export class Map extends React.Component {
     // for choropleth, generate a set of rects to map over our
     // data and obtain the shootings per million of each
     const shootingsArray = sortBy(
-      maps.geoData.objects.states.geometries.map(feature => {
+      maps.geoData.objects.states.geometries.map((feature) => {
         return (
-          feature.properties.numShootings /
-          feature.properties.population *
+          (feature.properties.numShootings / feature.properties.population) *
           1000000
         );
       })
@@ -81,7 +79,7 @@ export class Map extends React.Component {
     // use quantiles to generate our choropleth breaks
     const quantiles = [0, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95];
     let legendValues = uniq(
-      quantiles.map(tick => round(d3.quantile(shootingsArray, tick)))
+      quantiles.map((tick) => round(d3.quantile(shootingsArray, tick)))
     );
 
     // if breaks don't include 0 as a value, prepend it
@@ -104,14 +102,11 @@ export class Map extends React.Component {
 
     const maxState = d3.max(
       statesByShootings,
-      feature => feature.properties.numShootings
+      (feature) => feature.properties.numShootings
     );
 
     // set up a scale for the radius, the max will be the max in the dataset
-    const radius = d3
-      .scaleSqrt()
-      .domain([0, maxState])
-      .range([0, 80]);
+    const radius = d3.scaleSqrt().domain([0, maxState]).range([0, 80]);
 
     // return svg paths
     return (
@@ -198,7 +193,7 @@ export class Map extends React.Component {
       maps.geoData.objects.states.geometries,
       ['properties.numShootings'],
       ['desc']
-    ).map(feature => feature.properties.numShootings);
+    ).map((feature) => feature.properties.numShootings);
 
     // also get the max number of shootings in the dataset
     // this will set up a d3 scale appropriate for the data
@@ -206,23 +201,20 @@ export class Map extends React.Component {
 
     // we'll use d3 to generate quantiles for the legend
     const quantiles = [0.75, 0.5, 0.1];
-    let legendValues = quantiles.map(tick =>
+    let legendValues = quantiles.map((tick) =>
       round(d3.quantile(shootingsArray, tick), -1)
     );
 
     // check to see if all values are under 10
     // if so, just render a single circle
-    const allUnder10 = legendValues.every(value => value < 10);
+    const allUnder10 = legendValues.every((value) => value < 10);
     if (allUnder10) {
       legendValues = [5];
     }
 
     // set up a scale for the radii of the circles, using square roots
     // to ensure circles are compared propotionally (by area)
-    const radius = d3
-      .scaleSqrt()
-      .domain([0, maxState])
-      .range([0, 80]);
+    const radius = d3.scaleSqrt().domain([0, maxState]).range([0, 80]);
 
     const legendComponents = legendValues.map((value, i) => (
       <g key={i}>
