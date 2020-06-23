@@ -27,7 +27,7 @@ export class App extends Component {
     const { router, dispatch } = this.props;
     const nextRoute = findKey(
       router.routes,
-      route => route.index === router.result.index + 1
+      (route) => route.index === router.result.index + 1
     );
     dispatch(push(nextRoute));
   }
@@ -36,7 +36,7 @@ export class App extends Component {
     const { router, dispatch } = this.props;
     const prevRoute = findKey(
       router.routes,
-      route => route.index === router.result.index - 1
+      (route) => route.index === router.result.index - 1
     );
     dispatch(push(prevRoute));
   }
@@ -44,7 +44,7 @@ export class App extends Component {
   goToNextChild() {
     const { router, dispatch } = this.props;
     const currentRoute = router.result;
-    const nextRoute = findKey(router.routes, route => {
+    const nextRoute = findKey(router.routes, (route) => {
       if (currentRoute.hasChildren) {
         return (
           route.childIndex === 0 && route.parent.index === currentRoute.index
@@ -61,7 +61,7 @@ export class App extends Component {
   goToPreviousChild() {
     const { router, dispatch } = this.props;
     const currentRoute = router.result;
-    const prevRoute = findKey(router.routes, route => {
+    const prevRoute = findKey(router.routes, (route) => {
       if (!currentRoute.childIndex) {
         return route.index === currentRoute.parent.index;
       }
@@ -104,11 +104,14 @@ export class App extends Component {
 
   render() {
     const { maps } = this.props;
-    return maps.fetchingData ? (
-      <div />
-    ) : (
+
+    if (maps.fetchingData) {
+      return null;
+    }
+
+    return (
       <Fragment forRoute={'/'}>
-        <React.Fragment>
+        <>
           <Chevron
             direction="up"
             path={ChevronPaths.ChevronUp}
@@ -158,13 +161,13 @@ export class App extends Component {
             visible={this.getChevronVisibility('down')}
             onClick={this.goToNextChild}
           />
-        </React.Fragment>
+        </>
       </Fragment>
     );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   maps: state.mapReducer,
   router: state.router,
 });

@@ -3,8 +3,7 @@
 .map-container {
   @include flex-column;
   justify-content: center;
-  width: 70%;
-  flex: 0 0 auto;
+  flex-basis: 70%;
 
   .map {
     overflow: visible;

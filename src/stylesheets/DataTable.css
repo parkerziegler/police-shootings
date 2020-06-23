@@ -7,33 +7,32 @@
   .data-table .table-button-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 60%; }
+    justify-content: space-around; }
     .data-table .table-button-container .button {
       font-size: 10px;
+      flex: 1;
       font-family: "HelveticaNeue", "Helvetica", sans-serif;
-      width: 40%;
-      height: auto;
       background: #50505e;
-      flex: 0 0 auto;
-      padding: 5px 5px 5px 5px;
+      padding: 10px;
       text-align: center;
-      cursor: pointer; }
+      cursor: pointer;
+      outline: 0;
+      border: 0; }
       @media screen and (min-width: 480px) {
         .data-table .table-button-container .button {
           font-size: 12px; } }
       @media screen and (min-width: 768px) {
         .data-table .table-button-container .button {
-          font-size: 15px; } }
+          font-size: 14px; } }
       @media screen and (min-width: 1024px) {
         .data-table .table-button-container .button {
-          font-size: 18px; } }
-    .data-table .table-button-container div:first-child {
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px; }
-    .data-table .table-button-container div:last-child {
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px; }
+          font-size: 16px; } }
+      .data-table .table-button-container .button:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px; }
+      .data-table .table-button-container .button:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px; }
   .data-table .table {
     display: flex;
     flex-direction: row;

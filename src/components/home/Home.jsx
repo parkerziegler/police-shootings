@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import moment from 'moment';
+import differenceInDays from 'date-fns/differenceInDays';
 
 import '../../App.css';
 import '../../stylesheets/Home.css';
@@ -17,7 +17,10 @@ class Home extends React.Component {
     const { maps } = this.props;
     // get the total and average number of shootings per day
     const total = `${maps.shootingsData.length}`;
-    const numDays = moment('2016-12-31').diff(moment('2015-01-01'), 'days');
+    const numDays = differenceInDays(
+      new Date(2016, 11, 31),
+      new Date(2015, 0, 1)
+    );
     const average = (maps.shootingsData.length / numDays).toFixed(1);
     return {
       total,
@@ -31,7 +34,7 @@ class Home extends React.Component {
       <div className="home-text">
         Between January 1, 2015 and December 31, 2016
       </div>,
-      <div className="home-text-large">
+      <div className="home-text home-text--large">
         <b>{total}</b> people
       </div>,
       <div className="home-text">
@@ -77,7 +80,7 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   maps: state.mapReducer,
 });
 

@@ -3,10 +3,9 @@
 .map-description-container {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  text-align: left;
+  flex-basis: 30%;
   justify-content: center;
-  flex: 0 0 auto; }
+  text-align: left; }
   .map-description-container .inset-header {
     font-size: 16px;
     color: #000000;

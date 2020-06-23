@@ -18,8 +18,9 @@ body {
     @include flex-row;
     justify-content: space-between;
     align-items: center;
+    align-self: stretch;
     text-align: center;
-    min-width: 100%;
+    padding: 0 20px;
 
     .page-content {
       @include flex-column;
@@ -31,6 +32,7 @@ body {
 
 .map-layout {
   @include flex-row;
+  padding: 0 10px;
 }
 
 .chart-layout {

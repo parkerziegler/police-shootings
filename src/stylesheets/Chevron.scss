@@ -1,10 +1,10 @@
-@import "./_constants";
+@import './_constants';
 
 $chevron-sizes: (
   null: 30px,
   mobile: 30px,
   tablet: 40px,
-  desktop: 40px
+  desktop: 40px,
 );
 
 @mixin chevron-size($svg-map, $svg-breakpoints: $breakpoints) {
@@ -30,6 +30,11 @@ $chevron-sizes: (
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
+
+  svg {
+    fill-opacity: 1;
+    transition: fill-opacity 0.3s ease-out;
+  }
 
   &:hover {
     cursor: pointer;

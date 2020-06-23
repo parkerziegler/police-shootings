@@ -87,8 +87,9 @@ export class DataTable extends React.Component {
       // order states by per million count
       const states = orderBy(
         maps.geoData.objects.states.geometries,
-        state =>
-          state.properties.numShootings / state.properties.population * 1000000,
+        (state) =>
+          (state.properties.numShootings / state.properties.population) *
+          1000000,
         ascDesc
       ).slice(0, 5);
 
@@ -103,8 +104,7 @@ export class DataTable extends React.Component {
       const stateStats = states.map((state, i) => (
         <div className="row" key={i}>
           {round(
-            state.properties.numShootings /
-              state.properties.population *
+            (state.properties.numShootings / state.properties.population) *
               1000000,
             2
           )}
@@ -161,7 +161,7 @@ export class DataTable extends React.Component {
     return (
       <div className="data-table">
         <div className="table-button-container">
-          <div
+          <button
             className="button"
             id="highest"
             style={highest}
@@ -170,8 +170,8 @@ export class DataTable extends React.Component {
             onClick={this.onClickHandler}
           >
             Highest
-          </div>
-          <div
+          </button>
+          <button
             className="button"
             id="lowest"
             style={lowest}
@@ -180,7 +180,7 @@ export class DataTable extends React.Component {
             onClick={this.onClickHandler}
           >
             Lowest
-          </div>
+          </button>
         </div>
         <div className="table">
           <div>
@@ -199,7 +199,7 @@ export class DataTable extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   maps: state.mapReducer,
 });
 

@@ -20,6 +20,9 @@
     .chevron {
       height: 40px;
       width: 40px; } }
+  .chevron svg {
+    fill-opacity: 1;
+    transition: fill-opacity 0.3s ease-out; }
   .chevron:hover {
     cursor: pointer; }
     .chevron:hover svg {
