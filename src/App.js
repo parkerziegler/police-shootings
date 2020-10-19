@@ -136,13 +136,13 @@ export class App extends Component {
                   <MapDescription mapType="proportional" />
                 </div>
               </Fragment>
-              <Fragment forRoute={'/percapita'}>
+              <Fragment forRoute={'/per-capita'}>
                 <div className="map-layout">
                   <Map mapType="choropleth" />
                   <MapDescription mapType="choropleth" />
                 </div>
               </Fragment>
-              <Fragment forRoute={'/shootingsbydate'}>
+              <Fragment forRoute={'/shootings-by-date'}>
                 <div className="chart-layout">
                   <LineDescription />
                   <Line />

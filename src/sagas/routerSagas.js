@@ -1,7 +1,7 @@
 import { put, takeLatest, select } from 'redux-saga/effects';
 import { groupBy, partition, findKey, unionBy } from 'lodash';
-import moment from 'moment';
 import * as d3 from 'd3';
+import parse from 'date-fns/parse';
 
 import * as actionTypes from '../constants/action-types';
 import * as stateNames from '../assets/state-names.json';
@@ -45,62 +45,62 @@ const shootingsFilters = {
     filterValue: 'White',
     populationValue: 'population',
   },
-  '/percapita': {
+  '/per-capita': {
     filterKey: null,
     filterValue: null,
     populationValue: 'populationTotal',
   },
-  '/percapita/black': {
+  '/per-capita/black': {
     filterKey: 'raceethnicity',
     filterValue: 'Black',
     populationValue: 'populationBlack',
   },
-  '/percapita/latino': {
+  '/per-capita/latino': {
     filterKey: 'raceethnicity',
     filterValue: 'Hispanic/Latino',
     populationValue: 'populationHispanic',
   },
-  '/percapita/asian': {
+  '/per-capita/asian': {
     filterKey: 'raceethnicity',
     filterValue: 'Asian/Pacific Islander',
     populationValue: 'populationAsian',
   },
-  '/percapita/nativeamerican': {
+  '/per-capita/nativeamerican': {
     filterKey: 'raceethnicity',
     filterValue: 'Native American',
     populationValue: 'populationAIAN',
   },
-  '/percapita/white': {
+  '/per-capita/white': {
     filterKey: 'raceethnicity',
     filterValue: 'White',
     populationValue: 'populationWhite',
   },
-  '/shootingsbydate': {
+  '/shootings-by-date': {
     filterKey: null,
     filterValue: null,
     populationValue: 'population',
   },
-  '/shootingsbydate/black': {
+  '/shootings-by-date/black': {
     filterKey: 'raceethnicity',
     filterValue: 'Black',
     populationValue: 'populationBlack',
   },
-  '/shootingsbydate/latino': {
+  '/shootings-by-date/latino': {
     filterKey: 'raceethnicity',
     filterValue: 'Hispanic/Latino',
     populationValue: 'populationHispanic',
   },
-  '/shootingsbydate/asian': {
+  '/shootings-by-date/asian': {
     filterKey: 'raceethnicity',
     filterValue: 'Asian/Pacific Islander',
     populationValue: 'populationAsian',
   },
-  '/shootingsbydate/nativeamerican': {
+  '/shootings-by-date/nativeamerican': {
     filterKey: 'raceethnicity',
     filterValue: 'Native American',
     populationValue: 'populationAIAN',
   },
-  '/shootingsbydate/white': {
+  '/shootings-by-date/white': {
     filterKey: 'raceethnicity',
     filterValue: 'White',
     populationValue: 'populationWhite',
@@ -195,9 +195,11 @@ const handleDateRoutes = (route, shootingsData) => {
 
   // group by month within each year
   const groupByMonth = shootingsByYear.map((year) => {
-    return groupBy(year, ({ month, year }) =>
-      moment(`${month} - 2015`, 'MMMM - YYYY').valueOf()
-    );
+    return groupBy(year, ({ month }) => {
+      // To display data on roughly the same month timescale, just use 2015
+      // as the base year
+      return parse(`${month} - 2015`, 'MMMM - yyyy', new Date()).valueOf();
+    });
   });
 
   const data = groupByMonth.map((year) => {
@@ -207,9 +209,10 @@ const handleDateRoutes = (route, shootingsData) => {
     }));
   });
 
+  // Handle months where no shootings occured to prevent holes
   const emptyMonths = d3.timeMonth
     .range(new Date(2015, 0, 1), new Date(2016, 0, 1))
-    .map((date) => ({ x: moment(date).valueOf(), y: 0 }));
+    .map((date) => ({ x: date.valueOf(), y: 0 }));
 
   const [data2015, data2016] = data;
 

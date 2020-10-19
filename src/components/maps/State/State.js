@@ -25,54 +25,59 @@ class State extends React.Component {
 
   render() {
     const { mapType, feature, path, radius, fill, i } = this.props;
-    if (mapType === 'choropleth') {
-      return (
-        <path
-          className={`states state-transition-${i}`}
-          d={path}
-          fill={fill}
-          stroke="#FFFFFF"
-          strokeWidth={0.25}
-          onMouseEnter={this.onInteractionHandler}
-          onClick={this.onInteractionHandler}
-          onTouchStart={this.onInteractionHandler}
-        />
-      );
-    }
-
-    if (mapType === 'proportional') {
-      // get the centroid of the state and translate the labels to be centered
-      const centroid = geoPath().centroid(feature);
-      const translate =
-        'translate(' + (centroid[0] - 8) + ', ' + (centroid[1] + 2) + ')';
-
-      return (
-        <g className="state-container">
-          <circle
-            className={`states raw state-transition-${i}`}
-            r={radius}
+    switch (mapType) {
+      case 'choropleth':
+        return (
+          <path
+            className={`states state-transition-${i}`}
+            d={path}
             fill={fill}
             stroke="#FFFFFF"
-            strokeWidth={0.5}
-            transform={'translate(' + centroid + ')'}
-            opacity={0.75}
+            strokeWidth={0.25}
             onMouseEnter={this.onInteractionHandler}
             onClick={this.onInteractionHandler}
             onTouchStart={this.onInteractionHandler}
           />
-          <text
-            transform={translate}
-            className="state-label"
-            onMouseEnter={this.onInteractionHandler}
-            onClick={this.onInteractionHandler}
-            onTouchStart={this.onInteractionHandler}
-          >
-            {feature.properties.stateAbbreviation}
-          </text>
-        </g>
-      );
+        );
+      case 'proportional':
+        // get the centroid of the state and translate the labels to be centered
+        const centroid = geoPath().centroid(feature);
+        const translate =
+          'translate(' + (centroid[0] - 8) + ', ' + (centroid[1] + 2) + ')';
+
+        return (
+          <g className="state-container">
+            <path
+              className={`states states-bg state-transition-${i}`}
+              d={path}
+              fill="transparent"
+            />
+            <circle
+              className={`states raw state-transition-${i}`}
+              r={radius}
+              fill={fill}
+              stroke="#FFFFFF"
+              strokeWidth={0.5}
+              transform={'translate(' + centroid + ')'}
+              opacity={0.75}
+              onMouseEnter={this.onInteractionHandler}
+              onClick={this.onInteractionHandler}
+              onTouchStart={this.onInteractionHandler}
+            />
+            <text
+              transform={translate}
+              className="state-label"
+              onMouseEnter={this.onInteractionHandler}
+              onClick={this.onInteractionHandler}
+              onTouchStart={this.onInteractionHandler}
+            >
+              {feature.properties.stateAbbreviation}
+            </text>
+          </g>
+        );
+      default:
+        return null;
     }
-    return null;
   }
 }
 

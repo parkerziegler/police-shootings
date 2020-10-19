@@ -61,7 +61,7 @@ describe('routerSagas', () => {
         '/total-shootings/black': {
           type: 'map',
         },
-        '/shootingsbydate': {
+        '/shootings-by-date': {
           type: 'line',
         },
       },
@@ -113,7 +113,7 @@ describe('routerSagas', () => {
   it('handles date specific routes', () => {
     return expectSaga(handleLocationChanged, {
       type: 'ROUTER_LOCATION_CHANGED',
-      payload: { route: '/shootingsbydate' },
+      payload: { route: '/shootings-by-date' },
     })
       .withState(mockState)
       .put.actionType(actionTypes.SEND_SHOOTINGS_BY_DATE_TO_REDUCER)

@@ -92,7 +92,7 @@ const routes = {
       jsx: totalShootingsWhiteJSX,
     },
   },
-  '/percapita': {
+  '/per-capita': {
     type: 'map',
     title: 'Shootings Per Million By State',
     descTitle: 'Shootings Per Million',
@@ -147,7 +147,7 @@ const routes = {
       jsx: shootingsPerCapitaWhiteJSX,
     },
   },
-  '/shootingsbydate': {
+  '/shootings-by-date': {
     type: 'line',
     title: 'Shootings By Date',
     descTitle: 'Total Shootings By Date',

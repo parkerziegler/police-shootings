@@ -7,44 +7,44 @@ import {
   VictoryLabel,
   VictoryAnimation,
 } from 'victory';
-import moment from 'moment';
+import format from 'date-fns/format';
 
 export class Line extends React.Component {
   constructor(props) {
     super(props);
     this.LabelPositionMap = {
-      '/shootingsbydate': {
+      '/shootings-by-date': {
         2015: 230,
         2016: 295,
       },
-      '/shootingsbydate/black': {
+      '/shootings-by-date/black': {
         2015: 200,
         2016: 325,
       },
-      '/shootingsbydate/latino': {
+      '/shootings-by-date/latino': {
         2015: 100,
         2016: 250,
       },
-      '/shootingsbydate/asian': {
+      '/shootings-by-date/asian': {
         2015: 15,
         2016: 205,
       },
-      '/shootingsbydate/nativeamerican': {
+      '/shootings-by-date/nativeamerican': {
         2015: 340,
         2016: 205,
       },
-      '/shootingsbydate/white': {
+      '/shootings-by-date/white': {
         2015: 280,
         2016: 210,
       },
     };
     this.DelayMap = {
-      '/shootingsbydate': 2000,
-      '/shootingsbydate/black': 0,
-      '/shootingsbydate/latino': 0,
-      '/shootingsbydate/asian': 0,
-      '/shootingsbydate/nativeamerican': 0,
-      '/shootingsbydate/white': 0,
+      '/shootings-by-date': 2000,
+      '/shootings-by-date/black': 0,
+      '/shootings-by-date/latino': 0,
+      '/shootings-by-date/asian': 0,
+      '/shootings-by-date/nativeamerican': 0,
+      '/shootings-by-date/white': 0,
     };
   }
   render() {
@@ -71,7 +71,7 @@ export class Line extends React.Component {
             new Date(2015, 8, 1),
             new Date(2015, 11, 1),
           ]}
-          tickFormat={(t) => moment(t).format('MMMM')}
+          tickFormat={(t) => format(t, 'MMMM')}
           label="Month"
           style={{
             axisLabel: {

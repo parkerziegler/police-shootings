@@ -110,7 +110,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
   }
   router={
     Object {
-      "route": "/shootingsbydate",
+      "route": "/shootings-by-date",
     }
   }
 >
@@ -2288,7 +2288,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
     }
     groupComponent={<g />}
     height={400}
-    padding={40}
+    padding={
+      Object {
+        "bottom": 60,
+        "left": 80,
+        "right": 60,
+        "top": 0,
+      }
+    }
     standalone={true}
     theme={
       Object {
@@ -2779,8 +2786,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             1448946000000,
           ],
           "y": Array [
-            76.90625,
-            127.09375,
+            77.10726643598616,
+            126.89273356401384,
           ],
         }
       }
@@ -3340,8 +3347,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   1448946000000,
                 ],
                 "y": Array [
-                  76.90625,
-                  127.09375,
+                  77.10726643598616,
+                  126.89273356401384,
                 ],
               }
             }
@@ -3360,14 +3367,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             height={400}
             key="0"
             label="Month"
-            offsetY={40}
+            offsetY={60}
             orientation="bottom"
             padding={
               Object {
-                "bottom": 40,
-                "left": 40,
-                "right": 40,
-                "top": 40,
+                "bottom": 60,
+                "left": 80,
+                "right": 60,
+                "top": 0,
               }
             }
             scale={
@@ -3380,10 +3387,19 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             stringMap={null}
             style={
               Object {
+                "axisLabel": Object {
+                  "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "bold",
+                  "padding": 40,
+                },
                 "parent": Object {
                   "height": "100%",
                   "userSelect": "none",
                   "width": "100%",
+                },
+                "tickLabels": Object {
+                  "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                 },
               }
             }
@@ -3914,10 +3930,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   }
                 }
                 type="axis"
-                x1={40}
-                x2={960}
-                y1={360}
-                y2={360}
+                x1={80}
+                x2={940}
+                y1={340}
+                y2={340}
               >
                 <Line
                   style={
@@ -3929,10 +3945,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       "strokeWidth": 1,
                     }
                   }
-                  x1={40}
-                  x2={960}
-                  y1={360}
-                  y2={360}
+                  x1={80}
+                  x2={940}
+                  y1={340}
+                  y2={340}
                 >
                   <line
                     role="presentation"
@@ -3947,10 +3963,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       }
                     }
                     vectorEffect="non-scaling-stroke"
-                    x1={40}
-                    x2={960}
-                    y1={360}
-                    y2={360}
+                    x1={80}
+                    x2={940}
+                    y1={340}
+                    y2={340}
                   />
                 </Line>
               </Axis>
@@ -3968,10 +3984,11 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                 style={
                   Object {
                     "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "bold",
                     "letterSpacing": "normal",
-                    "padding": 25,
+                    "padding": 40,
                     "stroke": "transparent",
                     "textAnchor": "middle",
                   }
@@ -3981,20 +3998,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                 textComponent={<Text />}
                 tspanComponent={<TSpan />}
                 verticalAnchor="start"
-                x={500}
-                y={385}
+                x={510}
+                y={380}
               >
                 <Text
                   dx={0}
-                  dy={11.969999999999999}
-                  x={500}
-                  y={385}
+                  dy={13.68}
+                  x={510}
+                  y={380}
                 >
                   <text
                     dx={0}
-                    dy={11.969999999999999}
-                    x={500}
-                    y={385}
+                    dy={13.68}
+                    style={Object {}}
+                    x={510}
+                    y={380}
                   >
                     <TSpan
                       content="Month"
@@ -4003,32 +4021,32 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "#252525",
-                          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
-                          "fontSize": 14,
+                          "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+                          "fontSize": 16,
+                          "fontWeight": "bold",
                           "letterSpacing": "normal",
-                          "padding": 25,
+                          "padding": 40,
                           "stroke": "transparent",
                           "textAnchor": "middle",
                         }
                       }
                       textAnchor="middle"
-                      x={500}
+                      x={510}
                     >
                       <tspan
                         dx={0}
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
-                            "fontSize": 14,
-                            "letterSpacing": "normal",
-                            "padding": 25,
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+                            "fontSize": 16,
+                            "fontWeight": "bold",
                             "stroke": "transparent",
                             "textAnchor": "middle",
                           }
                         }
                         textAnchor="middle"
-                        x={500}
+                        x={510}
                       >
                         Month
                       </tspan>
@@ -4049,8 +4067,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "y": Array [
-                        360,
-                        40,
+                        340,
+                        0,
                       ],
                     }
                   }
@@ -4067,10 +4085,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={40}
-                  x2={40}
-                  y1={360}
-                  y2={40}
+                  x1={80}
+                  x2={80}
+                  y1={340}
+                  y2={0}
                 >
                   <Line
                     style={
@@ -4080,10 +4098,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={40}
-                    x2={40}
-                    y1={360}
-                    y2={40}
+                    x1={80}
+                    x2={80}
+                    y1={340}
+                    y2={0}
                   >
                     <line
                       role="presentation"
@@ -4096,10 +4114,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={40}
-                      y1={360}
-                      y2={40}
+                      x1={80}
+                      x2={80}
+                      y1={340}
+                      y2={0}
                     />
                   </Line>
                 </Axis>
@@ -4121,10 +4139,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={40}
-                  x2={40}
-                  y1={360}
-                  y2={361}
+                  x1={80}
+                  x2={80}
+                  y1={340}
+                  y2={341}
                 >
                   <Line
                     style={
@@ -4134,10 +4152,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={40}
-                    x2={40}
-                    y1={360}
-                    y2={361}
+                    x1={80}
+                    x2={80}
+                    y1={340}
+                    y2={341}
                   >
                     <line
                       role="presentation"
@@ -4145,15 +4163,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={40}
-                      y1={360}
-                      y2={361}
+                      x1={80}
+                      x2={80}
+                      y1={340}
+                      y2={341}
                     />
                   </Line>
                 </Axis>
@@ -4171,7 +4188,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -4183,20 +4200,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="start"
-                  x={40}
-                  y={371}
+                  x={80}
+                  y={351}
                 >
                   <Text
                     dx={0}
                     dy={11.969999999999999}
-                    x={40}
-                    y={371}
+                    x={80}
+                    y={351}
                   >
                     <text
                       dx={0}
                       dy={11.969999999999999}
-                      x={40}
-                      y={371}
+                      style={Object {}}
+                      x={80}
+                      y={351}
                     >
                       <TSpan
                         content="January"
@@ -4205,7 +4223,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -4213,22 +4231,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="middle"
-                        x={40}
+                        x={80}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="middle"
-                          x={40}
+                          x={80}
                         >
                           January
                         </tspan>
@@ -4250,8 +4266,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "y": Array [
-                        360,
-                        40,
+                        340,
+                        0,
                       ],
                     }
                   }
@@ -4268,10 +4284,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={202.51497005988026}
-                  x2={202.51497005988026}
-                  y1={360}
-                  y2={40}
+                  x1={231.91616766467067}
+                  x2={231.91616766467067}
+                  y1={340}
+                  y2={0}
                 >
                   <Line
                     style={
@@ -4281,10 +4297,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={202.51497005988026}
-                    x2={202.51497005988026}
-                    y1={360}
-                    y2={40}
+                    x1={231.91616766467067}
+                    x2={231.91616766467067}
+                    y1={340}
+                    y2={0}
                   >
                     <line
                       role="presentation"
@@ -4297,10 +4313,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={202.51497005988026}
-                      x2={202.51497005988026}
-                      y1={360}
-                      y2={40}
+                      x1={231.91616766467067}
+                      x2={231.91616766467067}
+                      y1={340}
+                      y2={0}
                     />
                   </Line>
                 </Axis>
@@ -4322,10 +4338,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={202.51497005988026}
-                  x2={202.51497005988026}
-                  y1={360}
-                  y2={361}
+                  x1={231.91616766467067}
+                  x2={231.91616766467067}
+                  y1={340}
+                  y2={341}
                 >
                   <Line
                     style={
@@ -4335,10 +4351,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={202.51497005988026}
-                    x2={202.51497005988026}
-                    y1={360}
-                    y2={361}
+                    x1={231.91616766467067}
+                    x2={231.91616766467067}
+                    y1={340}
+                    y2={341}
                   >
                     <line
                       role="presentation"
@@ -4346,15 +4362,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={202.51497005988026}
-                      x2={202.51497005988026}
-                      y1={360}
-                      y2={361}
+                      x1={231.91616766467067}
+                      x2={231.91616766467067}
+                      y1={340}
+                      y2={341}
                     />
                   </Line>
                 </Axis>
@@ -4372,7 +4387,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -4384,20 +4399,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="start"
-                  x={202.51497005988026}
-                  y={371}
+                  x={231.91616766467067}
+                  y={351}
                 >
                   <Text
                     dx={0}
                     dy={11.969999999999999}
-                    x={202.51497005988026}
-                    y={371}
+                    x={231.91616766467067}
+                    y={351}
                   >
                     <text
                       dx={0}
                       dy={11.969999999999999}
-                      x={202.51497005988026}
-                      y={371}
+                      style={Object {}}
+                      x={231.91616766467067}
+                      y={351}
                     >
                       <TSpan
                         content="March"
@@ -4406,7 +4422,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -4414,22 +4430,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="middle"
-                        x={202.51497005988026}
+                        x={231.91616766467067}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="middle"
-                          x={202.51497005988026}
+                          x={231.91616766467067}
                         >
                           March
                         </tspan>
@@ -4451,8 +4465,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "y": Array [
-                        360,
-                        40,
+                        340,
+                        0,
                       ],
                     }
                   }
@@ -4469,10 +4483,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={455.813373253493}
-                  x2={455.813373253493}
-                  y1={360}
-                  y2={40}
+                  x1={468.6951097804391}
+                  x2={468.6951097804391}
+                  y1={340}
+                  y2={0}
                 >
                   <Line
                     style={
@@ -4482,10 +4496,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={455.813373253493}
-                    x2={455.813373253493}
-                    y1={360}
-                    y2={40}
+                    x1={468.6951097804391}
+                    x2={468.6951097804391}
+                    y1={340}
+                    y2={0}
                   >
                     <line
                       role="presentation"
@@ -4498,10 +4512,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={455.813373253493}
-                      x2={455.813373253493}
-                      y1={360}
-                      y2={40}
+                      x1={468.6951097804391}
+                      x2={468.6951097804391}
+                      y1={340}
+                      y2={0}
                     />
                   </Line>
                 </Axis>
@@ -4523,10 +4537,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={455.813373253493}
-                  x2={455.813373253493}
-                  y1={360}
-                  y2={361}
+                  x1={468.6951097804391}
+                  x2={468.6951097804391}
+                  y1={340}
+                  y2={341}
                 >
                   <Line
                     style={
@@ -4536,10 +4550,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={455.813373253493}
-                    x2={455.813373253493}
-                    y1={360}
-                    y2={361}
+                    x1={468.6951097804391}
+                    x2={468.6951097804391}
+                    y1={340}
+                    y2={341}
                   >
                     <line
                       role="presentation"
@@ -4547,15 +4561,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={455.813373253493}
-                      x2={455.813373253493}
-                      y1={360}
-                      y2={361}
+                      x1={468.6951097804391}
+                      x2={468.6951097804391}
+                      y1={340}
+                      y2={341}
                     />
                   </Line>
                 </Axis>
@@ -4573,7 +4586,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -4585,20 +4598,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="start"
-                  x={455.813373253493}
-                  y={371}
+                  x={468.6951097804391}
+                  y={351}
                 >
                   <Text
                     dx={0}
                     dy={11.969999999999999}
-                    x={455.813373253493}
-                    y={371}
+                    x={468.6951097804391}
+                    y={351}
                   >
                     <text
                       dx={0}
                       dy={11.969999999999999}
-                      x={455.813373253493}
-                      y={371}
+                      style={Object {}}
+                      x={468.6951097804391}
+                      y={351}
                     >
                       <TSpan
                         content="June"
@@ -4607,7 +4621,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -4615,22 +4629,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="middle"
-                        x={455.813373253493}
+                        x={468.6951097804391}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="middle"
-                          x={455.813373253493}
+                          x={468.6951097804391}
                         >
                           June
                         </tspan>
@@ -4652,8 +4664,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "y": Array [
-                        360,
-                        40,
+                        340,
+                        0,
                       ],
                     }
                   }
@@ -4670,10 +4682,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={709.2265469061875}
-                  x2={709.2265469061875}
-                  y1={360}
-                  y2={40}
+                  x1={705.5813373253493}
+                  x2={705.5813373253493}
+                  y1={340}
+                  y2={0}
                 >
                   <Line
                     style={
@@ -4683,10 +4695,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={709.2265469061875}
-                    x2={709.2265469061875}
-                    y1={360}
-                    y2={40}
+                    x1={705.5813373253493}
+                    x2={705.5813373253493}
+                    y1={340}
+                    y2={0}
                   >
                     <line
                       role="presentation"
@@ -4699,10 +4711,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={709.2265469061875}
-                      x2={709.2265469061875}
-                      y1={360}
-                      y2={40}
+                      x1={705.5813373253493}
+                      x2={705.5813373253493}
+                      y1={340}
+                      y2={0}
                     />
                   </Line>
                 </Axis>
@@ -4724,10 +4736,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={709.2265469061875}
-                  x2={709.2265469061875}
-                  y1={360}
-                  y2={361}
+                  x1={705.5813373253493}
+                  x2={705.5813373253493}
+                  y1={340}
+                  y2={341}
                 >
                   <Line
                     style={
@@ -4737,10 +4749,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={709.2265469061875}
-                    x2={709.2265469061875}
-                    y1={360}
-                    y2={361}
+                    x1={705.5813373253493}
+                    x2={705.5813373253493}
+                    y1={340}
+                    y2={341}
                   >
                     <line
                       role="presentation"
@@ -4748,15 +4760,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={709.2265469061875}
-                      x2={709.2265469061875}
-                      y1={360}
-                      y2={361}
+                      x1={705.5813373253493}
+                      x2={705.5813373253493}
+                      y1={340}
+                      y2={341}
                     />
                   </Line>
                 </Axis>
@@ -4774,7 +4785,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -4786,20 +4797,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="start"
-                  x={709.2265469061875}
-                  y={371}
+                  x={705.5813373253493}
+                  y={351}
                 >
                   <Text
                     dx={0}
                     dy={11.969999999999999}
-                    x={709.2265469061875}
-                    y={371}
+                    x={705.5813373253493}
+                    y={351}
                   >
                     <text
                       dx={0}
                       dy={11.969999999999999}
-                      x={709.2265469061875}
-                      y={371}
+                      style={Object {}}
+                      x={705.5813373253493}
+                      y={351}
                     >
                       <TSpan
                         content="September"
@@ -4808,7 +4820,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -4816,22 +4828,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="middle"
-                        x={709.2265469061875}
+                        x={705.5813373253493}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="middle"
-                          x={709.2265469061875}
+                          x={705.5813373253493}
                         >
                           September
                         </tspan>
@@ -4853,8 +4863,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "y": Array [
-                        360,
-                        40,
+                        340,
+                        0,
                       ],
                     }
                   }
@@ -4871,10 +4881,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={960}
-                  x2={960}
-                  y1={360}
-                  y2={40}
+                  x1={940}
+                  x2={940}
+                  y1={340}
+                  y2={0}
                 >
                   <Line
                     style={
@@ -4884,10 +4894,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={960}
-                    x2={960}
-                    y1={360}
-                    y2={40}
+                    x1={940}
+                    x2={940}
+                    y1={340}
+                    y2={0}
                   >
                     <line
                       role="presentation"
@@ -4900,10 +4910,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={960}
-                      x2={960}
-                      y1={360}
-                      y2={40}
+                      x1={940}
+                      x2={940}
+                      y1={340}
+                      y2={0}
                     />
                   </Line>
                 </Axis>
@@ -4925,10 +4935,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={960}
-                  x2={960}
-                  y1={360}
-                  y2={361}
+                  x1={940}
+                  x2={940}
+                  y1={340}
+                  y2={341}
                 >
                   <Line
                     style={
@@ -4938,10 +4948,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={960}
-                    x2={960}
-                    y1={360}
-                    y2={361}
+                    x1={940}
+                    x2={940}
+                    y1={340}
+                    y2={341}
                   >
                     <line
                       role="presentation"
@@ -4949,15 +4959,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={960}
-                      x2={960}
-                      y1={360}
-                      y2={361}
+                      x1={940}
+                      x2={940}
+                      y1={340}
+                      y2={341}
                     />
                   </Line>
                 </Axis>
@@ -4975,7 +4984,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -4987,20 +4996,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="start"
-                  x={960}
-                  y={371}
+                  x={940}
+                  y={351}
                 >
                   <Text
                     dx={0}
                     dy={11.969999999999999}
-                    x={960}
-                    y={371}
+                    x={940}
+                    y={351}
                   >
                     <text
                       dx={0}
                       dy={11.969999999999999}
-                      x={960}
-                      y={371}
+                      style={Object {}}
+                      x={940}
+                      y={351}
                     >
                       <TSpan
                         content="December"
@@ -5009,7 +5019,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -5017,22 +5027,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="middle"
-                        x={960}
+                        x={940}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="middle"
-                          x={960}
+                          x={940}
                         >
                           December
                         </tspan>
@@ -5050,6 +5058,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                 type="axis"
               />
             }
+            axisLabel={true}
             axisLabelComponent={
               <VictoryLabel
                 capHeight={0.71}
@@ -5075,8 +5084,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   1448946000000,
                 ],
                 "y": Array [
-                  76.90625,
-                  127.09375,
+                  77.10726643598616,
+                  126.89273356401384,
                 ],
               }
             }
@@ -5095,14 +5104,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             height={400}
             key="1"
             label="Number of Shootings"
-            offsetX={40}
+            offsetX={80}
             orientation="left"
             padding={
               Object {
-                "bottom": 40,
-                "left": 40,
-                "right": 40,
-                "top": 40,
+                "bottom": 60,
+                "left": 80,
+                "right": 60,
+                "top": 0,
               }
             }
             scale={
@@ -5115,10 +5124,19 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             stringMap={null}
             style={
               Object {
+                "axisLabel": Object {
+                  "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "bold",
+                  "padding": 50,
+                },
                 "parent": Object {
                   "height": "100%",
                   "userSelect": "none",
                   "width": "100%",
+                },
+                "tickLabels": Object {
+                  "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                 },
               }
             }
@@ -5640,10 +5658,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   }
                 }
                 type="axis"
-                x1={40}
-                x2={40}
-                y1={40}
-                y2={360}
+                x1={80}
+                x2={80}
+                y1={0}
+                y2={340}
               >
                 <Line
                   style={
@@ -5655,10 +5673,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       "strokeWidth": 1,
                     }
                   }
-                  x1={40}
-                  x2={40}
-                  y1={40}
-                  y2={360}
+                  x1={80}
+                  x2={80}
+                  y1={0}
+                  y2={340}
                 >
                   <line
                     role="presentation"
@@ -5673,10 +5691,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       }
                     }
                     vectorEffect="non-scaling-stroke"
-                    x1={40}
-                    x2={40}
-                    y1={40}
-                    y2={360}
+                    x1={80}
+                    x2={80}
+                    y1={0}
+                    y2={340}
                   />
                 </Line>
               </Axis>
@@ -5694,10 +5712,11 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                 style={
                   Object {
                     "fill": "#252525",
-                    "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
-                    "fontSize": 14,
+                    "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "bold",
                     "letterSpacing": "normal",
-                    "padding": 25,
+                    "padding": 50,
                     "stroke": "transparent",
                     "textAnchor": "middle",
                   }
@@ -5707,22 +5726,23 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                 textComponent={<Text />}
                 tspanComponent={<TSpan />}
                 verticalAnchor="end"
-                x={15}
-                y={200}
+                x={30}
+                y={170}
               >
                 <Text
                   dx={0}
-                  dy={-2.0300000000000002}
-                  transform=" rotate(-90,15,200)"
-                  x={15}
-                  y={200}
+                  dy={-2.3200000000000003}
+                  transform=" rotate(-90,30,170)"
+                  x={30}
+                  y={170}
                 >
                   <text
                     dx={0}
-                    dy={-2.0300000000000002}
-                    transform=" rotate(-90,15,200)"
-                    x={15}
-                    y={200}
+                    dy={-2.3200000000000003}
+                    style={Object {}}
+                    transform=" rotate(-90,30,170)"
+                    x={30}
+                    y={170}
                   >
                     <TSpan
                       content="Number of Shootings"
@@ -5731,32 +5751,32 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "#252525",
-                          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
-                          "fontSize": 14,
+                          "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+                          "fontSize": 16,
+                          "fontWeight": "bold",
                           "letterSpacing": "normal",
-                          "padding": 25,
+                          "padding": 50,
                           "stroke": "transparent",
                           "textAnchor": "middle",
                         }
                       }
                       textAnchor="middle"
-                      x={15}
+                      x={30}
                     >
                       <tspan
                         dx={0}
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
-                            "fontSize": 14,
-                            "letterSpacing": "normal",
-                            "padding": 25,
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+                            "fontSize": 16,
+                            "fontWeight": "bold",
                             "stroke": "transparent",
                             "textAnchor": "middle",
                           }
                         }
                         textAnchor="middle"
-                        x={15}
+                        x={30}
                       >
                         Number of Shootings
                       </tspan>
@@ -5777,8 +5797,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "x": Array [
-                        40,
-                        960,
+                        80,
+                        940,
                       ],
                     }
                   }
@@ -5795,10 +5815,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={40}
-                  x2={960}
-                  y1={340.2739726027397}
-                  y2={340.2739726027397}
+                  x1={80}
+                  x2={940}
+                  y1={320.24464831804283}
+                  y2={320.24464831804283}
                 >
                   <Line
                     style={
@@ -5808,10 +5828,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={40}
-                    x2={960}
-                    y1={340.2739726027397}
-                    y2={340.2739726027397}
+                    x1={80}
+                    x2={940}
+                    y1={320.24464831804283}
+                    y2={320.24464831804283}
                   >
                     <line
                       role="presentation"
@@ -5824,10 +5844,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={960}
-                      y1={340.2739726027397}
-                      y2={340.2739726027397}
+                      x1={80}
+                      x2={940}
+                      y1={320.24464831804283}
+                      y2={320.24464831804283}
                     />
                   </Line>
                 </Axis>
@@ -5849,10 +5869,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={40}
-                  x2={39}
-                  y1={340.2739726027397}
-                  y2={340.2739726027397}
+                  x1={80}
+                  x2={79}
+                  y1={320.24464831804283}
+                  y2={320.24464831804283}
                 >
                   <Line
                     style={
@@ -5862,10 +5882,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={40}
-                    x2={39}
-                    y1={340.2739726027397}
-                    y2={340.2739726027397}
+                    x1={80}
+                    x2={79}
+                    y1={320.24464831804283}
+                    y2={320.24464831804283}
                   >
                     <line
                       role="presentation"
@@ -5873,15 +5893,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={39}
-                      y1={340.2739726027397}
-                      y2={340.2739726027397}
+                      x1={80}
+                      x2={79}
+                      y1={320.24464831804283}
+                      y2={320.24464831804283}
                     />
                   </Line>
                 </Axis>
@@ -5899,7 +5918,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -5911,20 +5930,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="middle"
-                  x={29}
-                  y={340.2739726027397}
+                  x={69}
+                  y={320.24464831804283}
                 >
                   <Text
                     dx={0}
                     dy={4.97}
-                    x={29}
-                    y={340.2739726027397}
+                    x={69}
+                    y={320.24464831804283}
                   >
                     <text
                       dx={0}
                       dy={4.97}
-                      x={29}
-                      y={340.2739726027397}
+                      style={Object {}}
+                      x={69}
+                      y={320.24464831804283}
                     >
                       <TSpan
                         content="80"
@@ -5933,7 +5953,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -5941,22 +5961,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="end"
-                        x={29}
+                        x={69}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="end"
-                          x={29}
+                          x={69}
                         >
                           80
                         </tspan>
@@ -5978,8 +5996,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "x": Array [
-                        40,
-                        960,
+                        80,
+                        940,
                       ],
                     }
                   }
@@ -5996,10 +6014,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={40}
-                  x2={960}
-                  y1={276.5130759651308}
-                  y2={276.5130759651308}
+                  x1={80}
+                  x2={940}
+                  y1={251.9516263552961}
+                  y2={251.9516263552961}
                 >
                   <Line
                     style={
@@ -6009,10 +6027,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={40}
-                    x2={960}
-                    y1={276.5130759651308}
-                    y2={276.5130759651308}
+                    x1={80}
+                    x2={940}
+                    y1={251.9516263552961}
+                    y2={251.9516263552961}
                   >
                     <line
                       role="presentation"
@@ -6025,10 +6043,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={960}
-                      y1={276.5130759651308}
-                      y2={276.5130759651308}
+                      x1={80}
+                      x2={940}
+                      y1={251.9516263552961}
+                      y2={251.9516263552961}
                     />
                   </Line>
                 </Axis>
@@ -6050,10 +6068,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={40}
-                  x2={39}
-                  y1={276.5130759651308}
-                  y2={276.5130759651308}
+                  x1={80}
+                  x2={79}
+                  y1={251.9516263552961}
+                  y2={251.9516263552961}
                 >
                   <Line
                     style={
@@ -6063,10 +6081,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={40}
-                    x2={39}
-                    y1={276.5130759651308}
-                    y2={276.5130759651308}
+                    x1={80}
+                    x2={79}
+                    y1={251.9516263552961}
+                    y2={251.9516263552961}
                   >
                     <line
                       role="presentation"
@@ -6074,15 +6092,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={39}
-                      y1={276.5130759651308}
-                      y2={276.5130759651308}
+                      x1={80}
+                      x2={79}
+                      y1={251.9516263552961}
+                      y2={251.9516263552961}
                     />
                   </Line>
                 </Axis>
@@ -6100,7 +6117,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -6112,20 +6129,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="middle"
-                  x={29}
-                  y={276.5130759651308}
+                  x={69}
+                  y={251.9516263552961}
                 >
                   <Text
                     dx={0}
                     dy={4.97}
-                    x={29}
-                    y={276.5130759651308}
+                    x={69}
+                    y={251.9516263552961}
                   >
                     <text
                       dx={0}
                       dy={4.97}
-                      x={29}
-                      y={276.5130759651308}
+                      style={Object {}}
+                      x={69}
+                      y={251.9516263552961}
                     >
                       <TSpan
                         content="90"
@@ -6134,7 +6152,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -6142,22 +6160,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="end"
-                        x={29}
+                        x={69}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="end"
-                          x={29}
+                          x={69}
                         >
                           90
                         </tspan>
@@ -6179,8 +6195,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "x": Array [
-                        40,
-                        960,
+                        80,
+                        940,
                       ],
                     }
                   }
@@ -6197,10 +6213,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={40}
-                  x2={960}
-                  y1={212.7521793275218}
-                  y2={212.7521793275218}
+                  x1={80}
+                  x2={940}
+                  y1={183.65860439254934}
+                  y2={183.65860439254934}
                 >
                   <Line
                     style={
@@ -6210,10 +6226,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={40}
-                    x2={960}
-                    y1={212.7521793275218}
-                    y2={212.7521793275218}
+                    x1={80}
+                    x2={940}
+                    y1={183.65860439254934}
+                    y2={183.65860439254934}
                   >
                     <line
                       role="presentation"
@@ -6226,10 +6242,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={960}
-                      y1={212.7521793275218}
-                      y2={212.7521793275218}
+                      x1={80}
+                      x2={940}
+                      y1={183.65860439254934}
+                      y2={183.65860439254934}
                     />
                   </Line>
                 </Axis>
@@ -6251,10 +6267,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={40}
-                  x2={39}
-                  y1={212.7521793275218}
-                  y2={212.7521793275218}
+                  x1={80}
+                  x2={79}
+                  y1={183.65860439254934}
+                  y2={183.65860439254934}
                 >
                   <Line
                     style={
@@ -6264,10 +6280,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={40}
-                    x2={39}
-                    y1={212.7521793275218}
-                    y2={212.7521793275218}
+                    x1={80}
+                    x2={79}
+                    y1={183.65860439254934}
+                    y2={183.65860439254934}
                   >
                     <line
                       role="presentation"
@@ -6275,15 +6291,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={39}
-                      y1={212.7521793275218}
-                      y2={212.7521793275218}
+                      x1={80}
+                      x2={79}
+                      y1={183.65860439254934}
+                      y2={183.65860439254934}
                     />
                   </Line>
                 </Axis>
@@ -6301,7 +6316,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -6313,20 +6328,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="middle"
-                  x={29}
-                  y={212.7521793275218}
+                  x={69}
+                  y={183.65860439254934}
                 >
                   <Text
                     dx={0}
                     dy={4.97}
-                    x={29}
-                    y={212.7521793275218}
+                    x={69}
+                    y={183.65860439254934}
                   >
                     <text
                       dx={0}
                       dy={4.97}
-                      x={29}
-                      y={212.7521793275218}
+                      style={Object {}}
+                      x={69}
+                      y={183.65860439254934}
                     >
                       <TSpan
                         content="100"
@@ -6335,7 +6351,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -6343,22 +6359,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="end"
-                        x={29}
+                        x={69}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="end"
-                          x={29}
+                          x={69}
                         >
                           100
                         </tspan>
@@ -6380,8 +6394,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "x": Array [
-                        40,
-                        960,
+                        80,
+                        940,
                       ],
                     }
                   }
@@ -6398,10 +6412,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={40}
-                  x2={960}
-                  y1={148.99128268991285}
-                  y2={148.99128268991285}
+                  x1={80}
+                  x2={940}
+                  y1={115.3655824298026}
+                  y2={115.3655824298026}
                 >
                   <Line
                     style={
@@ -6411,10 +6425,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={40}
-                    x2={960}
-                    y1={148.99128268991285}
-                    y2={148.99128268991285}
+                    x1={80}
+                    x2={940}
+                    y1={115.3655824298026}
+                    y2={115.3655824298026}
                   >
                     <line
                       role="presentation"
@@ -6427,10 +6441,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={960}
-                      y1={148.99128268991285}
-                      y2={148.99128268991285}
+                      x1={80}
+                      x2={940}
+                      y1={115.3655824298026}
+                      y2={115.3655824298026}
                     />
                   </Line>
                 </Axis>
@@ -6452,10 +6466,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={40}
-                  x2={39}
-                  y1={148.99128268991285}
-                  y2={148.99128268991285}
+                  x1={80}
+                  x2={79}
+                  y1={115.3655824298026}
+                  y2={115.3655824298026}
                 >
                   <Line
                     style={
@@ -6465,10 +6479,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={40}
-                    x2={39}
-                    y1={148.99128268991285}
-                    y2={148.99128268991285}
+                    x1={80}
+                    x2={79}
+                    y1={115.3655824298026}
+                    y2={115.3655824298026}
                   >
                     <line
                       role="presentation"
@@ -6476,15 +6490,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={39}
-                      y1={148.99128268991285}
-                      y2={148.99128268991285}
+                      x1={80}
+                      x2={79}
+                      y1={115.3655824298026}
+                      y2={115.3655824298026}
                     />
                   </Line>
                 </Axis>
@@ -6502,7 +6515,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -6514,20 +6527,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="middle"
-                  x={29}
-                  y={148.99128268991285}
+                  x={69}
+                  y={115.3655824298026}
                 >
                   <Text
                     dx={0}
                     dy={4.97}
-                    x={29}
-                    y={148.99128268991285}
+                    x={69}
+                    y={115.3655824298026}
                   >
                     <text
                       dx={0}
                       dy={4.97}
-                      x={29}
-                      y={148.99128268991285}
+                      style={Object {}}
+                      x={69}
+                      y={115.3655824298026}
                     >
                       <TSpan
                         content="110"
@@ -6536,7 +6550,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -6544,22 +6558,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="end"
-                        x={29}
+                        x={69}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="end"
-                          x={29}
+                          x={69}
                         >
                           110
                         </tspan>
@@ -6581,8 +6593,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   range={
                     Object {
                       "x": Array [
-                        40,
-                        960,
+                        80,
+                        940,
                       ],
                     }
                   }
@@ -6599,10 +6611,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="grid"
-                  x1={40}
-                  x2={960}
-                  y1={85.23038605230386}
-                  y2={85.23038605230386}
+                  x1={80}
+                  x2={940}
+                  y1={47.07256046705584}
+                  y2={47.07256046705584}
                 >
                   <Line
                     style={
@@ -6612,10 +6624,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "none",
                       }
                     }
-                    x1={40}
-                    x2={960}
-                    y1={85.23038605230386}
-                    y2={85.23038605230386}
+                    x1={80}
+                    x2={940}
+                    y1={47.07256046705584}
+                    y2={47.07256046705584}
                   >
                     <line
                       role="presentation"
@@ -6628,10 +6640,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={960}
-                      y1={85.23038605230386}
-                      y2={85.23038605230386}
+                      x1={80}
+                      x2={940}
+                      y1={47.07256046705584}
+                      y2={47.07256046705584}
                     />
                   </Line>
                 </Axis>
@@ -6653,10 +6665,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     }
                   }
                   type="tick"
-                  x1={40}
-                  x2={39}
-                  y1={85.23038605230386}
-                  y2={85.23038605230386}
+                  x1={80}
+                  x2={79}
+                  y1={47.07256046705584}
+                  y2={47.07256046705584}
                 >
                   <Line
                     style={
@@ -6666,10 +6678,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         "stroke": "transparent",
                       }
                     }
-                    x1={40}
-                    x2={39}
-                    y1={85.23038605230386}
-                    y2={85.23038605230386}
+                    x1={80}
+                    x2={79}
+                    y1={47.07256046705584}
+                    y2={47.07256046705584}
                   >
                     <line
                       role="presentation"
@@ -6677,15 +6689,14 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                       style={
                         Object {
                           "fill": "transparent",
-                          "size": 1,
                           "stroke": "transparent",
                         }
                       }
                       vectorEffect="non-scaling-stroke"
-                      x1={40}
-                      x2={39}
-                      y1={85.23038605230386}
-                      y2={85.23038605230386}
+                      x1={80}
+                      x2={79}
+                      y1={47.07256046705584}
+                      y2={47.07256046705584}
                     />
                   </Line>
                 </Axis>
@@ -6703,7 +6714,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   style={
                     Object {
                       "fill": "#252525",
-                      "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                      "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                       "fontSize": 14,
                       "letterSpacing": "normal",
                       "padding": 10,
@@ -6715,20 +6726,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   textComponent={<Text />}
                   tspanComponent={<TSpan />}
                   verticalAnchor="middle"
-                  x={29}
-                  y={85.23038605230386}
+                  x={69}
+                  y={47.07256046705584}
                 >
                   <Text
                     dx={0}
                     dy={4.97}
-                    x={29}
-                    y={85.23038605230386}
+                    x={69}
+                    y={47.07256046705584}
                   >
                     <text
                       dx={0}
                       dy={4.97}
-                      x={29}
-                      y={85.23038605230386}
+                      style={Object {}}
+                      x={69}
+                      y={47.07256046705584}
                     >
                       <TSpan
                         content="120"
@@ -6737,7 +6749,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         style={
                           Object {
                             "fill": "#252525",
-                            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                            "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                             "fontSize": 14,
                             "letterSpacing": "normal",
                             "padding": 10,
@@ -6745,22 +6757,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         }
                         textAnchor="end"
-                        x={29}
+                        x={69}
                       >
                         <tspan
                           dx={0}
                           style={
                             Object {
                               "fill": "#252525",
-                              "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+                              "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
                               "fontSize": 14,
-                              "letterSpacing": "normal",
-                              "padding": 10,
                               "stroke": "transparent",
                             }
                           }
                           textAnchor="end"
-                          x={29}
+                          x={69}
                         >
                           120
                         </tspan>
@@ -6857,8 +6867,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   1448946000000,
                 ],
                 "y": Array [
-                  76.90625,
-                  127.09375,
+                  77.10726643598616,
+                  126.89273356401384,
                 ],
               }
             }
@@ -6883,21 +6893,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             }
             padding={
               Object {
-                "bottom": 40,
-                "left": 40,
-                "right": 40,
-                "top": 40,
+                "bottom": 60,
+                "left": 80,
+                "right": 60,
+                "top": 0,
               }
             }
             range={
               Object {
                 "x": Array [
-                  40,
-                  960,
+                  80,
+                  940,
                 ],
                 "y": Array [
-                  360,
-                  40,
+                  340,
+                  0,
                 ],
               }
             }
@@ -7426,7 +7436,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
               <VictoryAnimation
                 data={
                   Object {
-                    "clipWidth": 920,
+                    "clipWidth": 860,
                     "data": Array [
                       Object {
                         "_x": 1420088400000,
@@ -7519,16 +7529,16 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         1448946000000,
                       ],
                       "y": Array [
-                        76.90625,
-                        127.09375,
+                        77.10726643598616,
+                        126.89273356401384,
                       ],
                     },
                     "height": 400,
                     "padding": Object {
-                      "bottom": 40,
-                      "left": 40,
-                      "right": 40,
-                      "top": 40,
+                      "bottom": 60,
+                      "left": 80,
+                      "right": 60,
+                      "top": 0,
                     },
                     "samples": 50,
                     "style": Object {
@@ -7693,8 +7703,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         1448946000000,
                       ],
                       "y": Array [
-                        76.90625,
-                        127.09375,
+                        77.10726643598616,
+                        126.89273356401384,
                       ],
                     }
                   }
@@ -7721,21 +7731,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   }
                   padding={
                     Object {
-                      "bottom": 40,
-                      "left": 40,
-                      "right": 40,
-                      "top": 40,
+                      "bottom": 60,
+                      "left": 80,
+                      "right": 60,
+                      "top": 0,
                     }
                   }
                   range={
                     Object {
                       "x": Array [
-                        40,
-                        960,
+                        80,
+                        940,
                       ],
                       "y": Array [
-                        360,
-                        40,
+                        340,
+                        0,
                       ],
                     }
                   }
@@ -8340,8 +8350,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           1448946000000,
                         ],
                         "y": Array [
-                          76.90625,
-                          127.09375,
+                          77.10726643598616,
+                          126.89273356401384,
                         ],
                       }
                     }
@@ -8351,10 +8361,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     key="line-parent-parent"
                     padding={
                       Object {
-                        "bottom": 40,
-                        "left": 40,
-                        "right": 40,
-                        "top": 40,
+                        "bottom": 60,
+                        "left": 80,
+                        "right": 60,
+                        "top": 0,
                       }
                     }
                     rectComponent={<Rect />}
@@ -8385,7 +8395,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     >
                       <ClipPath
                         circleComponent={<Circle />}
-                        clipHeight={320}
+                        clipHeight={340}
                         clipId="victory-clip-2"
                         clipPathComponent={<ClipPath />}
                         clipWidth={0}
@@ -8484,8 +8494,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                               1448946000000,
                             ],
                             "y": Array [
-                              76.90625,
-                              127.09375,
+                              77.10726643598616,
+                              126.89273356401384,
                             ],
                           }
                         }
@@ -8495,10 +8505,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         key="clip-path"
                         padding={
                           Object {
-                            "bottom": 40,
-                            "left": 40,
-                            "right": 40,
-                            "top": 40,
+                            "bottom": 60,
+                            "left": 80,
+                            "right": 60,
+                            "top": 0,
                           }
                         }
                         rectComponent={<Rect />}
@@ -8516,8 +8526,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                             "width": "100%",
                           }
                         }
-                        translateX={40}
-                        translateY={40}
+                        translateX={80}
+                        translateY={0}
                         width={1000}
                       >
                         <defs>
@@ -8525,19 +8535,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                             id="victory-clip-2"
                           >
                             <Rect
-                              height={320}
+                              height={340}
                               width={0}
-                              x={40}
-                              y={40}
+                              x={80}
+                              y={0}
                             >
                               <rect
-                                height={320}
+                                height={340}
                                 role="presentation"
                                 shapeRendering="auto"
+                                style={Object {}}
                                 vectorEffect="non-scaling-stroke"
                                 width={0}
-                                x={40}
-                                y={40}
+                                x={80}
+                                y={0}
                               />
                             </Rect>
                           </clipPath>
@@ -9142,7 +9153,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         >
                           <Path
-                            d="M40,270.13698630136986L125.38922155688623,321.14570361145707L202.51497005988026,129.86301369863014L287.7894211576846,200L370.42415169660677,302.01743462017436L455.813373253493,340.2739726027397L538.4481037924152,59.72602739726028L623.8373253493014,200L709.2265469061875,231.8804483188045L791.8612774451097,270.13698630136986L877.250499001996,314.76961394769614L960,257.3848069738481"
+                            d="M80,245.12232415902142L159.8203592814371,299.7567417292188L231.91616766467067,94.87767584097861L311.6292415169661,170L388.874750499002,279.2688351403948L468.6951097804391,320.24464831804283L545.9406187624751,19.755351681957166L625.7609780439122,170L705.5813373253493,204.14651098137338L782.8268463073853,245.12232415902142L862.6472055888223,292.92743953294416L940,231.46371976647208"
                             style={
                               Object {
                                 "fill": "transparent",
@@ -9152,7 +9163,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                             }
                           >
                             <path
-                              d="M40,270.13698630136986L125.38922155688623,321.14570361145707L202.51497005988026,129.86301369863014L287.7894211576846,200L370.42415169660677,302.01743462017436L455.813373253493,340.2739726027397L538.4481037924152,59.72602739726028L623.8373253493014,200L709.2265469061875,231.8804483188045L791.8612774451097,270.13698630136986L877.250499001996,314.76961394769614L960,257.3848069738481"
+                              d="M80,245.12232415902142L159.8203592814371,299.7567417292188L231.91616766467067,94.87767584097861L311.6292415169661,170L388.874750499002,279.2688351403948L468.6951097804391,320.24464831804283L545.9406187624751,19.755351681957166L625.7609780439122,170L705.5813373253493,204.14651098137338L782.8268463073853,245.12232415902142L862.6472055888223,292.92743953294416L940,231.46371976647208"
                               role="presentation"
                               shapeRendering="auto"
                               style={
@@ -9197,8 +9208,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   1448946000000,
                 ],
                 "y": Array [
-                  76.90625,
-                  127.09375,
+                  77.10726643598616,
+                  126.89273356401384,
                 ],
               }
             }
@@ -9208,21 +9219,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             key="3"
             padding={
               Object {
-                "bottom": 40,
-                "left": 40,
-                "right": 40,
-                "top": 40,
+                "bottom": 60,
+                "left": 80,
+                "right": 60,
+                "top": 0,
               }
             }
             range={
               Object {
                 "x": Array [
-                  40,
-                  960,
+                  80,
+                  940,
                 ],
                 "y": Array [
-                  360,
-                  40,
+                  340,
+                  0,
                 ],
               }
             }
@@ -9734,19 +9745,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
               textComponent={<Text />}
               tspanComponent={<TSpan />}
               x={950}
-              y={240}
+              y={230}
             >
               <Text
                 dx={0}
                 dy={4.97}
                 x={950}
-                y={240}
+                y={230}
               >
                 <text
                   dx={0}
                   dy={4.97}
+                  style={Object {}}
                   x={950}
-                  y={240}
+                  y={230}
                 >
                   <TSpan
                     content="2015"
@@ -9869,8 +9881,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   1448946000000,
                 ],
                 "y": Array [
-                  76.90625,
-                  127.09375,
+                  77.10726643598616,
+                  126.89273356401384,
                 ],
               }
             }
@@ -9895,21 +9907,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             }
             padding={
               Object {
-                "bottom": 40,
-                "left": 40,
-                "right": 40,
-                "top": 40,
+                "bottom": 60,
+                "left": 80,
+                "right": 60,
+                "top": 0,
               }
             }
             range={
               Object {
                 "x": Array [
-                  40,
-                  960,
+                  80,
+                  940,
                 ],
                 "y": Array [
-                  360,
-                  40,
+                  340,
+                  0,
                 ],
               }
             }
@@ -10438,7 +10450,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
               <VictoryAnimation
                 data={
                   Object {
-                    "clipWidth": 920,
+                    "clipWidth": 860,
                     "data": Array [
                       Object {
                         "_x": 1420088400000,
@@ -10531,16 +10543,16 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         1448946000000,
                       ],
                       "y": Array [
-                        76.90625,
-                        127.09375,
+                        77.10726643598616,
+                        126.89273356401384,
                       ],
                     },
                     "height": 400,
                     "padding": Object {
-                      "bottom": 40,
-                      "left": 40,
-                      "right": 40,
-                      "top": 40,
+                      "bottom": 60,
+                      "left": 80,
+                      "right": 60,
+                      "top": 0,
                     },
                     "samples": 50,
                     "style": Object {
@@ -10705,8 +10717,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         1448946000000,
                       ],
                       "y": Array [
-                        76.90625,
-                        127.09375,
+                        77.10726643598616,
+                        126.89273356401384,
                       ],
                     }
                   }
@@ -10733,21 +10745,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   }
                   padding={
                     Object {
-                      "bottom": 40,
-                      "left": 40,
-                      "right": 40,
-                      "top": 40,
+                      "bottom": 60,
+                      "left": 80,
+                      "right": 60,
+                      "top": 0,
                     }
                   }
                   range={
                     Object {
                       "x": Array [
-                        40,
-                        960,
+                        80,
+                        940,
                       ],
                       "y": Array [
-                        360,
-                        40,
+                        340,
+                        0,
                       ],
                     }
                   }
@@ -11352,8 +11364,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           1448946000000,
                         ],
                         "y": Array [
-                          76.90625,
-                          127.09375,
+                          77.10726643598616,
+                          126.89273356401384,
                         ],
                       }
                     }
@@ -11363,10 +11375,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     key="line-parent-parent"
                     padding={
                       Object {
-                        "bottom": 40,
-                        "left": 40,
-                        "right": 40,
-                        "top": 40,
+                        "bottom": 60,
+                        "left": 80,
+                        "right": 60,
+                        "top": 0,
                       }
                     }
                     rectComponent={<Rect />}
@@ -11397,7 +11409,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                     >
                       <ClipPath
                         circleComponent={<Circle />}
-                        clipHeight={320}
+                        clipHeight={340}
                         clipId="victory-clip-3"
                         clipPathComponent={<ClipPath />}
                         clipWidth={0}
@@ -11496,8 +11508,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                               1448946000000,
                             ],
                             "y": Array [
-                              76.90625,
-                              127.09375,
+                              77.10726643598616,
+                              126.89273356401384,
                             ],
                           }
                         }
@@ -11507,10 +11519,10 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                         key="clip-path"
                         padding={
                           Object {
-                            "bottom": 40,
-                            "left": 40,
-                            "right": 40,
-                            "top": 40,
+                            "bottom": 60,
+                            "left": 80,
+                            "right": 60,
+                            "top": 0,
                           }
                         }
                         rectComponent={<Rect />}
@@ -11528,8 +11540,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                             "width": "100%",
                           }
                         }
-                        translateX={40}
-                        translateY={40}
+                        translateX={80}
+                        translateY={0}
                         width={1000}
                       >
                         <defs>
@@ -11537,19 +11549,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                             id="victory-clip-3"
                           >
                             <Rect
-                              height={320}
+                              height={340}
                               width={0}
-                              x={40}
-                              y={40}
+                              x={80}
+                              y={0}
                             >
                               <rect
-                                height={320}
+                                height={340}
                                 role="presentation"
                                 shapeRendering="auto"
+                                style={Object {}}
                                 vectorEffect="non-scaling-stroke"
                                 width={0}
-                                x={40}
-                                y={40}
+                                x={80}
+                                y={0}
                               />
                             </Rect>
                           </clipPath>
@@ -12154,7 +12167,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                           }
                         >
                           <Path
-                            d="M40,295.64134495641343L125.38922155688623,212.7521793275218L202.51497005988026,212.7521793275218L287.7894211576846,302.01743462017436L370.42415169660677,295.64134495641343L455.813373253493,212.7521793275218L538.4481037924152,282.88916562889165L623.8373253493014,251.00871731008718L709.2265469061875,314.76961394769614L791.8612774451097,295.64134495641343L877.250499001996,251.00871731008718L960,308.3935242839352"
+                            d="M80,272.4395329441201L159.8203592814371,183.65860439254934L231.91616766467067,183.65860439254934L311.6292415169661,279.2688351403948L388.874750499002,272.4395329441201L468.6951097804391,183.65860439254934L545.9406187624751,258.78092855157075L625.7609780439122,224.6344175701974L705.5813373253493,292.92743953294416L782.8268463073853,272.4395329441201L862.6472055888223,224.6344175701974L940,286.0981373366695"
                             style={
                               Object {
                                 "fill": "transparent",
@@ -12164,7 +12177,7 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                             }
                           >
                             <path
-                              d="M40,295.64134495641343L125.38922155688623,212.7521793275218L202.51497005988026,212.7521793275218L287.7894211576846,302.01743462017436L370.42415169660677,295.64134495641343L455.813373253493,212.7521793275218L538.4481037924152,282.88916562889165L623.8373253493014,251.00871731008718L709.2265469061875,314.76961394769614L791.8612774451097,295.64134495641343L877.250499001996,251.00871731008718L960,308.3935242839352"
+                              d="M80,272.4395329441201L159.8203592814371,183.65860439254934L231.91616766467067,183.65860439254934L311.6292415169661,279.2688351403948L388.874750499002,272.4395329441201L468.6951097804391,183.65860439254934L545.9406187624751,258.78092855157075L625.7609780439122,224.6344175701974L705.5813373253493,292.92743953294416L782.8268463073853,272.4395329441201L862.6472055888223,224.6344175701974L940,286.0981373366695"
                               role="presentation"
                               shapeRendering="auto"
                               style={
@@ -12209,8 +12222,8 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
                   1448946000000,
                 ],
                 "y": Array [
-                  76.90625,
-                  127.09375,
+                  77.10726643598616,
+                  126.89273356401384,
                 ],
               }
             }
@@ -12220,21 +12233,21 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
             key="5"
             padding={
               Object {
-                "bottom": 40,
-                "left": 40,
-                "right": 40,
-                "top": 40,
+                "bottom": 60,
+                "left": 80,
+                "right": 60,
+                "top": 0,
               }
             }
             range={
               Object {
                 "x": Array [
-                  40,
-                  960,
+                  80,
+                  940,
                 ],
                 "y": Array [
-                  360,
-                  40,
+                  340,
+                  0,
                 ],
               }
             }
@@ -12746,19 +12759,20 @@ exports[`<Line /> renders the full DOM without crashing 1`] = `
               textComponent={<Text />}
               tspanComponent={<TSpan />}
               x={950}
-              y={325}
+              y={295}
             >
               <Text
                 dx={0}
                 dy={4.97}
                 x={950}
-                y={325}
+                y={295}
               >
                 <text
                   dx={0}
                   dy={4.97}
+                  style={Object {}}
                   x={950}
-                  y={325}
+                  y={295}
                 >
                   <TSpan
                     content="2016"
@@ -15015,7 +15029,14 @@ exports[`<Line /> renders without crashing 1`] = `
   }
   groupComponent={<g />}
   height={400}
-  padding={40}
+  padding={
+    Object {
+      "bottom": 60,
+      "left": 80,
+      "right": 60,
+      "top": 0,
+    }
+  }
   standalone={true}
   theme={
     Object {
@@ -15535,6 +15556,19 @@ exports[`<Line /> renders without crashing 1`] = `
     label="Month"
     scale="time"
     standalone={true}
+    style={
+      Object {
+        "axisLabel": Object {
+          "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "bold",
+          "padding": 40,
+        },
+        "tickLabels": Object {
+          "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+        },
+      }
+    }
     theme={
       Object {
         "area": Object {
@@ -16045,6 +16079,7 @@ exports[`<Line /> renders without crashing 1`] = `
         type="axis"
       />
     }
+    axisLabel={true}
     axisLabelComponent={
       <VictoryLabel
         capHeight={0.71}
@@ -16077,6 +16112,19 @@ exports[`<Line /> renders without crashing 1`] = `
     label="Number of Shootings"
     scale="linear"
     standalone={true}
+    style={
+      Object {
+        "axisLabel": Object {
+          "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "bold",
+          "padding": 50,
+        },
+        "tickLabels": Object {
+          "fontFamily": "'HelveticaNeue', 'Helvetica', sans-serif",
+        },
+      }
+    }
     theme={
       Object {
         "area": Object {

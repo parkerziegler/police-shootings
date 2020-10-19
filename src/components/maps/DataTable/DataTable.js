@@ -118,7 +118,7 @@ export class DataTable extends React.Component {
         stateStats,
       };
     } else if (mapType === 'proportional') {
-      // obtain our table data by looking at our reducer
+      // see our table data by looking at our reducer
       const states = orderBy(
         maps.geoData.objects.states.geometries,
         ['properties.numShootings'],

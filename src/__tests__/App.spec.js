@@ -59,7 +59,7 @@ describe('<App />', () => {
     );
 
     wrapper.instance().goToPreviousChild();
-    expect(dispatch).toHaveBeenCalledWith(push('/percapita'));
+    expect(dispatch).toHaveBeenCalledWith(push('/per-capita'));
   });
 
   it('handles goToPreviousChild properly on nested routes', () => {
@@ -81,7 +81,7 @@ describe('<App />', () => {
     );
 
     wrapper.instance().goToPreviousChild();
-    expect(dispatch).toHaveBeenCalledWith(push('/percapita/black'));
+    expect(dispatch).toHaveBeenCalledWith(push('/per-capita/black'));
   });
 
   it('handles goToNextChild properly when navigating from parent to child', () => {
@@ -101,7 +101,7 @@ describe('<App />', () => {
     );
 
     wrapper.instance().goToNextChild();
-    expect(dispatch).toHaveBeenCalledWith(push('/percapita/black'));
+    expect(dispatch).toHaveBeenCalledWith(push('/per-capita/black'));
   });
 
   it('handles goToNextChild properly on nested routes', () => {
@@ -123,7 +123,7 @@ describe('<App />', () => {
     );
 
     wrapper.instance().goToNextChild();
-    expect(dispatch).toHaveBeenCalledWith(push('/percapita/latino'));
+    expect(dispatch).toHaveBeenCalledWith(push('/per-capita/latino'));
   });
 
   it('handles goToPrevious properly on parent routes', () => {
@@ -161,6 +161,6 @@ describe('<App />', () => {
     );
 
     wrapper.instance().goToNext();
-    expect(dispatch).toHaveBeenCalledWith(push('/shootingsbydate'));
+    expect(dispatch).toHaveBeenCalledWith(push('/shootings-by-date'));
   });
 });

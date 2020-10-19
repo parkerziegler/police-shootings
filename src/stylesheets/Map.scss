@@ -29,6 +29,11 @@
       &:hover {
         fill-opacity: 0.75;
       }
+
+      &-bg {
+        stroke: #666666;
+        stroke-width: 0.5;
+      }
     }
 
     .state-label {
@@ -48,21 +53,27 @@
   .state-transition-#{$i}-appear,
   .state-transition-#{$i}-enter {
     fill-opacity: 0.01;
+    stroke-opacity: 0.01;
   }
 
   .state-transition-#{$i}-exit {
     fill-opacity: 1;
+    stroke-opacity: 1;
   }
 
   .state-transition-#{$i}-appear.state-transition-#{$i}-appear-active,
   .state-transition-#{$i}-enter.state-transition-#{$i}-enter-active {
     fill-opacity: 1;
-    transition: fill-opacity $i * 50ms ease-in 100ms;
+    stroke-opacity: 1;
+    transition: fill-opacity $i * 50ms ease-in 100ms,
+      stroke-opacity $i * 50ms ease-in 100ms;
   }
 
   .state-transition-#{$i}-exit.state-transition-#{$i}-exit-active {
     fill-opacity: 0.01;
-    transition: fill-opacity $i * 50ms ease-in 100ms;
+    stroke-opacity: 0.01;
+    transition: fill-opacity $i * 50ms ease-in 100ms,
+      stroke-opacity $i * 50ms ease-in 100ms;
   }
 }
 

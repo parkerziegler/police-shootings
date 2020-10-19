@@ -6,9 +6,7 @@ export const totalShootingsJSX = (
     this time period at <b>372</b>. <b>Texas</b> and <b>Florida</b> had the
     second and third greatest counts at <b>205</b> and <b>144</b>, respectively.{' '}
     <b>North Dakota</b> had the fewest shootings of all states with only{' '}
-    <b>2</b>.<br />
-    <br />
-    Hover over a state to obtain the number of shootings.
+    <b>2</b>.
   </div>
 );
 
@@ -22,9 +20,6 @@ export const totalShootingsBlackJSX = (
     American populations in the intermountain West and the Northeast, such as{' '}
     <b>Montana</b>, <b>Idaho</b>, <b>Maine</b>, and <b>Vermont</b> were among
     the few with no shootings of black Americans.
-    <br />
-    <br />
-    Hover over a state to obtain the number of shootings.
   </div>
 );
 
@@ -35,9 +30,6 @@ export const totalShootingsLatinoJSX = (
     shootings at <b>154</b>, more than double that of the second highest,{' '}
     <b>Texas</b>, at <b>67</b>. <b>Arizona</b>, <b>New Mexico</b>, and{' '}
     <b>Colorado</b> all demonstrated high counts as well.
-    <br />
-    <br />
-    Hover over a state to obtain the number of shootings.
   </div>
 );
 
@@ -48,9 +40,6 @@ export const totalShootingsAsianJSX = (
     <b>California</b> once again had the greatest number of shootings at{' '}
     <b>16</b>. <b>Hawaii</b> had the second largest number, <b>6</b>, likely
     owing to a larger Asian American population than other states.
-    <br />
-    <br />
-    Hover over a state to obtain the number of shootings.
   </div>
 );
 
@@ -61,9 +50,6 @@ export const totalShootingsNativeAmericanJSX = (
     greatest number of shootings with <b>9</b>. <b>Alaksa</b> and{' '}
     <b>Washington</b> had the second and third highest counts, at <b>7</b> and{' '}
     <b>6</b> respectively.
-    <br />
-    <br />
-    Hover over a state to obtain the number of shootings.
   </div>
 );
 
@@ -74,9 +60,7 @@ export const totalShootingsWhiteJSX = (
     of shootings at <b>125</b>, <b>92</b>, and <b>74</b>, respectively. Open
     carry states like <b>Arizona</b> and <b>Oklahoma</b> also had high counts. A
     high incidence of shootings is also visible in stretches of Appalachia and
-    the southern United States. <br />
-    <br />
-    Hover over a state to obtain the number of shootings.
+    the southern United States.
   </div>
 );
 
@@ -86,9 +70,7 @@ export const shootingsPerCapitaJSX = (
     shootings per million residents between 2015 and 2016. Western states in
     general demonstrated higher rates than the eastern and northern United
     States, with the <b>District of Columbia</b> being an exception. Four of the
-    five lowest rates were found in the northeastern United States. <br />
-    <br />
-    Hover over a state to obtain the number of shootings per million.
+    five lowest rates were found in the northeastern United States.
   </div>
 );
 
@@ -98,9 +80,7 @@ export const shootingsPerCapitaBlackJSX = (
     of police shootings at <b>68.21</b>. <b>West Virginia</b> and{' '}
     <b>Nebraska</b> had the second and third highest rates at <b>48.89</b> and{' '}
     <b>43.45</b> respectively. Only <b>10</b> states had no shootings of African
-    Americans in this time period. <br />
-    <br />
-    Hover over a state to obtain the number of shootings per million.
+    Americans in this time period.
   </div>
 );
 
@@ -110,9 +90,7 @@ export const shootingsPerCapitaLatinoJSX = (
     involved shootings of Latinos than other parts of the country. Southwest
     border states like <b>New Mexico</b> (<b>24.23</b> shootings per million
     Latino residents) and intermountain West states like <b>Idaho</b> (
-    <b>20.91</b>) had generally higher rates than eastern states. <br />
-    <br />
-    Hover over a state to obtain the number of shootings per million.
+    <b>20.91</b>) had generally higher rates than eastern states.
   </div>
 );
 
@@ -124,9 +102,6 @@ export const shootingsPerCapitaAsianJSX = (
     period. <b>Colorado</b>, <b>Louisiana</b>, and <b>Hawaii</b> were major
     outliers to this trend, demonstrating the highest rates of shootings of
     Asians.
-    <br />
-    <br />
-    Hover over a state to obtain the number of shootings per million.
   </div>
 );
 
@@ -141,9 +116,6 @@ export const shootingsPerCapitaNativeAmericanJSX = (
     <b>Washington</b> retain many of the highest rates. <b>Vermont</b> is an
     extreme outlier in the dataset, its rate of shootings being the result of a
     small indigenous population.
-    <br />
-    <br />
-    Hover over a state to obtain the number of shootings per million.
   </div>
 );
 
@@ -157,9 +129,6 @@ export const shootingsPerCapitaWhiteJSX = (
     whites were killed in the <b>District of Columbia</b> during this time
     period, meaning the city's high rate of police shootings were exclusively of
     people of color.
-    <br />
-    <br />
-    Hover over a state to obtain the number of shootings per million.
   </div>
 );
 

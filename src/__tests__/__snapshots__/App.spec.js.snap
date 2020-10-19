@@ -42,7 +42,7 @@ exports[`<App /> renders correct chevron visibility across all routes 1`] = `
         </div>
       </Connect(getContext(WithId))>
       <Connect(getContext(WithId))
-        forRoute="/percapita"
+        forRoute="/per-capita"
       >
         <div
           className="map-layout"
@@ -56,7 +56,7 @@ exports[`<App /> renders correct chevron visibility across all routes 1`] = `
         </div>
       </Connect(getContext(WithId))>
       <Connect(getContext(WithId))
-        forRoute="/shootingsbydate"
+        forRoute="/shootings-by-date"
       >
         <div
           className="chart-layout"
@@ -124,7 +124,7 @@ exports[`<App /> renders correct chevron visibility across all routes 2`] = `
         </div>
       </Connect(getContext(WithId))>
       <Connect(getContext(WithId))
-        forRoute="/percapita"
+        forRoute="/per-capita"
       >
         <div
           className="map-layout"
@@ -138,7 +138,7 @@ exports[`<App /> renders correct chevron visibility across all routes 2`] = `
         </div>
       </Connect(getContext(WithId))>
       <Connect(getContext(WithId))
-        forRoute="/shootingsbydate"
+        forRoute="/shootings-by-date"
       >
         <div
           className="chart-layout"
@@ -206,7 +206,7 @@ exports[`<App /> renders without crashing 1`] = `
         </div>
       </Connect(getContext(WithId))>
       <Connect(getContext(WithId))
-        forRoute="/percapita"
+        forRoute="/per-capita"
       >
         <div
           className="map-layout"
@@ -220,7 +220,7 @@ exports[`<App /> renders without crashing 1`] = `
         </div>
       </Connect(getContext(WithId))>
       <Connect(getContext(WithId))
-        forRoute="/shootingsbydate"
+        forRoute="/shootings-by-date"
       >
         <div
           className="chart-layout"

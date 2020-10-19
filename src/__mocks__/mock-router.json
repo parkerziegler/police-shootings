@@ -1,10 +1,10 @@
 {
-  "pathname": "/percapita",
+  "pathname": "/per-capita",
   "basename": "/police-shootings",
   "search": "",
   "hash": "",
   "query": {},
-  "route": "/percapita",
+  "route": "/per-capita",
   "params": {},
   "result": {
     "type": "map",
@@ -58,8 +58,7 @@
             "props": {},
             "_owner": null,
             "_store": {}
-          },
-          "Hover over a state to obtain the number of shootings per million."
+          }
         ]
       },
       "_owner": null,
@@ -210,8 +209,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings."
+            }
           ]
         },
         "_owner": null,
@@ -337,8 +335,7 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings."
+              }
             ]
           },
           "_owner": null,
@@ -456,8 +453,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings."
+            }
           ]
         },
         "_owner": null,
@@ -583,8 +579,7 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings."
+              }
             ]
           },
           "_owner": null,
@@ -669,8 +664,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings."
+            }
           ]
         },
         "_owner": null,
@@ -796,8 +790,7 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings."
+              }
             ]
           },
           "_owner": null,
@@ -904,8 +897,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings."
+            }
           ]
         },
         "_owner": null,
@@ -1031,8 +1023,7 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings."
+              }
             ]
           },
           "_owner": null,
@@ -1161,8 +1152,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings."
+            }
           ]
         },
         "_owner": null,
@@ -1288,8 +1278,7 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings."
+              }
             ]
           },
           "_owner": null,
@@ -1298,7 +1287,7 @@
         "route": "/total-shootings"
       }
     },
-    "/percapita/black": {
+    "/per-capita/black": {
       "type": "map",
       "title": "Shootings Per Million By Race African American",
       "descTitle": "Shootings Per Million",
@@ -1407,8 +1396,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings per million."
+            }
           ]
         },
         "_owner": null,
@@ -1466,17 +1454,16 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings per million."
+              }
             ]
           },
           "_owner": null,
           "_store": {}
         },
-        "route": "/percapita"
+        "route": "/per-capita"
       }
     },
-    "/percapita/latino": {
+    "/per-capita/latino": {
       "type": "map",
       "title": "Shootings Per Million By Race Latino",
       "descTitle": "Shootings Per Million",
@@ -1550,8 +1537,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings per million."
+            }
           ]
         },
         "_owner": null,
@@ -1609,17 +1595,16 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings per million."
+              }
             ]
           },
           "_owner": null,
           "_store": {}
         },
-        "route": "/percapita"
+        "route": "/per-capita"
       }
     },
-    "/percapita/asian": {
+    "/per-capita/asian": {
       "type": "map",
       "title": "Shootings Per Million By Race Asian",
       "descTitle": "Shootings Per Million",
@@ -1694,8 +1679,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings per million."
+            }
           ]
         },
         "_owner": null,
@@ -1753,17 +1737,16 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings per million."
+              }
             ]
           },
           "_owner": null,
           "_store": {}
         },
-        "route": "/percapita"
+        "route": "/per-capita"
       }
     },
-    "/percapita/nativeamerican": {
+    "/per-capita/nativeamerican": {
       "type": "map",
       "title": "Shootings Per Million By Race Native American",
       "descTitle": "Shootings Per Million",
@@ -1838,8 +1821,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings per million."
+            }
           ]
         },
         "_owner": null,
@@ -1897,17 +1879,16 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings per million."
+              }
             ]
           },
           "_owner": null,
           "_store": {}
         },
-        "route": "/percapita"
+        "route": "/per-capita"
       }
     },
-    "/percapita/white": {
+    "/per-capita/white": {
       "type": "map",
       "title": "Shootings Per Million By Race White",
       "descTitle": "Shootings Per Million",
@@ -1983,8 +1964,7 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings per million."
+            }
           ]
         },
         "_owner": null,
@@ -2042,17 +2022,16 @@
                 "props": {},
                 "_owner": null,
                 "_store": {}
-              },
-              "Hover over a state to obtain the number of shootings per million."
+              }
             ]
           },
           "_owner": null,
           "_store": {}
         },
-        "route": "/percapita"
+        "route": "/per-capita"
       }
     },
-    "/shootingsbydate/black": {
+    "/shootings-by-date/black": {
       "type": "line",
       "title": "Shootings By Date By Race African American",
       "descTitle": "Total Shootings By Date",
@@ -2250,10 +2229,10 @@
           "_store": {}
         },
         "hasChildren": true,
-        "route": "/shootingsbydate"
+        "route": "/shootings-by-date"
       }
     },
-    "/shootingsbydate/latino": {
+    "/shootings-by-date/latino": {
       "type": "line",
       "title": "Shootings By Date By Race Latino",
       "descTitle": "Total Shootings By Date",
@@ -2473,10 +2452,10 @@
           "_store": {}
         },
         "hasChildren": true,
-        "route": "/shootingsbydate"
+        "route": "/shootings-by-date"
       }
     },
-    "/shootingsbydate/asian": {
+    "/shootings-by-date/asian": {
       "type": "line",
       "title": "Shootings By Date By Race Asian",
       "descTitle": "Total Shootings By Date",
@@ -2672,10 +2651,10 @@
           "_store": {}
         },
         "hasChildren": true,
-        "route": "/shootingsbydate"
+        "route": "/shootings-by-date"
       }
     },
-    "/shootingsbydate/nativeamerican": {
+    "/shootings-by-date/nativeamerican": {
       "type": "line",
       "title": "Shootings By Date By Race Native American",
       "descTitle": "Total Shootings By Date",
@@ -2872,10 +2851,10 @@
           "_store": {}
         },
         "hasChildren": true,
-        "route": "/shootingsbydate"
+        "route": "/shootings-by-date"
       }
     },
-    "/shootingsbydate/white": {
+    "/shootings-by-date/white": {
       "type": "line",
       "title": "Shootings By Date By Race White",
       "descTitle": "Total Shootings By Date",
@@ -3084,7 +3063,7 @@
           "_store": {}
         },
         "hasChildren": true,
-        "route": "/shootingsbydate"
+        "route": "/shootings-by-date"
       }
     },
     "/": {
@@ -3211,15 +3190,14 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings."
+            }
           ]
         },
         "_owner": null,
         "_store": {}
       }
     },
-    "/percapita": {
+    "/per-capita": {
       "type": "map",
       "title": "Shootings Per Million By State",
       "descTitle": "Shootings Per Million",
@@ -3271,15 +3249,14 @@
               "props": {},
               "_owner": null,
               "_store": {}
-            },
-            "Hover over a state to obtain the number of shootings per million."
+            }
           ]
         },
         "_owner": null,
         "_store": {}
       }
     },
-    "/shootingsbydate": {
+    "/shootings-by-date": {
       "type": "line",
       "title": "Shootings By Date",
       "descTitle": "Total Shootings By Date",

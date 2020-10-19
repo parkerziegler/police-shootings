@@ -7,7 +7,7 @@ describe('<Line />', () => {
       shootingsByDate: mockShootingsByDate,
     },
     router: {
-      route: '/shootingsbydate',
+      route: '/shootings-by-date',
     },
   };
 
