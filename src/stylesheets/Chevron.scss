@@ -30,6 +30,9 @@ $chevron-sizes: (
   justify-content: center;
   align-items: center;
   flex: 0 0 auto;
+  border: none;
+  background: none;
+  padding: 0;
 
   svg {
     fill-opacity: 1;

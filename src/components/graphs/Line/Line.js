@@ -14,28 +14,28 @@ export class Line extends React.Component {
     super(props);
     this.LabelPositionMap = {
       '/shootingsbydate': {
-        2015: 240,
-        2016: 325,
+        2015: 230,
+        2016: 295,
       },
       '/shootingsbydate/black': {
-        2015: 215,
-        2016: 350,
+        2015: 200,
+        2016: 325,
       },
       '/shootingsbydate/latino': {
-        2015: 120,
-        2016: 280,
+        2015: 100,
+        2016: 250,
       },
       '/shootingsbydate/asian': {
-        2015: 45,
-        2016: 225,
+        2015: 15,
+        2016: 205,
       },
       '/shootingsbydate/nativeamerican': {
-        2015: 345,
-        2016: 225,
+        2015: 340,
+        2016: 205,
       },
       '/shootingsbydate/white': {
-        2015: 320,
-        2016: 225,
+        2015: 280,
+        2016: 210,
       },
     };
     this.DelayMap = {
@@ -48,7 +48,10 @@ export class Line extends React.Component {
     };
   }
   render() {
-    const { maps: { shootingsByDate }, router } = this.props;
+    const {
+      maps: { shootingsByDate },
+      router,
+    } = this.props;
     const [stats2015, stats2016] = shootingsByDate;
     const labelPosition = this.LabelPositionMap[router.route];
     const delay = this.DelayMap[router.route];
@@ -56,7 +59,7 @@ export class Line extends React.Component {
       <VictoryChart
         width={1000}
         height={400}
-        padding={40}
+        padding={{ top: 0, bottom: 60, left: 80, right: 60 }}
         domainPadding={{ y: 20 }}
       >
         <VictoryAxis
@@ -68,13 +71,36 @@ export class Line extends React.Component {
             new Date(2015, 8, 1),
             new Date(2015, 11, 1),
           ]}
-          tickFormat={t => moment(t).format('MMMM')}
+          tickFormat={(t) => moment(t).format('MMMM')}
           label="Month"
+          style={{
+            axisLabel: {
+              fontFamily: "'HelveticaNeue', 'Helvetica', sans-serif",
+              fontWeight: 'bold',
+              fontSize: '16px',
+              padding: 40,
+            },
+            tickLabels: {
+              fontFamily: "'HelveticaNeue', 'Helvetica', sans-serif",
+            },
+          }}
         />
         <VictoryAxis
           dependentAxis
-          tickFormat={t => parseInt(t, 10)}
+          tickFormat={(t) => parseInt(t, 10)}
           label="Number of Shootings"
+          axisLabel
+          style={{
+            axisLabel: {
+              fontFamily: "'HelveticaNeue', 'Helvetica', sans-serif",
+              fontWeight: 'bold',
+              fontSize: '16px',
+              padding: 50,
+            },
+            tickLabels: {
+              fontFamily: "'HelveticaNeue', 'Helvetica', sans-serif",
+            },
+          }}
         />
         <VictoryLine
           data={stats2015}
@@ -94,7 +120,7 @@ export class Line extends React.Component {
           data={[{ fill: 'transparent' }, { fill: '#7B52A1' }]}
           delay={delay}
         >
-          {style => (
+          {(style) => (
             <VictoryLabel
               x={950}
               y={labelPosition ? labelPosition['2015'] : 240}
@@ -121,7 +147,7 @@ export class Line extends React.Component {
           data={[{ fill: 'transparent' }, { fill: '#9FA152' }]}
           delay={delay}
         >
-          {style => (
+          {(style) => (
             <VictoryLabel
               x={950}
               y={labelPosition ? labelPosition['2016'] : 325}

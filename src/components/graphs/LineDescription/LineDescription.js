@@ -14,8 +14,8 @@ export const LineDescription = ({ title, subtitle, description }) => (
     >
       <div className="line-description-container">
         <div className="line-description-title">
-          <div className="title">{title}</div>
-          <div className="subtitle">{subtitle}</div>
+          <h1 className="title">{title}</h1>
+          {subtitle ? <p className="subtitle">{subtitle}</p> : null}
         </div>
         {description}
       </div>

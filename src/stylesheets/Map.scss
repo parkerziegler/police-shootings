@@ -4,9 +4,15 @@
   @include flex-column;
   justify-content: center;
   flex-basis: 75%;
+  margin-bottom: 10px;
+
+  @media (min-width: map-get($breakpoints, 'tablet')) {
+    margin-bottom: 0;
+  }
 
   .map {
     overflow: visible;
+    cursor: grab;
 
     .state-container {
       &:hover {
@@ -28,7 +34,6 @@
     .state-label {
       @include font-size($label-font-sizes);
       font-family: $helvetica;
-      cursor: default;
     }
   }
 }
