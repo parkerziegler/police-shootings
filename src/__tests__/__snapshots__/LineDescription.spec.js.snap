@@ -16,16 +16,16 @@ exports[`<LineDescription /> renders without crashing 1`] = `
       <div
         className="line-description-title"
       >
-        <div
+        <h1
           className="title"
         >
           Title
-        </div>
-        <div
+        </h1>
+        <p
           className="subtitle"
         >
           Subtitle
-        </div>
+        </p>
       </div>
       Description
     </div>
