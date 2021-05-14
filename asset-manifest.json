@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/police-shootings/static/css/main.400771cf.chunk.css",
+    "main.js": "/police-shootings/static/js/main.d0cf301c.chunk.js",
+    "main.js.map": "/police-shootings/static/js/main.d0cf301c.chunk.js.map",
+    "runtime-main.js": "/police-shootings/static/js/runtime-main.fbe87c9c.js",
+    "runtime-main.js.map": "/police-shootings/static/js/runtime-main.fbe87c9c.js.map",
+    "static/js/2.15618868.chunk.js": "/police-shootings/static/js/2.15618868.chunk.js",
+    "static/js/2.15618868.chunk.js.map": "/police-shootings/static/js/2.15618868.chunk.js.map",
+    "index.html": "/police-shootings/index.html",
+    "precache-manifest.72bb3655344f94ee45d2f1998c532743.js": "/police-shootings/precache-manifest.72bb3655344f94ee45d2f1998c532743.js",
+    "service-worker.js": "/police-shootings/service-worker.js",
+    "static/css/main.400771cf.chunk.css.map": "/police-shootings/static/css/main.400771cf.chunk.css.map",
+    "static/js/2.15618868.chunk.js.LICENSE.txt": "/police-shootings/static/js/2.15618868.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fbe87c9c.js",
+    "static/js/2.15618868.chunk.js",
+    "static/css/main.400771cf.chunk.css",
+    "static/js/main.d0cf301c.chunk.js"
+  ]
+}
